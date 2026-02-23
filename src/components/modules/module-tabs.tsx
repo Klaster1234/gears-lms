@@ -5,6 +5,8 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { useLearningStore, useStoreHydration } from '@/store/learning-store';
 import { LearnTab } from './learn-tab';
 import { PracticeTab } from './practice-tab';
+import { ReflectTab } from './reflect-tab';
+import { ResourcesTab } from './resources-tab';
 import type { Module } from '@/types';
 
 interface ModuleTabsProps {
@@ -60,25 +62,11 @@ export function ModuleTabs({ module }: ModuleTabsProps) {
       </TabsContent>
 
       <TabsContent value="reflect" className="mt-6">
-        <div className="flex flex-col items-center justify-center py-16 text-center">
-          <PenLine className="size-12 text-muted-foreground/40 mb-4" />
-          <h3 className="text-lg font-semibold text-[#1A1A2E] mb-2">Reflection Coming Soon</h3>
-          <p className="text-sm text-muted-foreground max-w-md">
-            Guided reflection prompts for this module are being developed.
-            You will be able to journal your thoughts and create action plans here.
-          </p>
-        </div>
+        <ReflectTab module={module} />
       </TabsContent>
 
       <TabsContent value="resources" className="mt-6">
-        <div className="flex flex-col items-center justify-center py-16 text-center">
-          <LinkIcon className="size-12 text-muted-foreground/40 mb-4" />
-          <h3 className="text-lg font-semibold text-[#1A1A2E] mb-2">Resources Coming Soon</h3>
-          <p className="text-sm text-muted-foreground max-w-md">
-            Additional reading materials, downloads, and reference links for this module
-            will be available here.
-          </p>
-        </div>
+        <ResourcesTab module={module} />
       </TabsContent>
     </Tabs>
   );
