@@ -4,6 +4,8 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import { routing } from '@/i18n/routing';
+import { Navbar } from '@/components/layout/navbar';
+import { Footer } from '@/components/layout/footer';
 import '../globals.css';
 
 const inter = Inter({
@@ -40,10 +42,14 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-[#FAFAF5]`}
       >
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <div className="flex min-h-screen flex-col">
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>
