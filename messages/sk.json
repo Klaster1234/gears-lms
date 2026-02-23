@@ -1,0 +1,43 @@
+{
+  "common": {
+    "nav": {
+      "modules": "Moduly",
+      "progress": "Pokrok",
+      "about": "O projekte",
+      "certificate": "Certifik\u00e1t"
+    },
+    "buttons": {
+      "startLearning": "Za\u010da\u0165 sa u\u010di\u0165",
+      "continue": "Pokra\u010dova\u0165",
+      "next": "\u010ealej",
+      "previous": "Sp\u00e4\u0165",
+      "submit": "Odosla\u0165",
+      "download": "Stiahnu\u0165",
+      "reset": "Resetova\u0165",
+      "close": "Zatvori\u0165",
+      "launch": "Spusti\u0165",
+      "complete": "Ozna\u010di\u0165 ako dokon\u010den\u00e9",
+      "retry": "Sk\u00fasi\u0165 znova"
+    },
+    "language": {
+      "en": "English",
+      "pl": "Polski",
+      "sk": "Slovensky"
+    },
+    "footer": {
+      "disclaimer": "Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Education and Culture Executive Agency (EACEA). Neither the European Union nor EACEA can be held responsible for them.",
+      "projectInfo": "G.E.A.R.S. - Green Explorers: Adults Reimagining Sustainability",
+      "programme": "Erasmus+ KA210-ADU",
+      "projectNumber": "\u010c\u00edslo projektu: 2024-2-PL01-KA210-ADU-000279352",
+      "copyright": "\u00a9 2025-2027 Konzorcium Green Explorers"
+    }
+  },
+  "landing": {
+    "hero": {
+      "title": "Green Explorers",
+      "subtitle": "Dospel\u00ed prehodnocuj\u00fa udr\u017eate\u013enos\u0165",
+      "description": "10 interakt\u00edvnych modulov o udr\u017eate\u013enom \u017eivotnom \u0161t\u00fdle, zero waste a zelen\u00fdch kompetenci\u00e1ch. U\u010dte sa vlastn\u00fdm tempom, z\u00edskajte certifik\u00e1t.",
+      "cta": "Za\u010da\u0165 sa u\u010di\u0165"
+    }
+  }
+}

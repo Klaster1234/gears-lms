@@ -1,0 +1,43 @@
+{
+  "common": {
+    "nav": {
+      "modules": "Modules",
+      "progress": "Progress",
+      "about": "About",
+      "certificate": "Certificate"
+    },
+    "buttons": {
+      "startLearning": "Start Learning",
+      "continue": "Continue",
+      "next": "Next",
+      "previous": "Previous",
+      "submit": "Submit",
+      "download": "Download",
+      "reset": "Reset",
+      "close": "Close",
+      "launch": "Launch",
+      "complete": "Mark as Complete",
+      "retry": "Retry"
+    },
+    "language": {
+      "en": "English",
+      "pl": "Polski",
+      "sk": "Slovensky"
+    },
+    "footer": {
+      "disclaimer": "Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Education and Culture Executive Agency (EACEA). Neither the European Union nor EACEA can be held responsible for them.",
+      "projectInfo": "G.E.A.R.S. - Green Explorers: Adults Reimagining Sustainability",
+      "programme": "Erasmus+ KA210-ADU",
+      "projectNumber": "Project No: 2024-2-PL01-KA210-ADU-000279352",
+      "copyright": "\u00a9 2025-2027 Green Explorers Consortium"
+    }
+  },
+  "landing": {
+    "hero": {
+      "title": "Green Explorers",
+      "subtitle": "Adults Reimagining Sustainability",
+      "description": "10 interactive modules on sustainable living, zero waste, and green competences. Learn at your own pace, earn your certificate.",
+      "cta": "Start Learning"
+    }
+  }
+}

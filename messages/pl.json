@@ -1,0 +1,43 @@
+{
+  "common": {
+    "nav": {
+      "modules": "Modu\u0142y",
+      "progress": "Post\u0119py",
+      "about": "O projekcie",
+      "certificate": "Certyfikat"
+    },
+    "buttons": {
+      "startLearning": "Rozpocznij nauk\u0119",
+      "continue": "Kontynuuj",
+      "next": "Dalej",
+      "previous": "Wstecz",
+      "submit": "Zatwierd\u017a",
+      "download": "Pobierz",
+      "reset": "Resetuj",
+      "close": "Zamknij",
+      "launch": "Uruchom",
+      "complete": "Oznacz jako uko\u0144czone",
+      "retry": "Spr\u00f3buj ponownie"
+    },
+    "language": {
+      "en": "English",
+      "pl": "Polski",
+      "sk": "Slovensky"
+    },
+    "footer": {
+      "disclaimer": "Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Education and Culture Executive Agency (EACEA). Neither the European Union nor EACEA can be held responsible for them.",
+      "projectInfo": "G.E.A.R.S. - Green Explorers: Adults Reimagining Sustainability",
+      "programme": "Erasmus+ KA210-ADU",
+      "projectNumber": "Nr projektu: 2024-2-PL01-KA210-ADU-000279352",
+      "copyright": "\u00a9 2025-2027 Konsorcjum Green Explorers"
+    }
+  },
+  "landing": {
+    "hero": {
+      "title": "Green Explorers",
+      "subtitle": "Doro\u015bli na nowo odkrywaj\u0105 zr\u00f3wnowa\u017cony rozw\u00f3j",
+      "description": "10 interaktywnych modu\u0142\u00f3w o zr\u00f3wnowa\u017conym stylu \u017cycia, zero waste i zielonych kompetencjach. Ucz si\u0119 we w\u0142asnym tempie, zdob\u0105d\u017a certyfikat.",
+      "cta": "Rozpocznij nauk\u0119"
+    }
+  }
+}
