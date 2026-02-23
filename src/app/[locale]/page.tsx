@@ -1,13 +1,17 @@
-import { useTranslations } from 'next-intl';
+import { HeroSection } from '@/components/landing/hero-section';
+import { FeaturesSection } from '@/components/landing/features-section';
+import { ModulesPreviewSection } from '@/components/landing/modules-preview';
+import { GreenCompSection } from '@/components/landing/greencomp-section';
+import { PartnersSection } from '@/components/landing/partners-section';
 
 export default function Home() {
-  const t = useTranslations('landing');
   return (
-    <main className="min-h-screen bg-cream">
-      <div className="container mx-auto px-4 py-20 text-center">
-        <h1 className="text-5xl font-bold text-forest-600">{t('hero.title')}</h1>
-        <p className="mt-4 text-xl text-charcoal/70">{t('hero.subtitle')}</p>
-      </div>
-    </main>
+    <>
+      <HeroSection />
+      <FeaturesSection />
+      <ModulesPreviewSection />
+      <GreenCompSection />
+      <PartnersSection />
+    </>
   );
 }

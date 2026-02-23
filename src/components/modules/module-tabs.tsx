@@ -4,6 +4,7 @@ import { BookOpen, Puzzle, PenLine, LinkIcon, CheckCircle2 } from 'lucide-react'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { useLearningStore, useStoreHydration } from '@/store/learning-store';
 import { LearnTab } from './learn-tab';
+import { PracticeTab } from './practice-tab';
 import type { Module } from '@/types';
 
 interface ModuleTabsProps {
@@ -55,14 +56,7 @@ export function ModuleTabs({ module }: ModuleTabsProps) {
       </TabsContent>
 
       <TabsContent value="practice" className="mt-6">
-        <div className="flex flex-col items-center justify-center py-16 text-center">
-          <Puzzle className="size-12 text-muted-foreground/40 mb-4" />
-          <h3 className="text-lg font-semibold text-[#1A1A2E] mb-2">Quiz Coming Soon</h3>
-          <p className="text-sm text-muted-foreground max-w-md">
-            Interactive practice exercises for this module are being prepared.
-            Check back soon to test your knowledge!
-          </p>
-        </div>
+        <PracticeTab module={module} />
       </TabsContent>
 
       <TabsContent value="reflect" className="mt-6">
