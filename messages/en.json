@@ -29,7 +29,7 @@
       "projectInfo": "G.E.A.R.S. - Green Explorers: Adults Reimagining Sustainability",
       "programme": "Erasmus+ KA210-ADU",
       "projectNumber": "Project No: 2024-2-PL01-KA210-ADU-000279352",
-      "copyright": "\u00a9 2025-2027 Green Explorers Consortium"
+      "copyright": "© 2025-2027 Green Explorers Consortium"
     }
   },
   "landing": {
@@ -38,6 +38,156 @@
       "subtitle": "Adults Reimagining Sustainability",
       "description": "10 interactive modules on sustainable living, zero waste, and green competences. Learn at your own pace, earn your certificate.",
       "cta": "Start Learning"
+    },
+    "features": {
+      "title": "What You'll Learn",
+      "modules": {
+        "title": "10 Interactive Modules",
+        "description": "Comprehensive lessons on sustainable living, from waste management to community action."
+      },
+      "quizzes": {
+        "title": "Quizzes & Activities",
+        "description": "Test your knowledge with interactive quizzes, drag-and-drop exercises, and real-world scenarios."
+      },
+      "certificate": {
+        "title": "Certificate of Completion",
+        "description": "Earn a recognised certificate after completing all modules and demonstrating your competences."
+      }
+    },
+    "modulesPreview": {
+      "title": "Learning Modules",
+      "subtitle": "10 modules covering all aspects of sustainable living"
+    },
+    "greencomp": {
+      "title": "GreenComp Framework",
+      "subtitle": "Our curriculum is aligned with the European Sustainability Competence Framework"
+    },
+    "partners": {
+      "title": "Our Partners",
+      "subtitle": "An Erasmus+ KA210-ADU collaboration"
     }
+  },
+  "modules": {
+    "catalog": {
+      "title": "Learning Modules",
+      "subtitle": "Explore all 10 modules of the G.E.A.R.S. programme"
+    },
+    "tabs": {
+      "learn": "Learn",
+      "practice": "Practice",
+      "reflect": "Reflect",
+      "resources": "Resources"
+    },
+    "progress": {
+      "notStarted": "Not Started",
+      "inProgress": "In Progress",
+      "completed": "Completed"
+    },
+    "1": {
+      "title": "Introduction to 5R Principles",
+      "description": "Learn the foundation of sustainable living through the 5R hierarchy: Refuse, Reduce, Reuse, Repurpose, Recycle."
+    },
+    "2": {
+      "title": "Waste Segregation & Zero Waste",
+      "description": "Master proper waste sorting and discover the zero waste philosophy for everyday life."
+    },
+    "3": {
+      "title": "Composting & Organic Waste",
+      "description": "Turn organic waste into valuable compost and understand the nutrient cycle."
+    },
+    "4": {
+      "title": "Sustainable Shopping",
+      "description": "Make informed purchasing decisions considering environmental and social impacts."
+    },
+    "5": {
+      "title": "Circular Economy",
+      "description": "Understand how the circular economy model replaces the linear take-make-dispose approach."
+    },
+    "6": {
+      "title": "Fast vs. Slow Fashion",
+      "description": "Explore the environmental and social costs of fast fashion and discover sustainable alternatives."
+    },
+    "7": {
+      "title": "Green Consumption & Eco-labels",
+      "description": "Learn to read eco-labels and make truly sustainable consumer choices."
+    },
+    "8": {
+      "title": "Energy Efficiency & Footprint",
+      "description": "Calculate your ecological footprint and discover practical energy-saving strategies."
+    },
+    "9": {
+      "title": "Community Action",
+      "description": "Harness the power of collective action for environmental change in your community."
+    },
+    "10": {
+      "title": "Eco-Anxiety & Wellbeing",
+      "description": "Understand eco-anxiety and develop strategies to channel environmental concern into positive action."
+    }
+  },
+  "progress": {
+    "title": "Your Learning Progress",
+    "overallProgress": "Overall Progress",
+    "modulesCompleted": "{count} of 10 modules completed",
+    "moduleProgress": "Module Progress",
+    "greencompBadges": "GreenComp Competences",
+    "certificateReady": "You've completed all modules! Generate your certificate.",
+    "certificateNotReady": "Complete {count} more modules to earn your certificate.",
+    "resetProgress": "Reset Progress",
+    "resetConfirm": "Are you sure? This will delete all your learning progress, quiz results, and reflections. This action cannot be undone.",
+    "resetButton": "Yes, Reset Everything",
+    "cancel": "Cancel"
+  },
+  "certificate": {
+    "title": "Certificate of Completion",
+    "enterName": "Enter Your Full Name",
+    "namePlaceholder": "Your full name as it will appear on the certificate",
+    "preview": "Preview Certificate",
+    "download": "Download as PDF",
+    "backToProgress": "Back to Progress",
+    "notComplete": "Complete all 10 modules to generate your certificate.",
+    "goToProgress": "View Progress",
+    "certifies": "This certifies that",
+    "hasCompleted": "has successfully completed all 10 modules of",
+    "programmeTitle": "G.E.A.R.S. - Green Explorers: Adults Reimagining Sustainability",
+    "programmeDescription": "A comprehensive programme in sustainable living, zero waste practices, and green competences",
+    "dateOfCompletion": "Date of Completion"
+  },
+  "greencomp": {
+    "areas": {
+      "embodyingValues": {
+        "title": "Embodying Sustainability Values",
+        "description": "Reflecting on personal values and how they relate to sustainability"
+      },
+      "embracingComplexity": {
+        "title": "Embracing Complexity",
+        "description": "Understanding interconnected systems and managing uncertainty"
+      },
+      "envisioningFutures": {
+        "title": "Envisioning Sustainable Futures",
+        "description": "Imagining better futures and developing adaptability"
+      },
+      "actingForSustainability": {
+        "title": "Acting for Sustainability",
+        "description": "Taking individual and collective action for positive change"
+      }
+    },
+    "competences": {
+      "valuingSustainability": "Valuing Sustainability",
+      "supportingFairness": "Supporting Fairness",
+      "promotingNature": "Promoting Nature",
+      "systemsThinking": "Systems Thinking",
+      "criticalThinking": "Critical Thinking",
+      "problemFraming": "Problem Framing",
+      "futuresLiteracy": "Futures Literacy",
+      "adaptability": "Adaptability",
+      "exploratoryThinking": "Exploratory Thinking",
+      "politicalAgency": "Political Agency",
+      "collectiveAction": "Collective Action",
+      "individualInitiative": "Individual Initiative"
+    }
+  },
+  "about": {
+    "title": "About G.E.A.R.S.",
+    "subtitle": "Green Explorers: Adults Reimagining Sustainability"
   }
 }

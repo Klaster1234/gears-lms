@@ -1,23 +1,23 @@
 {
   "common": {
     "nav": {
-      "modules": "Modu\u0142y",
-      "progress": "Post\u0119py",
+      "modules": "Moduły",
+      "progress": "Postępy",
       "about": "O projekcie",
       "certificate": "Certyfikat"
     },
     "buttons": {
-      "startLearning": "Rozpocznij nauk\u0119",
+      "startLearning": "Rozpocznij naukę",
       "continue": "Kontynuuj",
       "next": "Dalej",
       "previous": "Wstecz",
-      "submit": "Zatwierd\u017a",
+      "submit": "Zatwierdź",
       "download": "Pobierz",
       "reset": "Resetuj",
       "close": "Zamknij",
       "launch": "Uruchom",
-      "complete": "Oznacz jako uko\u0144czone",
-      "retry": "Spr\u00f3buj ponownie"
+      "complete": "Oznacz jako ukończone",
+      "retry": "Spróbuj ponownie"
     },
     "language": {
       "en": "English",
@@ -29,15 +29,165 @@
       "projectInfo": "G.E.A.R.S. - Green Explorers: Adults Reimagining Sustainability",
       "programme": "Erasmus+ KA210-ADU",
       "projectNumber": "Nr projektu: 2024-2-PL01-KA210-ADU-000279352",
-      "copyright": "\u00a9 2025-2027 Konsorcjum Green Explorers"
+      "copyright": "© 2025-2027 Konsorcjum Green Explorers"
     }
   },
   "landing": {
     "hero": {
       "title": "Green Explorers",
-      "subtitle": "Doro\u015bli na nowo odkrywaj\u0105 zr\u00f3wnowa\u017cony rozw\u00f3j",
-      "description": "10 interaktywnych modu\u0142\u00f3w o zr\u00f3wnowa\u017conym stylu \u017cycia, zero waste i zielonych kompetencjach. Ucz si\u0119 we w\u0142asnym tempie, zdob\u0105d\u017a certyfikat.",
-      "cta": "Rozpocznij nauk\u0119"
+      "subtitle": "Dorośli na nowo odkrywają zrównoważony rozwój",
+      "description": "10 interaktywnych modułów o zrównoważonym stylu życia, zero waste i zielonych kompetencjach. Ucz się we własnym tempie, zdobądź certyfikat.",
+      "cta": "Rozpocznij naukę"
+    },
+    "features": {
+      "title": "Czego się nauczysz",
+      "modules": {
+        "title": "10 interaktywnych modułów",
+        "description": "Kompleksowe lekcje o zrównoważonym życiu — od gospodarki odpadami po działania społeczne."
+      },
+      "quizzes": {
+        "title": "Quizy i ćwiczenia",
+        "description": "Sprawdź swoją wiedzę dzięki interaktywnym quizom, ćwiczeniom typu przeciągnij i upuść oraz scenariuszom z życia wziętym."
+      },
+      "certificate": {
+        "title": "Certyfikat ukończenia",
+        "description": "Zdobądź uznawany certyfikat po ukończeniu wszystkich modułów i wykazaniu się kompetencjami."
+      }
+    },
+    "modulesPreview": {
+      "title": "Moduły edukacyjne",
+      "subtitle": "10 modułów obejmujących wszystkie aspekty zrównoważonego życia"
+    },
+    "greencomp": {
+      "title": "Ramy GreenComp",
+      "subtitle": "Nasz program jest zgodny z Europejskimi Ramami Kompetencji w zakresie Zrównoważonego Rozwoju"
+    },
+    "partners": {
+      "title": "Nasi partnerzy",
+      "subtitle": "Współpraca w ramach Erasmus+ KA210-ADU"
     }
+  },
+  "modules": {
+    "catalog": {
+      "title": "Moduły edukacyjne",
+      "subtitle": "Poznaj wszystkie 10 modułów programu G.E.A.R.S."
+    },
+    "tabs": {
+      "learn": "Nauka",
+      "practice": "Praktyka",
+      "reflect": "Refleksja",
+      "resources": "Zasoby"
+    },
+    "progress": {
+      "notStarted": "Nie rozpoczęto",
+      "inProgress": "W trakcie",
+      "completed": "Ukończono"
+    },
+    "1": {
+      "title": "Wprowadzenie do zasad 5R",
+      "description": "Poznaj podstawy zrównoważonego życia poprzez hierarchię 5R: Odmów, Ogranicz, Użyj ponownie, Wykorzystaj inaczej, Recykluj."
+    },
+    "2": {
+      "title": "Segregacja odpadów i zero waste",
+      "description": "Opanuj prawidłową segregację odpadów i poznaj filozofię zero waste w codziennym życiu."
+    },
+    "3": {
+      "title": "Kompostowanie i odpady organiczne",
+      "description": "Przekształcaj odpady organiczne w cenny kompost i poznaj obieg składników odżywczych."
+    },
+    "4": {
+      "title": "Zrównoważone zakupy",
+      "description": "Podejmuj świadome decyzje zakupowe, uwzględniając wpływ na środowisko i społeczeństwo."
+    },
+    "5": {
+      "title": "Gospodarka o obiegu zamkniętym",
+      "description": "Dowiedz się, jak model gospodarki o obiegu zamkniętym zastępuje liniowe podejście weź-wyprodukuj-wyrzuć."
+    },
+    "6": {
+      "title": "Moda szybka vs. wolna",
+      "description": "Poznaj ekologiczne i społeczne koszty szybkiej mody oraz odkryj zrównoważone alternatywy."
+    },
+    "7": {
+      "title": "Zielona konsumpcja i eko-znaki",
+      "description": "Naucz się czytać oznaczenia ekologiczne i dokonywać naprawdę zrównoważonych wyborów konsumenckich."
+    },
+    "8": {
+      "title": "Efektywność energetyczna i ślad ekologiczny",
+      "description": "Oblicz swój ślad ekologiczny i poznaj praktyczne strategie oszczędzania energii."
+    },
+    "9": {
+      "title": "Działania społeczne",
+      "description": "Wykorzystaj siłę zbiorowego działania na rzecz zmian środowiskowych w Twojej społeczności."
+    },
+    "10": {
+      "title": "Eko-lęk i dobrostan",
+      "description": "Zrozum zjawisko eko-lęku i wypracuj strategie przekształcania troski o środowisko w pozytywne działanie."
+    }
+  },
+  "progress": {
+    "title": "Twoje postępy w nauce",
+    "overallProgress": "Postęp ogólny",
+    "modulesCompleted": "{count} z 10 modułów ukończonych",
+    "moduleProgress": "Postępy w modułach",
+    "greencompBadges": "Kompetencje GreenComp",
+    "certificateReady": "Ukończyłeś wszystkie moduły! Wygeneruj swój certyfikat.",
+    "certificateNotReady": "Ukończ jeszcze {count} modułów, aby zdobyć certyfikat.",
+    "resetProgress": "Resetuj postępy",
+    "resetConfirm": "Czy na pewno? Spowoduje to usunięcie wszystkich postępów w nauce, wyników quizów i refleksji. Tej operacji nie można cofnąć.",
+    "resetButton": "Tak, zresetuj wszystko",
+    "cancel": "Anuluj"
+  },
+  "certificate": {
+    "title": "Certyfikat ukończenia",
+    "enterName": "Wpisz swoje imię i nazwisko",
+    "namePlaceholder": "Twoje pełne imię i nazwisko, jakie pojawi się na certyfikacie",
+    "preview": "Podgląd certyfikatu",
+    "download": "Pobierz jako PDF",
+    "backToProgress": "Powrót do postępów",
+    "notComplete": "Ukończ wszystkie 10 modułów, aby wygenerować certyfikat.",
+    "goToProgress": "Zobacz postępy",
+    "certifies": "Niniejszym zaświadcza się, że",
+    "hasCompleted": "pomyślnie ukończył/a wszystkie 10 modułów programu",
+    "programmeTitle": "G.E.A.R.S. - Green Explorers: Adults Reimagining Sustainability",
+    "programmeDescription": "Kompleksowy program z zakresu zrównoważonego życia, praktyk zero waste i zielonych kompetencji",
+    "dateOfCompletion": "Data ukończenia"
+  },
+  "greencomp": {
+    "areas": {
+      "embodyingValues": {
+        "title": "Ucieleśnianie wartości zrównoważonego rozwoju",
+        "description": "Refleksja nad wartościami osobistymi i ich związkiem ze zrównoważonym rozwojem"
+      },
+      "embracingComplexity": {
+        "title": "Akceptowanie złożoności",
+        "description": "Rozumienie powiązanych systemów i radzenie sobie z niepewnością"
+      },
+      "envisioningFutures": {
+        "title": "Wizje zrównoważonej przyszłości",
+        "description": "Wyobrażanie lepszej przyszłości i rozwijanie zdolności adaptacyjnych"
+      },
+      "actingForSustainability": {
+        "title": "Działanie na rzecz zrównoważonego rozwoju",
+        "description": "Podejmowanie indywidualnych i zbiorowych działań na rzecz pozytywnych zmian"
+      }
+    },
+    "competences": {
+      "valuingSustainability": "Docenianie zrównoważonego rozwoju",
+      "supportingFairness": "Wspieranie sprawiedliwości",
+      "promotingNature": "Dbanie o naturę",
+      "systemsThinking": "Myślenie systemowe",
+      "criticalThinking": "Myślenie krytyczne",
+      "problemFraming": "Formułowanie problemów",
+      "futuresLiteracy": "Myślenie o przyszłości",
+      "adaptability": "Zdolność adaptacji",
+      "exploratoryThinking": "Myślenie eksploracyjne",
+      "politicalAgency": "Sprawczość polityczna",
+      "collectiveAction": "Działanie zbiorowe",
+      "individualInitiative": "Inicjatywa indywidualna"
+    }
+  },
+  "about": {
+    "title": "O projekcie G.E.A.R.S.",
+    "subtitle": "Green Explorers: Adults Reimagining Sustainability"
   }
 }

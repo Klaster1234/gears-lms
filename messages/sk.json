@@ -4,20 +4,20 @@
       "modules": "Moduly",
       "progress": "Pokrok",
       "about": "O projekte",
-      "certificate": "Certifik\u00e1t"
+      "certificate": "Certifikát"
     },
     "buttons": {
-      "startLearning": "Za\u010da\u0165 sa u\u010di\u0165",
-      "continue": "Pokra\u010dova\u0165",
-      "next": "\u010ealej",
-      "previous": "Sp\u00e4\u0165",
-      "submit": "Odosla\u0165",
-      "download": "Stiahnu\u0165",
-      "reset": "Resetova\u0165",
-      "close": "Zatvori\u0165",
-      "launch": "Spusti\u0165",
-      "complete": "Ozna\u010di\u0165 ako dokon\u010den\u00e9",
-      "retry": "Sk\u00fasi\u0165 znova"
+      "startLearning": "Začať sa učiť",
+      "continue": "Pokračovať",
+      "next": "Ďalej",
+      "previous": "Späť",
+      "submit": "Odoslať",
+      "download": "Stiahnuť",
+      "reset": "Resetovať",
+      "close": "Zatvoriť",
+      "launch": "Spustiť",
+      "complete": "Označiť ako dokončené",
+      "retry": "Skúsiť znova"
     },
     "language": {
       "en": "English",
@@ -28,16 +28,166 @@
       "disclaimer": "Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Education and Culture Executive Agency (EACEA). Neither the European Union nor EACEA can be held responsible for them.",
       "projectInfo": "G.E.A.R.S. - Green Explorers: Adults Reimagining Sustainability",
       "programme": "Erasmus+ KA210-ADU",
-      "projectNumber": "\u010c\u00edslo projektu: 2024-2-PL01-KA210-ADU-000279352",
-      "copyright": "\u00a9 2025-2027 Konzorcium Green Explorers"
+      "projectNumber": "Číslo projektu: 2024-2-PL01-KA210-ADU-000279352",
+      "copyright": "© 2025-2027 Konzorcium Green Explorers"
     }
   },
   "landing": {
     "hero": {
       "title": "Green Explorers",
-      "subtitle": "Dospel\u00ed prehodnocuj\u00fa udr\u017eate\u013enos\u0165",
-      "description": "10 interakt\u00edvnych modulov o udr\u017eate\u013enom \u017eivotnom \u0161t\u00fdle, zero waste a zelen\u00fdch kompetenci\u00e1ch. U\u010dte sa vlastn\u00fdm tempom, z\u00edskajte certifik\u00e1t.",
-      "cta": "Za\u010da\u0165 sa u\u010di\u0165"
+      "subtitle": "Dospelí prehodnocujú udržateľnosť",
+      "description": "10 interaktívnych modulov o udržateľnom životnom štýle, zero waste a zelených kompetenciách. Učte sa vlastným tempom, získajte certifikát.",
+      "cta": "Začať sa učiť"
+    },
+    "features": {
+      "title": "Čo sa naučíte",
+      "modules": {
+        "title": "10 interaktívnych modulov",
+        "description": "Komplexné lekcie o udržateľnom živote — od odpadového hospodárstva po komunitné aktivity."
+      },
+      "quizzes": {
+        "title": "Kvízy a aktivity",
+        "description": "Otestujte si svoje vedomosti pomocou interaktívnych kvízov, cvičení typu potiahni a pusti a scenárov zo skutočného života."
+      },
+      "certificate": {
+        "title": "Certifikát o absolvovaní",
+        "description": "Získajte uznávaný certifikát po absolvovaní všetkých modulov a preukázaní svojich kompetencií."
+      }
+    },
+    "modulesPreview": {
+      "title": "Vzdelávacie moduly",
+      "subtitle": "10 modulov pokrývajúcich všetky aspekty udržateľného života"
+    },
+    "greencomp": {
+      "title": "Rámec GreenComp",
+      "subtitle": "Náš učebný plán je v súlade s Európskym rámcom kompetencií pre udržateľnosť"
+    },
+    "partners": {
+      "title": "Naši partneri",
+      "subtitle": "Spolupráca v rámci Erasmus+ KA210-ADU"
     }
+  },
+  "modules": {
+    "catalog": {
+      "title": "Vzdelávacie moduly",
+      "subtitle": "Preskúmajte všetkých 10 modulov programu G.E.A.R.S."
+    },
+    "tabs": {
+      "learn": "Učenie",
+      "practice": "Prax",
+      "reflect": "Reflexia",
+      "resources": "Zdroje"
+    },
+    "progress": {
+      "notStarted": "Nezačaté",
+      "inProgress": "Prebieha",
+      "completed": "Dokončené"
+    },
+    "1": {
+      "title": "Úvod do princípov 5R",
+      "description": "Naučte sa základy udržateľného života prostredníctvom hierarchie 5R: Odmietni, Obmedz, Použi znova, Prepoužij, Recykluj."
+    },
+    "2": {
+      "title": "Triedenie odpadu a zero waste",
+      "description": "Osvojte si správne triedenie odpadu a objavte filozofiu zero waste pre každodenný život."
+    },
+    "3": {
+      "title": "Kompostovanie a biologický odpad",
+      "description": "Premeňte biologický odpad na hodnotný kompost a pochopte kolobeh živín."
+    },
+    "4": {
+      "title": "Udržateľné nakupovanie",
+      "description": "Robte informované nákupné rozhodnutia s ohľadom na vplyv na životné prostredie a spoločnosť."
+    },
+    "5": {
+      "title": "Obehové hospodárstvo",
+      "description": "Pochopte, ako model obehového hospodárstva nahrádza lineárny prístup vezmi-vyrob-vyhoď."
+    },
+    "6": {
+      "title": "Rýchla vs. pomalá móda",
+      "description": "Preskúmajte environmentálne a sociálne náklady rýchlej módy a objavte udržateľné alternatívy."
+    },
+    "7": {
+      "title": "Zelená spotreba a eko-značky",
+      "description": "Naučte sa čítať eko-značky a robiť skutočne udržateľné spotrebiteľské rozhodnutia."
+    },
+    "8": {
+      "title": "Energetická efektívnosť a ekologická stopa",
+      "description": "Vypočítajte svoju ekologickú stopu a objavte praktické stratégie šetrenia energiou."
+    },
+    "9": {
+      "title": "Komunitné aktivity",
+      "description": "Využite silu kolektívneho konania pre environmentálne zmeny vo vašej komunite."
+    },
+    "10": {
+      "title": "Eko-úzkosť a duševná pohoda",
+      "description": "Pochopte eko-úzkosť a vypracujte stratégie na premenu environmentálnych obáv na pozitívne konanie."
+    }
+  },
+  "progress": {
+    "title": "Váš pokrok v učení",
+    "overallProgress": "Celkový pokrok",
+    "modulesCompleted": "{count} z 10 modulov dokončených",
+    "moduleProgress": "Pokrok v moduloch",
+    "greencompBadges": "Kompetencie GreenComp",
+    "certificateReady": "Dokončili ste všetky moduly! Vygenerujte si certifikát.",
+    "certificateNotReady": "Dokončite ešte {count} modulov pre získanie certifikátu.",
+    "resetProgress": "Resetovať pokrok",
+    "resetConfirm": "Ste si istý/á? Týmto sa vymažú všetky vaše pokroky v učení, výsledky kvízov a reflexie. Túto akciu nie je možné vrátiť späť.",
+    "resetButton": "Áno, resetovať všetko",
+    "cancel": "Zrušiť"
+  },
+  "certificate": {
+    "title": "Certifikát o absolvovaní",
+    "enterName": "Zadajte svoje celé meno",
+    "namePlaceholder": "Vaše celé meno tak, ako sa objaví na certifikáte",
+    "preview": "Náhľad certifikátu",
+    "download": "Stiahnuť ako PDF",
+    "backToProgress": "Späť na pokrok",
+    "notComplete": "Pre vygenerovanie certifikátu dokončite všetkých 10 modulov.",
+    "goToProgress": "Zobraziť pokrok",
+    "certifies": "Týmto sa potvrdzuje, že",
+    "hasCompleted": "úspešne absolvoval/a všetkých 10 modulov programu",
+    "programmeTitle": "G.E.A.R.S. - Green Explorers: Adults Reimagining Sustainability",
+    "programmeDescription": "Komplexný program o udržateľnom živote, praktikách zero waste a zelených kompetenciách",
+    "dateOfCompletion": "Dátum dokončenia"
+  },
+  "greencomp": {
+    "areas": {
+      "embodyingValues": {
+        "title": "Stelesňovanie hodnôt udržateľnosti",
+        "description": "Reflexia osobných hodnôt a ich vzťahu k udržateľnosti"
+      },
+      "embracingComplexity": {
+        "title": "Prijímanie zložitosti",
+        "description": "Porozumenie prepojeným systémom a zvládanie neistoty"
+      },
+      "envisioningFutures": {
+        "title": "Vízie udržateľnej budúcnosti",
+        "description": "Predstavovanie si lepšej budúcnosti a rozvíjanie adaptability"
+      },
+      "actingForSustainability": {
+        "title": "Konanie pre udržateľnosť",
+        "description": "Individuálne a kolektívne konanie pre pozitívnu zmenu"
+      }
+    },
+    "competences": {
+      "valuingSustainability": "Oceňovanie udržateľnosti",
+      "supportingFairness": "Podpora spravodlivosti",
+      "promotingNature": "Podpora prírody",
+      "systemsThinking": "Systémové myslenie",
+      "criticalThinking": "Kritické myslenie",
+      "problemFraming": "Formulovanie problémov",
+      "futuresLiteracy": "Gramotnosť budúcnosti",
+      "adaptability": "Adaptabilita",
+      "exploratoryThinking": "Exploratívne myslenie",
+      "politicalAgency": "Politická angažovanosť",
+      "collectiveAction": "Kolektívne konanie",
+      "individualInitiative": "Individuálna iniciatíva"
+    }
+  },
+  "about": {
+    "title": "O projekte G.E.A.R.S.",
+    "subtitle": "Green Explorers: Adults Reimagining Sustainability"
   }
 }
