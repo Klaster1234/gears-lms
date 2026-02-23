@@ -145,3 +145,43 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Certificate print styles */
+@media print {
+  /* Hide everything except the certificate */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Show only the certificate container and its children */
+  #certificate,
+  #certificate * {
+    visibility: visible;
+  }
+
+  #certificate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 297mm;
+    height: 210mm;
+    margin: 0;
+    padding: 16mm;
+    background: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  /* Remove any navigation, header, footer */
+  nav,
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+}
