@@ -189,5 +189,556 @@
   "about": {
     "title": "O projekte G.E.A.R.S.",
     "subtitle": "Green Explorers: Adults Reimagining Sustainability"
+  },
+  "quizzes": {
+    "module1": {
+      "q1": {
+        "question": "Obchod vám pri pokladni ponúka igelitku zadarmo. Aký prístup 5R je najlepší?",
+        "options": {
+          "refuse": "Odmietni",
+          "reduce": "Obmedz",
+          "reuse": "Použi znova",
+          "repurpose": "Prepoužij",
+          "recycle": "Recykluj"
+        },
+        "feedback": "Odmietnutie zbytočných vecí, ako sú igelitky, zabraňuje vzniku odpadu na začiatku — to je vrch hierarchie 5R."
+      },
+      "q2": {
+        "question": "Všimnete si, že nakupujete viac jedla, než vaša rodina stihne za týždeň zjesť. Akú zásadu 5R by ste mali uplatniť?",
+        "options": {
+          "refuse": "Odmietni",
+          "reduce": "Obmedz",
+          "reuse": "Použi znova",
+          "repurpose": "Prepoužij",
+          "recycle": "Recykluj"
+        },
+        "feedback": "Obmedzenie nákupov na skutočné potreby zabraňuje plytvaniu jedlom a šetrí peniaze."
+      },
+      "q3": {
+        "question": "Máte doma staré sklenené poháre od zaváranín. Aký kreatívny prístup 5R sa hodí najlepšie?",
+        "options": {
+          "refuse": "Odmietni",
+          "reduce": "Obmedz",
+          "reuse": "Použi znova",
+          "repurpose": "Prepoužij",
+          "recycle": "Recykluj"
+        },
+        "feedback": "Prepoužitie dáva veciam novú funkciu — poháre sa môžu stať úložnými nádobami, svietnikmi alebo kvetináčmi."
+      },
+      "q4": {
+        "question": "Váš kamarát dočítal román, ktorý chcete prečítať. Aká zásada 5R tu platí?",
+        "options": {
+          "refuse": "Odmietni",
+          "reduce": "Obmedz",
+          "reuse": "Použi znova",
+          "repurpose": "Prepoužij",
+          "recycle": "Recykluj"
+        },
+        "feedback": "Opätovné použitie znamená použitie veci na jej pôvodný účel — požičiavanie kníh je perfektný príklad."
+      },
+      "q5": {
+        "question": "Uvažujete o výmene plne funkčného telefónu za najnovší model. Aká zásada 5R by vás mala viesť?",
+        "options": {
+          "refuse": "Odmietni",
+          "reduce": "Obmedz",
+          "reuse": "Použi znova",
+          "repurpose": "Prepoužij",
+          "recycle": "Recykluj"
+        },
+        "feedback": "Obmedzovanie spotreby znamená zamyslieť sa, či naozaj potrebujete nový produkt, keď ten súčasný funguje bezchybne."
+      },
+      "q6": {
+        "question": "Vaše deti vyrástli z drevenej postieľky. Aký prístup 5R môžete použiť?",
+        "options": {
+          "refuse": "Odmietni",
+          "reduce": "Obmedz",
+          "reuse": "Použi znova",
+          "repurpose": "Prepoužij",
+          "recycle": "Recykluj"
+        },
+        "feedback": "Prepoužitie premieňa predmet na iný účel — postieľka sa môže stať lavičkou, policou alebo záhradným kvetináčom."
+      },
+      "q7": {
+        "question": "Nahromadil sa vám kôpka starých novín. Aká akcia 5R je najvhodnejšia?",
+        "options": {
+          "refuse": "Odmietni",
+          "reduce": "Obmedz",
+          "reuse": "Použi znova",
+          "repurpose": "Prepoužij",
+          "recycle": "Recykluj"
+        },
+        "feedback": "Keď veci nemožno odmietnuť, obmedziť, znovu použiť ani prepoužiť, recyklácia zabezpečí zhodnotenie a opätovné spracovanie materiálov."
+      },
+      "q8": {
+        "question": "Kolega si každý deň nosí kávu v jednorazovom pohári. Akú radu 5R by ste mu dali?",
+        "options": {
+          "refuse": "Odmietni",
+          "reduce": "Obmedz",
+          "reuse": "Použi znova",
+          "repurpose": "Prepoužij",
+          "recycle": "Recykluj"
+        },
+        "feedback": "Opätovné použitie vlastného hrnčeka namiesto jednorazových pohárov eliminuje každodenný odpad."
+      }
+    },
+    "module2": {
+      "categories": {
+        "bio": "Bio / Organický",
+        "plasticsMetal": "Plasty a kovy",
+        "glass": "Sklo",
+        "paper": "Papier",
+        "mixed": "Zmiešaný / Zvyškový",
+        "special": "Špeciálny / Nebezpečný"
+      },
+      "items": {
+        "bananaPeel": "Banánová šupka",
+        "coffeeGroundsFilter": "Kávová usadenina s papierovým filtrom",
+        "plasticPetBottle": "Plastová PET fľaša",
+        "aluminiumCan": "Hliníková plechovka",
+        "glassJar": "Sklenený pohár",
+        "newspaperCardboard": "Noviny a kartón",
+        "thermalReceipt": "Termálny pokladničný blok",
+        "greasyPizzaBox": "Mastný kartón od pizze",
+        "usedTissue": "Použitý papierový vreckovka",
+        "aaBattery": "AA batéria",
+        "lightBulb": "Úsporná žiarovka",
+        "yogurtCup": "Kelímok od jogurtu (opláchnutý)"
+      }
+    },
+    "module3": {
+      "categories": {
+        "greens": "Zelené (bohaté na dusík)",
+        "browns": "Hnedé (bohaté na uhlík)",
+        "forbidden": "Nekompostovať"
+      },
+      "items": {
+        "fruitVegPeels": "Šupky z ovocia a zeleniny",
+        "coffeeGrounds": "Kávová usadenina",
+        "teaBags": "Čajové vrecúška (len papierové)",
+        "freshGrassClippings": "Čerstvo pokosená tráva",
+        "healthyPlantTrimmings": "Zdravé orezky rastlín",
+        "dryLeaves": "Suché listy",
+        "shreddedCardboard": "Natrhaný kartón",
+        "uncoatedPaper": "Nepotiahnutý papier",
+        "untreatedSawdust": "Neošetrené piliny",
+        "smallDryTwigs": "Drobné suché vetvičky",
+        "meatFish": "Zvyšky mäsa a rýb",
+        "fatsOils": "Kuchynské tuky a oleje",
+        "dairy": "Mliečne výrobky",
+        "petWaste": "Zvierací trus",
+        "plasticGlassMetal": "Plast, sklo a kov"
+      }
+    },
+    "module4": {
+      "q1": {
+        "optionA": "Kúpiť dovezené jahody v zime",
+        "optionB": "Kúpiť sezónne, lokálne pestované ovocie",
+        "feedback": "Sezónne, lokálne produkty majú oveľa nižšiu uhlíkovú stopu vďaka menšej preprave a absencii umelých podmienok pestovania."
+      },
+      "q2": {
+        "optionA": "Vybrať si najlacnejšie dostupné tričko",
+        "optionB": "Vybrať si tričko z organickej bavlny s certifikátom fair trade",
+        "feedback": "Oblečenie fair trade z organickej bavlny zabezpečuje lepšie pracovné podmienky a nižší dopad na životné prostredie."
+      },
+      "q3": {
+        "optionA": "Kúpiť nový outfit na jednorazovú udalosť",
+        "optionB": "Požičať si alebo prenajať outfit na špeciálnu príležitosť",
+        "feedback": "Požičiavanie oblečenia znižuje dopyt po novej výrobe a odpad z málo nosených odevov."
+      },
+      "q4": {
+        "optionA": "Nakúpiť veľké balenia spracovaných pochutín",
+        "optionB": "Kúpiť čerstvé suroviny na miestnom trhu s vlastnými taškami",
+        "feedback": "Nákup čerstvých lokálnych produktov s vlastnými taškami znižuje odpad z obalov a podporuje miestnu ekonomiku."
+      },
+      "q5": {
+        "optionA": "Vymeniť všetok nábytok za najnovšie trendy",
+        "optionB": "Opraviť, prerobit alebo kúpiť nábytok z druhej ruky",
+        "feedback": "Predĺženie životnosti nábytku opravou alebo nákupom z druhej ruky zabraňuje vzniku odpadu a šetrí zdroje."
+      },
+      "q6": {
+        "optionA": "Používať jednorazové plastové fľaše na vodu",
+        "optionB": "Nosiť si opakovane použiteľnú fľašu na vodu",
+        "feedback": "Jedna opakovane použiteľná fľaša môže nahradiť stovky jednorazových plastových fliaš ročne."
+      }
+    },
+    "module5": {
+      "q1": {
+        "question": "Firma ťaží suroviny, vyrobí produkt a zákazníci ho po použití vyhodia.",
+        "options": {
+          "linear": "Lineárne",
+          "circular": "Cirkulárne"
+        },
+        "feedback": "Toto je klasický lineárny model 'vezmi-vyrob-vyhoď', ktorý generuje odpad v každej fáze."
+      },
+      "q2": {
+        "question": "Odevná značka prijíma späť opotrebované oblečenie a recykluje vlákna na novú tkaninu.",
+        "options": {
+          "linear": "Lineárne",
+          "circular": "Cirkulárne"
+        },
+        "feedback": "Prijímanie produktov späť a recyklácia materiálov na nové je kľúčová prax obehového hospodárstva."
+      },
+      "q3": {
+        "question": "Práčka je navrhnutá na jednoduchú opravu, s modulárnymi dielmi a 10-ročným servisným plánom.",
+        "options": {
+          "linear": "Lineárne",
+          "circular": "Cirkulárne"
+        },
+        "feedback": "Navrhovanie s ohľadom na trvanlivosť a opraviteľnosť predlžuje životnosť produktu — kľúčová cirkulárna stratégia."
+      },
+      "q4": {
+        "question": "Značky rýchlej módy vydávajú 52 mikrosezón oblečenia ročne a nabádajú k neustálym nákupom.",
+        "options": {
+          "linear": "Lineárne",
+          "circular": "Cirkulárne"
+        },
+        "feedback": "Plánované zastarávanie a nadmerná spotreba sú charakteristické znaky lineárnej ekonomiky."
+      },
+      "q5": {
+        "question": "Reštaurácia kompostuje zvyšky jedla a kompost používa na pestovanie byliniek vo svojej záhrade.",
+        "options": {
+          "linear": "Lineárne",
+          "circular": "Cirkulárne"
+        },
+        "feedback": "Uzatváranie kolobehu živín prostredníctvom kompostovania je biologický cyklus v obehovom hospodárstve."
+      },
+      "q6": {
+        "question": "Spotrebitelia si prenajmú telefón a vrátia ho pri výmene za novší; firma zariadenie obnoví a znovu predá.",
+        "options": {
+          "linear": "Lineárne",
+          "circular": "Cirkulárne"
+        },
+        "feedback": "Modely 'produkt ako služba' udržiavajú produkty v používaní dlhšie a umožňujú ich obnovu — cirkulárny prístup."
+      },
+      "q7": {
+        "question": "Plastový obal sa použije raz a skončí na skládke, pretože je príliš zložitý na recykláciu.",
+        "options": {
+          "linear": "Lineárne",
+          "circular": "Cirkulárne"
+        },
+        "feedback": "Jednorazové obaly bez možnosti zhodnotenia sú lineárny prístup, ktorý plytvá cennými zdrojmi."
+      }
+    },
+    "module6": {
+      "externalTitle": "Threads: Hra o móde",
+      "description": "Preskúmajte vplyv rýchlej módy prostredníctvom interaktívnej hry. Rozhodujte o výrobe oblečenia a zistite, ako to ovplyvňuje ľudí a planétu."
+    },
+    "module7": {
+      "q1": {
+        "question": "Ktorá eko-značka certifikuje, že výrobky z dreva a papiera pochádzajú z zodpovedne obhospodarovaných lesov?",
+        "options": {
+          "fsc": "FSC",
+          "gots": "GOTS",
+          "euEcolabel": "EU Ecolabel",
+          "fairtrade": "Fairtrade",
+          "msc": "MSC",
+          "rainforestAlliance": "Rainforest Alliance"
+        },
+        "feedback": "FSC (Forest Stewardship Council) zaručuje, že výrobky pochádzajú z lesov obhospodarovaných s ohľadom na ekologické, sociálne a ekonomické prínosy."
+      },
+      "q2": {
+        "question": "Ktorá eko-značka zaručuje, že textílie sú vyrobené z organických vlákien s prísnymi environmentálnymi a sociálnymi kritériami?",
+        "options": {
+          "fsc": "FSC",
+          "gots": "GOTS",
+          "euEcolabel": "EU Ecolabel",
+          "fairtrade": "Fairtrade",
+          "msc": "MSC",
+          "rainforestAlliance": "Rainforest Alliance"
+        },
+        "feedback": "GOTS (Global Organic Textile Standard) je vedúci štandard pre organické textílie v celom výrobnom reťazci."
+      },
+      "q3": {
+        "question": "Ktorá eko-značka je oficiálnym označením Európskej únie pre produkty so zníženým vplyvom na životné prostredie?",
+        "options": {
+          "fsc": "FSC",
+          "gots": "GOTS",
+          "euEcolabel": "EU Ecolabel",
+          "fairtrade": "Fairtrade",
+          "msc": "MSC",
+          "rainforestAlliance": "Rainforest Alliance"
+        },
+        "feedback": "EU Ecolabel ('kvetinka') je oficiálna európska certifikácia environmentálne šetrných produktov a služieb."
+      },
+      "q4": {
+        "question": "Ktorá eko-značka zabezpečuje, že výrobcovia v rozvojových krajinách dostávajú spravodlivé ceny a dôstojné pracovné podmienky?",
+        "options": {
+          "fsc": "FSC",
+          "gots": "GOTS",
+          "euEcolabel": "EU Ecolabel",
+          "fairtrade": "Fairtrade",
+          "msc": "MSC",
+          "rainforestAlliance": "Rainforest Alliance"
+        },
+        "feedback": "Fairtrade zaručuje minimálne ceny a sociálne prémie pre farmárov a pracovníkov v rozvojových krajinách."
+      },
+      "q5": {
+        "question": "Ktorá eko-značka certifikuje, že morské plody pochádzajú z udržateľných, dobre riadených rybárskych oblastí?",
+        "options": {
+          "fsc": "FSC",
+          "gots": "GOTS",
+          "euEcolabel": "EU Ecolabel",
+          "fairtrade": "Fairtrade",
+          "msc": "MSC",
+          "rainforestAlliance": "Rainforest Alliance"
+        },
+        "feedback": "MSC (Marine Stewardship Council) certifikuje rybárstva spĺňajúce vedecké štandardy udržateľného rybolovu."
+      },
+      "q6": {
+        "question": "Ktorá eko-značka pracuje na ochrane biodiverzity a podpore udržateľného živobytia v tropických oblastiach?",
+        "options": {
+          "fsc": "FSC",
+          "gots": "GOTS",
+          "euEcolabel": "EU Ecolabel",
+          "fairtrade": "Fairtrade",
+          "msc": "MSC",
+          "rainforestAlliance": "Rainforest Alliance"
+        },
+        "feedback": "Certifikácia Rainforest Alliance podporuje ochranu biodiverzity a udržateľné poľnohospodárstvo v tropických ekosystémoch."
+      }
+    },
+    "module8": {
+      "externalTitle": "Kalkulačka ekologickej stopy",
+      "description": "Použite túto interaktívnu kalkulačku na zmeranie svojej osobnej ekologickej stopy a zistite, koľko planét Zem by bolo potrebných, keby všetci žili ako vy."
+    },
+    "module9": {
+      "s1": {
+        "scenario": "Objavíte nelegálnu skládku odpadu v zelenom priestore neďaleko vášho susedstva. Čo urobíte?",
+        "options": {
+          "report": "Nahláste to miestnym úradom a zorganizujte komunitné upratovanie",
+          "compost": "Pokúste sa sami vytriediť a recyklovať, čo sa dá",
+          "ignore": "Vyhýbajte sa tomu miestu a dúfajte, že sa o to postará niekto iný"
+        },
+        "feedback": {
+          "report": "Nahlásenie úradom zabezpečí správne odstránenie odpadu a komunitné upratovanie buduje kolektívnu zodpovednosť.",
+          "compost": "Aj keď sú úmysly dobré, manipulácia s neznámym odpadom môže byť nebezpečná. Zapojenie úradov je bezpečnejšie a účinnejšie.",
+          "ignore": "Ignorovanie environmentálnych problémov im umožňuje narastať. Komunitné konanie sa začína tým, že jednotlivci prehovoria."
+        }
+      },
+      "s2": {
+        "scenario": "Vo vašej domácnosti sa nahromadilo niekoľko tašiek starej elektroniky. Aký je najlepší prístup?",
+        "options": {
+          "checkPoints": "Nájdite certifikované zberné miesta na elektroodpad a odovzdajte ich",
+          "store": "Nechajte ich v garáži — možno sa ešte niekedy zídu",
+          "throwMixed": "Vyhoďte ich do bežného kontajnera na zmiešaný odpad"
+        },
+        "feedback": {
+          "checkPoints": "Certifikovaný zber elektroodpadu zabezpečuje správnu recykláciu cenných materiálov a bezpečné zaobchádzanie s nebezpečnými zložkami.",
+          "store": "Hromadenie elektroodpadu problém nerieši a staré batérie môžu vytiecť. Správna recyklácia umožňuje získať späť cenné zdroje.",
+          "throwMixed": "Elektronika obsahuje nebezpečné látky znečisťujúce skládky a cenné kovy, ktoré by sa mali zhodnotiť."
+        }
+      },
+      "s3": {
+        "scenario": "Sused tvrdí, že triedenie odpadu je zbytočné, lebo 'aj tak všetko skončí na jednej skládke.' Ako reagujete?",
+        "options": {
+          "shareGuide": "Zdieľajte miestneho sprievodcu triedením a navrhnite spoločnú návštevu triediarne",
+          "leadByExample": "Jednoducho dávajte dobrý príklad bez toho, aby ste niečo povedali",
+          "argue": "Hádate sa, že sa mýli a je nezodpovedný"
+        },
+        "feedback": {
+          "shareGuide": "Predloženie dôkazov a pozvanie k osobnej skúsenosti je najúčinnejší spôsob, ako zmeniť postoj k recyklácii.",
+          "leadByExample": "Dávanie príkladu je dobré, ale kombinácia so zdieľaním informácií môže inšpirovať širšiu zmenu.",
+          "argue": "Konfrontácia zvyčajne spôsobuje obranný postoj. Konštruktívny dialóg s dôkazmi funguje lepšie."
+        }
+      }
+    },
+    "module10": {
+      "step1": {
+        "title": "Aké environmentálne témy vyvolávajú váš nepokoj?",
+        "options": {
+          "climateNews": "Čítanie alarmujúcich správ o klíme",
+          "droughtsFloods": "Pozeranie obrázkov such alebo povodní",
+          "doingTooLittle": "Pocit, že robím málo",
+          "familyConflicts": "Nezhody s rodinou ohľadom udržateľnosti",
+          "infoOverload": "Preťaženie informáciami o environmentálnych problémoch"
+        }
+      },
+      "step2": {
+        "title": "Aké emócie prežívate?",
+        "options": {
+          "helplessness": "Bezmocnosť",
+          "sadness": "Smútok",
+          "anger": "Hnev",
+          "tension": "Napätie / Stres",
+          "fear": "Strach z budúcnosti",
+          "overwhelm": "Pocit zahltenia",
+          "guilt": "Pocit viny"
+        }
+      },
+      "step3": {
+        "title": "Ktoré stratégie zvládania vás oslovujú?",
+        "options": {
+          "limitNews": "Stanovte si časový limit na čítanie environmentálnych správ",
+          "digitalBreak": "Robte si pravidelné digitálne prestávky",
+          "microAction": "Zamerajte sa na jednu malú akciu denne",
+          "localInitiative": "Pridajte sa k miestnej environmentálnej iniciatíve",
+          "controlList": "Napíšte si zoznam vecí, ktoré máte pod kontrolou"
+        }
+      },
+      "step4": {
+        "title": "Vyberte si jeden záväzok na nadchádzajúci týždeň",
+        "options": {
+          "noDoomscrolling": "Koniec s doomscrollingom: obmedzte správy na 15 min denne",
+          "contactInitiative": "Kontaktujte jednu miestnu zelenú iniciatívu",
+          "fiveRHabit": "Praktizujte jeden návyk 5R denne",
+          "controlBoundaries": "Opíšte svoj 'kruh kontroly' a stanovte si hranice"
+        }
+      },
+      "step5": {
+        "title": "Ako pripravený/á sa cítite urobiť tento krok?",
+        "options": {
+          "scale1": "1 — Vôbec nie som pripravený/á",
+          "scale2": "2 — Trochu pripravený/á",
+          "scale3": "3 — Čiastočne pripravený/á",
+          "scale4": "4 — Väčšinou pripravený/á",
+          "scale5": "5 — Plne pripravený/á!"
+        }
+      }
+    }
+  },
+  "lessons": {
+    "module1": {
+      "intro": {
+        "title": "Úvod do udržateľnosti a princípov 5R",
+        "body": "Udržateľnosť je jednou z najväčších výziev našej doby, no zároveň predstavuje obrovskú príležitosť na pozitívnu zmenu. V roku 1987 Komisia OSN pod vedením Gro Harlem Brundtlandovej definovala trvalo udržateľný rozvoj ako „rozvoj, ktorý napĺňa potreby súčasnosti bez toho, aby ohrozoval schopnosť budúcich generácií napĺňať ich vlastné potreby.” Táto jednoduchá, no mimoriadne výstižná myšlienka nám pripomína, že každý zdroj, ktorý spotrebujeme, každý výrobok, ktorý si kúpime, a každý odpad, ktorý vyprodukujeme, má dôsledky, ktoré ďaleko presahujú náš vlastný život.\n\nPre mnohých dospelých môže udržateľnosť pôsobiť ako abstraktný alebo príliš rozsiahly koncept. Počúvame o klimatickej zmene, znečistení plastmi a vyčerpávaní zdrojov, no nie vždy je jasné, čo s tým ako jednotlivci môžeme urobiť. Dobrá správa je, že zmysluplná zmena nevyžaduje radikálnu prestavbu životného štýlu. Začína pochopením niekoľkých základných princípov a ich dôsledným uplatňovaním v každodennom živote.\n\nTento modul vás zoznámi s rámcom 5R — Odmietni, Obmedz, Opätovne použi, Recykluj a Kompostuj — praktickou hierarchiou, ktorá nás vedie k udržateľnejším rozhodnutiam. Princípy 5R sa netýkajú len odpadového hospodárstva; predstavujú zmenu v myslení o tom, ako sa vzťahujeme k materiálom a výrobkom v našom živote. Po absolvovaní tohto modulu pochopíte, prečo je prevencia vždy lepšia než riešenie následkov, pokiaľ ide o odpady, a budete mať k dispozícii konkrétne stratégie, ako začať meniť veci k lepšiemu už dnes.\n\nUdržateľnosť nie je o dokonalosti. Je o uvedomelosti, o lepších rozhodnutiach tam, kde je to v našich silách, a o neustálom zlepšovaní sa. Či žijete v mestskom byte alebo na vidieku, či ste študent alebo dôchodca — princípy 5R sa dajú prispôsobiť vašim podmienkam a pomôcť vám žiť šetrnejšie voči planéte."
+      },
+      "whatIs5r": {
+        "title": "Hierarchia 5R: Odmietni, Obmedz, Opätovne použi, Recykluj, Kompostuj",
+        "body": "Hierarchia 5R poskytuje štruktúrovaný prístup k minimalizácii odpadu, zoradený od najúčinnejšieho po najmenej účinný krok. Predstavte si ju ako rozhodovacie rebríčky: vždy začnite zhora a k nižším stupňom pristúpte, až keď vyššie kroky nie sú možné.\n\nOdmietni je prvý a najúčinnejší krok. Znamená povedať nie veciam, ktoré nepotrebujete — zadarmo rozdávaným reklamným predmetom, jednorazovým plastovým taškám, zbytočným obalom, nevyžiadanej pošte a jednorazovým príborom. Každá vec, ktorú odmietnete, je vec, ktorá sa nikdy nedostane do odpadového toku. Odmietanie vyžaduje pozornosť a niekedy aj trochu odvahy, no vysiela jasný signál trhu, že spotrebitelia požadujú menej plytvania. Noste si opakovane použiteľnú tašku, odmietnite slamky a darčeky zadarmo a vyberajte si výrobky s minimálnym obalom.\n\nObmedz znamená obmedziť to, čo spotrebúvate. Kupujte len to, čo skutočne potrebujete, uprednostnite kvalitu pred množstvom a plánujte nákupy tak, aby ste predišli impulzívnym kúpam. Obmedzovanie sa vzťahuje na jedlo (plánujte si jedálniček, aby ste predchádzali plytvaniu), oblečenie (vytvorte si kapsulový šatník namiesto naháňania sa za trendmi), energiu (zhasínajte svetlá, znížte termostat) a vodu (opravte kvapkajúce kohútiky, sprchovanie obmedzte). Každé zníženie spotreby znamená menej vyťažených surovín, menej energie spotrebovanej pri výrobe a menej vytvoreného odpadu.\n\nOpätovne použi znamená používať veci znovu na ich pôvodný účel namiesto ich vyhodenia po jednom použití. Doplňte fľašu na vodu, noste si vlastný hrnček na kávu, nakupujte v second-handoch, darujte veci, ktoré už nepotrebujete, a opravujte pokazené veci namiesto ich nahrádzania. Ekonomika opätovného použitia — od charitatívnych obchodov po online výmenné skupiny — udržuje výrobky v obehu oveľa dlhšie, než ich pôvodní majitelia zamýšľali.\n\nRecykluj je proces premeny odpadových materiálov na nové výrobky. Hoci je recyklácia dôležitá, vyžaduje energiu a infraštruktúru a nie všetky materiály sa dajú recyklovať donekonečna. Vždy si overte miestne pravidlá triedenia, obaly pred recykláciou opláchnite a vyhnite sa „zbožnému recyklovaniu” — vhadzovaniu nerecyklovateľných predmetov do recyklačného kontajnera, čo môže kontaminovať celé dávky. Medzi bežne recyklovateľné materiály patrí papier, kartón, sklo, kovové plechovky a niektoré plasty (zvyčajne označené recyklačnými kódmi 1 a 2).\n\nKompostuj (Rot) znamená kompostovanie organického odpadu — zvyškov jedla, záhradných orezkov, kávovej usadeniny a ďalších biologicky rozložiteľných materiálov. Keď organický odpad skončí na skládke, rozkladá sa bez prístupu kyslíka a uvoľňuje metán, silný skleníkový plyn. Kompostovanie doma alebo prostredníctvom mestských programov premieňa tento odpad na výživné pôdne hnojivo a uzatvára kolobeh biologických živín. Aj obyvatelia bytov môžu kompostovať pomocou vermikompostovania (kompostovacieho boxu s červami) alebo Bokashi fermentačných systémov."
+      },
+      "hierarchy": {
+        "title": "Prečo na hierarchii záleží: prevencia pred liečbou",
+        "body": "Hierarchia 5R je zámerne usporiadaná, pretože nie všetky stratégie nakladania s odpadom sú rovnako účinné. Prevencia — odmietanie a obmedzovanie — má vždy väčší prínos pre životné prostredie než recyklácia alebo kompostovanie. Každý výrobok, ktorý sa nikdy nevyrobí, šetrí suroviny, energiu, vodu a emisie spojené s celým jeho životným cyklom: ťažbou, výrobou, prepravou, používaním a likvidáciou.\n\nZoberme si jednoduchú plastovú fľašu na vodu. Jej recyklácia je lepšia než skládkovanie, no samotná výroba si vyžiadala ťažbu ropy, priemyselné spracovanie, plnenie, etiketovanie, chladenie a prepravu — často naprieč tisíckami kilometrov. Odmietnutie fľaše a pitie kohútikovej vody z opakovane použiteľnej nádoby eliminuje všetky tieto dopady.\n\nTo neznamená, že recyklácia je nepodstatná. Znamená to, že by sme mali najprv vyčerpať všetky vyššie možnosti. Rámcová smernica EÚ o odpadoch zakotvuje túto hierarchiu v legislatíve a vyžaduje od členských štátov uprednostňovanie prevencie, potom opätovného použitia, následne recyklácie, energetického zhodnotenia a až ako poslednej možnosti — skládkovania. Pochopenie tohto poradia nám pomáha sústrediť naše úsilie tam, kde bude mať najväčší pozitívny dopad."
+      },
+      "stats": {
+        "wastePerCapita": {
+          "value": "505 kg",
+          "label": "Komunálneho odpadu na obyvateľa ročne v EÚ",
+          "source": "Eurostat, 2023"
+        },
+        "recyclingRate": {
+          "value": "49.6%",
+          "label": "Miera recyklácie komunálneho odpadu v krajinách EÚ-27",
+          "source": "Eurostat, 2023"
+        },
+        "circularRate": {
+          "value": "7.5%",
+          "label": "Miera obehovosti európskej ekonomiky",
+          "source": "European Commission, Circular Economy Action Plan"
+        }
+      },
+      "caseStudy": {
+        "title": "Bezodpadové nakupovanie v Krakove",
+        "location": "Krakow, Poland",
+        "body": "V posledných rokoch sa v Krakove rozrastá hnutie bezobalových obchodov, ktoré sa stavia proti tradičnému supermarketovému modelu. Tieto obchody umožňujú zákazníkom priniesť si vlastné nádoby a nakupovať sypké potraviny, koreniny, čistiace prostriedky a výrobky osobnej hygieny presne v množstvách, ktoré potrebujú — čím sa eliminuje zbytočné balenie priamo pri zdroji.\n\nTieto obchody fungujú na jednoduchom princípe: produkty sú uložené v zásobníkoch na sypké tovary a zákazníci si napĺňajú vlastné opakovane použiteľné poháre, vrecká alebo fľaše. Ceny sa počítajú podľa hmotnosti, takže zákazníci platia len za to, čo si skutočne vezmú. Tento model dramaticky znižuje odpad z plastových obalov a zároveň pomáha zákazníkom predchádzať nadmernému nakupovaniu, čo je bežný zdroj potravinového odpadu v domácnostiach.\n\nVplyv na miestnu komunitu presahuje rámec znižovania odpadu. Bezobalové obchody často odoberajú produkty od miestnych a ekologických výrobcov, čím podporujú regionálnu ekonomiku a znižujú emisie z prepravy. Slúžia tiež ako komunitné centrá, kde ľudia zdieľajú tipy na udržateľný život, zúčastňujú sa workshopov o výrobe prírodných čistiacich prostriedkov a nadväzujú kontakty s rovnako zmýšľajúcimi susedmi.\n\nHoci bezobalové obchody stále tvoria len malý podiel na maloobchodnom trhu, ich rastúca popularita v poľských mestách ukazuje, že dopyt spotrebiteľov po možnostiach bez obalov je reálny a rastie. Každý zákazník, ktorý presunie čo i len časť svojich nákupov do bezobalového obchodu, zabráni stovkám jednorazových obalov ročne dostať sa do odpadového toku."
+      },
+      "tips": {
+        "title": "6 praktických tipov na uplatnenie princípov 5R",
+        "item1": "Noste so sebou opakovane použiteľnú sadu — fľašu na vodu, nákupnú tašku, hrnček na kávu a príbor. Keď ich budete mať po ruke, ľahko odmietnete jednorazové alternatívy kedykoľvek ste mimo domova.",
+        "item2": "Pred každým nákupom uplatnite pravidlo 24 hodín: počkajte celý deň, než kúpite neesenciálne veci. Tým sa obmedzia impulzívne nákupy a pomôže vám to rozlišovať medzi chcením a skutočnou potrebou.",
+        "item3": "Osvojte si návyk opravovať. Naučte sa základy opravy oblečenia, vyhľadajte online návody na opravu elektroniky a nájdite opravárne (repair cafés) vo vašom okolí, kde dobrovoľníci bezplatne pomáhajú opravovať pokazené veci.",
+        "item4": "Zriaďte si doma jednoduchú recyklačnú stanicu s jasne označenými nádobami na papier, plasty, sklo a kovy. Keď bude triedenie pohodlné, zvýši sa pravdepodobnosť, že sa zapoja všetci členovia domácnosti.",
+        "item5": "Naplánujte si jedálniček na celý týždeň ešte pred nákupom a napíšte si podrobný zoznam. Plánovanie jedál je jedným z najúčinnejších spôsobov, ako obmedziť potravinový odpad — priemerná európska domácnosť vyhodí ročne približne 70 kg jedla.",
+        "item6": "Začnite kompostovať kuchynské zvyšky, aj keď bývate v malom byte. Stolný Bokashi kôš alebo vermikompostovací box dokáže spracovať biologický odpad ticho a bez zápachu, pričom ho premení na hodnotné hnojivo pre rastliny."
+      }
+    },
+    "module2": {
+      "intro": {
+        "title": "Porozumenie odpadom a filozofia zero waste",
+        "body": "Odpad je v modernom živote natoľko všadeprítomný, že väčšina z nás sa nad ním len zriedka zamyslí. Obaly vhadzujeme do kontajnerov, odpadkové vrecia vynesieme k ceste a veríme, že sa o zvyšok postará systém. Ale kam vlastne ten „zvyšok” putuje? Pochopenie toho, čo odpad je, odkiaľ pochádza a čo sa s ním po vyhodení deje, je nevyhnutným prvým krokom k znižovaniu nášho vplyvu na životné prostredie.\n\nOdpad je akýkoľvek materiál alebo látka, ktorú jeho držiteľ vyhadzuje alebo má v úmysle vyhodiť. Táto zdanlivo jednoduchá definícia skrýva obrovskú zložitosť. Komunálny tuhý odpad — bežné smetie z domácností, kancelárií a obchodov — je len zlomkom celkového odpadu produkovaného spoločnosťou. Priemyselná výroba, stavebníctvo a demolácie, poľnohospodárstvo, ťažba a výroba energie produkujú neporovnateľne väčšie odpadové toky, z veľkej časti neviditeľné pre bežného spotrebiteľa.\n\nV tomto module preskúmame životný cyklus odpadu od výroby po likvidáciu, preskúmame jeho dopady na životné prostredie a predstavíme filozofiu zero waste ako realistický rámec pre domácnosti a komunity. Nemusíte dosiahnuť absolútnu nulovú produkciu odpadu zo dňa na deň. Cieľom je porozumieť systému, identifikovať, kde vo vašom živote odpad vzniká, a postupne ho znižovať pomocou stratégií, ktoré vyhovujú vašim podmienkam."
+      },
+      "wasteOrigins": {
+        "title": "Životný cyklus odpadu: od výroby po likvidáciu",
+        "body": "Každý výrobok prechádza životným cyklom, ktorý začína dávno pred tým, než sa dostane do vašich rúk, a pokračuje dlho po tom, čo ho vyhodíte. Pochopenie tohto cyklu odhaľuje, prečo je prevencia odpadu — zastavenie jeho vzniku priamo pri zdroji — oveľa účinnejšia než jeho spracovanie po faktickom vzniku.\n\nŽivotný cyklus začína ťažbou surovín: dobývaním kovov, ťažbou ropy, výrubom lesov alebo pestovaním plodín. Každá z týchto činností produkuje odpad a poškodzuje životné prostredie v priemyselnom meradle. Suroviny sú následne prepravené do tovární, často naprieč kontinentmi, kde sa spracúvajú a vyrábajú z nich produkty. Táto fáza spotrebúva energiu, vodu a chemikálie a produkuje priemyselný odpad, emisie a odpadové vody.\n\nHotové výrobky sú zabalené — často do viacerých vrstiev plastu, kartónu a peny — a distribuované cez zložité dodávateľské reťazce zahŕňajúce sklady, kamióny, lode a lietadlá. V maloobchodnej fáze sa nepredaný tovar sám môže stať odpadom. Po zakúpení majú produkty fázu používania, ktorá sa líši od minút (jednorazový pohár na kávu) po desaťročia (kvalitne vyrobený kus nábytku).\n\nKeď je výrobok vyhodený, vstupuje do jedného z niekoľkých odpadových tokov. V ideálnom systéme sa materiály triedia a recyklujú na nové výrobky. V skutočnosti značná časť končí na skládkach alebo v spaľovniach. Skládky zaberajú cennú pôdu, môžu kontaminovať zeminu a podzemné vody priesakovými vodami a produkujú metán pri rozklade organickej hmoty. Spaľovanie znižuje objem, no uvoľňuje oxid uhličitý a ďalšie znečisťujúce látky a stále po ňom zostáva toxický popol.\n\nOdpad môžeme rozdeliť do niekoľkých kategórií: organický alebo biologicky rozložiteľný odpad (zvyšky jedla, záhradný odpad), suché recyklovateľné materiály (papier, sklo, kovy, niektoré plasty), zvyškový alebo zmiešaný odpad (predmety, ktoré sa nedajú ľahko recyklovať), nebezpečný odpad (batérie, chemikálie, elektronika, zdravotnícky odpad) a stavebný a demolačný odpad. Každý typ vyžaduje odlišné nakladanie a kontaminácia — miešanie druhov odpadu — je jednou z najväčších prekážok účinnej recyklácie."
+      },
+      "environmental": {
+        "title": "Vplyv odpadu na životné prostredie",
+        "body": "Environmentálne dôsledky nášho odpadu ďaleko presahujú preplnené kontajnery. Skládky sú tretím najväčším zdrojom metánových emisií z ľudskej činnosti v EÚ. Metán je skleníkový plyn približne 80-krát účinnejší než oxid uhličitý v 20-ročnom horizonte, čo robí emisie zo skládok významným prispievateľom ku klimatickej zmene.\n\nPriesakové vody — kvapalina, ktorá presakuje cez odpad na skládke — môžu prenášať ťažké kovy, organické znečisťujúce látky a choroboplodné zárodky do okolitej pôdy a podzemných vôd, čím ohrozujú zásobovanie pitnou vodou a ekosystémy. Ani dobre skonštruované skládky s tesniacimi systémami nie sú z dlhodobého hľadiska bezporuchové.\n\nZnečistenie plastmi sa stalo jednou z najviditeľnejších environmentálnych kríz. Odhadom 8 až 10 miliónov ton plastov sa každoročne dostane do svetových oceánov, čím poškodzuje morský život, kontaminuje morské plody a rozpadáva sa na mikroplasty, ktoré boli nájdené v pitnej vode, potravinách, a dokonca v ľudskej krvi. V Európe plastové obaly tvoria najväčší podiel plastového odpadu, a napriek rastúcemu úsiliu o recykláciu sa v EÚ v súčasnosti recykluje iba približne 35 % plastových obalov.\n\nProblém s odpadom nie je len environmentálny — je aj otázkou sociálnej spravodlivosti. Zariadenia na spracovanie odpadov, skládky a spaľovne sú neúmerne umiestnené v blízkosti nízkopríjmových a marginalizovaných komunít, čím vystavujú obyvateľov zdravotným rizikám vrátane respiračných ochorení, rakoviny a vývojových porúch u detí."
+      },
+      "stats": {
+        "totalWaste": {
+          "value": "225M tonnes",
+          "label": "Komunálneho odpadu vyprodukovaného ročne v EÚ",
+          "source": "Eurostat, 2023"
+        },
+        "landfillRate": {
+          "value": "24%",
+          "label": "Podiel komunálneho odpadu v EÚ stále smerujúceho na skládky",
+          "source": "Eurostat, 2023"
+        },
+        "foodWaste": {
+          "value": "931M tonnes",
+          "label": "Potravín sa celosvetovo vyhodí každý rok",
+          "source": "UNEP Food Waste Index, 2024"
+        }
+      },
+      "zeroWaste": {
+        "title": "Filozofia zero waste",
+        "body": "Zero waste je cieľ aj filozofia zároveň. Medzinárodná aliancia Zero Waste ho definuje ako „uchovávanie všetkých zdrojov prostredníctvom zodpovednej výroby, spotreby, opätovného použitia a zhodnotenia výrobkov, obalov a materiálov bez spaľovania a bez únikov do pôdy, vody alebo ovzdušia, ktoré ohrozujú životné prostredie alebo ľudské zdravie.” V praxi zero waste neznamená dosiahnutie dokonale prázdneho odpadkového koša. Ide o prehodnotenie nášho vzťahu k materiálom a snahu posielať čo najmenej odpadu na skládky alebo do spaľovní.\n\nPrístup zero waste úzko súvisí s hierarchiou 5R, ktorú ste spoznali v Module 1. Začína odmietaním toho, čo nepotrebujete, obmedzením toho, čo používate, opätovným použitím a prepoužitím čo najväčšieho množstva vecí, recykláciou zvyšku a kompostovaním organickej hmoty. K tomu sa pridávajú systémové zmeny: podpora podnikov, ktoré minimalizujú obaly, presadzovanie lepšej recyklačnej infraštruktúry a uprednostňovanie výrobkov navrhnutých na dlhú životnosť a opraviteľnosť.\n\nPre domácnosti môže realistická cesta k zero waste začať odpadovým auditom. Počas jedného týždňa si prehliadnite všetko, čo vyhodíte, a identifikujte najčastejšie položky. Sú medzi nimi jednorazové výrobky, ktoré by ste mohli nahradiť opakovane použiteľnými alternatívami? Kupujete potraviny, ktoré sa vám skazí skôr, než ich zjete? Existujú obaly, ktorým by ste sa mohli vyhnúť iným spôsobom nakupovania? Malé, cielené zmeny v oblastiach, kde produkujete najviac odpadu, budú mať najväčší kumulatívny efekt.\n\nHnutie zero waste rýchlo rastie naprieč Európou. Mestá, podniky a komunitné organizácie prijímajú stratégie zero waste a legislatíva Európskej únie v oblasti odpadov čoraz viac odráža tieto princípy prostredníctvom ambicióznych recyklačných cieľov, zákazov jednorazových plastov a schém rozšírenej zodpovednosti výrobcov."
+      },
+      "caseStudy": {
+        "title": "Ľubľana: prvé európske hlavné mesto s cieľom zero waste",
+        "location": "Ljubljana, Slovenia",
+        "body": "Ľubľana, hlavné mesto Slovinska, sa dostala do medzinárodných správ v roku 2015, keď sa stala prvým európskym hlavným mestom, ktoré sa zaviazalo k cieľu zero waste. Premena tohto mesta je jedným z najpozoruhodnejších príbehov úspechu v odpadovom hospodárstve na kontinente a dokazuje, že systémová zmena je možná aj vo veľkom mestskom meradle.\n\nV roku 2004 Ľubľana posielala prakticky všetok svoj odpad na skládku. Do roku 2022 mesto dosiahlo mieru triedeného zberu 68 %, čo znamená, že viac ako dve tretiny všetkého odpadu od obyvateľov a podnikov boli triedené na recykláciu, kompostovanie alebo zhodnotenie namiesto skládkovania. Zvyškový odpad smerujúci na skládku bol znížený výrazne pod priemer EÚ.\n\nMesto to dosiahlo kombináciou stratégií. Zaviedlo zber od dverí k dverám pre päť odpadových tokov: obaly, papier, sklo, biologický odpad a zvyškový odpad. Obyvatelia dostali farebne rozlíšené nádoby a zrozumiteľné pokyny. Biologický odpadový tok bol prioritou — Ľubľana vybudovala veľkokapacitnú kompostáreň, ktorá spracováva biologický odpad na kompost predávaný miestnym farmárom a záhradkárom.\n\nFinančné stimuly zohrali kľúčovú úlohu. Mesto zaviedlo systém „plať za to, čo vyhodíš” (pay-as-you-throw), kde obyvatelia platia podľa množstva zvyškového odpadu, kým zber triedeného a biologického odpadu je bezplatný. To vytvára priamu finančnú motiváciu na správne triedenie odpadu a znižovanie zvyškovej frakcie.\n\nOsvetové kampane, školské programy a iniciatívy na zapojenie komunity pomohli vybudovať širokú verejnú podporu. Ľubľana tiež investovala do moderného regionálneho centra odpadového hospodárstva, ktoré pomocou pokročilej triediacejtechi technológie získava ďalšie recyklovateľné materiály zo zmiešaného odpadu.\n\nVýsledkom je čistejšie a zelenšie hlavné mesto, ktoré slúži ako vzor pre samosprávy naprieč Európou. Skúsenosť Ľubľany ukazuje, že ambiciózne ciele v oblasti znižovania odpadu sú dosiahnuteľné, keď sú podporené investíciami do infraštruktúry, premyslenou tvorbou politík a skutočným zapojením komunity."
+      },
+      "tips": {
+        "title": "6 praktických tipov na zníženie odpadu v domácnosti",
+        "item1": "Vykonajte jednomesačný odpadový audit: celý týždeň si odpad odkladajte na určené miesto a na konci ho roztrieďte podľa kategórií. Identifikujte tri hlavné kategórie odpadu a zamerajte sa najprv na ne — nahraďte ich opakovane použiteľnými alternatívami alebo zmenou správania.",
+        "item2": "Prejdite z jednorazových na opakovane použiteľné výrobky pri vašich najčastejších jednorázovkách — utierky z látky namiesto papierových utierok, včelie voskovky namiesto potravinovej fólie, nabíjateľné batérie a opakovane plniteľné dávkovače mydla.",
+        "item3": "Dôkladne sa naučte miestne pravidlá triedenia odpadu. Mnohé recyklovateľné materiály končia na skládke, pretože boli vhodené do nesprávneho kontajnera alebo boli kontaminované. Pozrite si webovú stránku alebo aplikáciu vašej samosprávy, kde nájdete podrobné pokyny na triedenie.",
+        "item4": "Osvojte si pravidlo „jeden dnu, jeden von” pre veci v domácnosti: zakaždým, keď si prinesiete niečo nové, darujte, predajte alebo správne zrecyklujte jednu existujúcu vec. Tým predídete hromadeniu a podporíte uvážlivé nakupovanie.",
+        "item5": "Obmedzte potravinový odpad správnym skladovaním potravín (mnohé druhy ovocia a zeleniny majú špecifické požiadavky na skladovanie), používaním systému „prvý dnu, prvý von” v chladničke a naučte sa využívať odrezky zeleniny na prípravu vývarov a bujónov.",
+        "item6": "Vyberajte si výrobky s menším množstvom obalov alebo nakupujte do vlastných nádob. Prineste si vlastné vrecká a poháre do lahôdkárstva, pekárne a na farmárske trhy. Mnohé obchody radi vyhovejú zákazníkom, ktorí si prinesú vlastné tašky a nádoby."
+      }
+    },
+    "module3": {
+      "intro": {
+        "title": "Kompostovanie pre domácnosti a komunity",
+        "body": "Kompostovanie je jednou z najúčinnejších vecí, ktoré môžete urobiť na zníženie odpadovej stopy vašej domácnosti. Biologický odpad — zvyšky jedla, záhradné orezky, kávová usadenina, čajové vrecúška a ďalšie biologicky rozložiteľné materiály — zvyčajne tvorí asi tretinu všetkého, čo vyhodíme. Keď tento materiál skončí na skládke, rozkladá sa bez prístupu kyslíka a uvoľňuje metán, skleníkový plyn v krátkodobom horizonte oveľa účinnejší než oxid uhličitý. Kompostovanie ponúka elegantné riešenie: premieňa biologický odpad na hodnotnú, živinami bohatú pôdnu zložku prostredníctvom prirodzeného biologického procesu.\n\nKompostovanie je rovnako staré ako samotné poľnohospodárstvo. Tisíce rokov farmári vracali organické zvyšky do pôdy, aby udržiavali jej úrodnosť. Moderné kompostovanie využíva vedecké poznatky na optimalizáciu tohto prirodzeného procesu, vďaka čomu je rýchlejšie, efektívnejšie a dostupné pre každého — od vidieckeho záhradkára s veľkou záhradou až po mestského obyvateľa s ničím viac než malým balkónom alebo kuchynskou linkou.\n\nV tomto module sa dozviete, ako kompostovanie funguje na biologickej úrovni, preskúmate rôzne kompostovacie systémy vhodné pre rôzne životné situácie, pochopíte, aké materiály sa dajú a nedajú kompostovať, a objavíte, ako komunitné kompostovacie programy menia situáciu v mestách naprieč Európou. Po absolvovaní budete mať vedomosti a sebadôveru začať kompostovať kdekoľvek žijete."
+      },
+      "science": {
+        "title": "Veda o kompostovaní",
+        "body": "Kompostovanie je riadený aeróbny rozklad — rozpad organickej hmoty mikroorganizmami za prítomnosti kyslíka. Pochopenie základnej vedy vám pomôže vytvoriť a udržiavať efektívny kompostovací systém.\n\nKľúčom k úspešnému kompostovaniu je vyváženie materiálov bohatých na uhlík (známych ako „hnedé”) s materiálmi bohatými na dusík (známymi ako „zelené”). Hnedé materiály zahŕňajú suché lístie, slamu, kartón, piliny a drevnú štiepku. Zelené materiály zahŕňajú šupky z ovocia a zeleniny, čerstvo pokosenú trávu, kávovú usadeninu a záhradné orezky. Ideálny pomer uhlíka a dusíka je približne 25 – 30 dielov uhlíka na 1 diel dusíka (25 – 30 : 1). Príliš veľa uhlíka a kopa sa rozkladá veľmi pomaly; príliš veľa dusíka a kopa sa stáva mazľavou a zapáchajúcou.\n\nRozklad prebieha v odlišných fázach. V počiatočnej mezofilnej fáze začínajú baktérie, ktoré prosperujú pri miernych teplotách (20 – 45 stupňov Celzia), rozkladať ľahko stráviteľné materiály. Ako sa mikrobiálna aktivita zintenzívňuje, teplota stúpa a nastupuje termofilná fáza (45 – 70 stupňov Celzia). Táto fáza vysokého tepla je kľúčová, pretože zabíja semená burín, rastlinné patogény a mnohé škodlivé baktérie. Termofilný rozklad zvyčajne trvá niekoľko týždňov v aktívne spravovanej kope.\n\nAko sa ľahko dostupné zdroje potravy spotrebujú, teplota postupne klesá a kopa vstupuje do fázy dozrievania. V tejto fáze huby, aktinomycéty a väčšie organizmy, ako sú dážďovky a svinky, kolonizujú materiál a ďalej ho rozkladajú na stabilný humus. Fáza dozrievania môže trvať niekoľko týždňov až mesiacov v závislosti od podmienok.\n\nTri faktory sú nevyhnutné pre zdravé kompostovanie: vlhkosť, prevzdušňovanie a veľkosť častíc. Kopa by mala byť vlhká ako dobre vyžmýknutá špongia — vlhká, no nie premočená. Pravidelné prehadzovanie alebo premiešavanie vnáša kyslík, ktorý aeróbne mikróby potrebujú na svoju činnosť. Sekanie alebo drvenie materiálov na menšie kúsky zväčšuje povrch dostupný pre mikrobiálnu kolonizáciu a výrazne urýchľuje celý proces."
+      },
+      "systems": {
+        "title": "Kompostovacie systémy pre každú situáciu",
+        "body": "Neexistuje univerzálna metóda kompostovania. Správny systém závisí od vašej životnej situácie, množstva organického odpadu, ktorý produkujete, dostupného priestoru a toho, koľko času ste ochotní investovať. Tu sú najčastejšie možnosti.\n\nZáhradné kompostéry sú najtradičnejším prístupom. Jednoduchý uzavretý zásobník alebo otvorená kopa v rohu záhrady zvládne kuchynské zvyšky a záhradný odpad po celý rok. Zásobníky udržiavajú materiál na jednom mieste, zachovávajú teplo a vlhkosť a odrádzajú zvieratá. Stačí pridávať zmes zelených a hnedých materiálov, občas kopu prehadzovať a hotový kompost odoberať zo spodku po niekoľkých mesiacoch. Toto je ideálne pre domácnosti so záhradou a výsledný kompost obohacuje záhony, zeleninové záhradky aj trávnik.\n\nRotačné kompostéry sú uzavreté rotujúce bubny upevnené na ráme. Ľahšie sa prevracajú než tradičné kopy (stačí otočiť bubon), produkujú kompost rýchlejšie vďaka lepšiemu prevzdušňovaniu a sú odolnejšie voči škodcom. Rotačné kompostéry dobre fungujú v menších záhradách alebo na terasách, aj keď majú obmedzenú kapacitu v porovnaní s otvorenými zásobníkmi.\n\nVermikompostovanie, čiže kompostovanie pomocou červov, využíva špecializované kompostovacie červy — typicky dážďovky Eisenia fetida — na spracovanie biologického odpadu. Vermikompostéry sú kompaktné, pri správnej starostlivosti bez zápachu a dajú sa držať v interiéri, čo ich robí ideálnymi pre byty. Červy konzumujú zvyšky jedla a produkujú vermikompost (výkaly červov), čo je mimoriadne výživné hnojivo. Dobre udržiavaný vermikompostér dokáže spracovať približne pol kilogramu odpadu z jedla denne.\n\nBokashi je japonská fermentačná metóda, ktorá používa vzduchotesné vedro a otruby naočkované efektívnymi mikroorganizmami. Na rozdiel od aeróbneho kompostovania Bokashi pracuje anaeróbne — môžete pridať mäso, mliečne výrobky a zvyšky vareného jedla, ktoré by v tradičnom zásobníku pritiahli škodcov. Odpad fermentuje približne dva týždne, potom ho možno zakopať do pôdy alebo pridať do kompostéra na dokončenie rozkladu. Bokashi je vynikajúca možnosť pre byty a domácnosti, ktoré chcú kompostovať všetok potravinový odpad bez výnimiek.\n\nKomunitné kompostovacie programy slúžia obyvateľom, ktorí nemôžu kompostovať doma. Mnohé európske mestá zriadili susedské kompostovacie stanovištia, kde obyvatelia môžu odovzdávať zvyšky jedla. Tieto stanovištia spravujú vyškolení dobrovoľníci alebo pracovníci samosprávy a produkujú kompost využívaný v komunitných záhradách, parkoch a mestskom poľnohospodárstve. Komunitné kompostovanie zároveň buduje sociálne väzby a vytvára zdieľaný pocit environmentálnej zodpovednosti."
+      },
+      "stats": {
+        "bioWaste": {
+          "value": "34%",
+          "label": "Podiel komunálneho odpadu, ktorý je organický a kompostovateľný",
+          "source": "European Environment Agency, 2023"
+        },
+        "methane": {
+          "value": "3%",
+          "label": "Emisie skleníkových plynov EÚ z biologického odpadu na skládkach",
+          "source": "European Environment Agency, 2023"
+        },
+        "compostBenefit": {
+          "value": "Up to 30%",
+          "label": "Zníženie domáceho odpadu dosiahnuteľné kompostovaním",
+          "source": "European Commission, Circular Economy Action Plan"
+        }
+      },
+      "whatToCompost": {
+        "title": "Čo kompostovať a čomu sa vyhnúť",
+        "body": "Vedieť, čo patrí do kompostu a čo nie, je kľúčové pre zdravý a produktívny systém.\n\nZelené materiály (bohaté na dusík) zahŕňajú šupky a odrezky z ovocia a zeleniny, kávovú usadeninu a papierové filtre, čajové vrecúška (odstráňte prípadné sponky), čerstvo pokosenú trávu, orezky z rastlín a rozdrvené vaječné škrupiny. Tieto materiály sú vlhké a rýchlo sa rozkladajú, pretože poskytujú dusík, ktorý mikróby potrebujú na rast.\n\nHnedé materiály (bohaté na uhlík) zahŕňajú suché jesenné lístie, natrhaný kartón a noviny (nie lesklý papier), slamu a seno, neošetrené piliny a drevné hobliny, drobné suché vetvičky a vysušené stonky rastlín. Hnedé materiály poskytujú štruktúru a vzdušnosť v kope, absorbujú prebytočnú vlhkosť a dodávajú uhlík, ktorý mikróby využívajú ako zdroj energie.\n\nNEkompostujte v štandardnom domácom zásobníku nasledovné: mäso, ryby a kosti (priťahujú škodcov a zapáchajú); mliečne výrobky a kuchynské oleje (rovnaké problémy); zvierací trus od psov a mačiek (môže obsahovať škodlivé patogény); chorý rastlinný materiál (patogény môžu prežiť kompostovanie); ošetrené alebo natreté drevo (obsahuje chemikálie); a popol z uhlia alebo drevného uhlia (môže obsahovať látky škodlivé pre rastliny). Upozornenie: systémy Bokashi DOKÁŽU spracovať mäso, mliečne výrobky a varené jedlo, preto si vyberte systém podľa toho, aký druh odpadu produkujete najčastejšie.\n\nVšeobecné pravidlo je udržiavať pomer približne dvoch až troch dielov hnedých materiálov na jeden diel zelených, objemovo. Ak váš kompost zapácha, pridajte viac hnedých materiálov a kopu prehádžte. Ak sa zdá príliš suchý a nerozkladá sa, pridajte zelené materiály a trochu vody."
+      },
+      "caseStudy": {
+        "title": "Mestské komunitné kompostovanie vo Viedni a Miláne",
+        "location": "Vienna, Austria & Milan, Italy",
+        "body": "Viedeň a Miláno ponúkajú dva presvedčivé modely toho, ako veľké európske mestá začleňujú kompostovanie do svojich systémov mestského odpadového hospodárstva.\n\nViedeň je priekopníkom v zbere biologického odpadu od začiatku 90. rokov. Mesto poskytuje obyvateľom špeciálne hnedé nádoby na organický odpad, ktorý sa zbiera týždenne a spracováva vo veľkokapacitných kompostárňach a zariadeniach na výrobu bioplynu na okraji mesta. Výsledný kompost sa používa v mestských parkoch, predáva záhradkárom a počas každoročných „dní kompostu” sa rozdáva bezplatne. Okrem toho Viedeň podporuje viac ako 1 000 komunitných kompostovacích stanovíšť vo vnútroblokoch a záhradkárskych osadách, ktoré spravujú vyškolení dobrovoľní poradcovia pre kompostovanie. Tieto decentralizované stanovištia spracovávajú odpad lokálne, znižujú emisie z prepravy a budujú zapojenie komunity do udržateľnosti.\n\nMiláno zaviedlo povinné triedenie potravinového odpadu v roku 2014 a stalo sa najväčším európskym mestom, ktoré zaviedlo univerzálny zber organického odpadu od dverí k dverám. Obyvatelia dostali malé vetrané kuchynské nádobky a kompostovateľné vrecká, aby bolo triedenie pohodlné. Zozbieraný biologický odpad sa spracováva anaeróbnou digesciou, ktorá zachytáva bioplyn na výrobu energie, a zvyšný digestát sa kompostuje. V priebehu dvoch rokov Miláno triedene zbieralo viac ako 90 kilogramov potravinového odpadu na obyvateľa ročne a miera kontaminácie v organickom prúde bola pozoruhodne nízka — okolo 5 %.\n\nObe mestá dokazujú, že mestské kompostovanie vo veľkom meradle je nielen realizovateľné, ale môže byť obyvateľmi široko prijaté, keď je systém navrhnutý s dôrazom na pohodlie a vzdelávanie. Kľúčmi k úspechu sú poskytnutie vhodného zberného vybavenia, jasná a konzistentná komunikácia o tom, čo patrí do organickej nádoby, investície do spracovateľskej infraštruktúry a vytváranie viditeľných prínosov, ako je kompost pre komunitné záhrady a čistejšie ulice."
+      },
+      "tips": {
+        "title": "6 praktických tipov na kompostovanie",
+        "item1": "Začnite jednoducho a v malom. Aj stolná nádobka na zber kuchynských zvyškov je zmysluplný prvý krok. Nazbierané zvyšky môžete odniesť na komunitné kompostovacie stanovište alebo do záhradného kompostéra, keď sa nádobka naplní.",
+        "item2": "Majte pri kompostéri malú zásobu natrhaných novín alebo suchého lístia. Zakaždým, keď pridáte zvyšky jedla (zelené materiály), hoďte dnu aj hrsť hnedých materiálov — udržíte tak správny pomer a predídete zápachu.",
+        "item3": "Veľké kusy pred kompostovaním narežte alebo natrhajte na menšie. Celá avokádová šupka alebo veľký kartón sa budú rozkladať mesiace, ale nasekané či natrhané kúsky sa rozložia za týždne.",
+        "item4": "Pre kompostovanie v byte vyskúšajte Bokashi vedro alebo malý vermikompostér. Oba sú kompaktné, nenápadné a pri správnej starostlivosti bez zápachu. Mnohé samosprávy ponúkajú dotácie alebo štartovacie sady na domáce kompostovanie.",
+        "item5": "Kompost pravidelne prehadzujte alebo premiešavajte — každý jeden až dva týždne pri záhradnom zásobníku. Tým sa dodáva kyslík, rovnomerne sa rozloží vlhkosť a mikróby a výrazne sa urýchli proces kompostovania.",
+        "item6": "Buďte trpezliví a pozorujte. Kompostovanie je živý proces, ktorý reaguje na podmienky. Ak je vaša kopa príliš mokrá, pridajte viac hnedých materiálov a nechajte veko v suchých dňoch otvorené. Ak je príliš suchá, pridajte vodu a čerstvé zelené materiály. Hotový kompost by mal vyzerať a voňať ako tmavá, sypká lesná pôda."
+      }
+    }
   }
 }

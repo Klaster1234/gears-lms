@@ -1,11 +1,13 @@
 'use client';
 
-import { CheckCircle2, Target, Lightbulb, ExternalLink } from 'lucide-react';
+import { CheckCircle2, Target, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { useLearningStore, useStoreHydration } from '@/store/learning-store';
 import { VideoEmbed } from './video-embed';
+import { LessonContent } from './lesson-content';
+import { getLessonByModuleId } from '@/data/lessons';
 import type { Module } from '@/types';
 
 // Learning objectives for each module (English)
@@ -72,20 +74,6 @@ const learningObjectives: Record<number, string[]> = {
   ],
 };
 
-// Key concepts for each module
-const keyConcepts: Record<number, string> = {
-  1: 'Sustainability means meeting our present needs without compromising the ability of future generations to meet theirs. The 5R framework (Refuse, Reduce, Reuse, Recycle, Rot) provides a practical hierarchy for making more sustainable daily choices.',
-  2: 'Zero waste is a philosophy that encourages redesigning resource life cycles so all products are reused, and no waste is sent to landfills or incinerators. It starts with rethinking how we consume.',
-  3: 'Composting transforms organic waste into nutrient-rich soil. It reduces landfill methane emissions, enriches garden soil, and closes the nutrient cycle in nature.',
-  4: 'Sustainable shopping considers the full lifecycle of products, from raw materials to disposal. True cost includes environmental, social, and health impacts beyond the price tag.',
-  5: 'The circular economy replaces the "take-make-dispose" model with systems designed to keep resources in use, extract maximum value, and regenerate natural systems.',
-  6: 'Fast fashion produces cheap clothing quickly, causing enormous environmental damage and social exploitation. Slow fashion prioritises quality, ethical production, and timeless design.',
-  7: 'Green consumption requires critical thinking to separate genuine sustainability efforts from greenwashing. Look for transparent supply chains, credible certifications, and measurable impact.',
-  8: 'Every resource we consume has an environmental footprint. Small changes in daily habits, such as reducing energy use, conserving water, and choosing efficient appliances, create significant cumulative impact.',
-  9: 'Individual actions matter, but collective action multiplies impact. Community initiatives, policy advocacy, and collaborative projects are essential for systemic environmental change.',
-  10: 'Eco-anxiety is a rational emotional response to environmental threats. Managing it involves acknowledging feelings, building community connections, taking meaningful action, and practising self-compassion.',
-};
-
 // Fallback external link titles
 const linkTitleFallbacks: Record<string, string> = {
   'modules.2.links.glideApp': 'GEARS Interactive App',
@@ -106,14 +94,14 @@ export function LearnTab({ module }: LearnTabProps) {
   );
 
   const objectives = learningObjectives[module.number] ?? [];
-  const concept = keyConcepts[module.number] ?? '';
+  const lesson = getLessonByModuleId(module.id);
 
   return (
     <div className="space-y-8">
       {/* Learning objectives */}
       <section>
         <div className="flex items-center gap-2 mb-4">
-          <Target className="size-5 text-[#2E7D32]" />
+          <Target className="size-5 text-[#064E3B]" />
           <h3 className="font-display text-lg font-semibold text-[#1A1A2E]">
             Learning Objectives
           </h3>
@@ -121,12 +109,20 @@ export function LearnTab({ module }: LearnTabProps) {
         <ul className="space-y-2 ml-1">
           {objectives.map((obj, i) => (
             <li key={i} className="flex items-start gap-3 text-sm text-[#1A1A2E]/80">
-              <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#2E7D32] shrink-0" />
+              <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#064E3B] shrink-0" />
               <span>{obj}</span>
             </li>
           ))}
         </ul>
       </section>
+
+      {/* Lesson content (rich educational article) */}
+      {lesson && (
+        <>
+          <Separator />
+          <LessonContent sections={lesson.sections} />
+        </>
+      )}
 
       <Separator />
 
@@ -144,7 +140,7 @@ export function LearnTab({ module }: LearnTabProps) {
         </section>
       )}
 
-      {module.videos.length > 0 && (module.externalLinks.length > 0 || concept) && (
+      {module.videos.length > 0 && module.externalLinks.length > 0 && (
         <Separator />
       )}
 
@@ -160,7 +156,7 @@ export function LearnTab({ module }: LearnTabProps) {
               return (
                 <Card key={i} className="border-border/60">
                   <CardContent className="flex items-center gap-4 py-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#33AEB4]/10 text-[#33AEB4] shrink-0">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0D9488]/10 text-[#0D9488] shrink-0">
                       <ExternalLink className="size-5" />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -181,37 +177,20 @@ export function LearnTab({ module }: LearnTabProps) {
         </section>
       )}
 
-      {module.externalLinks.length > 0 && concept && <Separator />}
-
-      {/* Key concepts callout */}
-      {concept && (
-        <section>
-          <div className="flex items-center gap-2 mb-4">
-            <Lightbulb className="size-5 text-[#F59E0B]" />
-            <h3 className="font-display text-lg font-semibold text-[#1A1A2E]">
-              Key Concepts
-            </h3>
-          </div>
-          <div className="rounded-lg border-l-4 border-[#F59E0B] bg-[#F59E0B]/5 p-4">
-            <p className="text-sm text-[#1A1A2E]/80 leading-relaxed">{concept}</p>
-          </div>
-        </section>
-      )}
-
       <Separator />
 
       {/* Mark as Read button */}
       <div className="flex justify-center py-2">
         {hydrated ? (
           learnCompleted ? (
-            <div className="flex items-center gap-2 text-[#2E7D32] font-medium">
+            <div className="flex items-center gap-2 text-[#064E3B] font-medium">
               <CheckCircle2 className="size-5" />
               <span>Learning material completed</span>
             </div>
           ) : (
             <Button
               size="lg"
-              className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white"
+              className="bg-[#064E3B] hover:bg-[#043927] text-white"
               onClick={() => completeLearn(module.id)}
             >
               <CheckCircle2 className="size-4" />

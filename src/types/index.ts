@@ -92,3 +92,63 @@ export interface QuizData {
   externalUrl?: string;
   externalTitle?: string;
 }
+
+// ─── Lesson Content Types ──────────────────────────────────────────────────
+
+export type CalloutVariant = 'info' | 'warning' | 'tip' | 'eu';
+
+export interface LessonIntroduction {
+  type: 'introduction';
+  titleKey: string;
+  bodyKey: string;
+}
+
+export interface LessonText {
+  type: 'text';
+  titleKey: string;
+  bodyKey: string;
+}
+
+export interface LessonCallout {
+  type: 'callout';
+  variant: CalloutVariant;
+  titleKey: string;
+  bodyKey: string;
+}
+
+export interface StatisticFigure {
+  valueKey: string;
+  labelKey: string;
+  sourceKey?: string;
+}
+
+export interface LessonStatistic {
+  type: 'statistic';
+  figures: StatisticFigure[];
+}
+
+export interface LessonCaseStudy {
+  type: 'case-study';
+  titleKey: string;
+  locationKey: string;
+  bodyKey: string;
+}
+
+export interface LessonTipList {
+  type: 'tip-list';
+  titleKey: string;
+  items: { textKey: string }[];
+}
+
+export type LessonSection =
+  | LessonIntroduction
+  | LessonText
+  | LessonCallout
+  | LessonStatistic
+  | LessonCaseStudy
+  | LessonTipList;
+
+export interface Lesson {
+  moduleId: string;
+  sections: LessonSection[];
+}

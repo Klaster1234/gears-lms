@@ -189,5 +189,556 @@
   "about": {
     "title": "O projekcie G.E.A.R.S.",
     "subtitle": "Green Explorers: Adults Reimagining Sustainability"
+  },
+  "quizzes": {
+    "module1": {
+      "q1": {
+        "question": "Sklep oferuje Ci darmową reklamówkę przy kasie. Jakie podejście 5R jest najlepsze?",
+        "options": {
+          "refuse": "Odmów",
+          "reduce": "Ogranicz",
+          "reuse": "Użyj ponownie",
+          "repurpose": "Wykorzystaj inaczej",
+          "recycle": "Recykluj"
+        },
+        "feedback": "Odmawianie zbędnych rzeczy, takich jak reklamówki, zapobiega powstawaniu odpadów u źródła — to szczyt hierarchii 5R."
+      },
+      "q2": {
+        "question": "Zauważasz, że kupujesz więcej jedzenia, niż Twoja rodzina jest w stanie zjeść w ciągu tygodnia. Jaką zasadę 5R powinieneś zastosować?",
+        "options": {
+          "refuse": "Odmów",
+          "reduce": "Ogranicz",
+          "reuse": "Użyj ponownie",
+          "repurpose": "Wykorzystaj inaczej",
+          "recycle": "Recykluj"
+        },
+        "feedback": "Ograniczenie zakupów do rzeczywistych potrzeb zapobiega marnowaniu żywności i oszczędza pieniądze."
+      },
+      "q3": {
+        "question": "Masz stare szklane słoiki po dżemie. Jakie kreatywne podejście 5R pasuje najlepiej?",
+        "options": {
+          "refuse": "Odmów",
+          "reduce": "Ogranicz",
+          "reuse": "Użyj ponownie",
+          "repurpose": "Wykorzystaj inaczej",
+          "recycle": "Recykluj"
+        },
+        "feedback": "Wykorzystanie inaczej nadaje przedmiotom nową funkcję — słoiki mogą stać się pojemnikami do przechowywania, świecznikami lub doniczkami."
+      },
+      "q4": {
+        "question": "Twój znajomy skończył czytać powieść, którą chcesz przeczytać. Jaka zasada 5R tu pasuje?",
+        "options": {
+          "refuse": "Odmów",
+          "reduce": "Ogranicz",
+          "reuse": "Użyj ponownie",
+          "repurpose": "Wykorzystaj inaczej",
+          "recycle": "Recykluj"
+        },
+        "feedback": "Ponowne użycie oznacza wykorzystanie przedmiotu zgodnie z jego pierwotnym przeznaczeniem — pożyczanie książek to doskonały przykład."
+      },
+      "q5": {
+        "question": "Rozważasz wymianę sprawnie działającego telefonu na najnowszy model. Jaka zasada 5R powinna Cię prowadzić?",
+        "options": {
+          "refuse": "Odmów",
+          "reduce": "Ogranicz",
+          "reuse": "Użyj ponownie",
+          "repurpose": "Wykorzystaj inaczej",
+          "recycle": "Recykluj"
+        },
+        "feedback": "Ograniczanie konsumpcji oznacza zastanowienie się, czy naprawdę potrzebujesz nowego produktu, gdy obecny działa bez zarzutu."
+      },
+      "q6": {
+        "question": "Twoje dzieci wyrosły z drewnianego łóżeczka. Jakie podejście 5R możesz zastosować?",
+        "options": {
+          "refuse": "Odmów",
+          "reduce": "Ogranicz",
+          "reuse": "Użyj ponownie",
+          "repurpose": "Wykorzystaj inaczej",
+          "recycle": "Recykluj"
+        },
+        "feedback": "Wykorzystanie inaczej przekształca przedmiot do innego zastosowania — łóżeczko może stać się ławką, półką lub donicą ogrodową."
+      },
+      "q7": {
+        "question": "Zebrał Ci się stos starych gazet. Jakie działanie 5R jest najbardziej odpowiednie?",
+        "options": {
+          "refuse": "Odmów",
+          "reduce": "Ogranicz",
+          "reuse": "Użyj ponownie",
+          "repurpose": "Wykorzystaj inaczej",
+          "recycle": "Recykluj"
+        },
+        "feedback": "Gdy przedmiotów nie można odmówić, ograniczyć, ponownie użyć ani wykorzystać inaczej, recykling zapewnia odzysk i ponowne przetworzenie materiałów."
+      },
+      "q8": {
+        "question": "Kolega z pracy codziennie przynosi kawę w jednorazowym kubku. Jaką radę 5R byś mu dał?",
+        "options": {
+          "refuse": "Odmów",
+          "reduce": "Ogranicz",
+          "reuse": "Użyj ponownie",
+          "repurpose": "Wykorzystaj inaczej",
+          "recycle": "Recykluj"
+        },
+        "feedback": "Ponowne użycie własnego kubka zamiast jednorazowych eliminuje codzienne odpady."
+      }
+    },
+    "module2": {
+      "categories": {
+        "bio": "Bio / Organiczne",
+        "plasticsMetal": "Tworzywa sztuczne i metale",
+        "glass": "Szkło",
+        "paper": "Papier",
+        "mixed": "Zmieszane / Resztkowe",
+        "special": "Specjalne / Niebezpieczne"
+      },
+      "items": {
+        "bananaPeel": "Skórka banana",
+        "coffeeGroundsFilter": "Fusy z kawą i filtrem papierowym",
+        "plasticPetBottle": "Plastikowa butelka PET",
+        "aluminiumCan": "Puszka aluminiowa",
+        "glassJar": "Słoik szklany",
+        "newspaperCardboard": "Gazety i karton",
+        "thermalReceipt": "Paragon termiczny",
+        "greasyPizzaBox": "Zatłuszczony karton po pizzy",
+        "usedTissue": "Zużyta chusteczka higieniczna",
+        "aaBattery": "Bateria AA",
+        "lightBulb": "Żarówka energooszczędna",
+        "yogurtCup": "Kubeczek po jogurcie (opłukany)"
+      }
+    },
+    "module3": {
+      "categories": {
+        "greens": "Zielone (bogate w azot)",
+        "browns": "Brązowe (bogate w węgiel)",
+        "forbidden": "Nie kompostować"
+      },
+      "items": {
+        "fruitVegPeels": "Obierki owoców i warzyw",
+        "coffeeGrounds": "Fusy z kawy",
+        "teaBags": "Torebki herbaty (tylko papierowe)",
+        "freshGrassClippings": "Świeżo ścięta trawa",
+        "healthyPlantTrimmings": "Zdrowe przycinki roślin",
+        "dryLeaves": "Suche liście",
+        "shreddedCardboard": "Podarty karton",
+        "uncoatedPaper": "Papier niepowlekany",
+        "untreatedSawdust": "Nieimpregnowane trociny",
+        "smallDryTwigs": "Drobne suche gałązki",
+        "meatFish": "Resztki mięsa i ryb",
+        "fatsOils": "Tłuszcze i oleje kuchenne",
+        "dairy": "Produkty mleczne",
+        "petWaste": "Odchody zwierząt domowych",
+        "plasticGlassMetal": "Plastik, szkło i metal"
+      }
+    },
+    "module4": {
+      "q1": {
+        "optionA": "Kup importowane truskawki zimą",
+        "optionB": "Kup sezonowe, lokalnie uprawiane owoce",
+        "feedback": "Sezonowe, lokalne produkty mają znacznie niższy ślad węglowy dzięki mniejszemu transportowi i brakowi sztucznych warunków uprawy."
+      },
+      "q2": {
+        "optionA": "Wybierz najtańszą dostępną koszulkę",
+        "optionB": "Wybierz koszulkę z bawełny organicznej z certyfikatem fair trade",
+        "feedback": "Odzież fair trade z bawełny organicznej zapewnia lepsze warunki pracy i mniejszy wpływ na środowisko."
+      },
+      "q3": {
+        "optionA": "Kup nową kreację na jednorazową okazję",
+        "optionB": "Wypożycz lub pożycz strój na specjalną okazję",
+        "feedback": "Wypożyczanie odzieży zmniejsza zapotrzebowanie na nową produkcję i ogranicza odpady z rzadko noszonych ubrań."
+      },
+      "q4": {
+        "optionA": "Zrób zapas przetworzonych przekąsek w dużych opakowaniach",
+        "optionB": "Kup świeże produkty na lokalnym targu z własnymi torbami",
+        "feedback": "Kupowanie świeżych lokalnych produktów z torbami wielorazowymi ogranicza odpady opakowaniowe i wspiera lokalną gospodarkę."
+      },
+      "q5": {
+        "optionA": "Wymień wszystkie meble na najnowsze trendy",
+        "optionB": "Napraw, odnów lub kup meble z drugiej ręki",
+        "feedback": "Przedłużanie życia mebli przez naprawę lub zakup z drugiej ręki zapobiega powstawaniu odpadów i oszczędza zasoby."
+      },
+      "q6": {
+        "optionA": "Używaj jednorazowych plastikowych butelek z wodą",
+        "optionB": "Noś ze sobą butelkę wielorazową",
+        "feedback": "Jedna butelka wielorazowa może zastąpić setki jednorazowych plastikowych butelek rocznie."
+      }
+    },
+    "module5": {
+      "q1": {
+        "question": "Firma wydobywa surowce, produkuje towar, a klienci wyrzucają go po użyciu.",
+        "options": {
+          "linear": "Liniowe",
+          "circular": "Cyrkularne"
+        },
+        "feedback": "To klasyczny liniowy model 'weź-wyprodukuj-wyrzuć', który generuje odpady na każdym etapie."
+      },
+      "q2": {
+        "question": "Marka odzieżowa przyjmuje z powrotem znoszone ubrania i przetwarza włókna na nową tkaninę.",
+        "options": {
+          "linear": "Liniowe",
+          "circular": "Cyrkularne"
+        },
+        "feedback": "Przyjmowanie produktów z powrotem i przetwarzanie materiałów na nowe to kluczowa praktyka gospodarki o obiegu zamkniętym."
+      },
+      "q3": {
+        "question": "Pralka jest zaprojektowana do łatwej naprawy, z modułowymi częściami i 10-letnim planem serwisowym.",
+        "options": {
+          "linear": "Liniowe",
+          "circular": "Cyrkularne"
+        },
+        "feedback": "Projektowanie z myślą o trwałości i naprawialności wydłuża żywotność produktu — to kluczowa strategia cyrkularna."
+      },
+      "q4": {
+        "question": "Marki fast fashion wypuszczają 52 mikrosezony odzieży rocznie, zachęcając do ciągłych zakupów.",
+        "options": {
+          "linear": "Liniowe",
+          "circular": "Cyrkularne"
+        },
+        "feedback": "Planowane starzenie się produktów i nadmierna konsumpcja to cechy charakterystyczne gospodarki liniowej."
+      },
+      "q5": {
+        "question": "Restauracja kompostuje resztki jedzenia i używa kompostu do uprawy ziół w swoim ogrodzie.",
+        "options": {
+          "linear": "Liniowe",
+          "circular": "Cyrkularne"
+        },
+        "feedback": "Zamykanie obiegu składników odżywczych przez kompostowanie to biologiczny cykl w gospodarce o obiegu zamkniętym."
+      },
+      "q6": {
+        "question": "Konsumenci leasingują telefon i zwracają go przy wymianie na nowszy; firma odnawia i odsprzedaje urządzenie.",
+        "options": {
+          "linear": "Liniowe",
+          "circular": "Cyrkularne"
+        },
+        "feedback": "Modele 'produkt jako usługa' utrzymują produkty w użytku dłużej i umożliwiają ich odnowę — to podejście cyrkularne."
+      },
+      "q7": {
+        "question": "Plastikowe opakowanie jest używane raz i trafia na składowisko, bo jest zbyt skomplikowane do recyklingu.",
+        "options": {
+          "linear": "Liniowe",
+          "circular": "Cyrkularne"
+        },
+        "feedback": "Opakowania jednorazowe bez możliwości odzysku to podejście liniowe, które marnuje cenne zasoby."
+      }
+    },
+    "module6": {
+      "externalTitle": "Threads: Gra o modzie",
+      "description": "Poznaj wpływ szybkiej mody poprzez interaktywną grę. Podejmuj decyzje dotyczące produkcji odzieży i zobacz, jak wpływają na ludzi i planetę."
+    },
+    "module7": {
+      "q1": {
+        "question": "Który eko-znak certyfikuje, że produkty z drewna i papieru pochodzą z odpowiedzialnie zarządzanych lasów?",
+        "options": {
+          "fsc": "FSC",
+          "gots": "GOTS",
+          "euEcolabel": "EU Ecolabel",
+          "fairtrade": "Fairtrade",
+          "msc": "MSC",
+          "rainforestAlliance": "Rainforest Alliance"
+        },
+        "feedback": "FSC (Forest Stewardship Council) gwarantuje, że produkty pochodzą z lasów zarządzanych z uwzględnieniem korzyści ekologicznych, społecznych i ekonomicznych."
+      },
+      "q2": {
+        "question": "Który eko-znak gwarantuje, że tkaniny są wykonane z włókien organicznych z zachowaniem rygorystycznych kryteriów środowiskowych i społecznych?",
+        "options": {
+          "fsc": "FSC",
+          "gots": "GOTS",
+          "euEcolabel": "EU Ecolabel",
+          "fairtrade": "Fairtrade",
+          "msc": "MSC",
+          "rainforestAlliance": "Rainforest Alliance"
+        },
+        "feedback": "GOTS (Global Organic Textile Standard) to wiodący standard dla tekstyliów organicznych na całym łańcuchu produkcji."
+      },
+      "q3": {
+        "question": "Który eko-znak jest oficjalnym oznaczeniem Unii Europejskiej dla produktów o zmniejszonym wpływie na środowisko?",
+        "options": {
+          "fsc": "FSC",
+          "gots": "GOTS",
+          "euEcolabel": "EU Ecolabel",
+          "fairtrade": "Fairtrade",
+          "msc": "MSC",
+          "rainforestAlliance": "Rainforest Alliance"
+        },
+        "feedback": "EU Ecolabel ('kwiatek') to oficjalna europejska certyfikacja produktów i usług przyjaznych dla środowiska."
+      },
+      "q4": {
+        "question": "Który eko-znak zapewnia, że producenci w krajach rozwijających się otrzymują uczciwe ceny i godne warunki pracy?",
+        "options": {
+          "fsc": "FSC",
+          "gots": "GOTS",
+          "euEcolabel": "EU Ecolabel",
+          "fairtrade": "Fairtrade",
+          "msc": "MSC",
+          "rainforestAlliance": "Rainforest Alliance"
+        },
+        "feedback": "Fairtrade gwarantuje minimalne ceny i premie społeczne dla rolników i pracowników w krajach rozwijających się."
+      },
+      "q5": {
+        "question": "Który eko-znak certyfikuje, że owoce morza pochodzą ze zrównoważonych, dobrze zarządzanych łowisk?",
+        "options": {
+          "fsc": "FSC",
+          "gots": "GOTS",
+          "euEcolabel": "EU Ecolabel",
+          "fairtrade": "Fairtrade",
+          "msc": "MSC",
+          "rainforestAlliance": "Rainforest Alliance"
+        },
+        "feedback": "MSC (Marine Stewardship Council) certyfikuje łowiska spełniające naukowe standardy zrównoważonego rybołówstwa."
+      },
+      "q6": {
+        "question": "Który eko-znak działa na rzecz ochrony bioróżnorodności i promowania zrównoważonych źródeł utrzymania w regionach tropikalnych?",
+        "options": {
+          "fsc": "FSC",
+          "gots": "GOTS",
+          "euEcolabel": "EU Ecolabel",
+          "fairtrade": "Fairtrade",
+          "msc": "MSC",
+          "rainforestAlliance": "Rainforest Alliance"
+        },
+        "feedback": "Certyfikacja Rainforest Alliance promuje ochronę bioróżnorodności i zrównoważone rolnictwo w ekosystemach tropikalnych."
+      }
+    },
+    "module8": {
+      "externalTitle": "Kalkulator śladu ekologicznego",
+      "description": "Użyj tego interaktywnego kalkulatora, aby zmierzyć swój osobisty ślad ekologiczny i odkryj, ile planet Ziemia byłoby potrzebnych, gdyby wszyscy żyli tak jak ty."
+    },
+    "module9": {
+      "s1": {
+        "scenario": "Odkrywasz nielegalne wysypisko śmieci na terenie zielonym w pobliżu Twojego osiedla. Co robisz?",
+        "options": {
+          "report": "Zgłoś to władzom lokalnym i zorganizuj sprzątanie społeczne",
+          "compost": "Spróbuj samodzielnie posegregować i poddać recyklingowi to, co się da",
+          "ignore": "Omijaj to miejsce i miej nadzieję, że ktoś inny się tym zajmie"
+        },
+        "feedback": {
+          "report": "Zgłoszenie władzom zapewnia właściwe usunięcie odpadów, a wspólne sprzątanie buduje odpowiedzialność zbiorową.",
+          "compost": "Choć intencje są dobre, obsługa nieznanego odpadu może być niebezpieczna. Zaangażowanie władz jest bezpieczniejsze i skuteczniejsze.",
+          "ignore": "Ignorowanie problemów środowiskowych pozwala im narastać. Działanie społeczne zaczyna się od pojedynczych osób, które zabierają głos."
+        }
+      },
+      "s2": {
+        "scenario": "W Twoim domu zebrało się kilka toreb starej elektroniki. Jakie jest najlepsze podejście?",
+        "options": {
+          "checkPoints": "Znajdź certyfikowane punkty zbiórki elektroodpadów i oddaj sprzęt",
+          "store": "Trzymaj w garażu — może się jeszcze kiedyś przydadzą",
+          "throwMixed": "Wyrzuć do zwykłego pojemnika na odpady zmieszane"
+        },
+        "feedback": {
+          "checkPoints": "Certyfikowana zbiórka elektroodpadów zapewnia właściwy recykling cennych materiałów i bezpieczne zagospodarowanie substancji niebezpiecznych.",
+          "store": "Gromadzenie elektroodpadów nie rozwiązuje problemu, a stare baterie mogą przeciekać. Właściwy recykling pozwala odzyskać cenne zasoby.",
+          "throwMixed": "Elektronika zawiera substancje niebezpieczne zanieczyszczające składowiska oraz cenne metale, które powinny zostać odzyskane."
+        }
+      },
+      "s3": {
+        "scenario": "Sąsiad twierdzi, że segregacja jest bezcelowa, bo 'i tak wszystko trafia na jedno wysypisko.' Jak reagujesz?",
+        "options": {
+          "shareGuide": "Udostępnij lokalny przewodnik po segregacji i zaproponuj wspólną wizytę w sortowni",
+          "leadByExample": "Po prostu dawaj dobry przykład, nic nie mówiąc",
+          "argue": "Kłóć się, że się myli i jest nieodpowiedzialny"
+        },
+        "feedback": {
+          "shareGuide": "Przedstawienie dowodów i zaproszenie do osobistego doświadczenia to najskuteczniejszy sposób na zmianę nastawienia do recyklingu.",
+          "leadByExample": "Dawanie przykładu jest dobre, ale połączenie go z dzieleniem się wiedzą może inspirować szerszą zmianę.",
+          "argue": "Konfrontacja zwykle powoduje postawę obronną. Konstruktywny dialog poparty dowodami działa lepiej."
+        }
+      }
+    },
+    "module10": {
+      "step1": {
+        "title": "Jakie tematy środowiskowe wywołują Twój niepokój?",
+        "options": {
+          "climateNews": "Czytanie alarmujących wiadomości o klimacie",
+          "droughtsFloods": "Oglądanie zdjęć susz lub powodzi",
+          "doingTooLittle": "Poczucie, że robię za mało",
+          "familyConflicts": "Nieporozumienia z rodziną dotyczące zrównoważonego rozwoju",
+          "infoOverload": "Przeładowanie informacjami o problemach środowiskowych"
+        }
+      },
+      "step2": {
+        "title": "Jakie emocje odczuwasz?",
+        "options": {
+          "helplessness": "Bezradność",
+          "sadness": "Smutek",
+          "anger": "Złość",
+          "tension": "Napięcie / Stres",
+          "fear": "Lęk o przyszłość",
+          "overwhelm": "Przytłoczenie",
+          "guilt": "Poczucie winy"
+        }
+      },
+      "step3": {
+        "title": "Które strategie radzenia sobie Cię przyciągają?",
+        "options": {
+          "limitNews": "Ustal limit czasu na czytanie wiadomości środowiskowych",
+          "digitalBreak": "Rób regularne przerwy od ekranów",
+          "microAction": "Skup się na jednym małym działaniu dziennie",
+          "localInitiative": "Dołącz do lokalnej inicjatywy środowiskowej",
+          "controlList": "Sporządź listę rzeczy, na które masz wpływ"
+        }
+      },
+      "step4": {
+        "title": "Wybierz jedno zobowiązanie na nadchodzący tydzień",
+        "options": {
+          "noDoomscrolling": "Koniec z doomscrollingiem: ogranicz wiadomości do 15 min dziennie",
+          "contactInitiative": "Skontaktuj się z jedną lokalną inicjatywą ekologiczną",
+          "fiveRHabit": "Praktykuj jeden nawyk 5R codziennie",
+          "controlBoundaries": "Opisz swój 'krąg wpływu' i wyznacz granice"
+        }
+      },
+      "step5": {
+        "title": "Jak bardzo czujesz się gotowy/a do podjęcia tego kroku?",
+        "options": {
+          "scale1": "1 — Wcale nie jestem gotowy/a",
+          "scale2": "2 — Trochę gotowy/a",
+          "scale3": "3 — W pewnym stopniu gotowy/a",
+          "scale4": "4 — Prawie gotowy/a",
+          "scale5": "5 — W pełni gotowy/a!"
+        }
+      }
+    }
+  },
+  "lessons": {
+    "module1": {
+      "intro": {
+        "title": "Wprowadzenie do zrównoważonego rozwoju i zasad 5R",
+        "body": "Zrównoważony rozwój to jedno z kluczowych wyzwań naszych czasów, a zarazem jedna z największych szans na pozytywną zmianę. W 1987 roku Komisja Brundtland przy Organizacji Narodów Zjednoczonych zdefiniowała zrównoważony rozwój jako „rozwój, który zaspokaja potrzeby obecnego pokolenia bez narażania zdolności przyszłych pokoleń do zaspokajania ich własnych potrzeb.” Ta prosta, lecz niezwykle trafna idea przypomina nam, że każdy zasób, z którego korzystamy, każdy produkt, który kupujemy, i każdy odpad, który wytwarzamy, niesie konsekwencje wykraczające daleko poza nasze własne życie.\n\nDla wielu dorosłych osób zrównoważony rozwój może wydawać się pojęciem abstrakcyjnym lub przytłaczającym. Słyszymy o zmianach klimatu, zanieczyszczeniu plastikiem i wyczerpywaniu zasobów naturalnych, ale nie zawsze jest jasne, co my — jako jednostki — możemy z tym zrobić. Dobra wiadomość jest taka, że znacząca zmiana nie wymaga radykalnego przewrócenia stylu życia do góry nogami. Zaczyna się od zrozumienia kilku kluczowych zasad i ich konsekwentnego stosowania w codziennych czynnościach.\n\nW tym module poznasz ramy 5R — Odmów, Ogranicz, Użyj ponownie, Recykluj i Kompostuj — praktyczną hierarchię, która pomaga podejmować bardziej zrównoważone decyzje. Zasady 5R to nie tylko kwestia gospodarki odpadami; to zmiana sposobu myślenia o materiałach i produktach, które nas otaczają. Pod koniec tego modułu zrozumiesz, dlaczego zapobieganie jest zawsze lepsze niż leczenie w kontekście odpadów, i poznasz konkretne strategie, które pozwolą Ci zacząć działać już dziś.\n\nZrównoważony rozwój nie polega na byciu idealnym. Chodzi o bycie świadomym, podejmowanie lepszych wyborów tam, gdzie to możliwe, i ciągłe doskonalenie się. Niezależnie od tego, czy mieszkasz w miejskim apartamencie, czy na wsi, czy jesteś studentem, czy osobą na emeryturze — zasady 5R można dostosować do Twoich warunków i dzięki nim żyć w bardziej harmonii z planetą."
+      },
+      "whatIs5r": {
+        "title": "Hierarchia 5R: Odmów, Ogranicz, Użyj ponownie, Recykluj, Kompostuj",
+        "body": "Hierarchia 5R to uporządkowane podejście do minimalizowania odpadów — od działań o największym do najmniejszego wpływie. Traktuj ją jak drabinę decyzyjną: zawsze zaczynaj od góry i schodź w dół tylko wtedy, gdy wyższe kroki nie są możliwe.\n\nOdmów — to pierwszy i najskuteczniejszy krok. Oznacza mówienie „nie” rzeczom, których nie potrzebujesz: darmowym gadżetom reklamowym, jednorazowym torebkom foliowym, zbędnym opakowaniom, nieproszonemu ulotkowi reklamowemu czy jednorazowym sztućcom. Każdy przedmiot, którego odmówisz, to przedmiot, który w ogóle nie trafia do obiegu odpadów. Odmawianie wymaga świadomości i czasem odrobiny odwagi, ale wysyła wyraźny sygnał rynkowy, że konsumenci oczekują mniej marnotrawnych rozwiązań. Noś ze sobą torbę wielorazową, odmawiaj słomek i gratisów, wybieraj produkty z minimalnym opakowaniem.\n\nOgranicz — oznacza zmniejszenie tego, co konsumujesz. Kupuj tylko to, czego naprawdę potrzebujesz, wybieraj jakość zamiast ilości i planuj zakupy, by unikać impulsywnych decyzji. Ograniczanie dotyczy żywności (planuj posiłki, by unikać marnotrawstwa), odzieży (zbuduj kapsułową garderobę zamiast gonić za trendami), energii (wyłączaj światła, obniżaj termostat) i wody (naprawiaj przecieki, bierz krótsze prysznice). Każde ograniczenie konsumpcji to mniej wydobywanych zasobów, mniej energii zużytej na produkcję i mniej wytworzonych odpadów.\n\nUżyj ponownie — oznacza ponowne wykorzystanie przedmiotów zgodnie z ich pierwotnym przeznaczeniem, zamiast wyrzucania ich po jednorazowym użyciu. Napełniaj butelki na wodę, zabieraj własny kubek do kawiarni, kupuj w sklepach z odzieżą używaną, przekazuj niepotrzebne rzeczy innym i naprawiaj zepsute przedmioty zamiast je wymieniać. Ekonomia ponownego użycia — od sklepów charytatywnych po internetowe grupy wymiany — utrzymuje produkty w obiegu znacznie dłużej, niż pierwotny właściciel mógłby przypuszczać.\n\nRecykluj — to proces przetwarzania materiałów odpadowych na nowe produkty. Choć recykling jest ważny, wymaga energii i infrastruktury, a nie wszystkie materiały mogą być przetwarzane w nieskończoność. Zawsze sprawdzaj lokalne zasady segregacji, płucz pojemniki przed oddaniem do recyklingu i unikaj tzw. „pobożnego recyklingu” — wrzucania do pojemników na surowce wtórne rzeczy, które nie podlegają recyklingowi, co może zanieczyścić całe partie materiału. Do typowych surowców wtórnych należą papier, tektura, szkło, puszki metalowe i niektóre rodzaje plastiku (zwykle oznaczone kodami 1 i 2).\n\nKompostuj — oznacza kompostowanie odpadów organicznych: resztek jedzenia, ściętej trawy, fusów z kawy i innych materiałów biodegradowalnych. Gdy odpady organiczne trafiają na składowisko, rozkładają się beztlenowo i wydzielają metan — gaz cieplarniany znacznie groźniejszy od dwutlenku węgla. Kompostowanie w domu lub za pośrednictwem programów miejskich zamienia te odpady w wartościowy nawóz glebowy, domykając biologiczny obieg składników odżywczych. Nawet mieszkańcy bloków mogą kompostować, korzystając z wermikompostownika (hodowli dżdżownic) lub systemu fermentacji Bokashi."
+      },
+      "hierarchy": {
+        "title": "Dlaczego hierarchia ma znaczenie: zapobieganie zamiast naprawiania",
+        "body": "Hierarchia 5R jest celowo uporządkowana, ponieważ nie wszystkie strategie gospodarowania odpadami są równie skuteczne. Zapobieganie — odmawianie i ograniczanie — zawsze przynosi większe korzyści środowiskowe niż recykling czy kompostowanie. Każdy produkt, który nigdy nie został wyprodukowany, oznacza zaoszczędzone surowce, energię, wodę i emisje związane z całym jego cyklem życia: wydobyciem, produkcją, transportem, użytkowaniem i utylizacją.\n\nWeźmy prostą plastikową butelkę na wodę. Recykling jest lepszy niż wyrzucenie jej na składowisko, ale samo wyprodukowanie butelki wymagało wydobycia ropy naftowej, przetworzenia przemysłowego, napełnienia, etykietowania, chłodzenia i transportu — często na dystansie tysięcy kilometrów. Całkowita odmowa kupna butelki i picie wody z kranu z własnego wielorazowego naczynia eliminuje wszystkie te oddziaływania.\n\nNie oznacza to, że recykling jest nieważny. Oznacza to, że najpierw powinniśmy wyczerpać wszystkie wyższe opcje. Dyrektywa ramowa Unii Europejskiej w sprawie odpadów zapisuje tę hierarchię w prawie, zobowiązując państwa członkowskie do priorytetowego traktowania zapobiegania, następnie ponownego użycia, recyklingu, odzysku, a dopiero w ostateczności — unieszkodliwiania. Zrozumienie tej kolejności pomaga nam skupić wysiłki tam, gdzie przyniosą największy pozytywny efekt."
+      },
+      "stats": {
+        "wastePerCapita": {
+          "value": "505 kg",
+          "label": "Odpady komunalne na mieszkańca rocznie w UE",
+          "source": "Eurostat, 2023"
+        },
+        "recyclingRate": {
+          "value": "49.6%",
+          "label": "Wskaźnik recyklingu odpadów komunalnych w UE-27",
+          "source": "Eurostat, 2023"
+        },
+        "circularRate": {
+          "value": "7.5%",
+          "label": "Wskaźnik cyrkularności europejskiej gospodarki",
+          "source": "European Commission, Circular Economy Action Plan"
+        }
+      },
+      "caseStudy": {
+        "title": "Zakupy zero waste w Krakowie",
+        "location": "Kraków, Polska",
+        "body": "W ostatnich latach Kraków stał się miejscem dynamicznie rozwijającego się ruchu sklepów zero waste, które kwestionują tradycyjny model supermarketowy. Takie sklepy pozwalają klientom przynosić własne pojemniki i kupować sypkie produkty, przyprawy, środki czystości i kosmetyki dokładnie w takiej ilości, jakiej potrzebują — eliminując zbędne opakowania u źródła.\n\nSklepy te działają na prostej zasadzie: produkty są przechowywane w dozownikach, a klienci napełniają własne słoiki, torby lub butelki wielorazowe. Cena obliczana jest na wagę, więc kupujesz dokładnie tyle, ile potrzebujesz. Taki model radykalnie ogranicza odpady opakowaniowe z tworzyw sztucznych, a jednocześnie pomaga unikać nadmiernych zakupów — jednego z głównych źródeł marnowania żywności w gospodarstwach domowych.\n\nWpływ na lokalną społeczność wykracza poza samą redukcję odpadów. Sklepy zero waste często zaopatrują się u lokalnych i ekologicznych producentów, wspierając regionalną gospodarkę i zmniejszając emisje związane z transportem. Pełnią też rolę centrów społecznościowych, w których ludzie dzielą się poradami na temat zrównoważonego stylu życia, uczestniczą w warsztatach wytwarzania naturalnych środków czystości i nawiązują kontakty z sąsiadami o podobnych wartościach.\n\nChoć sklepy zero waste wciąż stanowią niewielką część rynku detalicznego, ich rosnąca popularność w polskich miastach pokazuje, że zapotrzebowanie konsumentów na opcje bez opakowań jest realne i stale rośnie. Każdy klient, który przeniesie choćby część swoich zakupów do sklepu zero waste, zapobiega trafieniu setek sztuk jednorazowych opakowań do strumienia odpadów każdego roku."
+      },
+      "tips": {
+        "title": "6 praktycznych wskazówek jak stosować zasady 5R",
+        "item1": "Noś ze sobą zestaw wielorazowy — butelkę na wodę, torbę na zakupy, kubek na kawę i komplet sztućców. Mając je pod ręką, łatwo odmówisz jednorazowych odpowiedników na co dzień.",
+        "item2": "Przed każdym zakupem zastosuj zasadę 24 godzin: odczekaj dobę przed kupnem rzeczy, która nie jest niezbędna. To ogranicza impulsywne zakupy i pomaga odróżnić zachcianki od prawdziwych potrzeb.",
+        "item3": "Wyrabiaj w sobie nawyk naprawiania. Naucz się podstaw cerowania odzieży, szukaj poradników naprawy elektroniki w internecie i znajdź w swojej okolicy repair cafe — miejsca, gdzie wolontariusze pomagają bezpłatnie naprawiać zepsute przedmioty.",
+        "item4": "Zorganizuj w domu prostą stację do segregacji z wyraźnie opisanymi pojemnikami na papier, plastik, szkło i metal. Wygodna segregacja zwiększa szansę, że wszyscy domownicy będą w niej uczestniczyć.",
+        "item5": "Planuj posiłki na cały tydzień przed zakupami i przygotowuj szczegółową listę. Planowanie posiłków to jeden z najskuteczniejszych sposobów ograniczania marnotrawstwa żywności — przeciętne europejskie gospodarstwo domowe wyrzuca rocznie około 70 kg jedzenia.",
+        "item6": "Zacznij kompostować resztki kuchenne, nawet w małym mieszkaniu. Kuchenny pojemnik Bokashi lub wermikompostownik może przetwarzać odpady spożywcze cicho i bez nieprzyjemnego zapachu, zamieniając je w wartościowy nawóz do roślin."
+      }
+    },
+    "module2": {
+      "intro": {
+        "title": "Zrozumieć odpady i filozofia zero waste",
+        "body": "Odpady są tak głęboko wpisane w nasze codzienne życie, że większość z nas rzadko się nad nimi zastanawia. Wrzucamy opakowania do koszy, wynosimy worki na śmieci i ufamy, że system zajmie się resztą. Ale dokąd właściwie trafia ta „reszta”? Zrozumienie, czym są odpady, skąd się biorą i co dzieje się z nimi po wyrzuceniu, jest niezbędnym pierwszym krokiem ku zmniejszeniu naszego wpływu na środowisko.\n\nOdpady to każdy materiał lub substancja, których posiadacz pozbywa się lub zamierza się pozbyć. Ta z pozoru prosta definicja kryje za sobą ogromną złożoność. Odpady komunalne — codzienne śmieci z domów, biur i sklepów — stanowią jedynie ułamek wszystkich odpadów wytwarzanych w społeczeństwie. Produkcja przemysłowa, budownictwo i rozbiórki, rolnictwo, górnictwo i wytwarzanie energii generują znacznie większe strumienie odpadów, w dużej mierze niewidoczne dla przeciętnego konsumenta.\n\nW tym module przyjrzymy się cyklowi życia odpadów — od produkcji po utylizację — zbadamy ich konsekwencje dla środowiska i przedstawimy filozofię zero waste jako realną strategię dla gospodarstw domowych i społeczności. Nie musisz osiągnąć absolutnego zera odpadów z dnia na dzień. Celem jest zrozumienie systemu, zidentyfikowanie miejsc, w których w Twoim życiu powstają odpady, i ich systematyczne ograniczanie za pomocą strategii dopasowanych do Twoich warunków."
+      },
+      "wasteOrigins": {
+        "title": "Cykl życia odpadów: od produkcji do utylizacji",
+        "body": "Każdy produkt przechodzi przez cykl życia, który zaczyna się na długo przed tym, zanim trafi w Twoje ręce, i trwa jeszcze długo po tym, jak go wyrzucisz. Zrozumienie tego cyklu ujawnia, dlaczego zapobieganie powstawaniu odpadów — powstrzymywanie ich u źródła — jest znacznie skuteczniejsze niż ich późniejsze zagospodarowanie.\n\nCykl życia zaczyna się od wydobycia surowców: wydobywania metali, wiercenia w poszukiwaniu ropy, wycinki lasów czy zbierania plonów. Każde z tych działań generuje odpady i degradację środowiska na skalę przemysłową. Surowce są następnie transportowane do fabryk — często przez kontynenty — gdzie przetwarzane są na gotowe produkty. Ten etap pochłania energię, wodę i substancje chemiczne, a generuje odpady przemysłowe, emisje i ścieki.\n\nGotowe produkty są pakowane — często w kilka warstw plastiku, kartonu i pianki — i dystrybuowane poprzez złożone łańcuchy dostaw obejmujące magazyny, ciężarówki, statki i samoloty. Na etapie sprzedaży detalicznej niesprzedane towary same mogą stać się odpadem. Po zakupie produkty mają fazę użytkowania, której długość waha się od kilku minut (jednorazowy kubek do kawy) do kilkudziesięciu lat (solidny mebel).\n\nGdy produkt zostaje wyrzucony, trafia do jednego z kilku strumieni odpadów. W idealnym systemie materiały są sortowane i poddawane recyklingowi na nowe produkty. W rzeczywistości znaczna część trafia na składowiska lub jest spalana. Składowiska zajmują cenną przestrzeń, mogą zanieczyszczać glebę i wody gruntowe odciekami, a w wyniku rozkładu materii organicznej wytwarzają metan. Spalanie zmniejsza objętość odpadów, ale uwalnia dwutlenek węgla i inne zanieczyszczenia, a ponadto pozostawia toksyczny popiół.\n\nOdpady można sklasyfikować na kilka rodzajów: organiczne lub biodegradowalne (resztki jedzenia, odpady ogrodowe), suche surowce wtórne (papier, szkło, metale, niektóre tworzywa sztuczne), odpady resztkowe lub zmieszane (przedmioty trudne do recyklingu), odpady niebezpieczne (baterie, chemikalia, elektronika, odpady medyczne) oraz odpady budowlane i rozbiórkowe. Każdy rodzaj wymaga innego postępowania, a zanieczyszczenie krzyżowe — mieszanie różnych typów odpadów — jest jedną z największych przeszkód w efektywnym recyklingu."
+      },
+      "environmental": {
+        "title": "Wpływ odpadów na środowisko",
+        "body": "Środowiskowe konsekwencje naszych odpadów wykraczają daleko poza przepełnione kosze. Składowiska są trzecim co do wielkości źródłem emisji metanu pochodzenia antropogenicznego w UE. Metan jest gazem cieplarnianym około 80 razy silniejszym od dwutlenku węgla w perspektywie 20-letniej, co czyni emisje ze składowisk istotnym czynnikiem napędzającym zmiany klimatu.\n\nOdcieki — ciecz przesączająca się przez odpady na składowisku — mogą przenosić metale ciężkie, zanieczyszczenia organiczne i patogeny do otaczającej gleby i wód gruntowych, zagrażając źródłom wody pitnej i ekosystemom. Nawet dobrze zaprojektowane składowiska z systemami uszczelniającymi nie są w pełni szczelne w długim okresie.\n\nZanieczyszczenie plastikiem stało się jednym z najbardziej widocznych kryzysów ekologicznych. Szacuje się, że co roku od 8 do 10 milionów ton plastiku trafia do oceanów, szkodząc morskiej faunie, zanieczyszczając owoce morza i rozpadając się na mikroplastiki, które wykryto w wodzie pitnej, żywności, a nawet we krwi człowieka. W Europie opakowania z tworzyw sztucznych stanowią największy udział w odpadach plastikowych, a mimo rosnących wysiłków na rzecz recyklingu, obecnie przetwarzanych jest zaledwie około 35% opakowań plastikowych w UE.\n\nProblem odpadów to nie tylko kwestia środowiskowa — to również kwestia sprawiedliwości społecznej. Zakłady przetwarzania odpadów, składowiska i spalarnie nieproporcjonalnie często lokalizowane są w pobliżu społeczności o niższych dochodach i grup marginalizowanych, narażając mieszkańców na ryzyko zdrowotne, w tym choroby układu oddechowego, nowotwory i zaburzenia rozwojowe u dzieci."
+      },
+      "stats": {
+        "totalWaste": {
+          "value": "225M tonnes",
+          "label": "Odpady komunalne wytwarzane rocznie w UE",
+          "source": "Eurostat, 2023"
+        },
+        "landfillRate": {
+          "value": "24%",
+          "label": "Udział odpadów komunalnych UE nadal trafiających na składowiska",
+          "source": "Eurostat, 2023"
+        },
+        "foodWaste": {
+          "value": "931M tonnes",
+          "label": "Żywność marnowana globalnie każdego roku",
+          "source": "UNEP Food Waste Index, 2024"
+        }
+      },
+      "zeroWaste": {
+        "title": "Filozofia zero waste",
+        "body": "Zero waste to zarówno cel, jak i filozofia. Zero Waste International Alliance definiuje je jako „zachowanie wszystkich zasobów poprzez odpowiedzialną produkcję, konsumpcję, ponowne użycie i odzysk produktów, opakowań i materiałów bez spalania i bez zrzutów na ląd, do wody lub powietrza, które zagrażałyby środowisku lub zdrowiu ludzkiemu.” W praktyce zero waste nie polega na osiągnięciu idealnie pustego kosza na śmieci. Chodzi o przemyślenie naszego stosunku do materiałów i dążenie do wysyłania jak najmniejszej ilości odpadów na składowisko lub do spalarni.\n\nPodejście zero waste jest ściśle powiązane z hierarchią 5R, którą poznałeś w Module 1. Zaczyna się od odmawiania tego, czego nie potrzebujesz, ograniczania tego, z czego korzystasz, ponownego wykorzystywania i przetwarzania tego, co możliwe, recyklingu pozostałości i kompostowania materii organicznej. Dochodzą do tego zmiany systemowe: wspieranie firm minimalizujących opakowania, rzecznictwo na rzecz lepszej infrastruktury recyklingowej i wybieranie produktów zaprojektowanych z myślą o trwałości i naprawialności.\n\nDla gospodarstw domowych realistyczna podróż w stronę zero waste może zacząć się od audytu odpadów. Przez jeden tydzień obserwuj wszystko, co wyrzucasz, i zidentyfikuj najczęściej pojawiające się przedmioty. Czy istnieją produkty jednorazowe, które mógłbyś zastąpić wielorazowymi alternatywami? Czy kupujesz jedzenie, które psuje się, zanim zdążysz je zjeść? Czy da się uniknąć opakowań, robiąc zakupy w inny sposób? Małe, celowe zmiany w obszarach, w których wytwarzasz najwięcej odpadów, przyniosą największy skumulowany efekt.\n\nRuch zero waste dynamicznie rozwija się w całej Europie. Gminy, przedsiębiorstwa i organizacje społeczne wdrażają strategie zero waste, a prawodawstwo Unii Europejskiej coraz silniej odzwierciedla te zasady poprzez ambitne cele recyklingu, zakazy jednorazowych tworzyw sztucznych i systemy rozszerzonej odpowiedzialności producenta."
+      },
+      "caseStudy": {
+        "title": "Ljubljana: pierwsza europejska stolica zero waste",
+        "location": "Ljubljana, Słowenia",
+        "body": "Ljubljana, stolica Słowenii, trafiła na międzynarodowe nagłówki gazet w 2015 roku, gdy jako pierwsza europejska stolica zobowiązała się do realizacji celu zero waste. Transformacja tego miasta jest jedną z najbardziej niezwykłych historii sukcesu w gospodarce odpadami na kontynencie i dowodzi, że zmiana systemowa jest możliwa nawet w dużej skali miejskiej.\n\nW 2004 roku Ljubljana kierowała praktycznie wszystkie swoje odpady na składowisko. Do 2022 roku miasto osiągnęło wskaźnik selektywnej zbiórki na poziomie 68%, co oznacza, że ponad dwie trzecie wszystkich odpadów wytwarzanych przez mieszkańców i przedsiębiorstwa było sortowanych z przeznaczeniem na recykling, kompostowanie lub odzysk, zamiast trafiać na składowisko. Ilość odpadów resztkowych kierowanych na składowisko spadła znacznie poniżej średniej unijnej.\n\nMiasto osiągnęło to dzięki kombinacji strategii. Wprowadziło odbiór odpadów „od drzwi do drzwi” w pięciu strumieniach: opakowania, papier, szkło, odpady organiczne i odpady resztkowe. Mieszkańcy otrzymali kolorowe pojemniki i jasne instrukcje. Szczególny nacisk położono na strumień odpadów organicznych — Ljubljana uruchomiła dużą kompostownię przetwarzającą bioodpady na kompost sprzedawany lokalnym rolnikom i ogrodnikom.\n\nKluczową rolę odegrały zachęty finansowe. Miasto wdrożyło system „płać za ile wyrzucasz” (pay-as-you-throw), w którym mieszkańcy płacą proporcjonalnie do ilości wytwarzanych odpadów resztkowych, natomiast odbiór surowców wtórnych i bioodpadów jest bezpłatny. To tworzy bezpośrednią motywację finansową do prawidłowej segregacji i ograniczania frakcji resztkowej.\n\nKampanie edukacyjne, programy szkolne i inicjatywy angażujące społeczność pomogły zbudować szerokie poparcie publiczne. Ljubljana zainwestowała również w nowoczesne regionalne centrum gospodarki odpadami, które odzyskuje dodatkowe surowce wtórne z odpadów zmieszanych za pomocą zaawansowanej technologii sortowania.\n\nEfektem jest czystsza, bardziej ekologiczna stolica, która stanowi wzór dla gmin w całej Europie. Doświadczenie Ljubljany pokazuje, że ambitne cele redukcji odpadów są osiągalne, gdy wspierają je inwestycje w infrastrukturę, przemyślana polityka i autentyczne zaangażowanie społeczności."
+      },
+      "tips": {
+        "title": "6 praktycznych wskazówek jak ograniczyć odpady domowe",
+        "item1": "Przeprowadź tygodniowy audyt odpadów: przez tydzień zbieraj wszystkie śmieci w wyznaczonym miejscu, a na koniec je skategoryzuj. Zidentyfikuj trzy główne kategorie odpadów i od nich zacznij, wprowadzając wielorazowe zamienniki lub zmieniając nawyki.",
+        "item2": "Zamień jednorazowe produkty na wielorazowe w przypadku najczęściej używanych artykułów — ściereczki zamiast ręczników papierowych, wosk pszczeli zamiast folii spożywczej, akumulatorki zamiast baterii jednorazowych i dozowniki na mydło do ponownego napełniania.",
+        "item3": "Dokładnie poznaj lokalne zasady segregacji odpadów. Wiele materiałów nadających się do recyklingu trafia na składowisko, ponieważ zostały wrzucone do niewłaściwego pojemnika lub były zanieczyszczone. Sprawdź stronę internetową lub aplikację swojej gminy z dokładnymi wytycznymi dotyczącymi segregacji.",
+        "item4": "Stosuj zasadę „jedno wchodzi, jedno wychodzi”: za każdym razem, gdy przynosisz do domu nową rzecz, oddaj, sprzedaj lub prawidłowo zutylizuj jedną istniejącą. To zapobiega gromadzeniu przedmiotów i sprzyja świadomym zakupom.",
+        "item5": "Ograniczaj marnotrawstwo żywności, prawidłowo przechowując produkty łatwo psujące się (wiele owoców i warzyw ma specyficzne wymagania dotyczące przechowywania), stosując w lodówce zasadę „pierwsze weszło, pierwsze wychodzi” i ucząc się wykorzystywać resztki warzyw do przygotowywania bulionu.",
+        "item6": "Wybieraj produkty z mniejszą ilością opakowań lub kupuj na wagę, gdy to możliwe. Zabieraj własne pojemniki do delikatesów, piekarni i na targi. Wiele sklepów chętnie obsługuje klientów, którzy przychodzą z własnymi torbami i słoikami."
+      }
+    },
+    "module3": {
+      "intro": {
+        "title": "Kompostowanie w domu i w społeczności",
+        "body": "Kompostowanie to jedno z najbardziej efektywnych działań, jakie możesz podjąć, by zmniejszyć ilość odpadów w swoim gospodarstwie domowym. Odpady organiczne — resztki jedzenia, ścięta trawa, fusy z kawy, torebki herbaty i inne materiały biodegradowalne — stanowią zazwyczaj około jednej trzeciej wszystkiego, co wyrzucamy. Gdy te materiały trafiają na składowisko, rozkładają się beztlenowo i wydzielają metan — gaz cieplarniany znacznie groźniejszy od dwutlenku węgla w krótkiej perspektywie. Kompostowanie oferuje elegancką alternatywę: przekształca odpady organiczne w wartościowy, bogaty w składniki odżywcze nawóz glebowy dzięki naturalnemu procesowi biologicznemu.\n\nPraktyka kompostowania jest tak stara jak samo rolnictwo. Od tysięcy lat rolnicy zwracali resztki organiczne do gleby, by utrzymać jej żyzność. Współczesne kompostowanie wykorzystuje wiedzę naukową do optymalizacji tego naturalnego procesu — czyniąc go szybszym, wydajniejszym i dostępnym dla każdego: od właścicieli dużych ogrodów na wsi po mieszkańców miejskich bloków z niewielkim balkonem lub jedynie blatem kuchennym.\n\nW tym module dowiesz się, jak kompostowanie działa na poziomie biologicznym, poznasz różne systemy kompostowania dostosowane do rozmaitych warunków mieszkaniowych, zrozumiesz, jakie materiały można, a jakich nie wolno kompostować, i odkryjesz, w jaki sposób programy kompostowania społecznościowego zmieniają życie miast w całej Europie. Po zakończeniu będziesz mieć wiedzę i pewność siebie, by zacząć kompostować niezależnie od tego, gdzie mieszkasz."
+      },
+      "science": {
+        "title": "Nauka o kompostowaniu",
+        "body": "Kompostowanie to kontrolowany rozkład tlenowy — rozkład materii organicznej przez mikroorganizmy w obecności tlenu. Zrozumienie podstawowych mechanizmów pomaga tworzyć i utrzymywać sprawny system kompostowy.\n\nKluczem do udanego kompostowania jest równowaga między materiałami bogatymi w węgiel (zwanymi „brązowymi”) a materiałami bogatymi w azot (zwanymi „zielonymi”). Brązowe materiały to suche liście, słoma, tektura, trociny i zrębki drewniane. Zielone materiały to obierki owoców i warzyw, świeżo ścięta trawa, fusy z kawy i przycinki ogrodowe. Optymalny stosunek węgla do azotu (C:N) wynosi około 25-30 części węgla na 1 część azotu (25-30:1). Zbyt dużo węgla — i pryzma rozkłada się bardzo powoli; zbyt dużo azotu — i staje się śliska i cuchnąca.\n\nRozkład przebiega w odrębnych fazach. W początkowej fazie mezofilnej bakterie rozwijające się w umiarkowanych temperaturach (20-45 stopni Celsjusza) zaczynają rozkładać łatwo przyswajalne materiały. W miarę nasilania się aktywności mikrobiologicznej temperatura rośnie, rozpoczynając fazę termofilną (45-70 stopni Celsjusza). Ten etap wysokich temperatur jest kluczowy, ponieważ niszczy nasiona chwastów, patogeny roślinne i wiele szkodliwych bakterii. Faza termofilna trwa zwykle kilka tygodni w aktywnie zarządzanej pryzmie.\n\nGdy łatwo dostępne źródła pożywienia się wyczerpią, temperatura stopniowo spada i pryzma wchodzi w fazę dojrzewania. W tym etapie grzyby, promieniowce i większe organizmy, takie jak dżdżownice i stonogi, zasiedlają materiał, dalej rozkładając go w stabilny humus. Faza dojrzewania może trwać od kilku tygodni do kilku miesięcy, w zależności od warunków.\n\nTrzy czynniki są niezbędne dla zdrowego kompostowania: wilgotność, napowietrzanie i wielkość cząstek. Pryzma powinna być wilgotna jak dobrze wyciśnięta gąbka — mokra, ale nie przesiąknięta wodą. Regularne przerzucanie lub mieszanie dostarcza tlenu, którego potrzebują tlenowe mikroorganizmy. Siekanie lub rozdrabnianie materiałów na mniejsze kawałki zwiększa powierzchnię dostępną dla kolonizacji mikrobiologicznej i znacząco przyspiesza cały proces."
+      },
+      "systems": {
+        "title": "Systemy kompostowania na każdą sytuację",
+        "body": "Nie istnieje jedna, uniwersalna metoda kompostowania. Odpowiedni system zależy od Twojej sytuacji mieszkaniowej, ilości wytwarzanych odpadów organicznych, dostępnej przestrzeni i czasu, który chcesz poświęcić. Oto najczęstsze opcje.\n\nKompostownik ogrodowy to najbardziej tradycyjne podejście. Prosty zamknięty pojemnik lub otwarta pryzma w rogu ogrodu poradzi sobie z resztkami kuchennymi i odpadami ogrodowymi przez cały rok. Pojemnik utrzymuje materiał w jednym miejscu, zatrzymuje ciepło i wilgoć oraz odstrasza zwierzęta. Wystarczy dodawać mieszankę zielonych i brązowych materiałów, co jakiś czas przerzucać pryzmę i zbierać gotowy kompost od spodu po kilku miesiącach. To idealne rozwiązanie dla gospodarstw domowych z ogrodami — powstały kompost wzbogaca rabaty kwiatowe, grządki warzywne i trawnik.\n\nKompostownik obrotowy to zamknięty, obracany bęben osadzony na stelażu. Łatwiej go przerzucać niż tradycyjną pryzmę (wystarczy obrócić bęben), szybciej produkuje kompost dzięki lepszemu napowietrzeniu i jest bardziej odporny na szkodniki. Kompostowniki obrotowe sprawdzają się w mniejszych ogrodach lub na patio, choć mają ograniczoną pojemność w porównaniu z otwartymi pojemnikami.\n\nWermikompostowanie, czyli kompostowanie z udziałem dżdżownic, wykorzystuje specjalne gatunki dżdżownic kompostowych — najczęściej dżdżownice kalifornijskie (Eisenia fetida) — do przetwarzania odpadów spożywczych. Wermikompostowniki są kompaktowe, bezwonne przy prawidłowym prowadzeniu i mogą stać w mieszkaniu, co czyni je idealnym rozwiązaniem dla blokowiczów. Dżdżownice zjadają resztki jedzenia i produkują biohumus (odchody dżdżownic), który jest wyjątkowo bogatym nawozem. Dobrze utrzymany wermikompostownik przetwarza około pół kilograma odpadów spożywczych dziennie.\n\nBokashi to japońska metoda fermentacji wykorzystująca hermetyczny pojemnik i otrąb zaszczepione efektywnymi mikroorganizmami. W odróżnieniu od kompostowania tlenowego Bokashi działa beztlenowo — można dodawać resztki mięsa, nabiału i gotowane jedzenie, które w tradycyjnym kompostowniku przyciągałyby szkodniki. Odpady fermentują przez około dwa tygodnie, po czym mogą być zakopane w ziemi lub dodane do kompostownika w celu dokończenia rozkładu. Bokashi to doskonała opcja dla mieszkań i gospodarstw domowych, które chcą kompostować wszystkie odpady spożywcze bez wyjątku.\n\nProgramy kompostowania społecznościowego obsługują mieszkańców, którzy nie mogą kompostować w domu. Wiele europejskich miast utworzyło osiedlowe punkty kompostowania, do których mieszkańcy mogą przynosić resztki jedzenia. Punkty te są prowadzone przez przeszkolonych wolontariuszy lub pracowników miejskich i produkują kompost wykorzystywany w ogrodach społecznościowych, parkach i miejskich projektach rolniczych. Kompostowanie społecznościowe buduje też więzi sąsiedzkie i tworzy poczucie wspólnej odpowiedzialności za środowisko."
+      },
+      "stats": {
+        "bioWaste": {
+          "value": "34%",
+          "label": "Udział odpadów organicznych nadających się do kompostowania w odpadach komunalnych",
+          "source": "European Environment Agency, 2023"
+        },
+        "methane": {
+          "value": "3%",
+          "label": "Emisje gazów cieplarnianych UE z bioodpadów na składowiskach",
+          "source": "European Environment Agency, 2023"
+        },
+        "compostBenefit": {
+          "value": "Up to 30%",
+          "label": "Redukcja odpadów domowych możliwa dzięki kompostowaniu",
+          "source": "European Commission, Circular Economy Action Plan"
+        }
+      },
+      "whatToCompost": {
+        "title": "Co kompostować, a czego unikać",
+        "body": "Wiedza o tym, co trafia do kompostownika, a co nie, jest kluczowa dla zdrowego i wydajnego systemu.\n\nZielone materiały (bogate w azot) to obierki owoców i warzyw, fusy z kawy i papierowe filtry, torebki herbaty (bez zszywek), świeżo ścięta trawa, przycinki roślin i pokruszone skorupki jaj. Te materiały są wilgotne i szybko się rozkładają, dostarczając azotu potrzebnego mikroorganizmom do wzrostu.\n\nBrązowe materiały (bogate w węgiel) to suche jesienne liście, podarta tektura i gazety (niepowlekane), słoma i siano, nieimpregnowane trociny i wióry, drobne suche gałązki i suszone łodygi roślin. Brązowe materiały zapewniają strukturę i przepływ powietrza w pryzmie, absorbują nadmiar wilgoci i dostarczają węgla, który mikroorganizmy wykorzystują jako źródło energii.\n\nNIE kompostuj w standardowym domowym kompostowniku: mięsa, ryb i kości (przyciągają szkodniki i wytwarzają nieprzyjemny zapach); produktów mlecznych i tłuszczów kuchennych (ten sam problem); odchodów psów i kotów (mogą zawierać niebezpieczne patogeny); chorych roślin (patogeny mogą przetrwać proces kompostowania); drewna impregnowanego lub malowanego (zawiera chemikalia); popiołu z węgla (może zawierać substancje szkodliwe dla roślin). Warto pamiętać, że systemy Bokashi MOGĄ przetwarzać mięso, nabiał i gotowane jedzenie, więc wybierz system dopasowany do rodzaju odpadów, które najczęściej wytwarzasz.\n\nOgólna zasada to utrzymywanie proporcji mniej więcej dwóch do trzech części brązowych na jedną część zielonych materiałów objętościowo. Jeśli kompost śmierdzi, dodaj więcej brązowych i przerzuć pryzmę. Jeśli wydaje się zbyt suchy i nie rozkłada się, dodaj zielone materiały i trochę wody."
+      },
+      "caseStudy": {
+        "title": "Kompostowanie miejskie w Wiedniu i Mediolanie",
+        "location": "Wiedeń, Austria i Mediolan, Włochy",
+        "body": "Wiedeń i Mediolan oferują dwa inspirujące modele tego, jak duże europejskie miasta włączają kompostowanie do swoich systemów gospodarki odpadami.\n\nWiedeń jest pionierem miejskiej zbiórki bioodpadów od początku lat 90. Miasto udostępnia mieszkańcom brązowe pojemniki na odpady organiczne, które są odbierane co tydzień i przetwarzane w dużych kompostowniach i biogazowniach na obrzeżach miasta. Powstały kompost jest wykorzystywany w parkach miejskich, sprzedawany ogrodnikom i rozdawany bezpłatnie podczas corocznych „dni kompostu.” Ponadto Wiedeń wspiera ponad 1000 punktów kompostowania osiedlowego na podwórkach i w ogródkach działkowych, prowadzonych przez przeszkolonych wolontariuszy — doradców kompostowania. Te zdecentralizowane punkty przetwarzają odpady lokalnie, zmniejszają emisje transportowe i budują zaangażowanie społeczności wokół zrównoważonego rozwoju.\n\nMediolan wprowadził obowiązkową segregację odpadów spożywczych w 2014 roku, stając się największym europejskim miastem z powszechną zbiórką odpadów organicznych „od drzwi do drzwi.” Mieszkańcy otrzymali małe wentylowane pojemniki kuchenne i kompostowalne worki, co uczyniło segregację wygodną. Zebrane bioodpady są przetwarzane w procesie fermentacji beztlenowej, który wytwarza biogaz do produkcji energii, zanim pozostałość zostanie skompostowana. W ciągu dwóch lat Mediolan zbierał selektywnie ponad 90 kilogramów odpadów spożywczych na mieszkańca rocznie, a poziom zanieczyszczeń we frakcji organicznej był zaskakująco niski — około 5%.\n\nOba miasta pokazują, że kompostowanie miejskie na dużą skalę jest nie tylko wykonalne, ale może być powszechnie akceptowane przez mieszkańców, gdy system jest zaprojektowany z myślą o wygodzie i edukacji. Kluczem do sukcesu jest zapewnienie odpowiedniego wyposażenia do zbiórki, jasna i konsekwentna komunikacja o tym, co należy wrzucać do pojemnika na bioodpady, inwestycje w infrastrukturę przetwarzania oraz tworzenie widocznych korzyści — takich jak kompost dla ogrodów społecznościowych i czystsze ulice."
+      },
+      "tips": {
+        "title": "6 praktycznych wskazówek dotyczących kompostowania",
+        "item1": "Zacznij od małego kroku. Nawet kuchenny pojemnik na resztki jedzenia to już znaczący początek. Zebrane resztki możesz zanieść do osiedlowego punktu kompostowania lub ogrodowego kompostownika, gdy pojemnik się zapełni.",
+        "item2": "Trzymaj przy kompostowniku niewielki zapas poszarpanej gazety lub suchych liści. Za każdym razem, gdy dodajesz resztki jedzenia (zielone), dorzuć garść brązowych materiałów, by utrzymać właściwą równowagę i zapobiec nieprzyjemnym zapachom.",
+        "item3": "Siekaj lub rób na mniejsze kawałki duże elementy przed kompostowaniem. Cała skórka awokado lub duży karton będą rozkładać się miesiącami, ale posiekane lub podarte na kawałki — już w kilka tygodni.",
+        "item4": "Do kompostowania w mieszkaniu wypróbuj pojemnik Bokashi lub mały wermikompostownik. Oba są kompaktowe, dyskretne i bezwonne przy prawidłowym prowadzeniu. Wiele gmin oferuje dofinansowanie lub zestawy startowe do kompostowania domowego.",
+        "item5": "Regularnie przerzucaj lub mieszaj kompost — co jeden do dwóch tygodni w przypadku kompostownika ogrodowego. To dostarcza tlenu, równomiernie rozprowadza wilgoć i mikroorganizmy, znacząco przyspieszając proces kompostowania.",
+        "item6": "Bądź cierpliwy i obserwuj. Kompostowanie to żywy proces reagujący na warunki. Jeśli pryzma jest zbyt mokra, dodaj więcej brązowych materiałów i zostaw odkrytą w suchy dzień. Jeśli jest zbyt sucha, dodaj wody i świeże zielone materiały. Gotowy kompost powinien wyglądać i pachnieć jak ciemna, sypka ziemia leśna."
+      }
+    }
   }
 }
