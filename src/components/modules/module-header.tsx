@@ -1,5 +1,7 @@
 'use client';
 
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { Clock, BookOpen, Puzzle, PenLine, LinkIcon, CheckCircle2 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { useLearningStore, useStoreHydration } from '@/store/learning-store';
@@ -41,6 +43,8 @@ interface ModuleHeaderProps {
 export function ModuleHeader({ module }: ModuleHeaderProps) {
   const hydrated = useStoreHydration();
   const moduleProgress = useLearningStore((s) => s.moduleProgress[module.id]);
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-40px' });
 
   const stepStatus = {
     learn: moduleProgress?.learnCompleted ?? false,
@@ -56,75 +60,109 @@ export function ModuleHeader({ module }: ModuleHeaderProps) {
     .filter(Boolean);
 
   return (
-    <div className="border-b border-border/60 bg-card pb-6">
-      <div className="container mx-auto px-4">
-        {/* Module number + title */}
-        <div className="flex items-start gap-4">
-          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#2E7D32] text-white font-display font-bold text-xl shrink-0">
-            {String(module.number).padStart(2, '0')}
-          </div>
-          <div className="flex-1 min-w-0">
-            <h1 className="font-display text-2xl font-bold tracking-tight text-[#1A1A2E] sm:text-3xl">
-              {moduleTitles[module.number] ?? module.titleKey}
-            </h1>
+    <div ref={ref} className="relative border-b border-[#E5E2DB] bg-white pb-8 overflow-hidden">
+      {/* Large watermark module number */}
+      <span className="pointer-events-none absolute -top-8 -right-4 font-display text-[12rem] leading-none text-[#064E3B] opacity-[0.03] select-none sm:text-[16rem]">
+        {String(module.number).padStart(2, '0')}
+      </span>
 
-            {/* GreenComp area badges + time */}
-            <div className="mt-3 flex flex-wrap items-center gap-2">
-              {areaData.map((area) => (
-                <Badge
-                  key={area!.id}
-                  className="text-xs px-2.5 py-0.5 font-normal text-white"
-                  style={{ backgroundColor: area!.color }}
-                >
-                  {areaNames[area!.id] ?? area!.id}
-                </Badge>
-              ))}
-              <span className="flex items-center gap-1 text-sm text-muted-foreground">
-                <Clock className="size-3.5" />
-                ~{module.estimatedMinutes} min
-              </span>
-            </div>
-          </div>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Module number label + meta */}
+        <div className="mb-4 flex flex-wrap items-center gap-4">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-xs font-medium uppercase tracking-[0.2em] text-[#0D9488]"
+          >
+            Module {String(module.number).padStart(2, '0')}
+          </motion.p>
+
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="flex items-center gap-1.5 text-[13px] text-[#1A1A2E]/35"
+          >
+            <Clock className="size-3.5" />
+            ~{module.estimatedMinutes} min
+          </motion.span>
         </div>
 
+        {/* Title */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          className="font-display text-3xl text-[#1A1A2E] sm:text-4xl lg:text-5xl max-w-3xl"
+        >
+          {moduleTitles[module.number] ?? module.titleKey}
+        </motion.h1>
+
+        {/* GreenComp area badges */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-5 flex flex-wrap items-center gap-2"
+        >
+          {areaData.map((area) => (
+            <Badge
+              key={area!.id}
+              className="rounded-full border-0 px-3 py-1 text-[11px] font-normal text-white"
+              style={{ backgroundColor: area!.color }}
+            >
+              {areaNames[area!.id] ?? area!.id}
+            </Badge>
+          ))}
+        </motion.div>
+
         {/* Step progress indicator */}
-        <div className="mt-6">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-8"
+        >
           {hydrated ? (
-            <div className="flex items-center gap-1 text-sm text-muted-foreground mb-3">
-              <span className="font-medium text-[#1A1A2E]">
+            <div className="flex items-center gap-1.5 text-[13px] text-[#1A1A2E]/45 mb-4">
+              <span className="font-medium text-[#1A1A2E]/70">
                 Step {Math.min(completedSteps + 1, 4)} of 4
               </span>
-              <span className="mx-1">&middot;</span>
+              <span className="mx-1 text-[#E5E2DB]">/</span>
               <span>{completedSteps} completed</span>
             </div>
           ) : (
-            <div className="h-5 mb-3" />
+            <div className="h-5 mb-4" />
           )}
 
           <div className="flex gap-2 sm:gap-3">
-            {steps.map((step) => {
+            {steps.map((step, i) => {
               const Icon = step.icon;
               const done = hydrated && stepStatus[step.key];
               return (
-                <div
+                <motion.div
                   key={step.key}
-                  className={`flex flex-1 items-center gap-1.5 rounded-lg border px-3 py-2 text-xs sm:text-sm font-medium transition-colors ${
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.4, delay: 0.45 + i * 0.08 }}
+                  className={`flex flex-1 items-center gap-2 rounded-xl border px-3 py-2.5 text-xs sm:text-sm font-medium transition-all duration-300 ${
                     done
-                      ? 'border-[#2E7D32]/30 bg-[#E8F5E9] text-[#2E7D32]'
-                      : 'border-border/60 bg-muted/40 text-muted-foreground'
+                      ? 'border-[#064E3B]/20 bg-[#064E3B]/[0.04] text-[#064E3B]'
+                      : 'border-[#E5E2DB] bg-[#FAF8F0]/50 text-[#1A1A2E]/35'
                   }`}
                 >
                   {done ? (
-                    <CheckCircle2 className="size-4 text-[#2E7D32] shrink-0" />
+                    <CheckCircle2 className="size-4 text-[#064E3B] shrink-0" />
                   ) : (
                     <Icon className="size-4 shrink-0" />
                   )}
                   <span className="hidden sm:inline">{step.label}</span>
-                </div>
+                </motion.div>
               );
             })}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

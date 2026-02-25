@@ -31,12 +31,12 @@ interface StepIndicatorProps {
 function StepIndicator({ label, completed, icon }: StepIndicatorProps) {
   return (
     <div className="flex items-center gap-1.5">
-      <div className={completed ? 'text-[#2E7D32]' : 'text-muted-foreground/40'}>
+      <div className={completed ? 'text-[#064E3B]' : 'text-muted-foreground/40'}>
         {completed ? <CheckCircle2 className="size-4" /> : icon}
       </div>
       <span
         className={`text-xs ${
-          completed ? 'text-[#2E7D32] font-medium' : 'text-muted-foreground/60'
+          completed ? 'text-[#064E3B] font-medium' : 'text-muted-foreground/60'
         }`}
       >
         {label}
@@ -50,7 +50,7 @@ export function ModuleProgressCards() {
   const moduleProgress = useLearningStore((s) => s.moduleProgress);
 
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {modules.map((mod, index) => {
         const progress = hydrated ? moduleProgress[mod.id] : undefined;
 
@@ -75,25 +75,25 @@ export function ModuleProgressCards() {
             key={mod.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: index * 0.05 }}
+            transition={{ duration: 0.4, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
           >
             <Link href={`/modules/${mod.id}`} className="block h-full">
-              <Card className="h-full cursor-pointer transition-shadow duration-300 hover:shadow-lg border-border/60">
+              <Card className="h-full cursor-pointer border border-[#E5E2DB] bg-white rounded-2xl transition-all duration-300 hover:shadow-[0_20px_60px_-15px_rgba(6,78,59,0.08)]">
                 <CardHeader className="pb-2">
                   <div className="flex items-start gap-3">
                     {/* Module number badge */}
                     <div
                       className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-display font-bold text-sm ${
                         isCompleted
-                          ? 'bg-[#2E7D32] text-white'
+                          ? 'bg-[#064E3B] text-white'
                           : stepsCompleted > 0
-                            ? 'bg-[#F59E0B] text-white'
-                            : 'bg-muted text-muted-foreground'
+                            ? 'bg-[#D97706] text-white'
+                            : 'bg-[#FAF8F0] text-[#1A1A2E]/40 border border-[#E5E2DB]'
                       }`}
                     >
                       {String(mod.number).padStart(2, '0')}
                     </div>
-                    <CardTitle className="text-sm font-semibold leading-tight pt-1">
+                    <CardTitle className="text-sm font-semibold leading-tight pt-1 text-[#1A1A2E]">
                       {moduleTitles[mod.number] ?? mod.titleKey}
                     </CardTitle>
                   </div>
@@ -125,13 +125,13 @@ export function ModuleProgressCards() {
                   {hydrated && progress?.quizScore != null && (
                     <div className="flex items-center gap-1.5">
                       {progress.quizPassed ? (
-                        <CheckCircle2 className="size-4 text-[#2E7D32]" />
+                        <CheckCircle2 className="size-4 text-[#064E3B]" />
                       ) : (
                         <XCircle className="size-4 text-red-500" />
                       )}
                       <span
                         className={`text-xs font-medium ${
-                          progress.quizPassed ? 'text-[#2E7D32]' : 'text-red-500'
+                          progress.quizPassed ? 'text-[#064E3B]' : 'text-red-500'
                         }`}
                       >
                         {progress.quizScore}% ({progress.quizPassed ? 'Pass' : 'Fail'})
@@ -143,7 +143,7 @@ export function ModuleProgressCards() {
                   {hydrated ? (
                     <Progress value={completionPercent} className="h-1.5" />
                   ) : (
-                    <div className="h-1.5 w-full rounded-full bg-primary/20" />
+                    <div className="h-1.5 w-full rounded-full bg-[#E5E2DB]" />
                   )}
                 </CardContent>
               </Card>

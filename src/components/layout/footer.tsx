@@ -2,24 +2,27 @@ import { LOGOS, EU_DISCLAIMER, PROJECT } from '@/lib/constants';
 
 export function Footer() {
   return (
-    <footer className="mt-auto w-full bg-[#1A1A2E] text-white/90">
-      <div className="container mx-auto px-4 py-10">
-        {/* Partner logos row */}
-        <div className="flex flex-wrap items-center justify-center gap-8">
+    <footer className="mt-auto w-full bg-[#022C22] text-white/90">
+      {/* Top accent line */}
+      <div className="h-px bg-gradient-to-r from-transparent via-[#34D399]/30 to-transparent" />
+
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        {/* Partner logos */}
+        <div className="flex flex-wrap items-center justify-center gap-10">
           <img
             src={LOGOS.zieloneSlaskie}
             alt="Zielone Slaskie"
-            className="h-[120px] w-auto object-contain"
+            className="h-[120px] w-auto object-contain opacity-90"
           />
           <img
             src={LOGOS.partner}
             alt="SEQ Partner"
-            className="h-[120px] w-auto object-contain"
+            className="h-[120px] w-auto object-contain opacity-90"
           />
         </div>
 
-        {/* EU Co-funded emblem - must be at least as large as partner logos */}
-        <div className="mt-8 flex justify-center">
+        {/* EU Co-funded emblem */}
+        <div className="mt-10 flex justify-center">
           <img
             src={LOGOS.euCoFunded}
             alt="Co-funded by the European Union"
@@ -27,26 +30,26 @@ export function Footer() {
           />
         </div>
 
-        {/* EU Disclaimer text - MANDATORY for Erasmus+ projects */}
-        <p className="mx-auto mt-6 max-w-3xl text-center text-xs leading-relaxed text-white/60">
+        {/* EU Disclaimer */}
+        <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-white/40">
           {EU_DISCLAIMER}
         </p>
 
         {/* Separator */}
-        <div className="mx-auto my-6 h-px max-w-2xl bg-white/10" />
+        <div className="mx-auto my-10 h-px max-w-2xl bg-white/8" />
 
-        {/* Project info line */}
-        <div className="text-center text-sm text-white/70">
-          <p className="font-medium">
+        {/* Project info */}
+        <div className="text-center">
+          <p className="font-display text-lg text-white/80">
             {PROJECT.fullName}
           </p>
-          <p className="mt-1">
+          <p className="mt-2 text-sm text-white/40">
             {PROJECT.programme} &middot; {PROJECT.projectNumber}
           </p>
         </div>
 
-        {/* Copyright line */}
-        <p className="mt-4 text-center text-xs text-white/50">
+        {/* Copyright */}
+        <p className="mt-8 text-center text-xs text-white/25">
           &copy; 2025-2027 Green Explorers Consortium
         </p>
       </div>

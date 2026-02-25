@@ -1,7 +1,7 @@
 'use client';
 
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
+import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { ModuleHeader } from '@/components/modules/module-header';
 import { ModuleTabs } from '@/components/modules/module-tabs';
@@ -33,56 +33,90 @@ export function ModuleDetailClient({
   nextModule,
 }: ModuleDetailClientProps) {
   return (
-    <section className="min-h-screen bg-[#FAFAF5]">
-      {/* Header */}
-      <div className="bg-card pt-8 pb-0">
-        <div className="container mx-auto px-4 mb-6">
-          <Link
-            href="/modules"
-            className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-[#2E7D32] transition-colors"
+    <section className="min-h-screen bg-[#FAF8F0] pt-16">
+      {/* Header area */}
+      <div className="bg-white pb-0">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Back navigation */}
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="pt-8 pb-6"
           >
-            <ChevronLeft className="size-4" />
-            All Modules
-          </Link>
+            <Link
+              href="/modules"
+              className="group inline-flex items-center gap-2 text-sm text-[#1A1A2E]/40 transition-colors duration-300 hover:text-[#064E3B]"
+            >
+              <ArrowLeft className="size-4 transition-transform duration-300 group-hover:-translate-x-1" />
+              <span className="font-medium uppercase tracking-[0.15em] text-[12px]">
+                All Modules
+              </span>
+            </Link>
+          </motion.div>
         </div>
+
         <ModuleHeader module={module} />
       </div>
 
       {/* Tabs content */}
-      <div className="container mx-auto px-4 py-8">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-10">
         <ModuleTabs module={module} />
       </div>
 
-      {/* Navigation */}
-      <div className="border-t border-border/60 bg-card">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
+      {/* Bottom navigation between modules */}
+      <div className="border-t border-[#E5E2DB] bg-white">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="flex items-stretch">
+            {/* Previous module */}
             {prevModule ? (
-              <Button variant="outline" asChild>
-                <Link href={`/modules/${prevModule.id}`}>
-                  <ChevronLeft className="size-4" />
-                  <span className="hidden sm:inline">
-                    Module {prevModule.number}: {moduleTitles[prevModule.number]?.split(':')[0] ?? 'Previous'}
-                  </span>
-                  <span className="sm:hidden">Previous</span>
-                </Link>
-              </Button>
+              <Link
+                href={`/modules/${prevModule.id}`}
+                className="group flex flex-1 items-center gap-4 py-6 pr-6 transition-colors duration-300 hover:bg-[#FAF8F0]"
+              >
+                <ChevronLeft className="size-5 shrink-0 text-[#1A1A2E]/25 transition-all duration-300 group-hover:text-[#064E3B] group-hover:-translate-x-1" />
+                <div className="min-w-0">
+                  <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#1A1A2E]/30 mb-1">
+                    Previous
+                  </p>
+                  <p className="text-sm font-medium text-[#1A1A2E]/70 truncate transition-colors duration-300 group-hover:text-[#064E3B]">
+                    <span className="hidden sm:inline">
+                      Module {prevModule.number}:&nbsp;
+                    </span>
+                    {moduleTitles[prevModule.number]?.split(':')[0] ?? 'Previous'}
+                  </p>
+                </div>
+              </Link>
             ) : (
-              <div />
+              <div className="flex-1" />
             )}
 
+            {/* Divider */}
+            {prevModule && nextModule && (
+              <div className="w-px bg-[#E5E2DB]" />
+            )}
+
+            {/* Next module */}
             {nextModule ? (
-              <Button variant="outline" asChild>
-                <Link href={`/modules/${nextModule.id}`}>
-                  <span className="hidden sm:inline">
-                    Module {nextModule.number}: {moduleTitles[nextModule.number]?.split(':')[0] ?? 'Next'}
-                  </span>
-                  <span className="sm:hidden">Next</span>
-                  <ChevronRight className="size-4" />
-                </Link>
-              </Button>
+              <Link
+                href={`/modules/${nextModule.id}`}
+                className="group flex flex-1 items-center justify-end gap-4 py-6 pl-6 text-right transition-colors duration-300 hover:bg-[#FAF8F0]"
+              >
+                <div className="min-w-0">
+                  <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#1A1A2E]/30 mb-1">
+                    Next
+                  </p>
+                  <p className="text-sm font-medium text-[#1A1A2E]/70 truncate transition-colors duration-300 group-hover:text-[#064E3B]">
+                    <span className="hidden sm:inline">
+                      Module {nextModule.number}:&nbsp;
+                    </span>
+                    {moduleTitles[nextModule.number]?.split(':')[0] ?? 'Next'}
+                  </p>
+                </div>
+                <ChevronRight className="size-5 shrink-0 text-[#1A1A2E]/25 transition-all duration-300 group-hover:text-[#064E3B] group-hover:translate-x-1" />
+              </Link>
             ) : (
-              <div />
+              <div className="flex-1" />
             )}
           </div>
         </div>

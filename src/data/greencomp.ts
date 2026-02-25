@@ -19,7 +19,7 @@ export const greenCompAreas: GreenCompAreaData[] = [
     id: 'embodying-values',
     titleKey: 'greencomp.areas.embodyingValues.title',
     descriptionKey: 'greencomp.areas.embodyingValues.description',
-    color: '#2E7D32',
+    color: '#064E3B',
     icon: '\u{1F331}',
     competences: [
       { id: 'valuing-sustainability', titleKey: 'greencomp.competences.valuingSustainability' },
@@ -31,7 +31,7 @@ export const greenCompAreas: GreenCompAreaData[] = [
     id: 'embracing-complexity',
     titleKey: 'greencomp.areas.embracingComplexity.title',
     descriptionKey: 'greencomp.areas.embracingComplexity.description',
-    color: '#33AEB4',
+    color: '#0D9488',
     icon: '\u{1F504}',
     competences: [
       { id: 'systems-thinking', titleKey: 'greencomp.competences.systemsThinking' },
@@ -55,7 +55,7 @@ export const greenCompAreas: GreenCompAreaData[] = [
     id: 'acting-for-sustainability',
     titleKey: 'greencomp.areas.actingForSustainability.title',
     descriptionKey: 'greencomp.areas.actingForSustainability.description',
-    color: '#1B5E20',
+    color: '#043927',
     icon: '\u{270A}',
     competences: [
       { id: 'political-agency', titleKey: 'greencomp.competences.politicalAgency' },

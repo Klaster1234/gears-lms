@@ -67,7 +67,7 @@ function getVideoTypeBadge(type: VideoResource['type']) {
     case 'facebook':
       return { label: 'Facebook', color: 'bg-[#1877F2]/10 text-[#1877F2]' };
     case 'external':
-      return { label: 'External', color: 'bg-[#33AEB4]/10 text-[#33AEB4]' };
+      return { label: 'External', color: 'bg-[#0D9488]/10 text-[#0D9488]' };
     default:
       return { label: 'Video', color: 'bg-muted text-muted-foreground' };
   }
@@ -76,13 +76,13 @@ function getVideoTypeBadge(type: VideoResource['type']) {
 function getLinkTypeInfo(type: ExternalLinkType['type']) {
   switch (type) {
     case 'app':
-      return { label: 'App', icon: Smartphone, color: 'bg-[#2E7D32]/10 text-[#2E7D32]' };
+      return { label: 'App', icon: Smartphone, color: 'bg-[#064E3B]/10 text-[#064E3B]' };
     case 'game':
       return { label: 'Game', icon: Gamepad2, color: 'bg-[#7C3AED]/10 text-[#7C3AED]' };
     case 'calculator':
       return { label: 'Calculator', icon: Calculator, color: 'bg-[#F59E0B]/10 text-[#F59E0B]' };
     case 'presentation':
-      return { label: 'Presentation', icon: Presentation, color: 'bg-[#33AEB4]/10 text-[#33AEB4]' };
+      return { label: 'Presentation', icon: Presentation, color: 'bg-[#0D9488]/10 text-[#0D9488]' };
     default:
       return { label: 'Link', icon: ExternalLink, color: 'bg-muted text-muted-foreground' };
   }
@@ -178,7 +178,7 @@ export function ResourcesTab({ module }: ResourcesTabProps) {
       {hasLinks && (
         <section>
           <div className="flex items-center gap-2 mb-4">
-            <ExternalLink className="size-5 text-[#33AEB4]" />
+            <ExternalLink className="size-5 text-[#0D9488]" />
             <h3 className="font-display text-lg font-semibold text-[#1A1A2E]">
               External Links
             </h3>
@@ -225,7 +225,7 @@ export function ResourcesTab({ module }: ResourcesTabProps) {
           {(hasVideos || hasLinks) && <Separator />}
           <section>
             <div className="flex items-center gap-2 mb-4">
-              <BookOpen className="size-5 text-[#2E7D32]" />
+              <BookOpen className="size-5 text-[#064E3B]" />
               <h3 className="font-display text-lg font-semibold text-[#1A1A2E]">
                 Related Modules
               </h3>
@@ -240,7 +240,7 @@ export function ResourcesTab({ module }: ResourcesTabProps) {
                   <Card key={related.id} className="border-border/60 hover:shadow-md transition-shadow">
                     <CardContent className="py-4">
                       <div className="flex items-start gap-3">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#2E7D32]/10 text-[#2E7D32] font-display font-bold text-sm shrink-0">
+                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#064E3B]/10 text-[#064E3B] font-display font-bold text-sm shrink-0">
                           {String(related.number).padStart(2, '0')}
                         </div>
                         <div className="flex-1 min-w-0">
@@ -249,7 +249,7 @@ export function ResourcesTab({ module }: ResourcesTabProps) {
                           </p>
                           <a
                             href={`/modules/${related.id}`}
-                            className="inline-flex items-center gap-1 text-xs text-[#2E7D32] hover:text-[#1B5E20] font-medium mt-2"
+                            className="inline-flex items-center gap-1 text-xs text-[#064E3B] hover:text-[#043927] font-medium mt-2"
                           >
                             Explore
                             <ArrowRight className="size-3" />

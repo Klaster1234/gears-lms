@@ -1,19 +1,18 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 import { Link } from '@/i18n/routing';
 import { modules } from '@/data/modules';
-import { Clock, ChevronRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
-// GreenComp area color map
-const areaColors: Record<string, { bg: string; text: string; label: string }> = {
-  'embodying-values': { bg: 'bg-[#E8F5E9]', text: 'text-[#2E7D32]', label: 'Values' },
-  'embracing-complexity': { bg: 'bg-[#E0F7FA]', text: 'text-[#33AEB4]', label: 'Complexity' },
-  'envisioning-futures': { bg: 'bg-[#FFF8E1]', text: 'text-[#F59E0B]', label: 'Futures' },
-  'acting-for-sustainability': { bg: 'bg-[#E8F5E9]', text: 'text-[#1B5E20]', label: 'Action' },
+const areaColors: Record<string, string> = {
+  'embodying-values': '#064E3B',
+  'embracing-complexity': '#0D9488',
+  'envisioning-futures': '#D97706',
+  'acting-for-sustainability': '#047857',
 };
 
-// Hardcoded English titles as fallback (since i18n keys aren't in messages yet)
 const moduleTitles: Record<number, string> = {
   1: 'Introduction to the 5R Principle',
   2: 'Waste Sorting & Zero Waste',
@@ -28,74 +27,122 @@ const moduleTitles: Record<number, string> = {
 };
 
 export function ModulesPreviewSection() {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
   return (
-    <section className="bg-[#FAFAF5] py-20 md:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6 }}
-          className="mb-12 text-center"
-        >
-          <h2 className="font-display text-3xl font-bold text-[#1A1A2E] sm:text-4xl">
-            10 Modules to Transform Your Habits
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-[#1A1A2E]/60">
-            From waste reduction to community action, each module builds your sustainability competences step by step.
-          </p>
-        </motion.div>
+    <section ref={ref} className="relative overflow-hidden bg-[#064E3B] py-32 lg:py-40">
+      {/* Decorative elements */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#34D399]/20 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#34D399]/20 to-transparent" />
+        {/* Subtle rotating ring */}
+        <div className="absolute -right-[200px] top-1/2 -translate-y-1/2">
+          <div className="animate-spin-slow h-[600px] w-[600px] rounded-full border border-[#34D399]/5" />
+        </div>
+      </div>
 
-        {/* Scrollable container */}
-        <div className="relative">
-          <div className="-mx-4 flex gap-5 overflow-x-auto px-4 pb-6 scrollbar-thin md:-mx-0 md:px-0">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Section header */}
+        <div className="mb-16 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
+          <div className="max-w-xl">
+            <motion.div
+              initial={{ width: 0 }}
+              animate={isInView ? { width: 48 } : {}}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="mb-6 h-[2px] bg-[#34D399]"
+            />
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-[#6EE7B7]"
+            >
+              Curriculum
+            </motion.p>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="font-display text-4xl text-white sm:text-5xl"
+            >
+              10 Modules to Transform Your Habits
+            </motion.h2>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <Link
+              href="/modules"
+              className="group inline-flex items-center gap-2 text-sm font-medium text-[#6EE7B7] transition-colors hover:text-white"
+            >
+              View all modules
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* Module cards - horizontal scroll */}
+        <div className="relative -mx-6 lg:-mx-8">
+          <div className="scroll-hidden flex gap-4 overflow-x-auto px-6 pb-4 lg:px-8">
             {modules.map((module, index) => {
-              const primaryArea = module.greenCompAreas[0];
-              const areaStyle = areaColors[primaryArea] || areaColors['embodying-values'];
-
+              const primaryColor = areaColors[module.greenCompAreas[0]] || '#064E3B';
               return (
                 <motion.div
                   key={module.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-40px' }}
-                  transition={{ duration: 0.5, delay: index * 0.06 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.3 + index * 0.06,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
                   className="flex-shrink-0"
                 >
                   <Link
                     href={`/modules/${module.id}`}
-                    className="group flex h-full w-64 flex-col rounded-2xl border border-[#D1D5DB]/60 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#2E7D32]/8 sm:w-72"
+                    className="group flex h-full w-[280px] flex-col rounded-xl border border-white/8 bg-white/5 p-6 backdrop-blur-sm transition-all duration-500 hover:border-white/15 hover:bg-white/10 sm:w-[300px]"
                   >
-                    {/* Module number */}
-                    <div className="mb-4 flex items-start justify-between">
-                      <span className="font-display text-4xl font-bold text-[#2E7D32]/15">
+                    {/* Number + icon row */}
+                    <div className="mb-6 flex items-center justify-between">
+                      <span className="font-display text-4xl text-white/10">
                         {String(module.number).padStart(2, '0')}
                       </span>
                       <span className="text-2xl">{module.icon}</span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="mb-3 font-display text-base font-semibold leading-snug text-[#1A1A2E] group-hover:text-[#2E7D32]">
+                    <h3 className="mb-3 text-base font-medium leading-snug text-white/90 transition-colors duration-300 group-hover:text-white">
                       {moduleTitles[module.number] || `Module ${module.number}`}
                     </h3>
 
-                    {/* Meta */}
-                    <div className="mt-auto flex items-center gap-3 pt-4">
-                      <div className="flex items-center gap-1 text-sm text-[#1A1A2E]/50">
-                        <Clock className="h-3.5 w-3.5" />
-                        {module.estimatedMinutes} min
-                      </div>
+                    {/* Meta row */}
+                    <div className="mt-auto flex items-center gap-3 pt-6">
+                      <span className="text-sm text-white/40">
+                        ~{module.estimatedMinutes} min
+                      </span>
+                      <div
+                        className="h-1 w-1 rounded-full"
+                        style={{ backgroundColor: primaryColor }}
+                      />
                       <span
-                        className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${areaStyle.bg} ${areaStyle.text}`}
+                        className="text-sm font-medium"
+                        style={{ color: primaryColor === '#064E3B' ? '#34D399' : primaryColor === '#047857' ? '#6EE7B7' : primaryColor }}
                       >
-                        {areaStyle.label}
+                        {module.greenCompAreas[0]
+                          .split('-')
+                          .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+                          .join(' ')}
                       </span>
                     </div>
 
                     {/* Hover arrow */}
-                    <div className="mt-3 flex items-center gap-1 text-sm font-medium text-[#2E7D32] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                    <div className="mt-4 flex items-center gap-1.5 text-sm font-medium text-[#34D399] opacity-0 transition-all duration-300 group-hover:opacity-100">
                       Start module
-                      <ChevronRight className="h-4 w-4" />
+                      <ArrowRight className="h-3.5 w-3.5" />
                     </div>
                   </Link>
                 </motion.div>
@@ -103,8 +150,9 @@ export function ModulesPreviewSection() {
             })}
           </div>
 
-          {/* Fade edges on desktop to hint scrolling */}
-          <div className="pointer-events-none absolute top-0 right-0 hidden h-full w-16 bg-gradient-to-l from-[#FAFAF5] to-transparent md:block" />
+          {/* Fade edges */}
+          <div className="pointer-events-none absolute top-0 right-0 hidden h-full w-24 bg-gradient-to-l from-[#064E3B] to-transparent md:block" />
+          <div className="pointer-events-none absolute top-0 left-0 hidden h-full w-8 bg-gradient-to-r from-[#064E3B] to-transparent md:block" />
         </div>
       </div>
     </section>

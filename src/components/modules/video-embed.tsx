@@ -28,7 +28,7 @@ export function VideoEmbed({ video }: VideoEmbedProps) {
     return (
       <Card className="border-border/60">
         <CardContent className="flex items-center gap-4 py-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#33AEB4]/10 text-[#33AEB4] shrink-0">
+          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#0D9488]/10 text-[#0D9488] shrink-0">
             <ExternalLink className="size-6" />
           </div>
           <div className="flex-1 min-w-0">

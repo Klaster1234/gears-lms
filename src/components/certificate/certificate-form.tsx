@@ -31,16 +31,21 @@ export function CertificateForm({ onPreview }: CertificateFormProps) {
   };
 
   return (
-    <Card className="mx-auto max-w-md">
-      <CardHeader className="text-center">
-        <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-[#2E7D32]/10">
-          <User className="size-6 text-[#2E7D32]" />
+    <Card className="mx-auto max-w-md border border-[#E5E2DB] bg-white rounded-2xl shadow-none">
+      <CardHeader className="text-center pb-4">
+        <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-[#ECFDF5] border border-[#064E3B]/10">
+          <User className="size-6 text-[#064E3B]" />
         </div>
-        <CardTitle className="text-xl font-display">Enter Your Name</CardTitle>
+        <CardTitle className="text-xl font-display text-[#1A1A2E]">Enter Your Name</CardTitle>
+        <p className="text-sm text-[#1A1A2E]/50 mt-1">
+          This will appear on your certificate
+        </p>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-5 pt-0">
         <div className="space-y-2">
-          <Label htmlFor="certificateName">Full Name (as it will appear on the certificate)</Label>
+          <Label htmlFor="certificateName" className="text-[#1A1A2E]/70 text-sm">
+            Full Name (as it will appear on the certificate)
+          </Label>
           <Input
             id="certificateName"
             placeholder="e.g. Maria Kowalska"
@@ -48,12 +53,13 @@ export function CertificateForm({ onPreview }: CertificateFormProps) {
             onChange={(e) => setName(e.target.value)}
             onKeyDown={handleKeyDown}
             autoFocus
+            className="border-[#E5E2DB] focus:border-[#064E3B] focus:ring-[#064E3B]/20 bg-[#FAF8F0]/50"
           />
         </div>
         <Button
           onClick={handlePreview}
           disabled={!name.trim()}
-          className="w-full bg-[#2E7D32] hover:bg-[#1B5E20]"
+          className="w-full bg-[#064E3B] hover:bg-[#047857] text-white transition-colors duration-300"
         >
           <Eye className="size-4 mr-1" />
           Preview Certificate

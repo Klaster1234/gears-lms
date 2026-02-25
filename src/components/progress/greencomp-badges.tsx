@@ -72,22 +72,22 @@ export function GreenCompBadges() {
   const earned = useEarnedCompetences();
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-10">
       {greenCompAreas.map((area, areaIndex) => (
         <motion.div
           key={area.id}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: areaIndex * 0.1 }}
+          transition={{ duration: 0.5, delay: areaIndex * 0.1, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Area header */}
-          <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center gap-3 mb-5">
             <div
-              className="h-1 w-8 rounded-full"
+              className="h-1 w-10 rounded-full"
               style={{ backgroundColor: area.color }}
             />
             <h3
-              className="text-sm font-semibold uppercase tracking-wide"
+              className="text-xs font-semibold uppercase tracking-[0.15em]"
               style={{ color: area.color }}
             >
               {areaNames[area.id] ?? area.id}
@@ -105,24 +105,25 @@ export function GreenCompBadges() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{
-                    duration: 0.3,
+                    duration: 0.4,
                     delay: areaIndex * 0.1 + compIndex * 0.05,
+                    ease: [0.16, 1, 0.3, 1],
                   }}
-                  className={`flex items-center gap-3 rounded-lg border p-3 transition-all ${
+                  className={`flex items-center gap-3 rounded-2xl border p-4 transition-all duration-300 ${
                     isEarned
                       ? 'border-transparent shadow-sm'
-                      : 'border-border/40 opacity-50 grayscale'
+                      : 'border-[#E5E2DB] opacity-50 grayscale'
                   }`}
                   style={
                     isEarned
-                      ? { backgroundColor: `${area.color}15`, borderColor: `${area.color}40` }
+                      ? { backgroundColor: `${area.color}12`, borderColor: `${area.color}35` }
                       : undefined
                   }
                 >
                   {/* Icon / lock */}
                   <div
                     className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-lg ${
-                      isEarned ? 'text-white' : 'bg-muted text-muted-foreground'
+                      isEarned ? 'text-white' : 'bg-[#FAF8F0] text-[#1A1A2E]/30 border border-[#E5E2DB]'
                     }`}
                     style={isEarned ? { backgroundColor: area.color } : undefined}
                   >
@@ -136,7 +137,7 @@ export function GreenCompBadges() {
                   {/* Competence name */}
                   <span
                     className={`text-sm font-medium ${
-                      isEarned ? 'text-foreground' : 'text-muted-foreground'
+                      isEarned ? 'text-[#1A1A2E]' : 'text-[#1A1A2E]/40'
                     }`}
                   >
                     {competenceNames[comp.id] ?? comp.id}

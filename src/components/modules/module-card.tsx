@@ -2,9 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Clock, CheckCircle2 } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Progress } from '@/components/ui/progress';
 import { Link } from '@/i18n/routing';
 import { useLearningStore, useStoreHydration } from '@/store/learning-store';
 import { greenCompAreas } from '@/data/greencomp';
@@ -76,67 +74,69 @@ export function ModuleCard({ module, index }: ModuleCardProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.08 }}
-      whileHover={{ scale: 1.02, y: -4 }}
+      transition={{
+        duration: 0.8,
+        delay: index * 0.1,
+        ease: [0.16, 1, 0.3, 1],
+      }}
       className="h-full"
     >
-      <Link href={`/modules/${module.id}`} className="block h-full">
-        <Card className="h-full cursor-pointer transition-shadow duration-300 hover:shadow-lg border-border/60 overflow-hidden">
-          <CardHeader className="pb-2">
-            <div className="flex items-start justify-between">
-              {/* Module number badge */}
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#2E7D32] text-white font-display font-bold text-lg shrink-0">
-                {String(module.number).padStart(2, '0')}
-              </div>
+      <Link href={`/modules/${module.id}`} className="group block h-full">
+        <div className="relative h-full overflow-hidden rounded-2xl border border-[#E5E2DB] bg-white p-7 transition-all duration-500 hover:border-[#064E3B]/20 hover:shadow-[0_20px_60px_-15px_rgba(6,78,59,0.08)] lg:p-8">
+          {/* Large watermark number */}
+          <span className="pointer-events-none absolute -top-3 -right-1 font-display text-[7rem] leading-none text-[#064E3B] opacity-[0.04] transition-opacity duration-500 group-hover:opacity-[0.08]">
+            {String(module.number).padStart(2, '0')}
+          </span>
 
-              {/* Status indicator */}
-              {hydrated && (
-                <div className="shrink-0">
-                  {isCompleted ? (
-                    <div className="flex items-center gap-1 text-[#2E7D32]">
-                      <CheckCircle2 className="size-5" />
-                    </div>
-                  ) : isInProgress ? (
-                    <Badge className="bg-[#F59E0B] text-white text-[10px] px-2 py-0.5">
-                      In Progress
-                    </Badge>
-                  ) : (
-                    <Badge variant="outline" className="text-muted-foreground text-[10px] px-2 py-0.5">
-                      Not Started
-                    </Badge>
-                  )}
+          {/* Status indicator - top right */}
+          {hydrated && (
+            <div className="absolute top-6 right-6">
+              {isCompleted ? (
+                <div className="flex items-center gap-1.5 text-[#064E3B]">
+                  <CheckCircle2 className="size-5" />
+                  <span className="text-xs font-medium tracking-wide uppercase">Done</span>
                 </div>
-              )}
-            </div>
-
-            <CardTitle className="text-base font-semibold leading-tight mt-2">
-              {moduleTitles[module.number] ?? module.titleKey}
-            </CardTitle>
-          </CardHeader>
-
-          <CardContent className="flex flex-col gap-3 pt-0">
-            {/* Description */}
-            <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
-              {moduleDescriptions[module.number] ?? ''}
-            </p>
-
-            {/* GreenComp area badges */}
-            <div className="flex flex-wrap gap-1.5">
-              {areaData.map((area) => (
-                <Badge
-                  key={area!.id}
-                  className="text-[10px] px-2 py-0.5 font-normal text-white"
-                  style={{ backgroundColor: area!.color }}
-                >
-                  {areaNames[area!.id] ?? area!.id}
+              ) : isInProgress ? (
+                <Badge className="rounded-full border-0 bg-[#F59E0B]/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.1em] text-[#D97706]">
+                  In Progress
                 </Badge>
-              ))}
+              ) : null}
             </div>
+          )}
 
-            {/* Estimated time */}
-            <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+          {/* Module number label */}
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#0D9488]">
+            Module {String(module.number).padStart(2, '0')}
+          </p>
+
+          {/* Title */}
+          <h3 className="mb-3 font-display text-xl leading-tight text-[#1A1A2E] lg:text-[22px]">
+            {moduleTitles[module.number] ?? module.titleKey}
+          </h3>
+
+          {/* Description */}
+          <p className="mb-5 text-[14px] leading-relaxed text-[#1A1A2E]/50 line-clamp-2">
+            {moduleDescriptions[module.number] ?? ''}
+          </p>
+
+          {/* GreenComp area badges */}
+          <div className="mb-5 flex flex-wrap gap-1.5">
+            {areaData.map((area) => (
+              <Badge
+                key={area!.id}
+                className="rounded-full border-0 px-2.5 py-0.5 text-[10px] font-normal text-white"
+                style={{ backgroundColor: area!.color }}
+              >
+                {areaNames[area!.id] ?? area!.id}
+              </Badge>
+            ))}
+          </div>
+
+          {/* Bottom section: time + progress */}
+          <div className="mt-auto space-y-3 border-t border-[#E5E2DB]/60 pt-4">
+            <div className="flex items-center gap-1.5 text-[13px] text-[#1A1A2E]/40">
               <Clock className="size-3.5" />
               <span>~{module.estimatedMinutes} min</span>
             </div>
@@ -144,19 +144,27 @@ export function ModuleCard({ module, index }: ModuleCardProps) {
             {/* Progress bar */}
             {hydrated ? (
               <div className="space-y-1.5">
-                <Progress value={completionPercent} className="h-1.5" />
-                <p className="text-xs text-muted-foreground">
+                <div className="h-1 w-full overflow-hidden rounded-full bg-[#064E3B]/[0.06]">
+                  <div
+                    className="h-full rounded-full bg-[#064E3B] transition-all duration-700 ease-out"
+                    style={{ width: `${completionPercent}%` }}
+                  />
+                </div>
+                <p className="text-[11px] font-medium tracking-wide text-[#1A1A2E]/35">
                   {stepsCompleted} of 4 steps completed
                 </p>
               </div>
             ) : (
               <div className="space-y-1.5">
-                <div className="h-1.5 w-full rounded-full bg-primary/20" />
-                <p className="text-xs text-muted-foreground">&nbsp;</p>
+                <div className="h-1 w-full rounded-full bg-[#064E3B]/[0.06]" />
+                <p className="text-[11px] text-[#1A1A2E]/35">&nbsp;</p>
               </div>
             )}
-          </CardContent>
-        </Card>
+          </div>
+
+          {/* Bottom accent line on hover */}
+          <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#064E3B] transition-all duration-500 group-hover:w-full" />
+        </div>
       </Link>
     </motion.div>
   );

@@ -33,13 +33,13 @@ export function CertificatePreview({ name }: CertificatePreviewProps) {
     <div className="space-y-6">
       {/* Controls - hidden in print */}
       <div className="flex items-center justify-between no-print">
-        <Button variant="outline" asChild>
+        <Button variant="outline" asChild className="border-[#E5E2DB] text-[#1A1A2E]/70 hover:bg-[#FAF8F0]">
           <Link href="/progress">
             <ArrowLeft className="size-4 mr-1" />
             Back to Progress
           </Link>
         </Button>
-        <Button onClick={handleDownload} className="bg-[#2E7D32] hover:bg-[#1B5E20]">
+        <Button onClick={handleDownload} className="bg-[#064E3B] hover:bg-[#047857] text-white">
           <Download className="size-4 mr-1" />
           Download as PDF
         </Button>
@@ -62,17 +62,17 @@ export function CertificatePreview({ name }: CertificatePreviewProps) {
           style={{
             position: 'absolute',
             inset: '8mm',
-            border: '3px solid #2E7D32',
+            border: '3px solid #064E3B',
             borderRadius: '4px',
             pointerEvents: 'none',
           }}
         />
-        {/* Inner gold line */}
+        {/* Inner accent line */}
         <div
           style={{
             position: 'absolute',
             inset: '11mm',
-            border: '1px solid #F59E0B',
+            border: '1px solid #D97706',
             borderRadius: '2px',
             pointerEvents: 'none',
           }}
@@ -101,7 +101,7 @@ export function CertificatePreview({ name }: CertificatePreviewProps) {
               style={{
                 width: '80px',
                 height: '2px',
-                backgroundColor: '#F59E0B',
+                backgroundColor: '#D97706',
                 margin: '4px 0',
               }}
             />
@@ -121,7 +121,7 @@ export function CertificatePreview({ name }: CertificatePreviewProps) {
             <h2
               className="font-display"
               style={{
-                color: '#2E7D32',
+                color: '#064E3B',
                 fontSize: 'clamp(22px, 3.5vw, 44px)',
                 fontWeight: 700,
                 margin: 0,

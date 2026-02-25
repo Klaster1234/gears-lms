@@ -1,157 +1,156 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { LOGOS } from '@/lib/constants';
 import { ArrowRight } from 'lucide-react';
 
-const pyramidLevels = [
-  { label: 'Refuse', width: 'w-36', color: 'from-[#0D3B12] to-[#1B5E20]' },
-  { label: 'Reduce', width: 'w-44', color: 'from-[#1B5E20] to-[#256427]' },
-  { label: 'Reuse', width: 'w-52', color: 'from-[#256427] to-[#2E7D32]' },
-  { label: 'Repurpose', width: 'w-60', color: 'from-[#2E7D32] to-[#4CAF50]' },
-  { label: 'Recycle', width: 'w-68', color: 'from-[#4CAF50] to-[#66BB6A]' },
-];
-
 export function HeroSection() {
   const t = useTranslations('landing');
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
+
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section className="relative overflow-hidden py-20 md:py-28">
-      {/* Background decorative elements */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-0 right-0 h-[600px] w-[600px] -translate-y-1/3 translate-x-1/3 rounded-full bg-[#E8F5E9] opacity-40 blur-3xl" />
-        <div className="absolute bottom-0 left-0 h-[400px] w-[400px] translate-y-1/4 -translate-x-1/4 rounded-full bg-[#C8E6C9] opacity-30 blur-3xl" />
-        {/* Leaf-like decorative SVG shapes */}
-        <svg
-          className="absolute top-20 left-8 h-16 w-16 text-[#A5D6A7] opacity-20"
-          viewBox="0 0 100 100"
-          fill="currentColor"
-        >
-          <path d="M50 5 C25 5, 5 30, 5 55 C5 80, 25 95, 50 95 C50 95, 50 55, 50 5 Z" />
-        </svg>
-        <svg
-          className="absolute right-12 bottom-32 h-20 w-20 rotate-45 text-[#81C784] opacity-15"
-          viewBox="0 0 100 100"
-          fill="currentColor"
-        >
-          <path d="M50 5 C25 5, 5 30, 5 55 C5 80, 25 95, 50 95 C50 95, 50 55, 50 5 Z" />
-        </svg>
-      </div>
+    <section
+      ref={sectionRef}
+      className="relative min-h-[100dvh] overflow-hidden bg-[#022C22]"
+    >
+      {/* Animated gradient mesh background */}
+      <motion.div
+        style={{ y: backgroundY }}
+        className="pointer-events-none absolute inset-0"
+      >
+        <div className="absolute -top-[20%] -right-[10%] h-[700px] w-[700px] animate-morph bg-[#064E3B] opacity-60" />
+        <div
+          className="absolute -bottom-[15%] -left-[8%] h-[500px] w-[500px] animate-morph bg-[#047857] opacity-30"
+          style={{ animationDelay: '-5s' }}
+        />
+        <div
+          className="absolute top-[30%] left-[60%] h-[300px] w-[300px] animate-morph bg-[#0D9488] opacity-15"
+          style={{ animationDelay: '-10s' }}
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_80%,rgba(52,211,153,0.08),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(13,148,136,0.06),transparent_50%)]" />
+      </motion.div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left: Text content */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="text-center lg:text-left"
-          >
-            {/* Logo */}
+      {/* Content */}
+      <motion.div
+        style={{ y: textY, opacity }}
+        className="relative z-10 flex min-h-[100dvh] items-center"
+      >
+        <div className="mx-auto w-full max-w-7xl px-6 py-32 lg:px-8">
+          <div className="max-w-4xl">
+            {/* Logo badge */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="mb-8 flex justify-center lg:justify-start"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="mb-12"
             >
-              <Image
-                src={LOGOS.greenExplorers}
-                alt="Green Explorers"
-                width={120}
-                height={120}
-                className="h-24 w-auto drop-shadow-md md:h-28"
-                priority
-              />
+              <div className="inline-flex items-center gap-4 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 backdrop-blur-sm">
+                <Image
+                  src={LOGOS.greenExplorers}
+                  alt="Green Explorers"
+                  width={40}
+                  height={40}
+                  className="h-8 w-auto"
+                  priority
+                  unoptimized
+                />
+                <span className="text-sm font-medium tracking-wide text-[#6EE7B7]">
+                  Erasmus+ KA210-ADU
+                </span>
+              </div>
             </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-display text-4xl font-bold tracking-tight text-[#1A1A2E] sm:text-5xl md:text-6xl"
-            >
-              {t('hero.title')}
-            </motion.h1>
+            {/* Main heading - editorial serif */}
+            <div className="overflow-hidden">
+              <motion.h1
+                initial={{ y: '100%' }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                className="font-display text-5xl leading-[1.05] tracking-[-0.02em] text-white sm:text-7xl lg:text-[5.5rem]"
+              >
+                {t('hero.title')}
+              </motion.h1>
+            </div>
 
+            <div className="mt-2 overflow-hidden">
+              <motion.p
+                initial={{ y: '100%' }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                className="font-display text-2xl tracking-[-0.01em] text-[#34D399] sm:text-3xl lg:text-4xl"
+              >
+                {t('hero.subtitle')}
+              </motion.p>
+            </div>
+
+            {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.35 }}
-              className="mt-3 font-display text-xl font-medium text-[#2E7D32] sm:text-2xl"
-            >
-              {t('hero.subtitle')}
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[#1A1A2E]/70 lg:mx-0"
+              transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-8 max-w-2xl text-lg leading-relaxed text-white/60 sm:text-xl"
             >
               {t('hero.description')}
             </motion.p>
 
+            {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.65 }}
-              className="mt-8"
+              transition={{ duration: 0.8, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-12"
             >
               <Link
                 href="/modules"
-                className="group inline-flex items-center gap-2 rounded-xl bg-[#2E7D32] px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-[#2E7D32]/25 transition-all duration-300 hover:bg-[#1B5E20] hover:shadow-xl hover:shadow-[#2E7D32]/30"
+                className="group inline-flex items-center gap-3 rounded-full bg-[#ECFDF5] px-8 py-4 text-base font-medium text-[#064E3B] transition-all duration-500 hover:bg-white hover:shadow-[0_20px_60px_-12px_rgba(52,211,153,0.3)]"
               >
-                {t('hero.cta')}
-                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                <span>{t('hero.cta')}</span>
+                <ArrowRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
               </Link>
             </motion.div>
-          </motion.div>
-
-          {/* Right: Inverted Pyramid visual */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-            className="flex justify-center"
-          >
-            <div className="flex flex-col items-center gap-2">
-              <p className="mb-4 font-display text-sm font-semibold uppercase tracking-widest text-[#2E7D32]/60">
-                The 5R Hierarchy
-              </p>
-              {pyramidLevels.map((level, index) => (
-                <motion.div
-                  key={level.label}
-                  initial={{ opacity: 0, scaleX: 0 }}
-                  animate={{ opacity: 1, scaleX: 1 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.5 + index * 0.12,
-                    ease: 'easeOut',
-                  }}
-                  className={`${level.width} flex h-11 items-center justify-center rounded-lg bg-gradient-to-r ${level.color} text-sm font-semibold text-white shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg`}
-                >
-                  {level.label}
-                </motion.div>
-              ))}
-              <div className="mt-2 flex items-center gap-2 text-xs text-[#1A1A2E]/50">
-                <svg
-                  className="h-4 w-4"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path d="M12 5v14M5 12l7 7 7-7" />
-                </svg>
-                Most preferred to least preferred
-              </div>
-            </div>
-          </motion.div>
+          </div>
         </div>
+      </motion.div>
+
+      {/* Bottom decorative line */}
+      <div className="absolute bottom-0 left-0 right-0 z-20">
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1.5, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="h-px bg-gradient-to-r from-transparent via-[#34D399]/40 to-transparent"
+          style={{ transformOrigin: 'left' }}
+        />
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 1 }}
+        className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+          className="flex h-10 w-6 items-start justify-center rounded-full border border-white/20 p-1.5"
+        >
+          <motion.div className="h-2 w-1 rounded-full bg-[#34D399]" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

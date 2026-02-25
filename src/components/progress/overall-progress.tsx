@@ -19,7 +19,7 @@ export function OverallProgress() {
   const progressOffset = circumference - (percentage / 100) * circumference;
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col items-center gap-6">
       <div className="relative" style={{ width: size, height: size }}>
         <svg
           width={size}
@@ -33,7 +33,7 @@ export function OverallProgress() {
             cy={size / 2}
             r={radius}
             fill="none"
-            stroke="#e5e7eb"
+            stroke="#E5E2DB"
             strokeWidth={strokeWidth}
           />
           {/* Progress circle */}
@@ -43,13 +43,13 @@ export function OverallProgress() {
               cy={size / 2}
               r={radius}
               fill="none"
-              stroke="#2E7D32"
+              stroke="#064E3B"
               strokeWidth={strokeWidth}
               strokeLinecap="round"
               strokeDasharray={circumference}
               initial={{ strokeDashoffset: circumference }}
               animate={{ strokeDashoffset: progressOffset }}
-              transition={{ duration: 1.2, ease: 'easeOut' }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             />
           )}
         </svg>
@@ -57,10 +57,10 @@ export function OverallProgress() {
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           {hydrated ? (
             <motion.span
-              className="text-4xl font-bold font-display text-[#2E7D32]"
+              className="text-4xl font-bold font-display text-[#064E3B]"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
               {percentage}%
             </motion.span>
@@ -71,11 +71,11 @@ export function OverallProgress() {
           )}
         </div>
       </div>
-      <p className="text-lg text-muted-foreground">
+      <p className="text-lg text-[#1A1A2E]/60">
         {hydrated ? (
           <>
-            <span className="font-semibold text-foreground">{completedCount}</span> of{' '}
-            <span className="font-semibold text-foreground">10</span> modules completed
+            <span className="font-semibold text-[#1A1A2E]">{completedCount}</span> of{' '}
+            <span className="font-semibold text-[#1A1A2E]">10</span> modules completed
           </>
         ) : (
           <span>&nbsp;</span>

@@ -2,20 +2,21 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { Inter, Space_Grotesk } from 'next/font/google';
+import { Figtree, Instrument_Serif } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import '../globals.css';
 
-const inter = Inter({
-  variable: '--font-inter',
+const figtree = Figtree({
+  variable: '--font-figtree',
   subsets: ['latin', 'latin-ext'],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: '--font-space-grotesk',
+const instrumentSerif = Instrument_Serif({
+  variable: '--font-instrument',
   subsets: ['latin', 'latin-ext'],
+  weight: '400',
 });
 
 export const metadata: Metadata = {
@@ -32,7 +33,6 @@ type Props = {
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
 
-  // Validate locale
   if (!routing.locales.includes(locale as any)) {
     notFound();
   }
@@ -40,11 +40,13 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning className="scroll-smooth">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-[#FAFAF5]`}
+        className={`${figtree.variable} ${instrumentSerif.variable} font-sans antialiased bg-[#FAF8F0]`}
       >
         <NextIntlClientProvider messages={messages}>
+          {/* Grain texture overlay */}
+          <div className="grain-overlay" aria-hidden="true" />
           <div className="flex min-h-screen flex-col">
             <Navbar />
             <main className="flex-1">{children}</main>

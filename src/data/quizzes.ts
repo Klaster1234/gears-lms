@@ -121,7 +121,7 @@ export const quizzes: QuizData[] = [
     passingScore: 60,
     dragdrop: {
       categories: [
-        { id: 'bio', labelKey: 'quizzes.module2.categories.bio', color: '#4CAF50' },
+        { id: 'bio', labelKey: 'quizzes.module2.categories.bio', color: '#059669' },
         { id: 'plastics-metals', labelKey: 'quizzes.module2.categories.plasticsMetal', color: '#FDD835' },
         { id: 'glass', labelKey: 'quizzes.module2.categories.glass', color: '#26A69A' },
         { id: 'paper', labelKey: 'quizzes.module2.categories.paper', color: '#42A5F5' },
@@ -152,7 +152,7 @@ export const quizzes: QuizData[] = [
     passingScore: 60,
     dragdrop: {
       categories: [
-        { id: 'greens', labelKey: 'quizzes.module3.categories.greens', color: '#4CAF50' },
+        { id: 'greens', labelKey: 'quizzes.module3.categories.greens', color: '#059669' },
         { id: 'browns', labelKey: 'quizzes.module3.categories.browns', color: '#795548' },
         { id: 'forbidden', labelKey: 'quizzes.module3.categories.forbidden', color: '#EF5350' },
       ],

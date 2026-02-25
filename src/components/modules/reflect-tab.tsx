@@ -98,7 +98,7 @@ export function ReflectTab({ module }: ReflectTabProps) {
       <div className="space-y-8">
         {/* Completed header */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2 text-[#2E7D32]">
+          <div className="flex items-center gap-2 text-[#064E3B]">
             <CheckCircle2 className="size-5" />
             <span className="font-medium text-sm">Reflection saved on {formattedDate}</span>
           </div>
@@ -111,12 +111,12 @@ export function ReflectTab({ module }: ReflectTabProps) {
         {/* Prompt reminder */}
         <section>
           <div className="flex items-center gap-2 mb-3">
-            <PenLine className="size-5 text-[#33AEB4]" />
+            <PenLine className="size-5 text-[#0D9488]" />
             <h3 className="font-display text-lg font-semibold text-[#1A1A2E]">
               Reflection Prompt
             </h3>
           </div>
-          <div className="rounded-lg border-l-4 border-[#33AEB4] bg-[#33AEB4]/5 p-4">
+          <div className="rounded-lg border-l-4 border-[#0D9488] bg-[#0D9488]/5 p-4">
             <p className="text-sm text-[#1A1A2E]/80 leading-relaxed italic">{prompt}</p>
           </div>
         </section>
@@ -143,12 +143,12 @@ export function ReflectTab({ module }: ReflectTabProps) {
             <Separator />
             <section>
               <div className="flex items-center gap-2 mb-3">
-                <Target className="size-5 text-[#2E7D32]" />
+                <Target className="size-5 text-[#064E3B]" />
                 <h3 className="font-display text-lg font-semibold text-[#1A1A2E]">
                   My Action Plan
                 </h3>
               </div>
-              <Card className="border-[#2E7D32]/20 bg-[#2E7D32]/5">
+              <Card className="border-[#064E3B]/20 bg-[#064E3B]/5">
                 <CardContent className="py-4">
                   <p className="text-sm text-[#1A1A2E]/80 leading-relaxed whitespace-pre-wrap">
                     {savedReflection.actionPlan}
@@ -191,12 +191,12 @@ export function ReflectTab({ module }: ReflectTabProps) {
       {/* Reflection prompt */}
       <section>
         <div className="flex items-center gap-2 mb-3">
-          <PenLine className="size-5 text-[#33AEB4]" />
+          <PenLine className="size-5 text-[#0D9488]" />
           <h3 className="font-display text-lg font-semibold text-[#1A1A2E]">
             Reflection Prompt
           </h3>
         </div>
-        <div className="rounded-lg border-l-4 border-[#33AEB4] bg-[#33AEB4]/5 p-4">
+        <div className="rounded-lg border-l-4 border-[#0D9488] bg-[#0D9488]/5 p-4">
           <p className="text-sm text-[#1A1A2E]/80 leading-relaxed">{prompt}</p>
         </div>
       </section>
@@ -226,7 +226,7 @@ export function ReflectTab({ module }: ReflectTabProps) {
                 )}
               </>
             ) : (
-              <span className="text-[#2E7D32]">Minimum reached</span>
+              <span className="text-[#064E3B]">Minimum reached</span>
             )}
           </p>
           <p className="text-xs text-muted-foreground">
@@ -240,7 +240,7 @@ export function ReflectTab({ module }: ReflectTabProps) {
       {/* Action plan */}
       <section>
         <div className="flex items-center gap-2 mb-3">
-          <Target className="size-5 text-[#2E7D32]" />
+          <Target className="size-5 text-[#064E3B]" />
           <h3 className="font-display text-lg font-semibold text-[#1A1A2E]">
             My Action Plan
           </h3>
@@ -284,7 +284,7 @@ export function ReflectTab({ module }: ReflectTabProps) {
       <div className="flex justify-center py-2">
         <Button
           size="lg"
-          className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white"
+          className="bg-[#064E3B] hover:bg-[#043927] text-white"
           onClick={handleSave}
           disabled={!canSave}
         >

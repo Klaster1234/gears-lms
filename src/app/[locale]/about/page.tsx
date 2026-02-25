@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import {
   BookOpen,
@@ -27,32 +28,32 @@ const programmeFeatures = [
     title: '10 Interactive Modules',
     description:
       'From waste management to eco-anxiety, our modules cover the full spectrum of sustainable living topics with quizzes, scenarios, and hands-on activities.',
-    color: '#2E7D32',
-    bgColor: 'bg-[#E8F5E9]',
+    color: '#064E3B',
+    bgColor: 'bg-[#ECFDF5]',
   },
   {
     icon: MapPin,
     title: 'City Quests',
     description:
       'Outdoor educational activities connecting classroom learning with real-world sustainability practices in your local community.',
-    color: '#33AEB4',
-    bgColor: 'bg-[#E0F7FA]',
+    color: '#0D9488',
+    bgColor: 'bg-[#F0FDFA]',
   },
   {
     icon: BookImage,
     title: 'Educational Comic Book',
     description:
       'Engaging visual storytelling that makes sustainability concepts accessible and memorable for adult learners.',
-    color: '#F59E0B',
-    bgColor: 'bg-[#FFF8E1]',
+    color: '#D97706',
+    bgColor: 'bg-[#FFFBEB]',
   },
   {
     icon: Library,
     title: 'Sustainability Cabinets',
     description:
       'Physical resource collections for community centres and libraries, bringing hands-on sustainability education to local spaces.',
-    color: '#1B5E20',
-    bgColor: 'bg-[#E8F5E9]',
+    color: '#047857',
+    bgColor: 'bg-[#ECFDF5]',
   },
 ];
 
@@ -97,62 +98,134 @@ const teamMembers = [
 ];
 
 /* ------------------------------------------------------------------ */
-/*  Animation variants                                                 */
+/*  Animation                                                          */
 /* ------------------------------------------------------------------ */
 
-const sectionVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' as const },
-  },
-};
+const ease = [0.16, 1, 0.3, 1] as const;
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.12 },
-  },
-};
+/* ------------------------------------------------------------------ */
+/*  Reusable section header                                            */
+/* ------------------------------------------------------------------ */
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 25 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' as const },
-  },
-};
+function SectionHeader({
+  label,
+  heading,
+  description,
+  inView,
+  accentColor = '#064E3B',
+  light = false,
+}: {
+  label: string;
+  heading: string;
+  description?: string;
+  inView: boolean;
+  accentColor?: string;
+  light?: boolean;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, ease }}
+      className="mb-14"
+    >
+      <div className="flex items-center gap-4 mb-5">
+        <motion.div
+          initial={{ width: 0 }}
+          animate={inView ? { width: 48 } : {}}
+          transition={{ duration: 0.8, ease, delay: 0.15 }}
+          className="h-[2px]"
+          style={{ backgroundColor: accentColor }}
+        />
+        <span
+          className="text-xs font-semibold uppercase tracking-[0.2em]"
+          style={{ color: accentColor }}
+        >
+          {label}
+        </span>
+      </div>
+      <h2
+        className={`font-display text-3xl font-bold sm:text-4xl lg:text-5xl leading-[1.1] ${
+          light ? 'text-white' : 'text-[#1A1A2E]'
+        }`}
+      >
+        {heading}
+      </h2>
+      {description && (
+        <p
+          className={`mt-4 text-lg max-w-2xl ${
+            light ? 'text-white/60' : 'text-[#1A1A2E]/50'
+          }`}
+        >
+          {description}
+        </p>
+      )}
+    </motion.div>
+  );
+}
 
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
 
 export default function AboutPage() {
+  const heroRef = useRef(null);
+  const projectRef = useRef(null);
+  const offerRef = useRef(null);
+  const greencompRef = useRef(null);
+  const partnersRef = useRef(null);
+  const teamRef = useRef(null);
+  const euRef = useRef(null);
+
+  const heroInView = useInView(heroRef, { once: true });
+  const projectInView = useInView(projectRef, { once: true, margin: '-80px' });
+  const offerInView = useInView(offerRef, { once: true, margin: '-80px' });
+  const greencompInView = useInView(greencompRef, { once: true, margin: '-80px' });
+  const partnersInView = useInView(partnersRef, { once: true, margin: '-80px' });
+  const teamInView = useInView(teamRef, { once: true, margin: '-80px' });
+  const euInView = useInView(euRef, { once: true, margin: '-80px' });
+
   return (
-    <div className="bg-[#FAFAF5]">
+    <div className="bg-[#FAF8F0] pt-16">
+
       {/* ============================================================ */}
-      {/* 1. Hero / Header Section                                      */}
+      {/* 1. Hero                                                       */}
       {/* ============================================================ */}
-      <section className="bg-gradient-to-b from-[#E8F5E9] to-[#FAFAF5] py-20 md:py-28">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <section
+        ref={heroRef}
+        className="relative overflow-hidden py-24 md:py-36"
+      >
+        {/* Subtle gradient mesh */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#ECFDF5] via-[#FAF8F0] to-[#FAF8F0] pointer-events-none" />
+
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={heroInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease }}
           >
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-1.5 text-sm font-medium text-[#2E7D32] shadow-sm">
-              <GraduationCap className="h-4 w-4" />
-              <span>Erasmus+ KA210-ADU</span>
+            {/* Top badge */}
+            <div className="flex items-center gap-4 mb-8">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={heroInView ? { width: 48 } : {}}
+                transition={{ duration: 0.8, ease, delay: 0.3 }}
+                className="h-[2px] bg-[#064E3B]"
+              />
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#064E3B]">
+                Erasmus+ KA210-ADU
+              </span>
             </div>
-            <h1 className="font-display text-4xl font-bold text-[#1A1A2E] sm:text-5xl">
+
+            <h1 className="font-display text-5xl font-bold text-[#1A1A2E] sm:text-6xl lg:text-7xl leading-[1.05] max-w-3xl">
               About G.E.A.R.S.
             </h1>
-            <p className="mt-3 font-display text-xl text-[#2E7D32] sm:text-2xl">
+
+            <p className="mt-4 font-display text-xl text-[#064E3B] sm:text-2xl max-w-2xl">
               Green Explorers: Adults Reimagining Sustainability
             </p>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[#1A1A2E]/70">
+
+            <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#1A1A2E]/60">
               G.E.A.R.S. is an Erasmus+ KA210-ADU project developing innovative
               tools for adult education in sustainable development. Our goal is to
               empower adults with practical knowledge and competences to live more
@@ -165,200 +238,171 @@ export default function AboutPage() {
       {/* ============================================================ */}
       {/* 2. About the Project                                          */}
       {/* ============================================================ */}
-      <section className="py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <section ref={projectRef} className="py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            label="Overview"
+            heading="About the Project"
+            inView={projectInView}
+          />
+
           <motion.div
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={projectInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease, delay: 0.2 }}
+            className="rounded-2xl border border-[#E5E2DB] bg-white p-8 md:p-12"
           >
-            <h2 className="mb-8 text-center font-display text-3xl font-bold text-[#1A1A2E]">
-              About the Project
-            </h2>
-
-            <div className="rounded-2xl border border-[#D1D5DB]/60 bg-white p-8 shadow-sm md:p-10">
-              {/* Project details */}
-              <div className="mb-8 grid gap-4 sm:grid-cols-3">
-                <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#E8F5E9]">
-                    <GraduationCap className="h-5 w-5 text-[#2E7D32]" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-medium uppercase tracking-wider text-[#1A1A2E]/40">
-                      Programme
-                    </p>
-                    <p className="mt-0.5 text-sm font-semibold text-[#1A1A2E]">
-                      {PROJECT.programme}
-                    </p>
-                    <p className="text-xs text-[#1A1A2E]/50">
-                      Small-scale Partnership in Adult Education
-                    </p>
-                  </div>
+            {/* Project details - asymmetric layout */}
+            <div className="grid gap-8 md:grid-cols-[1fr_1px_1fr_1px_1fr] md:items-start">
+              <div className="flex items-start gap-4">
+                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-[#ECFDF5]">
+                  <GraduationCap className="h-5 w-5 text-[#064E3B]" />
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#E0F7FA]">
-                    <Hash className="h-5 w-5 text-[#33AEB4]" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-medium uppercase tracking-wider text-[#1A1A2E]/40">
-                      Project Number
-                    </p>
-                    <p className="mt-0.5 text-sm font-semibold text-[#1A1A2E]">
-                      {PROJECT.projectNumber}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#FFF8E1]">
-                    <Calendar className="h-5 w-5 text-[#F59E0B]" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-medium uppercase tracking-wider text-[#1A1A2E]/40">
-                      Duration
-                    </p>
-                    <p className="mt-0.5 text-sm font-semibold text-[#1A1A2E]">
-                      {PROJECT.duration}
-                    </p>
-                  </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1A1A2E]/35 mb-1">
+                    Programme
+                  </p>
+                  <p className="text-sm font-semibold text-[#1A1A2E]">
+                    {PROJECT.programme}
+                  </p>
+                  <p className="text-xs text-[#1A1A2E]/45 mt-0.5">
+                    Small-scale Partnership in Adult Education
+                  </p>
                 </div>
               </div>
 
-              <Separator className="my-6" />
+              <div className="hidden md:block w-px bg-[#E5E2DB] self-stretch" />
 
-              {/* Description paragraphs */}
-              <div className="space-y-4 text-[#1A1A2E]/70 leading-relaxed">
-                <p>
-                  The G.E.A.R.S. project addresses the urgent need for
-                  sustainability education among adults. Through 10 interactive
-                  learning modules, we guide participants through the journey from
-                  understanding basic environmental principles to taking meaningful
-                  community action.
-                </p>
-                <p>
-                  Our programme is built around the European GreenComp framework,
-                  ensuring that learners develop key sustainability competences
-                  recognised across the European Union.
-                </p>
+              <div className="flex items-start gap-4">
+                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-[#F0FDFA]">
+                  <Hash className="h-5 w-5 text-[#0D9488]" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1A1A2E]/35 mb-1">
+                    Project Number
+                  </p>
+                  <p className="text-sm font-semibold text-[#1A1A2E]">
+                    {PROJECT.projectNumber}
+                  </p>
+                </div>
               </div>
+
+              <div className="hidden md:block w-px bg-[#E5E2DB] self-stretch" />
+
+              <div className="flex items-start gap-4">
+                <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-[#FFFBEB]">
+                  <Calendar className="h-5 w-5 text-[#D97706]" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1A1A2E]/35 mb-1">
+                    Duration
+                  </p>
+                  <p className="text-sm font-semibold text-[#1A1A2E]">
+                    {PROJECT.duration}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <Separator className="my-8 bg-[#E5E2DB]" />
+
+            {/* Description paragraphs - wider reading column */}
+            <div className="max-w-2xl space-y-5 text-[#1A1A2E]/60 leading-relaxed text-[17px]">
+              <p>
+                The G.E.A.R.S. project addresses the urgent need for
+                sustainability education among adults. Through 10 interactive
+                learning modules, we guide participants through the journey from
+                understanding basic environmental principles to taking meaningful
+                community action.
+              </p>
+              <p>
+                Our programme is built around the European GreenComp framework,
+                ensuring that learners develop key sustainability competences
+                recognised across the European Union.
+              </p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <Separator />
-      </div>
-
       {/* ============================================================ */}
-      {/* 3. The Programme - What We Offer                              */}
+      {/* 3. What We Offer - DARK section                               */}
       {/* ============================================================ */}
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
-            className="mb-12 text-center"
-          >
-            <h2 className="font-display text-3xl font-bold text-[#1A1A2E]">
-              What We Offer
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-[#1A1A2E]/60">
-              A comprehensive programme of tools and resources for sustainability
-              education.
-            </p>
-          </motion.div>
+      <section ref={offerRef} className="section-dark bg-[#064E3B] py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            label="Programme"
+            heading="What We Offer"
+            description="A comprehensive programme of tools and resources for sustainability education."
+            inView={offerInView}
+            accentColor="#34D399"
+            light
+          />
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-60px' }}
-            className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2"
-          >
-            {programmeFeatures.map((feature) => (
+          <div className="grid gap-6 sm:grid-cols-2">
+            {programmeFeatures.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                variants={cardVariants}
-                className="group rounded-2xl border border-[#D1D5DB]/40 bg-white p-8 transition-all duration-300 hover:shadow-lg hover:shadow-[#2E7D32]/8"
+                initial={{ opacity: 0, y: 30 }}
+                animate={offerInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, ease, delay: 0.15 + index * 0.1 }}
+                className="group rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-sm p-8 transition-all duration-300 hover:bg-white/[0.1] hover:border-white/20"
               >
                 <div
-                  className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl ${feature.bgColor} transition-transform duration-300 group-hover:scale-110`}
+                  className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110"
+                  style={{ backgroundColor: `${feature.color}25` }}
                 >
                   <feature.icon
                     className="h-6 w-6"
-                    style={{ color: feature.color }}
+                    style={{ color: '#6EE7B7' }}
                   />
                 </div>
-                <h3 className="mb-3 font-display text-xl font-semibold text-[#1A1A2E]">
+                <h3 className="mb-3 font-display text-xl font-semibold text-white">
                   {feature.title}
                 </h3>
-                <p className="leading-relaxed text-[#1A1A2E]/60">
+                <p className="leading-relaxed text-white/50">
                   {feature.description}
                 </p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
-
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <Separator />
-      </div>
 
       {/* ============================================================ */}
       {/* 4. GreenComp Framework                                        */}
       {/* ============================================================ */}
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
-            className="mb-12 text-center"
-          >
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#E8F5E9] px-4 py-1.5 text-sm font-medium text-[#2E7D32]">
-              <span>EU Framework</span>
-            </div>
-            <h2 className="font-display text-3xl font-bold text-[#1A1A2E]">
-              GreenComp Framework
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-[#1A1A2E]/60">
-              Our curriculum is aligned with the European Sustainability Competence
-              Framework (GreenComp), which defines the sustainability competences
-              that learners need.
-            </p>
-          </motion.div>
+      <section ref={greencompRef} className="py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            label="EU Framework"
+            heading="GreenComp Framework"
+            description="Our curriculum is aligned with the European Sustainability Competence Framework (GreenComp), which defines the sustainability competences that learners need."
+            inView={greencompInView}
+            accentColor="#0D9488"
+          />
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-60px' }}
-            className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-4"
-          >
-            {greenCompAreas.map((area) => {
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {greenCompAreas.map((area, index) => {
               const display = greenCompDisplayData[area.id];
               return (
                 <motion.div
                   key={area.id}
-                  variants={cardVariants}
-                  className="group relative overflow-hidden rounded-2xl border bg-white p-6 transition-all duration-300 hover:shadow-lg"
-                  style={{ borderColor: `${area.color}30` }}
+                  initial={{ opacity: 0, y: 25 }}
+                  animate={greencompInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, ease, delay: 0.15 + index * 0.1 }}
+                  className="group relative overflow-hidden rounded-2xl border border-[#E5E2DB] bg-white p-7 transition-all duration-300 hover:shadow-[0_20px_60px_-15px_rgba(6,78,59,0.08)]"
                 >
                   {/* Top color bar */}
                   <div
-                    className="absolute top-0 left-0 h-1.5 w-full"
+                    className="absolute top-0 left-0 h-1 w-full"
                     style={{ backgroundColor: area.color }}
                   />
 
                   {/* Icon */}
                   <div
-                    className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl text-2xl transition-transform duration-300 group-hover:scale-110"
-                    style={{ backgroundColor: `${area.color}15` }}
+                    className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl text-2xl transition-transform duration-300 group-hover:scale-110"
+                    style={{ backgroundColor: `${area.color}12` }}
                   >
                     {area.icon}
                   </div>
@@ -372,55 +416,40 @@ export default function AboutPage() {
                   </h3>
 
                   {/* Competences */}
-                  <p className="text-sm leading-relaxed text-[#1A1A2E]/60">
+                  <p className="text-sm leading-relaxed text-[#1A1A2E]/50">
                     {display?.competences ?? ''}
                   </p>
                 </motion.div>
               );
             })}
-          </motion.div>
+          </div>
         </div>
       </section>
-
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <Separator />
-      </div>
 
       {/* ============================================================ */}
       {/* 5. Our Partners                                               */}
       {/* ============================================================ */}
-      <section className="py-16">
+      <section ref={partnersRef} className="section-dark bg-[#064E3B] py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
-            className="mb-12 text-center"
-          >
-            <h2 className="font-display text-3xl font-bold text-[#1A1A2E]">
-              Our Partners
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-[#1A1A2E]/60">
-              Two organisations united by a shared commitment to sustainability
-              education for adults.
-            </p>
-          </motion.div>
+          <SectionHeader
+            label="Collaboration"
+            heading="Our Partners"
+            description="Two organisations united by a shared commitment to sustainability education for adults."
+            inView={partnersInView}
+            accentColor="#6EE7B7"
+            light
+          />
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-60px' }}
-            className="grid gap-8 md:grid-cols-2"
-          >
+          <div className="grid gap-8 md:grid-cols-2">
             {/* Zielone Slaskie */}
             <motion.div
-              variants={cardVariants}
-              className="flex flex-col rounded-2xl border border-[#D1D5DB]/60 bg-white p-8 shadow-sm"
+              initial={{ opacity: 0, y: 30 }}
+              animate={partnersInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, ease, delay: 0.2 }}
+              className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-sm p-8"
             >
-              <div className="mb-2 inline-flex self-start rounded-full bg-[#E8F5E9] px-3 py-1 text-xs font-semibold text-[#2E7D32]">
-                Lead Partner - Poland
+              <div className="mb-3 inline-flex self-start rounded-full bg-[#34D399]/15 px-3 py-1 text-xs font-semibold text-[#6EE7B7]">
+                Lead Partner &mdash; Poland
               </div>
               <div className="my-6 flex h-20 items-center">
                 <Image
@@ -429,13 +458,13 @@ export default function AboutPage() {
                   width={200}
                   height={80}
                   unoptimized
-                  className="h-16 w-auto object-contain"
+                  className="h-16 w-auto object-contain brightness-0 invert opacity-80"
                 />
               </div>
-              <h3 className="mb-3 font-display text-xl font-semibold text-[#1A1A2E]">
+              <h3 className="mb-3 font-display text-xl font-semibold text-white">
                 Stowarzyszenie Zielone Slaskie
               </h3>
-              <p className="mb-6 flex-1 text-sm leading-relaxed text-[#1A1A2E]/60">
+              <p className="mb-6 flex-1 text-sm leading-relaxed text-white/50">
                 Zielone Slaskie is a Polish environmental association based in
                 Silesia, dedicated to promoting sustainable development,
                 environmental education, and community engagement. As the lead
@@ -446,7 +475,7 @@ export default function AboutPage() {
                 href="https://www.zieloneslaskie.pl"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-[#2E7D32] transition-colors hover:text-[#1B5E20]"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-[#6EE7B7] transition-colors hover:text-[#34D399]"
               >
                 Visit website
                 <ExternalLink className="h-3.5 w-3.5" />
@@ -455,11 +484,13 @@ export default function AboutPage() {
 
             {/* SEQ / YouthFullyYours */}
             <motion.div
-              variants={cardVariants}
-              className="flex flex-col rounded-2xl border border-[#D1D5DB]/60 bg-white p-8 shadow-sm"
+              initial={{ opacity: 0, y: 30 }}
+              animate={partnersInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, ease, delay: 0.35 }}
+              className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-sm p-8"
             >
-              <div className="mb-2 inline-flex self-start rounded-full bg-[#E0F7FA] px-3 py-1 text-xs font-semibold text-[#33AEB4]">
-                Partner - Slovakia
+              <div className="mb-3 inline-flex self-start rounded-full bg-[#0D9488]/20 px-3 py-1 text-xs font-semibold text-[#5EEAD4]">
+                Partner &mdash; Slovakia
               </div>
               <div className="my-6 flex h-20 items-center">
                 <Image
@@ -468,99 +499,79 @@ export default function AboutPage() {
                   width={200}
                   height={80}
                   unoptimized
-                  className="h-16 w-auto object-contain"
+                  className="h-16 w-auto object-contain brightness-0 invert opacity-80"
                 />
               </div>
-              <h3 className="mb-3 font-display text-xl font-semibold text-[#1A1A2E]">
+              <h3 className="mb-3 font-display text-xl font-semibold text-white">
                 SEQ / YouthFullyYours
               </h3>
-              <p className="mb-6 flex-1 text-sm leading-relaxed text-[#1A1A2E]/60">
+              <p className="mb-6 flex-1 text-sm leading-relaxed text-white/50">
                 SEQ (Slovak Education Quest) / YouthFullyYours is a Slovak
                 non-profit organisation specialising in non-formal education, youth
                 work, and adult learning. They contribute expertise in educational
                 methodology, accreditation systems, and international project
                 management.
               </p>
-              <span className="inline-flex items-center gap-1.5 text-sm font-medium text-[#1A1A2E]/40">
+              <span className="inline-flex items-center gap-1.5 text-sm font-medium text-white/30">
                 Website coming soon
               </span>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
-
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <Separator />
-      </div>
 
       {/* ============================================================ */}
       {/* 6. Key People                                                 */}
       {/* ============================================================ */}
-      <section className="py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
-            className="mb-12 text-center"
-          >
-            <h2 className="font-display text-3xl font-bold text-[#1A1A2E]">
-              Key People
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-[#1A1A2E]/60">
-              The team behind the G.E.A.R.S. project.
-            </p>
-          </motion.div>
+      <section ref={teamRef} className="py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            label="Team"
+            heading="Key People"
+            description="The team behind the G.E.A.R.S. project."
+            inView={teamInView}
+            accentColor="#047857"
+          />
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-60px' }}
-            className="grid gap-6 sm:grid-cols-3"
-          >
-            {teamMembers.map((member) => (
+          <div className="grid gap-6 sm:grid-cols-3">
+            {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
-                variants={cardVariants}
-                className="flex flex-col items-center rounded-2xl border border-[#D1D5DB]/40 bg-white p-8 text-center transition-all duration-300 hover:shadow-md"
+                initial={{ opacity: 0, y: 25 }}
+                animate={teamInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, ease, delay: 0.15 + index * 0.12 }}
+                className="flex flex-col items-center rounded-2xl border border-[#E5E2DB] bg-white p-8 text-center transition-all duration-300 hover:shadow-[0_20px_60px_-15px_rgba(6,78,59,0.08)]"
               >
                 {/* Avatar placeholder */}
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#E8F5E9]">
-                  <Users className="h-7 w-7 text-[#2E7D32]" />
+                <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#ECFDF5] border border-[#064E3B]/10">
+                  <Users className="h-7 w-7 text-[#064E3B]" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-[#1A1A2E]">
                   {member.name}
                 </h3>
-                <p className="mt-1 text-sm font-medium text-[#2E7D32]">
+                <p className="mt-1 text-sm font-medium text-[#064E3B]">
                   {member.role}
                 </p>
-                <p className="mt-0.5 text-xs text-[#1A1A2E]/50">{member.org}</p>
+                <p className="mt-0.5 text-xs text-[#1A1A2E]/40">{member.org}</p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
-
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <Separator />
-      </div>
 
       {/* ============================================================ */}
       {/* 7. EU Funding Section                                         */}
       {/* ============================================================ */}
-      <section className="py-16 pb-24">
+      <section ref={euRef} className="py-20 pb-28">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <motion.div
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
+            initial={{ opacity: 0, y: 24 }}
+            animate={euInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, ease }}
             className="flex flex-col items-center text-center"
           >
-            <div className="rounded-2xl border border-[#003399]/15 bg-white p-8 shadow-sm md:p-10">
-              <div className="mb-6 flex justify-center">
+            <div className="rounded-2xl border border-[#003399]/15 bg-white p-8 md:p-12 w-full">
+              <div className="mb-8 flex justify-center">
                 <Image
                   src={LOGOS.euCoFunded}
                   alt="Co-funded by the European Union"
@@ -572,18 +583,18 @@ export default function AboutPage() {
                 />
               </div>
 
-              <Separator className="my-6" />
+              <Separator className="my-6 bg-[#E5E2DB]" />
 
-              <p className="text-sm leading-relaxed text-[#1A1A2E]/60">
+              <p className="text-sm leading-relaxed text-[#1A1A2E]/50">
                 {EU_DISCLAIMER}
               </p>
 
-              <div className="mt-6 inline-flex items-center gap-3 rounded-full border border-[#003399]/20 bg-[#F0F4FF] px-5 py-2">
+              <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-[#003399]/15 bg-[#F0F4FF] px-5 py-2.5">
                 <span className="text-xs font-semibold text-[#003399]">
                   {PROJECT.programme}
                 </span>
                 <div className="h-4 w-px bg-[#003399]/20" />
-                <span className="text-xs text-[#003399]/70">
+                <span className="text-xs text-[#003399]/60">
                   {PROJECT.projectNumber}
                 </span>
               </div>
