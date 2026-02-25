@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { ExternalLink, CheckCircle2, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { t } from '@/lib/quiz-text';
+import { useTranslations } from 'next-intl';
 
 interface ExternalActivityProps {
   url: string;
@@ -22,6 +22,7 @@ export function ExternalActivity({
   alreadyCompleted,
   onComplete,
 }: ExternalActivityProps) {
+  const t = useTranslations();
   const [checked, setChecked] = useState(alreadyCompleted);
   const [launched, setLaunched] = useState(false);
 
@@ -50,8 +51,8 @@ export function ExternalActivity({
         <CardContent className="pt-2">
           <div className="flex flex-col items-center text-center py-4">
             {/* Icon */}
-            <div className="flex items-center justify-center w-20 h-20 rounded-full bg-[#33AEB4]/10 mb-5">
-              <Globe className="size-10 text-[#33AEB4]" />
+            <div className="flex items-center justify-center w-20 h-20 rounded-full bg-[#0D9488]/10 mb-5">
+              <Globe className="size-10 text-[#0D9488]" />
             </div>
 
             {/* Title */}
@@ -65,7 +66,7 @@ export function ExternalActivity({
             {/* Launch button */}
             <Button
               size="lg"
-              className="bg-[#33AEB4] hover:bg-[#2a9299] text-white mb-8"
+              className="bg-[#0D9488] hover:bg-[#0F766E] text-white mb-8"
               onClick={handleLaunch}
             >
               <ExternalLink className="size-4" />
@@ -80,16 +81,16 @@ export function ExternalActivity({
                 disabled={checked}
                 className={`w-full flex items-center gap-3 p-4 rounded-lg border-2 transition-all text-left ${
                   checked
-                    ? 'border-[#2E7D32] bg-[#2E7D32]/5 cursor-default'
+                    ? 'border-[#064E3B] bg-[#064E3B]/5 cursor-default'
                     : launched
-                      ? 'border-[#33AEB4] hover:border-[#33AEB4] bg-[#33AEB4]/5 cursor-pointer'
-                      : 'border-border hover:border-[#33AEB4]/30 cursor-pointer'
+                      ? 'border-[#0D9488] hover:border-[#0D9488] bg-[#0D9488]/5 cursor-pointer'
+                      : 'border-border hover:border-[#0D9488]/30 cursor-pointer'
                 }`}
               >
                 <div
                   className={`w-6 h-6 rounded flex items-center justify-center shrink-0 border-2 transition-colors ${
                     checked
-                      ? 'bg-[#2E7D32] border-[#2E7D32]'
+                      ? 'bg-[#064E3B] border-[#064E3B]'
                       : 'border-muted-foreground/30'
                   }`}
                 >
@@ -111,12 +112,12 @@ export function ExternalActivity({
                 </div>
                 <span
                   className={`text-sm font-medium ${
-                    checked ? 'text-[#2E7D32]' : 'text-[#1A1A2E]'
+                    checked ? 'text-[#064E3B]' : 'text-[#1A1A2E]'
                   }`}
                 >
                   I have completed this activity
                 </span>
-                {checked && <CheckCircle2 className="size-5 text-[#2E7D32] ml-auto shrink-0" />}
+                {checked && <CheckCircle2 className="size-5 text-[#064E3B] ml-auto shrink-0" />}
               </button>
             </div>
           </div>

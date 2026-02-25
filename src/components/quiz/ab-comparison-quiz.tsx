@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { QuizResult } from './quiz-result';
-import { t } from '@/lib/quiz-text';
+import { useTranslations } from 'next-intl';
 import type { ABQuestion } from '@/types';
 
 interface ABComparisonQuizProps {
@@ -26,6 +26,7 @@ export function ABComparisonQuiz({
   passingScore,
   onComplete,
 }: ABComparisonQuizProps) {
+  const t = useTranslations();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<'A' | 'B' | null>(null);
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -107,13 +108,13 @@ export function ABComparisonQuiz({
     const isThisSelected = selectedAnswer === label;
     const isThisCorrect = label === question.correctAnswer;
 
-    let borderStyle = 'border-border hover:border-[#33AEB4]/50';
+    let borderStyle = 'border-border hover:border-[#0D9488]/50';
     let bgStyle = '';
 
     if (isAnswered) {
       if (isThisCorrect) {
-        borderStyle = 'border-[#2E7D32] border-2';
-        bgStyle = 'bg-[#2E7D32]/5';
+        borderStyle = 'border-[#064E3B] border-2';
+        bgStyle = 'bg-[#064E3B]/5';
       } else if (isThisSelected) {
         borderStyle = 'border-red-400 border-2';
         bgStyle = 'bg-red-50';
@@ -121,8 +122,8 @@ export function ABComparisonQuiz({
         borderStyle = 'border-border opacity-60';
       }
     } else if (isThisSelected) {
-      borderStyle = 'border-[#33AEB4] border-2';
-      bgStyle = 'bg-[#33AEB4]/5';
+      borderStyle = 'border-[#0D9488] border-2';
+      bgStyle = 'bg-[#0D9488]/5';
     }
 
     return (
@@ -143,7 +144,7 @@ export function ABComparisonQuiz({
               <span
                 className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold ${
                   isAnswered && isThisCorrect
-                    ? 'bg-[#2E7D32] text-white'
+                    ? 'bg-[#064E3B] text-white'
                     : isAnswered && isThisSelected
                       ? 'bg-red-400 text-white'
                       : 'bg-muted text-muted-foreground'
@@ -152,7 +153,7 @@ export function ABComparisonQuiz({
                 {label}
               </span>
               {isAnswered && isThisCorrect && (
-                <CheckCircle2 className="size-5 text-[#2E7D32]" />
+                <CheckCircle2 className="size-5 text-[#064E3B]" />
               )}
               {isAnswered && isThisSelected && !isThisCorrect && (
                 <XCircle className="size-5 text-red-500" />
@@ -212,7 +213,7 @@ export function ABComparisonQuiz({
             <div
               className={`p-4 rounded-lg text-sm ${
                 isCorrect
-                  ? 'bg-[#2E7D32]/10 text-[#1B5E20]'
+                  ? 'bg-[#064E3B]/10 text-[#043927]'
                   : 'bg-red-50 text-red-700'
               }`}
             >
@@ -237,7 +238,7 @@ export function ABComparisonQuiz({
           className="flex justify-end"
         >
           <Button
-            className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white"
+            className="bg-[#064E3B] hover:bg-[#043927] text-white"
             onClick={handleNext}
           >
             {currentIndex < questions.length - 1 ? (

@@ -42,7 +42,7 @@ function ConfettiDot({ delay, x, color }: { delay: number; x: number; color: str
   );
 }
 
-const confettiColors = ['#2E7D32', '#4CAF50', '#81C784', '#F59E0B', '#33AEB4', '#FDD835'];
+const confettiColors = ['#064E3B', '#059669', '#6EE7B7', '#D97706', '#0D9488', '#FBBF24'];
 
 export function QuizResult({ score, total, passed, onRetry, onContinue }: QuizResultProps) {
   const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
@@ -93,8 +93,8 @@ export function QuizResult({ score, total, passed, onRetry, onContinue }: QuizRe
             transition={{ type: 'spring', stiffness: 200, damping: 12, delay: 0.2 }}
           >
             {passed ? (
-              <div className="flex items-center justify-center w-20 h-20 rounded-full bg-[#2E7D32]/10 mb-4">
-                <Trophy className="size-10 text-[#2E7D32]" />
+              <div className="flex items-center justify-center w-20 h-20 rounded-full bg-[#064E3B]/10 mb-4">
+                <Trophy className="size-10 text-[#064E3B]" />
               </div>
             ) : (
               <div className="flex items-center justify-center w-20 h-20 rounded-full bg-red-50 mb-4">
@@ -121,7 +121,7 @@ export function QuizResult({ score, total, passed, onRetry, onContinue }: QuizRe
             transition={{ delay: 0.4 }}
           >
             <p className="text-3xl font-bold mb-1">
-              <span className={passed ? 'text-[#2E7D32]' : 'text-red-500'}>{score}</span>
+              <span className={passed ? 'text-[#064E3B]' : 'text-red-500'}>{score}</span>
               <span className="text-muted-foreground"> / {total}</span>
             </p>
             <p className="text-sm text-muted-foreground">
@@ -133,7 +133,7 @@ export function QuizResult({ score, total, passed, onRetry, onContinue }: QuizRe
           <motion.div
             className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 ${
               passed
-                ? 'bg-[#2E7D32]/10 text-[#2E7D32]'
+                ? 'bg-[#064E3B]/10 text-[#064E3B]'
                 : 'bg-red-50 text-red-600'
             }`}
             initial={{ opacity: 0 }}
@@ -169,7 +169,7 @@ export function QuizResult({ score, total, passed, onRetry, onContinue }: QuizRe
             </Button>
             {passed && onContinue && (
               <Button
-                className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white"
+                className="bg-[#064E3B] hover:bg-[#043927] text-white"
                 onClick={onContinue}
               >
                 Continue

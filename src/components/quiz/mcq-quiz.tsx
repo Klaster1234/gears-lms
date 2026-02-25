@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { QuizResult } from './quiz-result';
-import { t } from '@/lib/quiz-text';
+import { useTranslations } from 'next-intl';
 import type { MCQQuestion } from '@/types';
 
 interface MCQQuizProps {
@@ -22,6 +22,7 @@ interface MCQQuizProps {
 }
 
 export function MCQQuiz({ questions, passingScore, onComplete }: MCQQuizProps) {
+  const t = useTranslations();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isChecked, setIsChecked] = useState(false);
@@ -141,18 +142,18 @@ export function MCQQuiz({ questions, passingScore, onComplete }: MCQQuizProps) {
 
                   if (isChecked) {
                     if (isOptionCorrect) {
-                      borderColor = 'border-[#2E7D32]';
-                      bgColor = 'bg-[#2E7D32]/5';
-                      textColor = 'text-[#2E7D32]';
+                      borderColor = 'border-[#064E3B]';
+                      bgColor = 'bg-[#064E3B]/5';
+                      textColor = 'text-[#064E3B]';
                     } else if (isSelected && !isOptionCorrect) {
                       borderColor = 'border-red-400';
                       bgColor = 'bg-red-50';
                       textColor = 'text-red-600';
                     }
                   } else if (isSelected) {
-                    borderColor = 'border-[#33AEB4]';
-                    bgColor = 'bg-[#33AEB4]/5';
-                    textColor = 'text-[#33AEB4]';
+                    borderColor = 'border-[#0D9488]';
+                    bgColor = 'bg-[#0D9488]/5';
+                    textColor = 'text-[#0D9488]';
                   }
 
                   return (
@@ -162,7 +163,7 @@ export function MCQQuiz({ questions, passingScore, onComplete }: MCQQuizProps) {
                       disabled={isChecked}
                       onClick={() => setSelectedAnswer(option.value)}
                       className={`w-full flex items-center gap-3 p-4 rounded-lg border-2 transition-all text-left ${borderColor} ${bgColor} ${textColor} ${
-                        !isChecked ? 'hover:border-[#33AEB4]/50 cursor-pointer' : 'cursor-default'
+                        !isChecked ? 'hover:border-[#0D9488]/50 cursor-pointer' : 'cursor-default'
                       }`}
                     >
                       {/* Radio indicator */}
@@ -171,11 +172,11 @@ export function MCQQuiz({ questions, passingScore, onComplete }: MCQQuizProps) {
                           isSelected
                             ? isChecked
                               ? isOptionCorrect
-                                ? 'border-[#2E7D32] bg-[#2E7D32]'
+                                ? 'border-[#064E3B] bg-[#064E3B]'
                                 : 'border-red-400 bg-red-400'
-                              : 'border-[#33AEB4] bg-[#33AEB4]'
+                              : 'border-[#0D9488] bg-[#0D9488]'
                             : isChecked && isOptionCorrect
-                              ? 'border-[#2E7D32] bg-[#2E7D32]'
+                              ? 'border-[#064E3B] bg-[#064E3B]'
                               : 'border-muted-foreground/30'
                         }`}
                       >
@@ -188,7 +189,7 @@ export function MCQQuiz({ questions, passingScore, onComplete }: MCQQuizProps) {
 
                       {/* Feedback icons */}
                       {isChecked && isOptionCorrect && (
-                        <CheckCircle2 className="size-5 text-[#2E7D32] shrink-0" />
+                        <CheckCircle2 className="size-5 text-[#064E3B] shrink-0" />
                       )}
                       {isChecked && isSelected && !isOptionCorrect && (
                         <XCircle className="size-5 text-red-500 shrink-0" />
@@ -211,7 +212,7 @@ export function MCQQuiz({ questions, passingScore, onComplete }: MCQQuizProps) {
                     <div
                       className={`mt-4 p-4 rounded-lg text-sm ${
                         isCorrect
-                          ? 'bg-[#2E7D32]/10 text-[#1B5E20]'
+                          ? 'bg-[#064E3B]/10 text-[#043927]'
                           : 'bg-red-50 text-red-700'
                       }`}
                     >
@@ -249,7 +250,7 @@ export function MCQQuiz({ questions, passingScore, onComplete }: MCQQuizProps) {
       <div className="flex justify-end gap-3">
         {!isChecked ? (
           <Button
-            className="bg-[#33AEB4] hover:bg-[#2a9299] text-white"
+            className="bg-[#0D9488] hover:bg-[#0F766E] text-white"
             disabled={!selectedAnswer}
             onClick={handleCheck}
           >
@@ -257,7 +258,7 @@ export function MCQQuiz({ questions, passingScore, onComplete }: MCQQuizProps) {
           </Button>
         ) : (
           <Button
-            className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white"
+            className="bg-[#064E3B] hover:bg-[#043927] text-white"
             onClick={handleNext}
           >
             {currentIndex < questions.length - 1 ? (

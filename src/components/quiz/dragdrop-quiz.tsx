@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, XCircle, GripVertical, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { QuizResult } from './quiz-result';
-import { t } from '@/lib/quiz-text';
+import { useTranslations } from 'next-intl';
 import type { DragDropQuiz as DragDropQuizData } from '@/types';
 
 interface DragDropQuizProps {
@@ -35,6 +35,7 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 export function DragDropQuiz({ quiz, passingScore, onComplete }: DragDropQuizProps) {
+  const t = useTranslations();
   const shuffledItems = useMemo(() => shuffleArray(quiz.items), [quiz.items]);
 
   const [pool, setPool] = useState<string[]>(shuffledItems.map((item) => item.id));
@@ -191,7 +192,7 @@ export function DragDropQuiz({ quiz, passingScore, onComplete }: DragDropQuizPro
                 {...provided.droppableProps}
                 className={`min-h-[60px] flex flex-wrap gap-2 p-3 rounded-lg border-2 border-dashed transition-colors ${
                   snapshot.isDraggingOver
-                    ? 'border-[#33AEB4] bg-[#33AEB4]/5'
+                    ? 'border-[#0D9488] bg-[#0D9488]/5'
                     : 'border-border bg-muted/30'
                 }`}
               >
@@ -217,7 +218,7 @@ export function DragDropQuiz({ quiz, passingScore, onComplete }: DragDropQuizPro
                           {...dragProvided.dragHandleProps}
                           className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium border transition-shadow ${
                             dragSnapshot.isDragging
-                              ? 'shadow-lg bg-white border-[#33AEB4] z-50'
+                              ? 'shadow-lg bg-white border-[#0D9488] z-50'
                               : 'bg-white border-border shadow-sm hover:shadow'
                           } ${checked ? 'cursor-default' : 'cursor-grab active:cursor-grabbing'}`}
                         >
@@ -289,10 +290,10 @@ export function DragDropQuiz({ quiz, passingScore, onComplete }: DragDropQuizPro
                               className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium border transition-all ${
                                 checked
                                   ? isCorrect
-                                    ? 'border-[#2E7D32] bg-[#2E7D32]/10 text-[#1B5E20]'
+                                    ? 'border-[#064E3B] bg-[#064E3B]/10 text-[#043927]'
                                     : 'border-red-400 bg-red-50 text-red-700'
                                   : dragSnapshot.isDragging
-                                    ? 'shadow-lg bg-white border-[#33AEB4]'
+                                    ? 'shadow-lg bg-white border-[#0D9488]'
                                     : 'bg-white border-border/60 shadow-sm'
                               } ${checked ? 'cursor-default' : 'cursor-grab active:cursor-grabbing'}`}
                             >
@@ -300,7 +301,7 @@ export function DragDropQuiz({ quiz, passingScore, onComplete }: DragDropQuizPro
                                 <GripVertical className="size-3 text-muted-foreground/40 shrink-0" />
                               )}
                               {checked && isCorrect && (
-                                <CheckCircle2 className="size-3.5 text-[#2E7D32] shrink-0" />
+                                <CheckCircle2 className="size-3.5 text-[#064E3B] shrink-0" />
                               )}
                               {isWrong && (
                                 <XCircle className="size-3.5 text-red-500 shrink-0" />
@@ -334,7 +335,7 @@ export function DragDropQuiz({ quiz, passingScore, onComplete }: DragDropQuizPro
       <div className="flex justify-end gap-3">
         {!checked ? (
           <Button
-            className="bg-[#33AEB4] hover:bg-[#2a9299] text-white"
+            className="bg-[#0D9488] hover:bg-[#0F766E] text-white"
             disabled={!allPlaced}
             onClick={handleCheck}
           >
@@ -342,7 +343,7 @@ export function DragDropQuiz({ quiz, passingScore, onComplete }: DragDropQuizPro
           </Button>
         ) : (
           <Button
-            className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white"
+            className="bg-[#064E3B] hover:bg-[#043927] text-white"
             onClick={handleShowResults}
           >
             See Results

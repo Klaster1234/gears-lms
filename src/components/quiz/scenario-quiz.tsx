@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { QuizResult } from './quiz-result';
-import { t } from '@/lib/quiz-text';
+import { useTranslations } from 'next-intl';
 import type { ScenarioQuestion } from '@/types';
 
 interface ScenarioQuizProps {
@@ -22,6 +22,7 @@ interface ScenarioQuizProps {
 }
 
 export function ScenarioQuiz({ scenarios, passingScore, onComplete }: ScenarioQuizProps) {
+  const t = useTranslations();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -121,9 +122,9 @@ export function ScenarioQuiz({ scenarios, passingScore, onComplete }: ScenarioQu
           className="space-y-5"
         >
           {/* Scenario description */}
-          <div className="rounded-lg border-l-4 border-[#33AEB4] bg-[#33AEB4]/5 p-5">
+          <div className="rounded-lg border-l-4 border-[#0D9488] bg-[#0D9488]/5 p-5">
             <div className="flex items-start gap-3">
-              <MessageSquare className="size-5 text-[#33AEB4] mt-0.5 shrink-0" />
+              <MessageSquare className="size-5 text-[#0D9488] mt-0.5 shrink-0" />
               <p className="text-[#1A1A2E] font-medium">{t(scenario.scenarioKey)}</p>
             </div>
           </div>
@@ -140,10 +141,10 @@ export function ScenarioQuiz({ scenarios, passingScore, onComplete }: ScenarioQu
 
               if (isAnswered) {
                 if (isOptimal) {
-                  borderColor = 'border-[#2E7D32]';
-                  bgColor = 'bg-[#2E7D32]/5';
+                  borderColor = 'border-[#064E3B]';
+                  bgColor = 'bg-[#064E3B]/5';
                   icon = (
-                    <CheckCircle2 className="size-5 text-[#2E7D32] shrink-0" />
+                    <CheckCircle2 className="size-5 text-[#064E3B] shrink-0" />
                   );
                 } else if (isSelected) {
                   borderColor = 'border-[#F59E0B]';
@@ -164,8 +165,8 @@ export function ScenarioQuiz({ scenarios, passingScore, onComplete }: ScenarioQu
                   >
                     <Card
                       className={`transition-all border-2 ${borderColor} ${bgColor} ${
-                        !isAnswered ? 'hover:border-[#33AEB4]/50 hover:shadow cursor-pointer' : 'cursor-default'
-                      } ${isSelected && !isAnswered ? 'border-[#33AEB4] bg-[#33AEB4]/5' : ''}`}
+                        !isAnswered ? 'hover:border-[#0D9488]/50 hover:shadow cursor-pointer' : 'cursor-default'
+                      } ${isSelected && !isAnswered ? 'border-[#0D9488] bg-[#0D9488]/5' : ''}`}
                     >
                       <CardContent className="flex items-center gap-3 py-3">
                         <span className="text-sm font-medium text-[#1A1A2E] flex-1">
@@ -188,7 +189,7 @@ export function ScenarioQuiz({ scenarios, passingScore, onComplete }: ScenarioQu
                         <p
                           className={`text-xs mt-1.5 ml-2 pl-3 border-l-2 py-1 ${
                             isOptimal
-                              ? 'text-[#1B5E20] border-[#2E7D32]'
+                              ? 'text-[#043927] border-[#064E3B]'
                               : 'text-[#92400E] border-[#F59E0B]'
                           }`}
                         >
@@ -212,7 +213,7 @@ export function ScenarioQuiz({ scenarios, passingScore, onComplete }: ScenarioQu
           className="flex justify-end"
         >
           <Button
-            className="bg-[#2E7D32] hover:bg-[#1B5E20] text-white"
+            className="bg-[#064E3B] hover:bg-[#043927] text-white"
             onClick={handleNext}
           >
             {currentIndex < scenarios.length - 1 ? (

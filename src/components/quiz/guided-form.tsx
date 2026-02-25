@@ -12,7 +12,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { t } from '@/lib/quiz-text';
+import { useTranslations } from 'next-intl';
 import type { GuidedFormStep } from '@/types';
 
 interface GuidedFormProps {
@@ -23,6 +23,7 @@ interface GuidedFormProps {
 const scaleEmojis = ['1', '2', '3', '4', '5'];
 
 export function GuidedForm({ steps, onComplete }: GuidedFormProps) {
+  const t = useTranslations();
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState<Record<string, string[]>>({});
   const [completed, setCompleted] = useState(false);
@@ -95,9 +96,9 @@ export function GuidedForm({ steps, onComplete }: GuidedFormProps) {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: 'spring', stiffness: 200, damping: 12, delay: 0.2 }}
-                className="flex items-center justify-center w-20 h-20 rounded-full bg-[#33AEB4]/10 mb-4"
+                className="flex items-center justify-center w-20 h-20 rounded-full bg-[#0D9488]/10 mb-4"
               >
-                <Heart className="size-10 text-[#33AEB4]" />
+                <Heart className="size-10 text-[#0D9488]" />
               </motion.div>
 
               <h3 className="text-xl font-bold text-[#1A1A2E] mb-2">
@@ -128,7 +129,7 @@ export function GuidedForm({ steps, onComplete }: GuidedFormProps) {
                           return (
                             <span
                               key={sel}
-                              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#33AEB4]/10 text-[#33AEB4] text-xs font-medium"
+                              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#0D9488]/10 text-[#0D9488] text-xs font-medium"
                             >
                               <Leaf className="size-3" />
                               {option ? t(option.labelKey) : sel}
@@ -141,7 +142,7 @@ export function GuidedForm({ steps, onComplete }: GuidedFormProps) {
                 })}
               </div>
 
-              <div className="mt-6 flex items-center gap-2 text-[#2E7D32] font-medium">
+              <div className="mt-6 flex items-center gap-2 text-[#064E3B] font-medium">
                 <CheckCircle2 className="size-5" />
                 <span>Activity completed</span>
               </div>
@@ -195,14 +196,14 @@ export function GuidedForm({ steps, onComplete }: GuidedFormProps) {
                         onClick={() => handleCheckboxToggle(option.key)}
                         className={`w-full flex items-center gap-3 p-3.5 rounded-lg border-2 transition-all text-left ${
                           isSelected
-                            ? 'border-[#33AEB4] bg-[#33AEB4]/5'
-                            : 'border-border hover:border-[#33AEB4]/30'
+                            ? 'border-[#0D9488] bg-[#0D9488]/5'
+                            : 'border-border hover:border-[#0D9488]/30'
                         } cursor-pointer`}
                       >
                         <div
                           className={`w-5 h-5 rounded flex items-center justify-center shrink-0 border-2 transition-colors ${
                             isSelected
-                              ? 'bg-[#33AEB4] border-[#33AEB4]'
+                              ? 'bg-[#0D9488] border-[#0D9488]'
                               : 'border-muted-foreground/30'
                           }`}
                         >
@@ -243,14 +244,14 @@ export function GuidedForm({ steps, onComplete }: GuidedFormProps) {
                         onClick={() => handleRadioSelect(option.key)}
                         className={`w-full flex items-center gap-3 p-3.5 rounded-lg border-2 transition-all text-left ${
                           isSelected
-                            ? 'border-[#33AEB4] bg-[#33AEB4]/5'
-                            : 'border-border hover:border-[#33AEB4]/30'
+                            ? 'border-[#0D9488] bg-[#0D9488]/5'
+                            : 'border-border hover:border-[#0D9488]/30'
                         } cursor-pointer`}
                       >
                         <div
                           className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 border-2 transition-colors ${
                             isSelected
-                              ? 'border-[#33AEB4] bg-[#33AEB4]'
+                              ? 'border-[#0D9488] bg-[#0D9488]'
                               : 'border-muted-foreground/30'
                           }`}
                         >
@@ -281,8 +282,8 @@ export function GuidedForm({ steps, onComplete }: GuidedFormProps) {
                           <div
                             className={`w-14 h-14 rounded-full flex items-center justify-center text-lg font-bold transition-all ${
                               isSelected
-                                ? 'bg-[#33AEB4] text-white scale-110 shadow-lg'
-                                : 'bg-muted text-muted-foreground hover:bg-[#33AEB4]/20'
+                                ? 'bg-[#0D9488] text-white scale-110 shadow-lg'
+                                : 'bg-muted text-muted-foreground hover:bg-[#0D9488]/20'
                             } cursor-pointer`}
                           >
                             {scaleEmojis[index]}
@@ -290,7 +291,7 @@ export function GuidedForm({ steps, onComplete }: GuidedFormProps) {
                           <span
                             className={`text-[10px] text-center max-w-[60px] leading-tight ${
                               isSelected
-                                ? 'text-[#33AEB4] font-medium'
+                                ? 'text-[#0D9488] font-medium'
                                 : 'text-muted-foreground'
                             }`}
                           >
@@ -319,7 +320,7 @@ export function GuidedForm({ steps, onComplete }: GuidedFormProps) {
         </Button>
 
         <Button
-          className="bg-[#33AEB4] hover:bg-[#2a9299] text-white"
+          className="bg-[#0D9488] hover:bg-[#0F766E] text-white"
           onClick={handleNext}
           disabled={!canProceed}
         >
