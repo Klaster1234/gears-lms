@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { AlertTriangle, ArrowRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
 import { useLearningStore, useStoreHydration } from '@/store/learning-store';
@@ -12,6 +13,7 @@ import { CertificatePreview } from '@/components/certificate/certificate-preview
 const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function CertificatePage() {
+  const t = useTranslations('certificate');
   const hydrated = useStoreHydration();
   const certificateEarned = useLearningStore((s) => s.certificateEarned);
   const certificateName = useLearningStore((s) => s.certificateName);
@@ -46,14 +48,14 @@ export default function CertificatePage() {
               <AlertTriangle className="size-7 text-[#D97706]" />
             </div>
             <h1 className="text-2xl font-bold font-display text-[#1A1A2E] mb-3">
-              Certificate Not Yet Available
+              {t('notAvailable')}
             </h1>
             <p className="text-[#1A1A2E]/50 mb-8">
-              Complete all 10 modules to earn your certificate of completion.
+              {t('completeAll')}
             </p>
             <Button asChild className="bg-[#064E3B] hover:bg-[#047857] text-white px-8 transition-colors duration-300">
               <Link href="/progress">
-                View Your Progress
+                {t('backToProgress')}
                 <ArrowRight className="size-4 ml-2" />
               </Link>
             </Button>
@@ -82,14 +84,14 @@ export default function CertificatePage() {
               className="h-[2px] bg-[#064E3B]"
             />
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#064E3B]">
-              Achievement
+              {t('achievementLabel')}
             </span>
           </div>
           <h1 className="font-display text-4xl font-bold text-[#1A1A2E] sm:text-5xl leading-[1.1]">
-            Your Certificate
+            {t('yourCertificate')}
           </h1>
           <p className="mt-4 text-lg text-[#1A1A2E]/50 max-w-xl">
-            Generate and download your certificate of completion
+            {t('generateDescription')}
           </p>
         </motion.div>
 

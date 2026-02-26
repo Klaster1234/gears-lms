@@ -52,19 +52,36 @@
       "certificate": {
         "title": "Certyfikat ukończenia",
         "description": "Zdobądź uznawany certyfikat po ukończeniu wszystkich modułów i wykazaniu się kompetencjami."
-      }
+      },
+      "sectionLabel": "Czego się nauczysz",
+      "sectionTitle": "Wszystko, czego potrzebujesz, aby żyć ekologicznie",
+      "modulesNumber": "10",
+      "modulesDescription": "Pełny program zrównoważonego rozwoju - od redukcji odpadów i gospodarki cyrkularnej po efektywność energetyczną i działania społeczne.",
+      "quizzesNumber": "50+",
+      "quizzesDescription": "Angażuj się w quizy wielokrotnego wyboru, sortowanie typu przeciągnij i upuść, scenariusze z życia wzięte i interaktywne gry stworzone dla dorosłych.",
+      "certificateNumber": "1",
+      "certificateDescription": "Ukończ wszystkie moduły, aby zdobyć certyfikat Green Explorers, uznawany w ramach programu Erasmus+."
     },
     "modulesPreview": {
       "title": "Moduły edukacyjne",
-      "subtitle": "10 modułów obejmujących wszystkie aspekty zrównoważonego życia"
+      "subtitle": "10 modułów obejmujących wszystkie aspekty zrównoważonego życia",
+      "sectionLabel": "Program",
+      "sectionTitle": "10 modułów, które zmienią Twoje nawyki",
+      "viewAll": "Zobacz wszystkie moduły",
+      "startModule": "Rozpocznij moduł"
     },
     "greencomp": {
       "title": "Ramy GreenComp",
-      "subtitle": "Nasz program jest zgodny z Europejskimi Ramami Kompetencji w zakresie Zrównoważonego Rozwoju"
+      "subtitle": "Nasz program jest zgodny z Europejskimi Ramami Kompetencji w zakresie Zrównoważonego Rozwoju",
+      "sectionLabel": "Ramy UE",
+      "sectionTitle": "Oparte na GreenComp",
+      "sectionDescription": "Nasz program jest zgodny z GreenComp, europejskimi ramami kompetencji w zakresie zrównoważonego rozwoju - 4 obszary, 12 kompetencji."
     },
     "partners": {
       "title": "Nasi partnerzy",
-      "subtitle": "Współpraca w ramach Erasmus+ KA210-ADU"
+      "subtitle": "Współpraca w ramach Erasmus+ KA210-ADU",
+      "sectionLabel": "Partnerstwo",
+      "visitWebsite": "Odwiedź stronę"
     }
   },
   "modules": {
@@ -110,7 +127,8 @@
     },
     "catalog": {
       "title": "Moduły edukacyjne",
-      "subtitle": "Poznaj wszystkie 10 modułów programu G.E.A.R.S."
+      "subtitle": "Poznaj wszystkie 10 modułów programu G.E.A.R.S.",
+      "description": "Dziesięć starannie opracowanych modułów obejmujących zrównoważony rozwój, zero waste, gospodarkę cyrkularną i zielone kompetencje. Postępuj we własnym rytmie przez etapy: ucz się, ćwicz, reflektuj i rozwiązuj quizy."
     },
     "tabs": {
       "learn": "Nauka",
@@ -122,7 +140,15 @@
       "notStarted": "Nie rozpoczęto",
       "inProgress": "W trakcie",
       "completed": "Ukończono"
-    }
+    },
+    "moduleLabel": "Moduł {number}",
+    "stepsCompleted": "{count} z 4 kroków ukończonych",
+    "done": "Ukończony",
+    "inProgress": "W trakcie",
+    "startModule": "Rozpocznij moduł",
+    "allModules": "Wszystkie moduły",
+    "stepsLabel": "Krok {current} z {total}",
+    "stepsCompletedCount": "{count} ukończonych"
   },
   "progress": {
     "title": "Twoje postępy w nauce",
@@ -135,7 +161,19 @@
     "resetProgress": "Resetuj postępy",
     "resetConfirm": "Czy na pewno? Spowoduje to usunięcie wszystkich postępów w nauce, wyników quizów i refleksji. Tej operacji nie można cofnąć.",
     "resetButton": "Tak, zresetuj wszystko",
-    "cancel": "Anuluj"
+    "cancel": "Anuluj",
+    "dashboardLabel": "Panel",
+    "pageTitle": "Twoje postępy w nauce",
+    "trackJourney": "Śledź swoją podróż przez program G.E.A.R.S.",
+    "modulesLabel": "Moduły",
+    "competencesLabel": "Kompetencje",
+    "congratulations": "Gratulacje!",
+    "allModulesComplete": "Ukończyłeś wszystkie 10 modułów. Wygeneruj teraz swój certyfikat!",
+    "generateCertificate": "Wygeneruj certyfikat",
+    "certificateTitle": "Certyfikat ukończenia",
+    "remainingModules": "Ukończ jeszcze {count} moduł(ów), aby zdobyć certyfikat",
+    "resetTitle": "Zresetować wszystkie postępy?",
+    "resetDescription": "To trwale usunie wszystkie Twoje postępy w nauce, wyniki quizów, refleksje i dane certyfikatu. Tej akcji nie można cofnąć."
   },
   "certificate": {
     "title": "Certyfikat ukończenia",
@@ -150,7 +188,12 @@
     "hasCompleted": "pomyślnie ukończył/a wszystkie 10 modułów programu",
     "programmeTitle": "G.E.A.R.S. - Green Explorers: Adults Reimagining Sustainability",
     "programmeDescription": "pełny program z zakresu zrównoważonego życia, praktyk zero waste i zielonych kompetencji",
-    "dateOfCompletion": "Data ukończenia"
+    "dateOfCompletion": "Data ukończenia",
+    "notAvailable": "Certyfikat jeszcze niedostępny",
+    "completeAll": "Ukończ wszystkie 10 modułów, aby zdobyć certyfikat ukończenia.",
+    "achievementLabel": "Osiągnięcie",
+    "yourCertificate": "Twój certyfikat",
+    "generateDescription": "Wygeneruj i pobierz swój certyfikat ukończenia"
   },
   "greencomp": {
     "areas": {
@@ -188,7 +231,59 @@
   },
   "about": {
     "title": "O projekcie G.E.A.R.S.",
-    "subtitle": "Green Explorers: Adults Reimagining Sustainability"
+    "subtitle": "Green Explorers: Adults Reimagining Sustainability",
+    "erasmusLabel": "Erasmus+ KA210-ADU",
+    "description": "G.E.A.R.S. to projekt Erasmus+ KA210-ADU rozwijający innowacyjne narzędzia do edukacji dorosłych w zakresie zrównoważonego rozwoju. Naszym celem jest wyposażenie dorosłych w praktyczną wiedzę i kompetencje do bardziej zrównoważonego życia.",
+    "overviewLabel": "Przegląd",
+    "aboutProject": "O projekcie",
+    "programmeLabel": "Program",
+    "projectNumberLabel": "Numer projektu",
+    "durationLabel": "Czas trwania",
+    "smallScale": "Partnerstwo na małą skalę w edukacji dorosłych",
+    "aboutParagraph1": "Projekt G.E.A.R.S. odpowiada na pilną potrzebę edukacji o zrównoważonym rozwoju wśród dorosłych. Przez 10 interaktywnych modułów edukacyjnych prowadzimy uczestników od zrozumienia podstawowych zasad środowiskowych do podejmowania znaczących działań społecznych.",
+    "aboutParagraph2": "Nasz program opiera się na europejskich ramach GreenComp, zapewniając, że uczący się rozwijają kluczowe kompetencje w zakresie zrównoważonego rozwoju, uznawane w Unii Europejskiej.",
+    "whatWeOffer": "Co oferujemy",
+    "whatWeOfferDescription": "Kompleksowy program narzędzi i zasobów do edukacji o zrównoważonym rozwoju.",
+    "features": {
+      "modules": {
+        "title": "10 interaktywnych modułów",
+        "description": "Od gospodarki odpadami po eko-lęk - nasze moduły obejmują pełne spektrum tematów zrównoważonego życia z quizami, scenariuszami i ćwiczeniami praktycznymi."
+      },
+      "quests": {
+        "title": "Miejskie wyprawy",
+        "description": "Zajęcia edukacyjne na świeżym powietrzu łączące naukę z praktykami zrównoważonego rozwoju w Twojej lokalnej społeczności."
+      },
+      "comic": {
+        "title": "Komiks edukacyjny",
+        "description": "Angażująca narracja wizualna, która czyni koncepcje zrównoważonego rozwoju dostępnymi i łatwymi do zapamiętania."
+      },
+      "cabinets": {
+        "title": "Szafki zrównoważonego rozwoju",
+        "description": "Fizyczne zbiory zasobów dla centrów społeczności i bibliotek, wprowadzające praktyczną edukację o zrównoważoności."
+      }
+    },
+    "visitWebsite": "Odwiedź stronę",
+    "greencompLabel": "Ramy UE",
+    "greencompTitle": "Ramy GreenComp",
+    "greencompDescription": "Nasz program jest zgodny z Europejskimi Ramami Kompetencji w zakresie Zrównoważonego Rozwoju (GreenComp), które definiują kompetencje potrzebne uczącym się.",
+    "collaborationLabel": "Współpraca",
+    "ourPartners": "Nasi partnerzy",
+    "partnersDescription": "Dwie organizacje połączone wspólnym zaangażowaniem w edukację o zrównoważonym rozwoju dla dorosłych.",
+    "leadPartner": "Partner wiodący - Polska",
+    "partner": "Partner - Słowacja",
+    "zsName": "Stowarzyszenie Zielone Slaskie",
+    "zsDescription": "Zielone Śląskie to polskie stowarzyszenie ekologiczne z siedzibą na Śląsku, poświęcone promowaniu zrównoważonego rozwoju, edukacji ekologicznej i zaangażowania społecznego. Jako partner wiodący koordynuje projekt i wnosi doświadczenie w edukacji ekologicznej i mobilizacji społecznej.",
+    "seqName": "SEQ / YouthFullyYours",
+    "seqDescription": "SEQ (Slovak Education Quest) / YouthFullyYours to słowacka organizacja non-profit specjalizująca się w edukacji pozaformalnej, pracy z młodzieżą i edukacji dorosłych. Wnoszą doświadczenie w metodologii edukacyjnej, systemach akredytacji i zarządzaniu projektami międzynarodowymi.",
+    "websiteComingSoon": "Strona wkrótce",
+    "teamLabel": "Zespół",
+    "keyPeople": "Kluczowe osoby",
+    "teamDescription": "Zespół stojący za projektem G.E.A.R.S.",
+    "roles": {
+      "projectManager": "Kierownik projektu",
+      "educationSpecialist": "Specjalista ds. edukacji",
+      "sustainabilityExpert": "Ekspert ds. zrównoważonego rozwoju"
+    }
   },
   "quizzes": {
     "module1": {
@@ -1097,5 +1192,44 @@
         "item6": "Bądź dla siebie współczujący. Nie możesz rozwiązać każdego problemu środowiskowego, a poczucie winy z powodu niedoskonałych wyborów jest kontrproduktywne. Skup się na postępie, a nie na perfekcji, i pamiętaj, że troska o środowisko jest sama w sobie oznaką moralnej siły."
       }
     }
+  },
+  "auth": {
+    "signIn": "Zaloguj się",
+    "signUp": "Zarejestruj się",
+    "signOut": "Wyloguj się",
+    "signInTitle": "Witaj ponownie",
+    "signInSubtitle": "Zaloguj się, aby śledzić postępy na różnych urządzeniach",
+    "signUpTitle": "Utwórz konto",
+    "signUpSubtitle": "Dołącz do Green Explorers i rozpocznij swoją podróż ku zrównoważonemu rozwojowi",
+    "email": "Email",
+    "password": "Hasło",
+    "name": "Imię i nazwisko",
+    "continueWithGoogle": "Kontynuuj z Google",
+    "or": "lub",
+    "noAccount": "Nie masz konta?",
+    "hasAccount": "Masz już konto?",
+    "invalidCredentials": "Nieprawidłowy email lub hasło",
+    "registrationFailed": "Rejestracja nie powiodła się. Spróbuj ponownie.",
+    "userExists": "Konto z tym adresem email już istnieje.",
+    "adminPanel": "Panel Admina",
+    "passwordMin": "Hasło musi mieć co najmniej 6 znaków"
+  },
+  "admin": {
+    "title": "Panel Admina",
+    "subtitle": "Zarządzaj użytkownikami i śledź postępy w nauce",
+    "users": "Zarejestrowani użytkownicy",
+    "name": "Imię",
+    "email": "Email",
+    "provider": "Metoda logowania",
+    "modulesCompleted": "Moduły",
+    "progress": "Postęp",
+    "certificate": "Certyfikat",
+    "joined": "Dołączył",
+    "actions": "Akcje",
+    "deleteUser": "Usuń użytkownika",
+    "deleteConfirm": "Czy na pewno chcesz usunąć tego użytkownika? Tej akcji nie można cofnąć.",
+    "noUsers": "Brak zarejestrowanych użytkowników.",
+    "totalUsers": "Łączna liczba użytkowników",
+    "withCertificate": "Z certyfikatem"
   }
 }

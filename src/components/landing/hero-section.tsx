@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
-import { LOGOS } from '@/lib/constants';
 import { ArrowRight } from 'lucide-react';
 
 export function HeroSection() {
@@ -25,22 +24,32 @@ export function HeroSection() {
       ref={sectionRef}
       className="relative min-h-[100dvh] overflow-hidden bg-[#022C22]"
     >
-      {/* Animated gradient mesh background */}
+      {/* Papercut illustration background */}
       <motion.div
         style={{ y: backgroundY }}
         className="pointer-events-none absolute inset-0"
       >
-        <div className="absolute -top-[20%] -right-[10%] h-[700px] w-[700px] animate-morph bg-[#064E3B] opacity-60" />
+        <Image
+          src="/art/hero-papercut.png"
+          alt=""
+          fill
+          className="object-cover opacity-25 mix-blend-luminosity"
+          sizes="100vw"
+          priority
+        />
+        <div className="absolute -top-[20%] -right-[10%] h-[700px] w-[700px] animate-morph bg-[#064E3B] opacity-40" />
         <div
-          className="absolute -bottom-[15%] -left-[8%] h-[500px] w-[500px] animate-morph bg-[#047857] opacity-30"
+          className="absolute -bottom-[15%] -left-[8%] h-[500px] w-[500px] animate-morph bg-[#047857] opacity-20"
           style={{ animationDelay: '-5s' }}
         />
         <div
-          className="absolute top-[30%] left-[60%] h-[300px] w-[300px] animate-morph bg-[#0D9488] opacity-15"
+          className="absolute top-[30%] left-[60%] h-[300px] w-[300px] animate-morph bg-[#0D9488] opacity-10"
           style={{ animationDelay: '-10s' }}
         />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_80%,rgba(52,211,153,0.08),transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(13,148,136,0.06),transparent_50%)]" />
+        {/* Dark overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#022C22] via-[#022C22]/60 to-[#022C22]/80" />
       </motion.div>
 
       {/* Content */}
@@ -57,16 +66,18 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="mb-12"
             >
-              <div className="inline-flex items-center gap-4 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 backdrop-blur-sm">
-                <Image
-                  src={LOGOS.greenExplorers}
-                  alt="Green Explorers"
-                  width={40}
-                  height={40}
-                  className="h-8 w-auto"
-                  priority
-                  unoptimized
-                />
+              <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 backdrop-blur-sm">
+                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none">
+                  <path
+                    d="M12 3C7 3 3 8 3 13c0 4 3 8 9 8 0 0 0-8 0-18z"
+                    fill="#34D399"
+                  />
+                  <path
+                    d="M12 3c5 0 9 5 9 10 0 4-3 8-9 8 0 0 0-8 0-18z"
+                    fill="#6EE7B7"
+                    fillOpacity="0.5"
+                  />
+                </svg>
                 <span className="text-sm font-medium tracking-wide text-[#6EE7B7]">
                   Erasmus+ KA210-ADU
                 </span>

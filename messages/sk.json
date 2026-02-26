@@ -52,19 +52,36 @@
       "certificate": {
         "title": "Certifikát o absolvovaní",
         "description": "Získajte uznávaný certifikát po absolvovaní všetkých modulov a preukázaní svojich kompetencií."
-      }
+      },
+      "sectionLabel": "Čo sa naučíte",
+      "sectionTitle": "Všetko, čo potrebujete na ekologický život",
+      "modulesNumber": "10",
+      "modulesDescription": "Kompletné kurikulum udržateľnosti - od znižovania odpadu a cirkulárnej ekonomiky po energetickú efektívnosť a komunitné aktivity.",
+      "quizzesNumber": "50+",
+      "quizzesDescription": "Zapojte sa do kvízov s výberom odpovedí, triedenia potiahni a pusti, scenárov zo skutočného života a interaktívnych hier vytvorených pre dospelých.",
+      "certificateNumber": "1",
+      "certificateDescription": "Dokončite všetky moduly a získajte certifikát Green Explorers, uznaný v rámci programu Erasmus+."
     },
     "modulesPreview": {
       "title": "Vzdelávacie moduly",
-      "subtitle": "10 modulov pokrývajúcich všetky aspekty udržateľného života"
+      "subtitle": "10 modulov pokrývajúcich všetky aspekty udržateľného života",
+      "sectionLabel": "Kurikulum",
+      "sectionTitle": "10 modulov, ktoré zmenia vaše návyky",
+      "viewAll": "Zobraziť všetky moduly",
+      "startModule": "Začať modul"
     },
     "greencomp": {
       "title": "Rámec GreenComp",
-      "subtitle": "Náš učebný plán je v súlade s Európskym rámcom kompetencií pre udržateľnosť"
+      "subtitle": "Náš učebný plán je v súlade s Európskym rámcom kompetencií pre udržateľnosť",
+      "sectionLabel": "Rámec EÚ",
+      "sectionTitle": "Postavené na GreenComp",
+      "sectionDescription": "Naše kurikulum je v súlade s GreenComp, európskym rámcom kompetencií pre udržateľnosť - 4 oblasti, 12 kompetencií."
     },
     "partners": {
       "title": "Naši partneri",
-      "subtitle": "Spolupráca v rámci Erasmus+ KA210-ADU"
+      "subtitle": "Spolupráca v rámci Erasmus+ KA210-ADU",
+      "sectionLabel": "Partnerstvo",
+      "visitWebsite": "Navštíviť stránku"
     }
   },
   "modules": {
@@ -110,7 +127,8 @@
     },
     "catalog": {
       "title": "Vzdelávacie moduly",
-      "subtitle": "Preskúmajte všetkých 10 modulov programu G.E.A.R.S."
+      "subtitle": "Preskúmajte všetkých 10 modulov programu G.E.A.R.S.",
+      "description": "Desať starostlivo pripravených modulov pokrývajúcich udržateľnosť, zero waste, cirkulárnu ekonomiku a zelené kompetencie. Postupujte vlastným tempom cez fázy: učenie, prax, reflexia a kvízy."
     },
     "tabs": {
       "learn": "Učenie",
@@ -122,7 +140,15 @@
       "notStarted": "Nezačaté",
       "inProgress": "Prebieha",
       "completed": "Dokončené"
-    }
+    },
+    "moduleLabel": "Modul {number}",
+    "stepsCompleted": "{count} zo 4 krokov dokončených",
+    "done": "Dokončený",
+    "inProgress": "Prebieha",
+    "startModule": "Začať modul",
+    "allModules": "Všetky moduly",
+    "stepsLabel": "Krok {current} zo {total}",
+    "stepsCompletedCount": "{count} dokončených"
   },
   "progress": {
     "title": "Váš pokrok v učení",
@@ -135,7 +161,19 @@
     "resetProgress": "Resetovať pokrok",
     "resetConfirm": "Ste si istý/á? Týmto sa vymažú všetky vaše pokroky v učení, výsledky kvízov a reflexie. Túto akciu nie je možné vrátiť späť.",
     "resetButton": "Áno, resetovať všetko",
-    "cancel": "Zrušiť"
+    "cancel": "Zrušiť",
+    "dashboardLabel": "Prehľad",
+    "pageTitle": "Váš pokrok v učení",
+    "trackJourney": "Sledujte svoju cestu programom G.E.A.R.S.",
+    "modulesLabel": "Moduly",
+    "competencesLabel": "Kompetencie",
+    "congratulations": "Gratulujeme!",
+    "allModulesComplete": "Dokončili ste všetkých 10 modulov. Vygenerujte si certifikát!",
+    "generateCertificate": "Vygenerovať certifikát",
+    "certificateTitle": "Certifikát o absolvovaní",
+    "remainingModules": "Dokončite ešte {count} modul(ov) na získanie certifikátu",
+    "resetTitle": "Resetovať všetok pokrok?",
+    "resetDescription": "Toto natrvalo vymaže všetok váš pokrok v učení, výsledky kvízov, reflexie a údaje certifikátu. Túto akciu nie je možné vrátiť späť."
   },
   "certificate": {
     "title": "Certifikát o absolvovaní",
@@ -150,7 +188,12 @@
     "hasCompleted": "úspešne absolvoval/a všetkých 10 modulov programu",
     "programmeTitle": "G.E.A.R.S. - Green Explorers: Adults Reimagining Sustainability",
     "programmeDescription": "Ucelený program o udržateľnom živote, praktikách zero waste a zelených kompetenciách",
-    "dateOfCompletion": "Dátum dokončenia"
+    "dateOfCompletion": "Dátum dokončenia",
+    "notAvailable": "Certifikát zatiaľ nie je k dispozícii",
+    "completeAll": "Dokončite všetkých 10 modulov, aby ste získali certifikát o absolvovaní.",
+    "achievementLabel": "Úspech",
+    "yourCertificate": "Váš certifikát",
+    "generateDescription": "Vygenerujte a stiahnite si certifikát o absolvovaní"
   },
   "greencomp": {
     "areas": {
@@ -188,7 +231,59 @@
   },
   "about": {
     "title": "O projekte G.E.A.R.S.",
-    "subtitle": "Green Explorers: Adults Reimagining Sustainability"
+    "subtitle": "Green Explorers: Adults Reimagining Sustainability",
+    "erasmusLabel": "Erasmus+ KA210-ADU",
+    "description": "G.E.A.R.S. je projekt Erasmus+ KA210-ADU vyvíjajúci inovatívne nástroje pre vzdelávanie dospelých v oblasti udržateľného rozvoja. Naším cieľom je posilniť dospelých praktickými znalosťami a kompetenciami pre udržateľnejší život.",
+    "overviewLabel": "Prehľad",
+    "aboutProject": "O projekte",
+    "programmeLabel": "Program",
+    "projectNumberLabel": "Číslo projektu",
+    "durationLabel": "Trvanie",
+    "smallScale": "Malé partnerstvo vo vzdelávaní dospelých",
+    "aboutParagraph1": "Projekt G.E.A.R.S. reaguje na naliehavú potrebu vzdelávania o udržateľnosti medzi dospelými. Prostredníctvom 10 interaktívnych vzdelávacích modulov vedieme účastníkov od pochopenia základných environmentálnych princípov po zmysluplné komunitné aktivity.",
+    "aboutParagraph2": "Náš program je postavený na európskom rámci GreenComp, čo zaručuje, že účastníci rozvíjajú kľúčové kompetencie udržateľnosti uznávané v Európskej únii.",
+    "whatWeOffer": "Čo ponúkame",
+    "whatWeOfferDescription": "Komplexný program nástrojov a zdrojov pre vzdelávanie o udržateľnosti.",
+    "features": {
+      "modules": {
+        "title": "10 interaktívnych modulov",
+        "description": "Od odpadového hospodárstva po eko-úzkosť - naše moduly pokrývajú celé spektrum tém udržateľného života s kvízmi, scenármi a praktickými aktivitami."
+      },
+      "quests": {
+        "title": "Mestské výpravy",
+        "description": "Vonkajšie vzdelávacie aktivity spájajúce štúdium s reálnymi praktikami udržateľnosti vo vašej lokálnej komunite."
+      },
+      "comic": {
+        "title": "Vzdelávací komiks",
+        "description": "Pútavé vizuálne rozprávanie, ktoré robí koncepty udržateľnosti prístupnými a zapamätateľnými pre dospelých."
+      },
+      "cabinets": {
+        "title": "Skrine udržateľnosti",
+        "description": "Fyzické zbierky zdrojov pre komunitné centrá a knižnice, prinášajúce praktické vzdelávanie o udržateľnosti."
+      }
+    },
+    "visitWebsite": "Navštíviť stránku",
+    "greencompLabel": "Rámec EÚ",
+    "greencompTitle": "Rámec GreenComp",
+    "greencompDescription": "Naše kurikulum je v súlade s Európskym rámcom kompetencií pre udržateľnosť (GreenComp), ktorý definuje kompetencie udržateľnosti, ktoré študujúci potrebujú.",
+    "collaborationLabel": "Spolupráca",
+    "ourPartners": "Naši partneri",
+    "partnersDescription": "Dve organizácie spojené spoločným záväzkom k vzdelávaniu o udržateľnosti pre dospelých.",
+    "leadPartner": "Vedúci partner - Poľsko",
+    "partner": "Partner - Slovensko",
+    "zsName": "Stowarzyszenie Zielone Slaskie",
+    "zsDescription": "Zielone Śląskie je poľské environmentálne združenie so sídlom v Sliezsku, venujúce sa podpore udržateľného rozvoja, environmentálnemu vzdelávaniu a zapájaniu komunít. Ako vedúci partner koordinuje projekt a prináša odborné znalosti v oblasti zeleného vzdelávania a mobilizácie komunít.",
+    "seqName": "SEQ / YouthFullyYours",
+    "seqDescription": "SEQ (Slovak Education Quest) / YouthFullyYours je slovenská nezisková organizácia špecializujúca sa na neformálne vzdelávanie, prácu s mládežou a vzdelávanie dospelých. Prispievajú odbornosťou v oblasti vzdelávacej metodológie, akreditačných systémov a medzinárodného projektového manažmentu.",
+    "websiteComingSoon": "Stránka čoskoro",
+    "teamLabel": "Tím",
+    "keyPeople": "Kľúčové osoby",
+    "teamDescription": "Tím stojaci za projektom G.E.A.R.S.",
+    "roles": {
+      "projectManager": "Projektový manažér",
+      "educationSpecialist": "Špecialista na vzdelávanie",
+      "sustainabilityExpert": "Expert na udržateľnosť"
+    }
   },
   "quizzes": {
     "module1": {
@@ -1097,5 +1192,44 @@
         "item6": "Buďte k sebe súcitní. Nemôžete vyriešiť každý environmentálny problém a pocit viny z nedokonalých rozhodnutí je kontraproduktívny. Sústreďte sa na pokrok, nie na dokonalósť, a pamätajte, že starosť o životné prostredie je sama osebe znakom morálnej sily."
       }
     }
+  },
+  "auth": {
+    "signIn": "Prihlásiť sa",
+    "signUp": "Zaregistrovať sa",
+    "signOut": "Odhlásiť sa",
+    "signInTitle": "Vitajte späť",
+    "signInSubtitle": "Prihláste sa, aby ste sledovali svoj pokrok na rôznych zariadeniach",
+    "signUpTitle": "Vytvoriť účet",
+    "signUpSubtitle": "Pridajte sa ku Green Explorers a začnite svoju cestu k udržateľnosti",
+    "email": "Email",
+    "password": "Heslo",
+    "name": "Celé meno",
+    "continueWithGoogle": "Pokračovať s Google",
+    "or": "alebo",
+    "noAccount": "Nemáte účet?",
+    "hasAccount": "Už máte účet?",
+    "invalidCredentials": "Neplatný email alebo heslo",
+    "registrationFailed": "Registrácia zlyhala. Skúste to znova.",
+    "userExists": "Účet s týmto emailom už existuje.",
+    "adminPanel": "Admin Panel",
+    "passwordMin": "Heslo musí mať aspoň 6 znakov"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "subtitle": "Spravujte používateľov a sledujte pokrok v učení",
+    "users": "Zaregistrovaní používatelia",
+    "name": "Meno",
+    "email": "Email",
+    "provider": "Spôsob prihlásenia",
+    "modulesCompleted": "Moduly",
+    "progress": "Pokrok",
+    "certificate": "Certifikát",
+    "joined": "Pridaný",
+    "actions": "Akcie",
+    "deleteUser": "Odstrániť používateľa",
+    "deleteConfirm": "Ste si istí, že chcete odstrániť tohto používateľa? Túto akciu nie je možné vrátiť.",
+    "noUsers": "Zatiaľ žiadni zaregistrovaní používatelia.",
+    "totalUsers": "Celkový počet používateľov",
+    "withCertificate": "S certifikátom"
   }
 }

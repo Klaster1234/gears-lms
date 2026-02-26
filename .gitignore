@@ -41,3 +41,11 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+/src/generated/prisma
+
+# MCP config (contains secrets)
+.mcp.json
+
+# session context
+CONTINUATION-PROMPT.md

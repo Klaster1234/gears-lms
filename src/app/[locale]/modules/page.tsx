@@ -2,9 +2,11 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { ModuleGrid } from '@/components/modules/module-grid';
 
 export default function ModulesPage() {
+  const t = useTranslations('modules.catalog');
   const headerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(headerRef, { once: true, margin: '-80px' });
 
@@ -34,7 +36,7 @@ export default function ModulesPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-[#0D9488]"
           >
-            Curriculum
+            {t('subtitle')}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -42,7 +44,7 @@ export default function ModulesPage() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="font-display text-4xl text-[#1A1A2E] sm:text-5xl lg:text-6xl"
           >
-            Learning Modules
+            {t('title')}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -50,9 +52,7 @@ export default function ModulesPage() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="mt-5 text-[16px] leading-relaxed text-[#1A1A2E]/55"
           >
-            Ten carefully crafted modules covering sustainability, zero waste,
-            circular economy, and green competences. Progress at your own rhythm
-            through learn, practice, reflect, and quiz stages.
+            {t('description')}
           </motion.p>
         </div>
 

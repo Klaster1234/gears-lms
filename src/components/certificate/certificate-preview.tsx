@@ -1,16 +1,16 @@
 'use client';
 
 import { Download, ArrowLeft } from 'lucide-react';
+import { useLocale, useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
 import { greenCompAreas } from '@/data/greencomp';
 
-// English fallback names for areas
-const areaNames: Record<string, string> = {
-  'embodying-values': 'Embodying Values',
-  'embracing-complexity': 'Embracing Complexity',
-  'envisioning-futures': 'Envisioning Futures',
-  'acting-for-sustainability': 'Acting for Sustainability',
+const areaToKey: Record<string, string> = {
+  'embodying-values': 'embodyingValues',
+  'embracing-complexity': 'embracingComplexity',
+  'envisioning-futures': 'envisioningFutures',
+  'acting-for-sustainability': 'actingForSustainability',
 };
 
 interface CertificatePreviewProps {
@@ -18,8 +18,13 @@ interface CertificatePreviewProps {
 }
 
 export function CertificatePreview({ name }: CertificatePreviewProps) {
+  const t = useTranslations('certificate');
+  const tg = useTranslations('greencomp.areas');
+  const tf = useTranslations('common.footer');
+  const locale = useLocale();
+
   const today = new Date();
-  const formattedDate = today.toLocaleDateString('en-GB', {
+  const formattedDate = today.toLocaleDateString(locale === 'pl' ? 'pl-PL' : locale === 'sk' ? 'sk-SK' : 'en-GB', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
@@ -36,12 +41,12 @@ export function CertificatePreview({ name }: CertificatePreviewProps) {
         <Button variant="outline" asChild className="border-[#E5E2DB] text-[#1A1A2E]/70 hover:bg-[#FAF8F0]">
           <Link href="/progress">
             <ArrowLeft className="size-4 mr-1" />
-            Back to Progress
+            {t('backToProgress')}
           </Link>
         </Button>
         <Button onClick={handleDownload} className="bg-[#064E3B] hover:bg-[#047857] text-white">
           <Download className="size-4 mr-1" />
-          Download as PDF
+          {t('download')}
         </Button>
       </div>
 
@@ -95,7 +100,7 @@ export function CertificatePreview({ name }: CertificatePreviewProps) {
                 margin: 0,
               }}
             >
-              Certificate of Completion
+              {t('title')}
             </h1>
             <div
               style={{
@@ -112,7 +117,7 @@ export function CertificatePreview({ name }: CertificatePreviewProps) {
                 margin: 0,
               }}
             >
-              This certifies that
+              {t('certifies')}
             </p>
           </div>
 
@@ -137,7 +142,7 @@ export function CertificatePreview({ name }: CertificatePreviewProps) {
                 margin: 0,
               }}
             >
-              has successfully completed all 10 modules of
+              {t('hasCompleted')}
             </p>
           </div>
 
@@ -173,35 +178,37 @@ export function CertificatePreview({ name }: CertificatePreviewProps) {
                 margin: '4px 0 0 0',
               }}
             >
-              A comprehensive programme in sustainable living, zero waste practices, and green
-              competences
+              {t('programmeDescription')}
             </p>
           </div>
 
           {/* GreenComp area badges */}
           <div className="flex flex-wrap items-center justify-center gap-3">
-            {greenCompAreas.map((area) => (
-              <div key={area.id} className="flex items-center gap-1.5">
-                <div
-                  style={{
-                    width: 'clamp(16px, 1.5vw, 24px)',
-                    height: 'clamp(16px, 1.5vw, 24px)',
-                    borderRadius: '50%',
-                    backgroundColor: area.color,
-                    flexShrink: 0,
-                  }}
-                />
-                <span
-                  style={{
-                    color: '#374151',
-                    fontSize: 'clamp(8px, 0.9vw, 12px)',
-                    fontWeight: 500,
-                  }}
-                >
-                  {areaNames[area.id] ?? area.id}
-                </span>
-              </div>
-            ))}
+            {greenCompAreas.map((area) => {
+              const areaKey = areaToKey[area.id];
+              return (
+                <div key={area.id} className="flex items-center gap-1.5">
+                  <div
+                    style={{
+                      width: 'clamp(16px, 1.5vw, 24px)',
+                      height: 'clamp(16px, 1.5vw, 24px)',
+                      borderRadius: '50%',
+                      backgroundColor: area.color,
+                      flexShrink: 0,
+                    }}
+                  />
+                  <span
+                    style={{
+                      color: '#374151',
+                      fontSize: 'clamp(8px, 0.9vw, 12px)',
+                      fontWeight: 500,
+                    }}
+                  >
+                    {areaKey ? tg(`${areaKey}.title`) : area.id}
+                  </span>
+                </div>
+              );
+            })}
           </div>
 
           {/* Date and programme info */}
@@ -213,7 +220,7 @@ export function CertificatePreview({ name }: CertificatePreviewProps) {
                 margin: 0,
               }}
             >
-              Date of completion: <strong>{formattedDate}</strong>
+              {t('dateOfCompletion')}: <strong>{formattedDate}</strong>
             </p>
 
             {/* Erasmus+ badge */}
@@ -261,10 +268,7 @@ export function CertificatePreview({ name }: CertificatePreviewProps) {
               margin: 0,
             }}
           >
-            Funded by the European Union. Views and opinions expressed are however those of the
-            author(s) only and do not necessarily reflect those of the European Union or the
-            European Education and Culture Executive Agency (EACEA). Neither the European Union
-            nor EACEA can be held responsible for them.
+            {tf('disclaimer')}
           </p>
         </div>
       </div>

@@ -6,6 +6,8 @@ import { Figtree, Instrument_Serif } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
+import { AuthSessionProvider } from '@/components/auth/session-provider';
+import { ProgressSyncProvider } from '@/components/auth/progress-sync-provider';
 import '../globals.css';
 
 const figtree = Figtree({
@@ -45,13 +47,17 @@ export default async function LocaleLayout({ children, params }: Props) {
         className={`${figtree.variable} ${instrumentSerif.variable} font-sans antialiased bg-[#FAF8F0]`}
       >
         <NextIntlClientProvider messages={messages}>
-          {/* Grain texture overlay */}
-          <div className="grain-overlay" aria-hidden="true" />
-          <div className="flex min-h-screen flex-col">
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
+          <AuthSessionProvider>
+            <ProgressSyncProvider>
+              {/* Grain texture overlay */}
+              <div className="grain-overlay" aria-hidden="true" />
+              <div className="flex min-h-screen flex-col">
+                <Navbar />
+                <main className="flex-1">{children}</main>
+                <Footer />
+              </div>
+            </ProgressSyncProvider>
+          </AuthSessionProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { User, Eye } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -13,6 +14,7 @@ interface CertificateFormProps {
 }
 
 export function CertificateForm({ onPreview }: CertificateFormProps) {
+  const t = useTranslations('certificate');
   const certificateName = useLearningStore((s) => s.certificateName);
   const setCertificateName = useLearningStore((s) => s.setCertificateName);
   const [name, setName] = useState(certificateName || '');
@@ -36,15 +38,15 @@ export function CertificateForm({ onPreview }: CertificateFormProps) {
         <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-[#ECFDF5] border border-[#064E3B]/10">
           <User className="size-6 text-[#064E3B]" />
         </div>
-        <CardTitle className="text-xl font-display text-[#1A1A2E]">Enter Your Name</CardTitle>
+        <CardTitle className="text-xl font-display text-[#1A1A2E]">{t('enterName')}</CardTitle>
         <p className="text-sm text-[#1A1A2E]/50 mt-1">
-          This will appear on your certificate
+          {t('namePlaceholder')}
         </p>
       </CardHeader>
       <CardContent className="space-y-5 pt-0">
         <div className="space-y-2">
           <Label htmlFor="certificateName" className="text-[#1A1A2E]/70 text-sm">
-            Full Name (as it will appear on the certificate)
+            {t('enterName')}
           </Label>
           <Input
             id="certificateName"
@@ -62,7 +64,7 @@ export function CertificateForm({ onPreview }: CertificateFormProps) {
           className="w-full bg-[#064E3B] hover:bg-[#047857] text-white transition-colors duration-300"
         >
           <Eye className="size-4 mr-1" />
-          Preview Certificate
+          {t('preview')}
         </Button>
       </CardContent>
     </Card>

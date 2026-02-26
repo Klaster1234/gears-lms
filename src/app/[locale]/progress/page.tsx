@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Award, RotateCcw, ArrowRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Separator } from '@/components/ui/separator';
@@ -26,6 +27,8 @@ const TOTAL_MODULES = 10;
 const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function ProgressPage() {
+  const t = useTranslations('progress');
+  const tc = useTranslations('common.buttons');
   const hydrated = useStoreHydration();
   const certificateEarned = useLearningStore((s) => s.certificateEarned);
   const completedModules = useLearningStore((s) => s.completedModules);
@@ -67,14 +70,14 @@ export default function ProgressPage() {
               className="h-[2px] bg-[#064E3B]"
             />
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#064E3B]">
-              Dashboard
+              {t('dashboardLabel')}
             </span>
           </div>
           <h1 className="font-display text-4xl font-bold text-[#1A1A2E] sm:text-5xl lg:text-6xl leading-[1.1]">
-            Your Learning<br />Progress
+            {t('pageTitle')}
           </h1>
           <p className="mt-4 text-lg text-[#1A1A2E]/50 max-w-xl">
-            Track your journey through the G.E.A.R.S. programme
+            {t('trackJourney')}
           </p>
         </motion.div>
 
@@ -104,11 +107,11 @@ export default function ProgressPage() {
                 className="h-[2px] bg-[#047857]"
               />
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#047857]">
-                Modules
+                {t('modulesLabel')}
               </span>
             </div>
             <h2 className="font-display text-3xl font-bold text-[#1A1A2E] sm:text-4xl">
-              Module Progress
+              {t('moduleProgress')}
             </h2>
           </motion.div>
           <ModuleProgressCards />
@@ -132,11 +135,11 @@ export default function ProgressPage() {
                 className="h-[2px] bg-[#0D9488]"
               />
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0D9488]">
-                Competences
+                {t('competencesLabel')}
               </span>
             </div>
             <h2 className="font-display text-3xl font-bold text-[#1A1A2E] sm:text-4xl">
-              GreenComp Competences
+              {t('greencompBadges')}
             </h2>
           </motion.div>
           <GreenCompBadges />
@@ -163,10 +166,10 @@ export default function ProgressPage() {
               {hydrated && certificateEarned ? (
                 <>
                   <h3 className="font-display text-2xl font-bold text-[#064E3B] mb-3">
-                    Congratulations!
+                    {t('congratulations')}
                   </h3>
                   <p className="text-[#1A1A2E]/50 mb-8 max-w-md">
-                    You have completed all 10 modules. Generate your certificate now!
+                    {t('allModulesComplete')}
                   </p>
                   <Button
                     asChild
@@ -174,7 +177,7 @@ export default function ProgressPage() {
                     className="bg-[#064E3B] hover:bg-[#047857] text-white px-8 transition-colors duration-300"
                   >
                     <Link href="/certificate">
-                      Generate Your Certificate
+                      {t('generateCertificate')}
                       <ArrowRight className="size-4 ml-2" />
                     </Link>
                   </Button>
@@ -182,16 +185,15 @@ export default function ProgressPage() {
               ) : (
                 <>
                   <h3 className="font-display text-2xl font-bold text-[#1A1A2E] mb-3">
-                    Certificate of Completion
+                    {t('certificateTitle')}
                   </h3>
                   <p className="text-[#1A1A2E]/50 mb-6 max-w-md">
-                    Complete {remaining} more module{remaining !== 1 ? 's' : ''} to earn your
-                    certificate
+                    {t('remainingModules', { count: remaining })}
                   </p>
                   <div className="mx-auto max-w-xs w-full">
                     <Progress value={hydrated ? (completedCount / TOTAL_MODULES) * 100 : 0} className="h-2 mb-3" />
                     <p className="text-xs text-[#1A1A2E]/40 font-medium">
-                      {completedCount} / {TOTAL_MODULES} modules
+                      {completedCount} / {TOTAL_MODULES} {t('modulesLabel').toLowerCase()}
                     </p>
                   </div>
                 </>
@@ -209,26 +211,25 @@ export default function ProgressPage() {
                 className="text-[#1A1A2E]/40 border-[#E5E2DB] hover:text-[#1A1A2E]/60 hover:bg-[#FAF8F0]"
               >
                 <RotateCcw className="size-4 mr-1" />
-                Reset Progress
+                {t('resetProgress')}
               </Button>
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle className="font-display">Reset All Progress?</DialogTitle>
+                <DialogTitle className="font-display">{t('resetTitle')}</DialogTitle>
                 <DialogDescription>
-                  This will permanently erase all your learning progress, quiz results,
-                  reflections, and certificate data. This action cannot be undone.
+                  {t('resetDescription')}
                 </DialogDescription>
               </DialogHeader>
               <DialogFooter>
                 <Button variant="outline" onClick={() => setResetDialogOpen(false)}>
-                  Cancel
+                  {tc('close')}
                 </Button>
                 <Button
                   variant="destructive"
                   onClick={handleReset}
                 >
-                  Yes, Reset Everything
+                  {t('resetButton')}
                 </Button>
               </DialogFooter>
             </DialogContent>

@@ -1,9 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { useLearningStore, useStoreHydration } from '@/store/learning-store';
 
 export function OverallProgress() {
+  const t = useTranslations('progress');
   const hydrated = useStoreHydration();
   const overallProgress = useLearningStore((s) => s.overallProgress);
   const completedModules = useLearningStore((s) => s.completedModules);
@@ -73,10 +75,7 @@ export function OverallProgress() {
       </div>
       <p className="text-lg text-[#1A1A2E]/60">
         {hydrated ? (
-          <>
-            <span className="font-semibold text-[#1A1A2E]">{completedCount}</span> of{' '}
-            <span className="font-semibold text-[#1A1A2E]">10</span> modules completed
-          </>
+          <>{t('modulesCompleted', { count: completedCount })}</>
         ) : (
           <span>&nbsp;</span>
         )}

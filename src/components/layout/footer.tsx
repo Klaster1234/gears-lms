@@ -1,6 +1,9 @@
+import { useTranslations } from 'next-intl';
 import { LOGOS, EU_DISCLAIMER, PROJECT } from '@/lib/constants';
 
 export function Footer() {
+  const t = useTranslations('common.footer');
+
   return (
     <footer className="mt-auto w-full bg-[#022C22] text-white/90">
       {/* Top accent line */}
@@ -32,7 +35,7 @@ export function Footer() {
 
         {/* EU Disclaimer */}
         <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-white/40">
-          {EU_DISCLAIMER}
+          {t('disclaimer')}
         </p>
 
         {/* Separator */}
@@ -41,16 +44,16 @@ export function Footer() {
         {/* Project info */}
         <div className="text-center">
           <p className="font-display text-lg text-white/80">
-            {PROJECT.fullName}
+            {t('projectInfo')}
           </p>
           <p className="mt-2 text-sm text-white/40">
-            {PROJECT.programme} &middot; {PROJECT.projectNumber}
+            {t('programme')} &middot; {t('projectNumber')}
           </p>
         </div>
 
         {/* Copyright */}
         <p className="mt-8 text-center text-xs text-white/25">
-          &copy; 2025-2027 Green Explorers Consortium
+          {t('copyright')}
         </p>
       </div>
     </footer>

@@ -2,25 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { CheckCircle2, XCircle, BookOpen, Wrench, MessageSquare } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Link } from '@/i18n/routing';
 import { useLearningStore, useStoreHydration } from '@/store/learning-store';
 import { modules } from '@/data/modules';
-
-// English fallback titles
-const moduleTitles: Record<number, string> = {
-  1: 'Introduction to 5R Principles',
-  2: 'Waste Segregation & Zero Waste',
-  3: 'Composting & Organic Waste',
-  4: 'Sustainable Shopping',
-  5: 'Circular Economy',
-  6: 'Fast vs. Slow Fashion',
-  7: 'Green Consumption & Eco-labels',
-  8: 'Energy Efficiency & Footprint',
-  9: 'Community Action',
-  10: 'Eco-Anxiety & Wellbeing',
-};
 
 interface StepIndicatorProps {
   label: string;
@@ -46,6 +33,8 @@ function StepIndicator({ label, completed, icon }: StepIndicatorProps) {
 }
 
 export function ModuleProgressCards() {
+  const t = useTranslations('modules');
+  const tt = useTranslations('modules.tabs');
   const hydrated = useStoreHydration();
   const moduleProgress = useLearningStore((s) => s.moduleProgress);
 
@@ -94,7 +83,7 @@ export function ModuleProgressCards() {
                       {String(mod.number).padStart(2, '0')}
                     </div>
                     <CardTitle className="text-sm font-semibold leading-tight pt-1 text-[#1A1A2E]">
-                      {moduleTitles[mod.number] ?? mod.titleKey}
+                      {t(`${mod.number}.title`)}
                     </CardTitle>
                   </div>
                 </CardHeader>
@@ -104,17 +93,17 @@ export function ModuleProgressCards() {
                   {hydrated && (
                     <div className="flex flex-wrap gap-x-4 gap-y-1.5">
                       <StepIndicator
-                        label="Learn"
+                        label={tt('learn')}
                         completed={progress?.learnCompleted ?? false}
                         icon={<BookOpen className="size-4" />}
                       />
                       <StepIndicator
-                        label="Practice"
+                        label={tt('practice')}
                         completed={progress?.practiceCompleted ?? false}
                         icon={<Wrench className="size-4" />}
                       />
                       <StepIndicator
-                        label="Reflect"
+                        label={tt('reflect')}
                         completed={progress?.reflectCompleted ?? false}
                         icon={<MessageSquare className="size-4" />}
                       />
@@ -134,7 +123,7 @@ export function ModuleProgressCards() {
                           progress.quizPassed ? 'text-[#064E3B]' : 'text-red-500'
                         }`}
                       >
-                        {progress.quizScore}% ({progress.quizPassed ? 'Pass' : 'Fail'})
+                        {progress.quizScore}%
                       </span>
                     </div>
                   )}

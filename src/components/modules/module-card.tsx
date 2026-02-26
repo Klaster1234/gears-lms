@@ -2,37 +2,32 @@
 
 import { motion } from 'framer-motion';
 import { Clock, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { Badge } from '@/components/ui/badge';
 import { Link } from '@/i18n/routing';
 import { useLearningStore, useStoreHydration } from '@/store/learning-store';
 import { greenCompAreas } from '@/data/greencomp';
 import type { Module } from '@/types';
 
-// English fallback titles for modules
-const moduleTitles: Record<number, string> = {
-  1: 'Introduction to Sustainability & the 5R Principles',
-  2: 'Understanding Waste & the Zero Waste Mindset',
-  3: 'Composting for Households & Communities',
-  4: 'Sustainable Shopping: Food, Fashion & Beyond',
-  5: 'Circular Economy Basics',
-  6: 'Fast Fashion vs. Slow Fashion',
-  7: 'Green Consumption & Ethical Choices',
-  8: 'Energy & Resource Efficiency in Daily Life',
-  9: 'Community Action & Collective Impact',
-  10: 'Understanding and Managing Eco-Anxiety',
+const moduleIllustrations: Record<number, string> = {
+  1: '/art/mod-sustainability.png',
+  2: '/art/mod-zerowaste.png',
+  3: '/art/mod-composting.png',
+  4: '/art/mod-shopping.png',
+  5: '/art/mod-circular.png',
+  6: '/art/mod-fashion.png',
+  7: '/art/mod-greenwashing.png',
+  8: '/art/mod-energy.png',
+  9: '/art/mod-community.png',
+  10: '/art/mod-ecoanxiety.png',
 };
 
-const moduleDescriptions: Record<number, string> = {
-  1: 'Learn about the foundations of sustainability and how the 5R principles guide everyday choices.',
-  2: 'Explore waste generation, its environmental impact, and how to adopt a zero waste lifestyle.',
-  3: 'Discover practical composting techniques for reducing organic waste at home and in your community.',
-  4: 'Make informed decisions about food, fashion, and consumer goods for a sustainable future.',
-  5: 'Understand how a circular economy keeps resources in use and eliminates waste by design.',
-  6: 'Compare the environmental and social impacts of fast fashion with sustainable fashion alternatives.',
-  7: 'Develop critical thinking skills for ethical consumption and recognising greenwashing.',
-  8: 'Learn practical ways to reduce energy use and resource consumption in your daily routines.',
-  9: 'Explore how collective efforts and community initiatives drive meaningful environmental change.',
-  10: 'Understand eco-anxiety, build emotional resilience, and channel concern into positive action.',
+const areaToKey: Record<string, string> = {
+  'embodying-values': 'embodyingValues',
+  'embracing-complexity': 'embracingComplexity',
+  'envisioning-futures': 'envisioningFutures',
+  'acting-for-sustainability': 'actingForSustainability',
 };
 
 interface ModuleCardProps {
@@ -41,6 +36,8 @@ interface ModuleCardProps {
 }
 
 export function ModuleCard({ module, index }: ModuleCardProps) {
+  const t = useTranslations('modules');
+  const tg = useTranslations('greencomp.areas');
   const hydrated = useStoreHydration();
   const moduleProgress = useLearningStore((s) => s.moduleProgress[module.id]);
 
@@ -64,14 +61,6 @@ export function ModuleCard({ module, index }: ModuleCardProps) {
     .map((areaId) => greenCompAreas.find((a) => a.id === areaId))
     .filter(Boolean);
 
-  // English titles for GreenComp areas
-  const areaNames: Record<string, string> = {
-    'embodying-values': 'Embodying Values',
-    'embracing-complexity': 'Embracing Complexity',
-    'envisioning-futures': 'Envisioning Futures',
-    'acting-for-sustainability': 'Acting for Sustainability',
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -84,54 +73,72 @@ export function ModuleCard({ module, index }: ModuleCardProps) {
       className="h-full"
     >
       <Link href={`/modules/${module.id}`} className="group block h-full">
-        <div className="relative h-full overflow-hidden rounded-2xl border border-[#E5E2DB] bg-white p-7 transition-all duration-500 hover:border-[#064E3B]/20 hover:shadow-[0_20px_60px_-15px_rgba(6,78,59,0.08)] lg:p-8">
-          {/* Large watermark number */}
-          <span className="pointer-events-none absolute -top-3 -right-1 font-display text-[7rem] leading-none text-[#064E3B] opacity-[0.04] transition-opacity duration-500 group-hover:opacity-[0.08]">
-            {String(module.number).padStart(2, '0')}
-          </span>
-
-          {/* Status indicator - top right */}
-          {hydrated && (
-            <div className="absolute top-6 right-6">
-              {isCompleted ? (
-                <div className="flex items-center gap-1.5 text-[#064E3B]">
-                  <CheckCircle2 className="size-5" />
-                  <span className="text-xs font-medium tracking-wide uppercase">Done</span>
-                </div>
-              ) : isInProgress ? (
-                <Badge className="rounded-full border-0 bg-[#F59E0B]/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.1em] text-[#D97706]">
-                  In Progress
-                </Badge>
-              ) : null}
+        <div className="relative h-full overflow-hidden rounded-2xl border border-[#E5E2DB] bg-white transition-all duration-500 hover:border-[#064E3B]/20 hover:shadow-[0_20px_60px_-15px_rgba(6,78,59,0.08)]">
+          {/* Illustration banner */}
+          {moduleIllustrations[module.number] && (
+            <div className="relative h-32 w-full overflow-hidden bg-[#FAF8F0]">
+              <Image
+                src={moduleIllustrations[module.number]}
+                alt=""
+                fill
+                className="object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
             </div>
           )}
 
-          {/* Module number label */}
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#0D9488]">
-            Module {String(module.number).padStart(2, '0')}
-          </p>
+          <div className="relative p-7 lg:p-8">
+            {/* Large watermark number */}
+            <span className="pointer-events-none absolute -top-3 -right-1 font-display text-[7rem] leading-none text-[#064E3B] opacity-[0.04] transition-opacity duration-500 group-hover:opacity-[0.08]">
+              {String(module.number).padStart(2, '0')}
+            </span>
+
+            {/* Status indicator - top right */}
+            {hydrated && (
+              <div className="absolute top-4 right-6">
+                {isCompleted ? (
+                  <div className="flex items-center gap-1.5 text-[#064E3B]">
+                    <CheckCircle2 className="size-5" />
+                    <span className="text-xs font-medium tracking-wide uppercase">{t('done')}</span>
+                  </div>
+                ) : isInProgress ? (
+                  <Badge className="rounded-full border-0 bg-[#F59E0B]/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.1em] text-[#D97706]">
+                    {t('inProgress')}
+                  </Badge>
+                ) : null}
+              </div>
+            )}
+
+            {/* Module number label */}
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#0D9488]">
+              {t('moduleLabel', { number: String(module.number).padStart(2, '0') })}
+            </p>
 
           {/* Title */}
           <h3 className="mb-3 font-display text-xl leading-tight text-[#1A1A2E] lg:text-[22px]">
-            {moduleTitles[module.number] ?? module.titleKey}
+            {t(`${module.number}.title`)}
           </h3>
 
           {/* Description */}
           <p className="mb-5 text-[14px] leading-relaxed text-[#1A1A2E]/50 line-clamp-2">
-            {moduleDescriptions[module.number] ?? ''}
+            {t(`${module.number}.description`)}
           </p>
 
           {/* GreenComp area badges */}
           <div className="mb-5 flex flex-wrap gap-1.5">
-            {areaData.map((area) => (
-              <Badge
-                key={area!.id}
-                className="rounded-full border-0 px-2.5 py-0.5 text-[10px] font-normal text-white"
-                style={{ backgroundColor: area!.color }}
-              >
-                {areaNames[area!.id] ?? area!.id}
-              </Badge>
-            ))}
+            {areaData.map((area) => {
+              const areaKey = areaToKey[area!.id];
+              return (
+                <Badge
+                  key={area!.id}
+                  className="rounded-full border-0 px-2.5 py-0.5 text-[10px] font-normal text-white"
+                  style={{ backgroundColor: area!.color }}
+                >
+                  {areaKey ? tg(`${areaKey}.title`) : area!.id}
+                </Badge>
+              );
+            })}
           </div>
 
           {/* Bottom section: time + progress */}
@@ -151,7 +158,7 @@ export function ModuleCard({ module, index }: ModuleCardProps) {
                   />
                 </div>
                 <p className="text-[11px] font-medium tracking-wide text-[#1A1A2E]/35">
-                  {stepsCompleted} of 4 steps completed
+                  {t('stepsCompleted', { count: stepsCompleted })}
                 </p>
               </div>
             ) : (
@@ -160,6 +167,8 @@ export function ModuleCard({ module, index }: ModuleCardProps) {
                 <p className="text-[11px] text-[#1A1A2E]/35">&nbsp;</p>
               </div>
             )}
+          </div>
+
           </div>
 
           {/* Bottom accent line on hover */}

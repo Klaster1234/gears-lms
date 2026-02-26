@@ -52,19 +52,36 @@
       "certificate": {
         "title": "Certificate of Completion",
         "description": "Earn a recognised certificate after completing all modules and demonstrating your competences."
-      }
+      },
+      "sectionLabel": "What you'll learn",
+      "sectionTitle": "Everything you need to go green",
+      "modulesNumber": "10",
+      "modulesDescription": "A full sustainability curriculum - from waste reduction and circular economy to energy efficiency and community action.",
+      "quizzesNumber": "50+",
+      "quizzesDescription": "Engage with multiple-choice quizzes, drag-and-drop sorting, real-world scenarios, and interactive games built for adults.",
+      "certificateNumber": "1",
+      "certificateDescription": "Complete all modules to earn your Green Explorers certificate, recognised under the Erasmus+ programme."
     },
     "modulesPreview": {
       "title": "Learning Modules",
-      "subtitle": "10 modules covering all aspects of sustainable living"
+      "subtitle": "10 modules covering all aspects of sustainable living",
+      "sectionLabel": "Curriculum",
+      "sectionTitle": "10 Modules to Transform Your Habits",
+      "viewAll": "View all modules",
+      "startModule": "Start module"
     },
     "greencomp": {
       "title": "GreenComp Framework",
-      "subtitle": "Our curriculum is aligned with the European Sustainability Competence Framework"
+      "subtitle": "Our curriculum is aligned with the European Sustainability Competence Framework",
+      "sectionLabel": "EU Framework",
+      "sectionTitle": "Built on GreenComp",
+      "sectionDescription": "Our curriculum aligns with GreenComp, the European sustainability competence framework - 4 areas, 12 competences."
     },
     "partners": {
       "title": "Our Partners",
-      "subtitle": "An Erasmus+ KA210-ADU collaboration"
+      "subtitle": "An Erasmus+ KA210-ADU collaboration",
+      "sectionLabel": "Partnership",
+      "visitWebsite": "Visit website"
     }
   },
   "modules": {
@@ -110,7 +127,8 @@
     },
     "catalog": {
       "title": "Learning Modules",
-      "subtitle": "Explore all 10 modules of the G.E.A.R.S. programme"
+      "subtitle": "Explore all 10 modules of the G.E.A.R.S. programme",
+      "description": "Ten carefully crafted modules covering sustainability, zero waste, circular economy, and green competences. Progress at your own rhythm through learn, practice, reflect, and quiz stages."
     },
     "tabs": {
       "learn": "Learn",
@@ -122,7 +140,15 @@
       "notStarted": "Not Started",
       "inProgress": "In Progress",
       "completed": "Completed"
-    }
+    },
+    "moduleLabel": "Module {number}",
+    "stepsCompleted": "{count} of 4 steps completed",
+    "done": "Done",
+    "inProgress": "In Progress",
+    "startModule": "Start module",
+    "allModules": "All Modules",
+    "stepsLabel": "Step {current} of {total}",
+    "stepsCompletedCount": "{count} completed"
   },
   "progress": {
     "title": "Your Learning Progress",
@@ -135,7 +161,19 @@
     "resetProgress": "Reset Progress",
     "resetConfirm": "Are you sure? This will delete all your learning progress, quiz results, and reflections. This action cannot be undone.",
     "resetButton": "Yes, Reset Everything",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "dashboardLabel": "Dashboard",
+    "pageTitle": "Your Learning Progress",
+    "trackJourney": "Track your journey through the G.E.A.R.S. programme",
+    "modulesLabel": "Modules",
+    "competencesLabel": "Competences",
+    "congratulations": "Congratulations!",
+    "allModulesComplete": "You have completed all 10 modules. Generate your certificate now!",
+    "generateCertificate": "Generate Your Certificate",
+    "certificateTitle": "Certificate of Completion",
+    "remainingModules": "Complete {count} more module(s) to earn your certificate",
+    "resetTitle": "Reset All Progress?",
+    "resetDescription": "This will permanently erase all your learning progress, quiz results, reflections, and certificate data. This action cannot be undone."
   },
   "certificate": {
     "title": "Certificate of Completion",
@@ -150,7 +188,12 @@
     "hasCompleted": "has successfully completed all 10 modules of",
     "programmeTitle": "G.E.A.R.S. - Green Explorers: Adults Reimagining Sustainability",
     "programmeDescription": "A full programme in sustainable living, zero waste practices, and green competences",
-    "dateOfCompletion": "Date of Completion"
+    "dateOfCompletion": "Date of Completion",
+    "notAvailable": "Certificate Not Yet Available",
+    "completeAll": "Complete all 10 modules to earn your certificate of completion.",
+    "achievementLabel": "Achievement",
+    "yourCertificate": "Your Certificate",
+    "generateDescription": "Generate and download your certificate of completion"
   },
   "greencomp": {
     "areas": {
@@ -188,7 +231,59 @@
   },
   "about": {
     "title": "About G.E.A.R.S.",
-    "subtitle": "Green Explorers: Adults Reimagining Sustainability"
+    "subtitle": "Green Explorers: Adults Reimagining Sustainability",
+    "erasmusLabel": "Erasmus+ KA210-ADU",
+    "description": "G.E.A.R.S. is an Erasmus+ KA210-ADU project developing innovative tools for adult education in sustainable development. Our goal is to empower adults with practical knowledge and competences to live more sustainably.",
+    "overviewLabel": "Overview",
+    "aboutProject": "About the Project",
+    "programmeLabel": "Programme",
+    "projectNumberLabel": "Project Number",
+    "durationLabel": "Duration",
+    "smallScale": "Small-scale Partnership in Adult Education",
+    "aboutParagraph1": "The G.E.A.R.S. project addresses the urgent need for sustainability education among adults. Through 10 interactive learning modules, we guide participants through the journey from understanding basic environmental principles to taking meaningful community action.",
+    "aboutParagraph2": "Our programme is built around the European GreenComp framework, ensuring that learners develop key sustainability competences recognised across the European Union.",
+    "whatWeOffer": "What We Offer",
+    "whatWeOfferDescription": "A comprehensive programme of tools and resources for sustainability education.",
+    "features": {
+      "modules": {
+        "title": "10 Interactive Modules",
+        "description": "From waste management to eco-anxiety, our modules cover the full spectrum of sustainable living topics with quizzes, scenarios, and hands-on activities."
+      },
+      "quests": {
+        "title": "City Quests",
+        "description": "Outdoor educational activities connecting classroom learning with real-world sustainability practices in your local community."
+      },
+      "comic": {
+        "title": "Educational Comic Book",
+        "description": "Engaging visual storytelling that makes sustainability concepts accessible and memorable for adult learners."
+      },
+      "cabinets": {
+        "title": "Sustainability Cabinets",
+        "description": "Physical resource collections for community centres and libraries, bringing hands-on sustainability education to local spaces."
+      }
+    },
+    "visitWebsite": "Visit website",
+    "greencompLabel": "EU Framework",
+    "greencompTitle": "GreenComp Framework",
+    "greencompDescription": "Our curriculum is aligned with the European Sustainability Competence Framework (GreenComp), which defines the sustainability competences that learners need.",
+    "collaborationLabel": "Collaboration",
+    "ourPartners": "Our Partners",
+    "partnersDescription": "Two organisations united by a shared commitment to sustainability education for adults.",
+    "leadPartner": "Lead Partner - Poland",
+    "partner": "Partner - Slovakia",
+    "zsName": "Stowarzyszenie Zielone Slaskie",
+    "zsDescription": "Zielone Slaskie is a Polish environmental association based in Silesia, dedicated to promoting sustainable development, environmental education, and community engagement. As the lead partner, they coordinate the project and bring expertise in green education and community mobilisation.",
+    "seqName": "SEQ / YouthFullyYours",
+    "seqDescription": "SEQ (Slovak Education Quest) / YouthFullyYours is a Slovak non-profit organisation specialising in non-formal education, youth work, and adult learning. They contribute expertise in educational methodology, accreditation systems, and international project management.",
+    "websiteComingSoon": "Website coming soon",
+    "teamLabel": "Team",
+    "keyPeople": "Key People",
+    "teamDescription": "The team behind the G.E.A.R.S. project.",
+    "roles": {
+      "projectManager": "Project Manager",
+      "educationSpecialist": "Education Specialist",
+      "sustainabilityExpert": "Sustainability Expert"
+    }
   },
   "quizzes": {
     "module1": {
@@ -1097,5 +1192,44 @@
         "item6": "Be compassionate with yourself. You cannot solve every environmental problem, and feeling guilty about imperfect choices is counterproductive. Focus on progress rather than perfection, and remember that caring about the environment is itself a sign of moral strength."
       }
     }
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "signInTitle": "Welcome Back",
+    "signInSubtitle": "Sign in to track your progress across devices",
+    "signUpTitle": "Create Account",
+    "signUpSubtitle": "Join Green Explorers and start your sustainability journey",
+    "email": "Email",
+    "password": "Password",
+    "name": "Full Name",
+    "continueWithGoogle": "Continue with Google",
+    "or": "or",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "invalidCredentials": "Invalid email or password",
+    "registrationFailed": "Registration failed. Please try again.",
+    "userExists": "An account with this email already exists.",
+    "adminPanel": "Admin Panel",
+    "passwordMin": "Password must be at least 6 characters"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "subtitle": "Manage users and view learning progress",
+    "users": "Registered Users",
+    "name": "Name",
+    "email": "Email",
+    "provider": "Login Method",
+    "modulesCompleted": "Modules",
+    "progress": "Progress",
+    "certificate": "Certificate",
+    "joined": "Joined",
+    "actions": "Actions",
+    "deleteUser": "Delete User",
+    "deleteConfirm": "Are you sure you want to delete this user? This action cannot be undone.",
+    "noUsers": "No registered users yet.",
+    "totalUsers": "Total Users",
+    "withCertificate": "With Certificate"
   }
 }

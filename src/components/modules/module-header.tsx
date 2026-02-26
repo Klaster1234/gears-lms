@@ -3,37 +3,38 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Clock, BookOpen, Puzzle, PenLine, LinkIcon, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { Badge } from '@/components/ui/badge';
 import { useLearningStore, useStoreHydration } from '@/store/learning-store';
 import { greenCompAreas } from '@/data/greencomp';
 import type { Module } from '@/types';
 
-// English fallback titles
-const moduleTitles: Record<number, string> = {
-  1: 'Introduction to Sustainability & the 5R Principles',
-  2: 'Understanding Waste & the Zero Waste Mindset',
-  3: 'Composting for Households & Communities',
-  4: 'Sustainable Shopping: Food, Fashion & Beyond',
-  5: 'Circular Economy Basics',
-  6: 'Fast Fashion vs. Slow Fashion',
-  7: 'Green Consumption & Ethical Choices',
-  8: 'Energy & Resource Efficiency in Daily Life',
-  9: 'Community Action & Collective Impact',
-  10: 'Understanding and Managing Eco-Anxiety',
+const moduleIllustrations: Record<number, string> = {
+  1: '/art/mod-sustainability.png',
+  2: '/art/mod-zerowaste.png',
+  3: '/art/mod-composting.png',
+  4: '/art/mod-shopping.png',
+  5: '/art/mod-circular.png',
+  6: '/art/mod-fashion.png',
+  7: '/art/mod-greenwashing.png',
+  8: '/art/mod-energy.png',
+  9: '/art/mod-community.png',
+  10: '/art/mod-ecoanxiety.png',
 };
 
-const areaNames: Record<string, string> = {
-  'embodying-values': 'Embodying Values',
-  'embracing-complexity': 'Embracing Complexity',
-  'envisioning-futures': 'Envisioning Futures',
-  'acting-for-sustainability': 'Acting for Sustainability',
+const areaToKey: Record<string, string> = {
+  'embodying-values': 'embodyingValues',
+  'embracing-complexity': 'embracingComplexity',
+  'envisioning-futures': 'envisioningFutures',
+  'acting-for-sustainability': 'actingForSustainability',
 };
 
 const steps = [
-  { key: 'learn' as const, label: 'Learn', icon: BookOpen },
-  { key: 'practice' as const, label: 'Practice', icon: Puzzle },
-  { key: 'reflect' as const, label: 'Reflect', icon: PenLine },
-  { key: 'resources' as const, label: 'Resources', icon: LinkIcon },
+  { key: 'learn' as const, labelKey: 'learn', icon: BookOpen },
+  { key: 'practice' as const, labelKey: 'practice', icon: Puzzle },
+  { key: 'reflect' as const, labelKey: 'reflect', icon: PenLine },
+  { key: 'resources' as const, labelKey: 'resources', icon: LinkIcon },
 ];
 
 interface ModuleHeaderProps {
@@ -41,6 +42,9 @@ interface ModuleHeaderProps {
 }
 
 export function ModuleHeader({ module }: ModuleHeaderProps) {
+  const t = useTranslations('modules');
+  const tg = useTranslations('greencomp.areas');
+  const tt = useTranslations('modules.tabs');
   const hydrated = useStoreHydration();
   const moduleProgress = useLearningStore((s) => s.moduleProgress[module.id]);
   const ref = useRef<HTMLDivElement>(null);
@@ -61,6 +65,20 @@ export function ModuleHeader({ module }: ModuleHeaderProps) {
 
   return (
     <div ref={ref} className="relative border-b border-[#E5E2DB] bg-white pb-8 overflow-hidden">
+      {/* Background illustration - right side decorative */}
+      {moduleIllustrations[module.number] && (
+        <div className="pointer-events-none absolute -right-12 top-0 bottom-0 hidden w-[320px] select-none opacity-[0.06] lg:block">
+          <Image
+            src={moduleIllustrations[module.number]}
+            alt=""
+            fill
+            className="object-cover object-center"
+            sizes="320px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/60 to-transparent" />
+        </div>
+      )}
+
       {/* Large watermark module number */}
       <span className="pointer-events-none absolute -top-8 -right-4 font-display text-[12rem] leading-none text-[#064E3B] opacity-[0.03] select-none sm:text-[16rem]">
         {String(module.number).padStart(2, '0')}
@@ -75,7 +93,7 @@ export function ModuleHeader({ module }: ModuleHeaderProps) {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-xs font-medium uppercase tracking-[0.2em] text-[#0D9488]"
           >
-            Module {String(module.number).padStart(2, '0')}
+            {t('moduleLabel', { number: String(module.number).padStart(2, '0') })}
           </motion.p>
 
           <motion.span
@@ -96,7 +114,7 @@ export function ModuleHeader({ module }: ModuleHeaderProps) {
           transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           className="font-display text-3xl text-[#1A1A2E] sm:text-4xl lg:text-5xl max-w-3xl"
         >
-          {moduleTitles[module.number] ?? module.titleKey}
+          {t(`${module.number}.title`)}
         </motion.h1>
 
         {/* GreenComp area badges */}
@@ -106,15 +124,18 @@ export function ModuleHeader({ module }: ModuleHeaderProps) {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-5 flex flex-wrap items-center gap-2"
         >
-          {areaData.map((area) => (
-            <Badge
-              key={area!.id}
-              className="rounded-full border-0 px-3 py-1 text-[11px] font-normal text-white"
-              style={{ backgroundColor: area!.color }}
-            >
-              {areaNames[area!.id] ?? area!.id}
-            </Badge>
-          ))}
+          {areaData.map((area) => {
+            const areaKey = areaToKey[area!.id];
+            return (
+              <Badge
+                key={area!.id}
+                className="rounded-full border-0 px-3 py-1 text-[11px] font-normal text-white"
+                style={{ backgroundColor: area!.color }}
+              >
+                {areaKey ? tg(`${areaKey}.title`) : area!.id}
+              </Badge>
+            );
+          })}
         </motion.div>
 
         {/* Step progress indicator */}
@@ -127,10 +148,10 @@ export function ModuleHeader({ module }: ModuleHeaderProps) {
           {hydrated ? (
             <div className="flex items-center gap-1.5 text-[13px] text-[#1A1A2E]/45 mb-4">
               <span className="font-medium text-[#1A1A2E]/70">
-                Step {Math.min(completedSteps + 1, 4)} of 4
+                {t('stepsLabel', { current: Math.min(completedSteps + 1, 4), total: 4 })}
               </span>
               <span className="mx-1 text-[#E5E2DB]">/</span>
-              <span>{completedSteps} completed</span>
+              <span>{t('stepsCompletedCount', { count: completedSteps })}</span>
             </div>
           ) : (
             <div className="h-5 mb-4" />
@@ -157,7 +178,7 @@ export function ModuleHeader({ module }: ModuleHeaderProps) {
                   ) : (
                     <Icon className="size-4 shrink-0" />
                   )}
-                  <span className="hidden sm:inline">{step.label}</span>
+                  <span className="hidden sm:inline">{tt(step.labelKey)}</span>
                 </motion.div>
               );
             })}

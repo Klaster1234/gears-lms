@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import {
   BookOpen,
   MapPin,
@@ -19,82 +20,27 @@ import { LOGOS, EU_DISCLAIMER, PROJECT } from '@/lib/constants';
 import { greenCompAreas } from '@/data/greencomp';
 
 /* ------------------------------------------------------------------ */
-/*  Static data                                                        */
+/*  Static data (non-translatable)                                     */
 /* ------------------------------------------------------------------ */
 
-const programmeFeatures = [
-  {
-    icon: BookOpen,
-    title: '10 Interactive Modules',
-    description:
-      'From waste management to eco-anxiety, our modules cover the full spectrum of sustainable living topics with quizzes, scenarios, and hands-on activities.',
-    color: '#064E3B',
-    bgColor: 'bg-[#ECFDF5]',
-  },
-  {
-    icon: MapPin,
-    title: 'City Quests',
-    description:
-      'Outdoor educational activities connecting classroom learning with real-world sustainability practices in your local community.',
-    color: '#0D9488',
-    bgColor: 'bg-[#F0FDFA]',
-  },
-  {
-    icon: BookImage,
-    title: 'Educational Comic Book',
-    description:
-      'Engaging visual storytelling that makes sustainability concepts accessible and memorable for adult learners.',
-    color: '#D97706',
-    bgColor: 'bg-[#FFFBEB]',
-  },
-  {
-    icon: Library,
-    title: 'Sustainability Cabinets',
-    description:
-      'Physical resource collections for community centres and libraries, bringing hands-on sustainability education to local spaces.',
-    color: '#047857',
-    bgColor: 'bg-[#ECFDF5]',
-  },
-];
+const programmeFeatureKeys = [
+  { key: 'modules', icon: BookOpen, color: '#064E3B', bgColor: 'bg-[#ECFDF5]' },
+  { key: 'quests', icon: MapPin, color: '#0D9488', bgColor: 'bg-[#F0FDFA]' },
+  { key: 'comic', icon: BookImage, color: '#D97706', bgColor: 'bg-[#FFFBEB]' },
+  { key: 'cabinets', icon: Library, color: '#047857', bgColor: 'bg-[#ECFDF5]' },
+] as const;
 
-const greenCompDisplayData: Record<
-  string,
-  { title: string; competences: string }
-> = {
-  'embodying-values': {
-    title: 'Embodying Sustainability Values',
-    competences: 'Valuing Sustainability, Supporting Fairness, Promoting Nature',
-  },
-  'embracing-complexity': {
-    title: 'Embracing Complexity',
-    competences: 'Systems Thinking, Critical Thinking, Problem Framing',
-  },
-  'envisioning-futures': {
-    title: 'Envisioning Sustainable Futures',
-    competences: 'Futures Literacy, Adaptability, Exploratory Thinking',
-  },
-  'acting-for-sustainability': {
-    title: 'Acting for Sustainability',
-    competences: 'Political Agency, Collective Action, Individual Initiative',
-  },
+const areaToKey: Record<string, string> = {
+  'embodying-values': 'embodyingValues',
+  'embracing-complexity': 'embracingComplexity',
+  'envisioning-futures': 'envisioningFutures',
+  'acting-for-sustainability': 'actingForSustainability',
 };
 
 const teamMembers = [
-  {
-    name: 'Gabriela Meziova',
-    role: 'Project Manager',
-    org: 'SEQ / YouthFullyYours',
-  },
-  {
-    name: 'Katarina Zvarikova',
-    role: 'Education Specialist',
-    org: 'SEQ / YouthFullyYours',
-  },
-  {
-    name: 'Marco Pogai',
-    role: 'Sustainability Expert',
-    org: 'Zielone Slaskie',
-  },
+  { name: 'Gabriela Meziova', roleKey: 'projectManager', org: 'SEQ / YouthFullyYours' },
+  { name: 'Katarina Zvarikova', roleKey: 'educationSpecialist', org: 'SEQ / YouthFullyYours' },
+  { name: 'Marco Pogai', roleKey: 'sustainabilityExpert', org: 'Zielone Slaskie' },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -169,6 +115,8 @@ function SectionHeader({
 /* ------------------------------------------------------------------ */
 
 export default function AboutPage() {
+  const t = useTranslations('about');
+  const tg = useTranslations('greencomp');
   const heroRef = useRef(null);
   const projectRef = useRef(null);
   const offerRef = useRef(null);
@@ -213,23 +161,20 @@ export default function AboutPage() {
                 className="h-[2px] bg-[#064E3B]"
               />
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#064E3B]">
-                Erasmus+ KA210-ADU
+                {t('erasmusLabel')}
               </span>
             </div>
 
             <h1 className="font-display text-5xl font-bold text-[#1A1A2E] sm:text-6xl lg:text-7xl leading-[1.05] max-w-3xl">
-              About G.E.A.R.S.
+              {t('title')}
             </h1>
 
             <p className="mt-4 font-display text-xl text-[#064E3B] sm:text-2xl max-w-2xl">
-              Green Explorers: Adults Reimagining Sustainability
+              {t('subtitle')}
             </p>
 
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-[#1A1A2E]/60">
-              G.E.A.R.S. is an Erasmus+ KA210-ADU project developing innovative
-              tools for adult education in sustainable development. Our goal is to
-              empower adults with practical knowledge and competences to live more
-              sustainably.
+              {t('description')}
             </p>
           </motion.div>
         </div>
@@ -241,8 +186,8 @@ export default function AboutPage() {
       <section ref={projectRef} className="py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Overview"
-            heading="About the Project"
+            label={t('overviewLabel')}
+            heading={t('aboutProject')}
             inView={projectInView}
           />
 
@@ -260,13 +205,13 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1A1A2E]/35 mb-1">
-                    Programme
+                    {t('programmeLabel')}
                   </p>
                   <p className="text-sm font-semibold text-[#1A1A2E]">
                     {PROJECT.programme}
                   </p>
                   <p className="text-xs text-[#1A1A2E]/45 mt-0.5">
-                    Small-scale Partnership in Adult Education
+                    {t('smallScale')}
                   </p>
                 </div>
               </div>
@@ -279,7 +224,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1A1A2E]/35 mb-1">
-                    Project Number
+                    {t('projectNumberLabel')}
                   </p>
                   <p className="text-sm font-semibold text-[#1A1A2E]">
                     {PROJECT.projectNumber}
@@ -295,7 +240,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1A1A2E]/35 mb-1">
-                    Duration
+                    {t('durationLabel')}
                   </p>
                   <p className="text-sm font-semibold text-[#1A1A2E]">
                     {PROJECT.duration}
@@ -308,18 +253,8 @@ export default function AboutPage() {
 
             {/* Description paragraphs - wider reading column */}
             <div className="max-w-2xl space-y-5 text-[#1A1A2E]/60 leading-relaxed text-[17px]">
-              <p>
-                The G.E.A.R.S. project addresses the urgent need for
-                sustainability education among adults. Through 10 interactive
-                learning modules, we guide participants through the journey from
-                understanding basic environmental principles to taking meaningful
-                community action.
-              </p>
-              <p>
-                Our programme is built around the European GreenComp framework,
-                ensuring that learners develop key sustainability competences
-                recognised across the European Union.
-              </p>
+              <p>{t('aboutParagraph1')}</p>
+              <p>{t('aboutParagraph2')}</p>
             </div>
           </motion.div>
         </div>
@@ -331,18 +266,18 @@ export default function AboutPage() {
       <section ref={offerRef} className="section-dark bg-[#064E3B] py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Programme"
-            heading="What We Offer"
-            description="A comprehensive programme of tools and resources for sustainability education."
+            label={t('programmeLabel')}
+            heading={t('whatWeOffer')}
+            description={t('whatWeOfferDescription')}
             inView={offerInView}
             accentColor="#34D399"
             light
           />
 
           <div className="grid gap-6 sm:grid-cols-2">
-            {programmeFeatures.map((feature, index) => (
+            {programmeFeatureKeys.map((feature, index) => (
               <motion.div
-                key={feature.title}
+                key={feature.key}
                 initial={{ opacity: 0, y: 30 }}
                 animate={offerInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, ease, delay: 0.15 + index * 0.1 }}
@@ -358,10 +293,10 @@ export default function AboutPage() {
                   />
                 </div>
                 <h3 className="mb-3 font-display text-xl font-semibold text-white">
-                  {feature.title}
+                  {t(`features.${feature.key}.title`)}
                 </h3>
                 <p className="leading-relaxed text-white/50">
-                  {feature.description}
+                  {t(`features.${feature.key}.description`)}
                 </p>
               </motion.div>
             ))}
@@ -375,16 +310,16 @@ export default function AboutPage() {
       <section ref={greencompRef} className="py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="EU Framework"
-            heading="GreenComp Framework"
-            description="Our curriculum is aligned with the European Sustainability Competence Framework (GreenComp), which defines the sustainability competences that learners need."
+            label={t('greencompLabel')}
+            heading={t('greencompTitle')}
+            description={t('greencompDescription')}
             inView={greencompInView}
             accentColor="#0D9488"
           />
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {greenCompAreas.map((area, index) => {
-              const display = greenCompDisplayData[area.id];
+              const areaKey = areaToKey[area.id];
               return (
                 <motion.div
                   key={area.id}
@@ -412,12 +347,12 @@ export default function AboutPage() {
                     className="mb-3 font-display text-lg font-semibold"
                     style={{ color: area.color }}
                   >
-                    {display?.title ?? area.id}
+                    {areaKey ? tg(`areas.${areaKey}.title`) : area.id}
                   </h3>
 
                   {/* Competences */}
                   <p className="text-sm leading-relaxed text-[#1A1A2E]/50">
-                    {display?.competences ?? ''}
+                    {areaKey ? tg(`areas.${areaKey}.description`) : ''}
                   </p>
                 </motion.div>
               );
@@ -432,9 +367,9 @@ export default function AboutPage() {
       <section ref={partnersRef} className="section-dark bg-[#064E3B] py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Collaboration"
-            heading="Our Partners"
-            description="Two organisations united by a shared commitment to sustainability education for adults."
+            label={t('collaborationLabel')}
+            heading={t('ourPartners')}
+            description={t('partnersDescription')}
             inView={partnersInView}
             accentColor="#6EE7B7"
             light
@@ -449,12 +384,12 @@ export default function AboutPage() {
               className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-sm p-8"
             >
               <div className="mb-3 inline-flex self-start rounded-full bg-[#34D399]/15 px-3 py-1 text-xs font-semibold text-[#6EE7B7]">
-                Lead Partner &mdash; Poland
+                {t('leadPartner')}
               </div>
               <div className="my-6 flex h-20 items-center">
                 <Image
                   src={LOGOS.zieloneSlaskie}
-                  alt="Stowarzyszenie Zielone Slaskie"
+                  alt={t('zsName')}
                   width={200}
                   height={80}
                   unoptimized
@@ -462,14 +397,10 @@ export default function AboutPage() {
                 />
               </div>
               <h3 className="mb-3 font-display text-xl font-semibold text-white">
-                Stowarzyszenie Zielone Slaskie
+                {t('zsName')}
               </h3>
               <p className="mb-6 flex-1 text-sm leading-relaxed text-white/50">
-                Zielone Slaskie is a Polish environmental association based in
-                Silesia, dedicated to promoting sustainable development,
-                environmental education, and community engagement. As the lead
-                partner, they coordinate the project and bring expertise in green
-                education and community mobilisation.
+                {t('zsDescription')}
               </p>
               <a
                 href="https://www.zieloneslaskie.pl"
@@ -477,7 +408,7 @@ export default function AboutPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-[#6EE7B7] transition-colors hover:text-[#34D399]"
               >
-                Visit website
+                {t('visitWebsite')}
                 <ExternalLink className="h-3.5 w-3.5" />
               </a>
             </motion.div>
@@ -490,12 +421,12 @@ export default function AboutPage() {
               className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-sm p-8"
             >
               <div className="mb-3 inline-flex self-start rounded-full bg-[#0D9488]/20 px-3 py-1 text-xs font-semibold text-[#5EEAD4]">
-                Partner &mdash; Slovakia
+                {t('partner')}
               </div>
               <div className="my-6 flex h-20 items-center">
                 <Image
                   src={LOGOS.partner}
-                  alt="SEQ / YouthFullyYours"
+                  alt={t('seqName')}
                   width={200}
                   height={80}
                   unoptimized
@@ -503,17 +434,13 @@ export default function AboutPage() {
                 />
               </div>
               <h3 className="mb-3 font-display text-xl font-semibold text-white">
-                SEQ / YouthFullyYours
+                {t('seqName')}
               </h3>
               <p className="mb-6 flex-1 text-sm leading-relaxed text-white/50">
-                SEQ (Slovak Education Quest) / YouthFullyYours is a Slovak
-                non-profit organisation specialising in non-formal education, youth
-                work, and adult learning. They contribute expertise in educational
-                methodology, accreditation systems, and international project
-                management.
+                {t('seqDescription')}
               </p>
               <span className="inline-flex items-center gap-1.5 text-sm font-medium text-white/30">
-                Website coming soon
+                {t('websiteComingSoon')}
               </span>
             </motion.div>
           </div>
@@ -526,9 +453,9 @@ export default function AboutPage() {
       <section ref={teamRef} className="py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Team"
-            heading="Key People"
-            description="The team behind the G.E.A.R.S. project."
+            label={t('teamLabel')}
+            heading={t('keyPeople')}
+            description={t('teamDescription')}
             inView={teamInView}
             accentColor="#047857"
           />
@@ -550,7 +477,7 @@ export default function AboutPage() {
                   {member.name}
                 </h3>
                 <p className="mt-1 text-sm font-medium text-[#064E3B]">
-                  {member.role}
+                  {t(`roles.${member.roleKey}`)}
                 </p>
                 <p className="mt-0.5 text-xs text-[#1A1A2E]/40">{member.org}</p>
               </motion.div>
