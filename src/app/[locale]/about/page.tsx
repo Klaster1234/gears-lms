@@ -38,9 +38,9 @@ const areaToKey: Record<string, string> = {
 };
 
 const teamMembers = [
-  { name: 'Gabriela Meziova', roleKey: 'projectManager', org: 'SEQ / YouthFullyYours' },
-  { name: 'Katarina Zvarikova', roleKey: 'educationSpecialist', org: 'SEQ / YouthFullyYours' },
-  { name: 'Marco Pogai', roleKey: 'sustainabilityExpert', org: 'Zielone Slaskie' },
+  { name: 'Gabriela Meziova', roleKey: 'projectManager', org: 'Youthfully Yours SK' },
+  { name: 'Katarina Zvarikova', roleKey: 'educationSpecialist', org: 'Youthfully Yours SK' },
+  { name: 'Marco Pogai', roleKey: 'sustainabilityExpert', org: 'Zielone Śląskie' },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -413,7 +413,7 @@ export default function AboutPage() {
               </a>
             </motion.div>
 
-            {/* SEQ / YouthFullyYours */}
+            {/* Youthfully Yours SK */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={partnersInView ? { opacity: 1, y: 0 } : {}}

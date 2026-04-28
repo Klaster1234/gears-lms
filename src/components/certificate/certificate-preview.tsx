@@ -254,7 +254,7 @@ export function CertificatePreview({ name }: CertificatePreviewProps) {
                 margin: 0,
               }}
             >
-              Zielone Slaskie (PL) &bull; SEQ / YouthFullyYours (SK)
+              Zielone Śląskie (PL) &bull; Youthfully Yours SK
             </p>
           </div>
 

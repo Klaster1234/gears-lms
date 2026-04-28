@@ -18,7 +18,7 @@ const partners = [
   {
     nameKey: 'seqName' as const,
     descKey: 'seqDescription' as const,
-    cityCountry: 'Bratislava, Slovakia',
+    cityCountry: 'Nižný Klátov, Slovakia',
     logo: LOGOS.partner,
     url: 'https://seq.sk/',
   },

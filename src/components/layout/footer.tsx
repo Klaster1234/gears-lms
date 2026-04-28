@@ -19,7 +19,7 @@ export function Footer() {
           />
           <img
             src={LOGOS.partner}
-            alt="SEQ Partner"
+            alt="Youthfully Yours SK"
             className="h-[120px] w-auto object-contain opacity-90"
           />
         </div>
