@@ -1204,8 +1204,6 @@
     "email": "Email",
     "password": "Heslo",
     "name": "Celé meno",
-    "continueWithGoogle": "Pokračovať s Google",
-    "or": "alebo",
     "noAccount": "Nemáte účet?",
     "hasAccount": "Už máte účet?",
     "invalidCredentials": "Neplatný email alebo heslo",

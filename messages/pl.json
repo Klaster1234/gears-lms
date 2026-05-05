@@ -1204,8 +1204,6 @@
     "email": "Email",
     "password": "Hasło",
     "name": "Imię i nazwisko",
-    "continueWithGoogle": "Kontynuuj z Google",
-    "or": "lub",
     "noAccount": "Nie masz konta?",
     "hasAccount": "Masz już konto?",
     "invalidCredentials": "Nieprawidłowy email lub hasło",
