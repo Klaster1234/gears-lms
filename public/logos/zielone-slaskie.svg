@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" role="img" aria-label="Zielone Śląskie Ekologiczna Spółdzielnia Socjalna">
+  <defs>
+    <linearGradient id="zsLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#064E3B"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(20, 25)">
+    <path d="M35 0 C20 5, 5 20, 5 45 C5 60, 15 70, 30 70 C40 70, 50 65, 55 55 C60 45, 60 30, 55 15 C50 5, 42 0, 35 0 Z"
+          fill="url(#zsLeaf)"/>
+    <path d="M30 55 Q30 35 50 18" stroke="#FAF8F0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M35 50 Q35 40 45 30" stroke="#FAF8F0" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(95, 0)" font-family="'Figtree', system-ui, sans-serif">
+    <text x="0" y="48" font-size="26" font-weight="700" fill="#064E3B">Zielone Śląskie</text>
+    <text x="0" y="72" font-size="11" font-weight="500" fill="#0D9488" letter-spacing="0.5">EKOLOGICZNA SPÓŁDZIELNIA SOCJALNA</text>
+    <line x1="0" y1="82" x2="270" y2="82" stroke="#0D9488" stroke-width="1" opacity="0.3"/>
+    <text x="0" y="100" font-size="10" fill="#1A1A2E" opacity="0.6">Gliwice · Polska</text>
+  </g>
+</svg>
