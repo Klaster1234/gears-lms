@@ -79,3 +79,192 @@ enum Role {
   USER
   ADMIN
 }
+
+// ─── City Quest Models (Sprint 1) ────────────────────────────
+
+enum PlaceCategory {
+  REPAIR
+  SECOND_HAND
+  VEGAN
+  NO_PACKAGE
+  ECO
+  RECYCLING
+  EDUCATION
+  MOBILITY
+  TOURISM
+  GASTRONOMY
+}
+
+enum TransportMode {
+  WALKING
+  BIKE
+  PUBLIC
+  MIXED
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum IndoorOutdoor {
+  INDOOR
+  OUTDOOR
+  MIXED
+}
+
+enum RegistrationStatus {
+  PENDING
+  WAITLIST
+  CONFIRMED
+  ATTENDED
+  CANCELLED
+  NO_SHOW
+}
+
+enum SuggestionStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  DUPLICATE
+}
+
+model QuestPlace {
+  id                   String        @id @default(cuid())
+  slug                 String        @unique
+  name                 String
+  nameEn               String?
+  nameSk               String?
+  category             PlaceCategory
+  tags                 String[]      @default([])
+  // adres
+  street               String?
+  houseNumber          String?
+  postalCode           String?
+  city                 String        @default("Gliwice")
+  countryCode          String        @default("PL") @db.Char(2)
+  // geo
+  lat                  Float
+  lng                  Float
+  // opisy i18n
+  descriptionPl        String?       @db.Text
+  descriptionEn        String?       @db.Text
+  descriptionSk        String?       @db.Text
+  // kontakt
+  website              String?
+  facebook             String?
+  instagram            String?
+  phone                String?
+  email                String?
+  hours                Json?
+  // a11y
+  wheelchairAccessible Boolean?
+  accessibilityNotes   String?
+  // meta
+  photoUrls            String[]      @default([])
+  sources              String[]      @default([])
+  verifiedAt           DateTime?
+  isActive             Boolean       @default(true)
+  createdAt            DateTime      @default(now())
+  updatedAt            DateTime      @updatedAt
+
+  stops              QuestStop[]
+  meetingPointQuests Quest[]       @relation("QuestMeetingPoint")
+
+  @@index([category])
+  @@index([city])
+  @@index([isActive])
+}
+
+model Quest {
+  id                  String          @id @default(cuid())
+  slug                String          @unique
+  titlePl             String
+  titleEn             String?
+  titleSk             String?
+  descriptionPl       String?         @db.Text
+  descriptionEn       String?         @db.Text
+  descriptionSk       String?         @db.Text
+  durationMinutes     Int?
+  distanceKm          Float?
+  transportMode       TransportMode?
+  difficulty          Difficulty?
+  maxParticipants     Int             @default(10)
+  greencompCompetence String?
+  themes              String[]        @default([])
+  seasonRecommended   String[]        @default([])
+  indoorOutdoor       IndoorOutdoor?
+  scheduledAt         DateTime?
+  meetingPointId      String?
+  isPublished         Boolean         @default(false)
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
+
+  meetingPoint  QuestPlace?           @relation("QuestMeetingPoint", fields: [meetingPointId], references: [id])
+  stops         QuestStop[]
+  registrations QuestRegistration[]
+
+  @@index([scheduledAt])
+  @@index([isPublished])
+}
+
+model QuestStop {
+  id               String   @id @default(cuid())
+  questId          String
+  placeId          String
+  position         Int
+  taskPl           String?  @db.Text
+  taskEn           String?  @db.Text
+  taskSk           String?  @db.Text
+  estimatedMinutes Int?
+
+  quest Quest      @relation(fields: [questId], references: [id], onDelete: Cascade)
+  place QuestPlace @relation(fields: [placeId], references: [id])
+
+  @@unique([questId, position])
+  @@index([questId])
+}
+
+model QuestRegistration {
+  id                     String             @id @default(cuid())
+  questId                String
+  firstName              String
+  lastName               String
+  email                  String
+  phone                  String?
+  ageRange               String?
+  city                   String?
+  dietaryRequirements    String?
+  accessibilityNeeds     String?
+  hearAboutUs            String?
+  consentDataProcessing  Boolean            @default(false)
+  consentPhotos          Boolean            @default(false)
+  consentNewsletter      Boolean            @default(false)
+  status                 RegistrationStatus @default(PENDING)
+  createdAt              DateTime           @default(now())
+  updatedAt              DateTime           @updatedAt
+
+  quest Quest @relation(fields: [questId], references: [id])
+
+  @@unique([questId, email])
+  @@index([questId])
+  @@index([email])
+  @@index([status])
+}
+
+model PlaceSuggestion {
+  id                   String           @id @default(cuid())
+  suggestedName        String
+  suggestedCategory    String?
+  suggestedAddress     String?
+  suggestedDescription String?           @db.Text
+  suggesterEmail       String?
+  suggesterName        String?
+  status               SuggestionStatus @default(PENDING)
+  reviewedAt           DateTime?
+  reviewerNotes        String?           @db.Text
+  createdAt            DateTime         @default(now())
+
+  @@index([status])
+}

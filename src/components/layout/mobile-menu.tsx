@@ -17,6 +17,7 @@ import { LanguageSwitcher } from './language-switcher';
 
 const navItems = [
   { href: '/modules', labelKey: 'modules' },
+  { href: '/quests', labelKey: 'quests' },
   { href: '/progress', labelKey: 'progress' },
   { href: '/about', labelKey: 'about' },
 ] as const;

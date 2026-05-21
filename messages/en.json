@@ -4,7 +4,8 @@
       "modules": "Modules",
       "progress": "Progress",
       "about": "About",
-      "certificate": "Certificate"
+      "certificate": "Certificate",
+      "quests": "Quests"
     },
     "buttons": {
       "startLearning": "Start Learning",
@@ -1229,5 +1230,110 @@
     "noUsers": "No registered users yet.",
     "totalUsers": "Total Users",
     "withCertificate": "With Certificate"
+  },
+  "quests": {
+    "badge": "City Quests · 2026",
+    "title": "City Quests",
+    "tagline": "Discover sustainable places nearby. Real spots. Real conversations.",
+    "intro": "One-day quests through eco-friendly places in Gliwice and the Silesia region. Meet local makers, repair shops, second-hand stores, vegan bistros and zero-waste pioneers. Part of the G.E.A.R.S. Erasmus+ programme.",
+    "sections": {
+      "upcoming": "Upcoming quests",
+      "noUpcoming": "No quests scheduled yet — but the map of places is already growing below.",
+      "places": "Places on the map",
+      "placesIntro": "Filter by category to find what you need today.",
+      "placesEmpty": "No places yet. Help us build the map — suggest the first one."
+    },
+    "categories": {
+      "repair": "Repair",
+      "secondHand": "Second-hand",
+      "vegan": "Vegan",
+      "noPackage": "No-package",
+      "eco": "Eco",
+      "recycling": "Recycling",
+      "education": "Education",
+      "mobility": "Mobility",
+      "tourism": "Tourism",
+      "gastronomy": "Gastronomy"
+    },
+    "filters": {
+      "title": "Filter by category",
+      "showAll": "Show all",
+      "empty": "No places match these filters.",
+      "resultsCount": "{count} places"
+    },
+    "actions": {
+      "viewQuest": "View quest",
+      "register": "Register",
+      "suggestPlace": "Suggest a place",
+      "visitWebsite": "Visit website",
+      "showMap": "Map",
+      "showList": "List"
+    },
+    "quest": {
+      "stops": "Quest stops",
+      "backToList": "Back to all quests",
+      "waitlistOpen": "(waitlist)"
+    },
+    "registration": {
+      "heading": "Sign up for this quest",
+      "intro": "Reserve your spot. All data is processed by Spółdzielnia Socjalna Zielone Śląskie under the Erasmus+ G.E.A.R.S. project.",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "ageRange": "Age range",
+      "city": "City",
+      "dietary": "Dietary requirements (optional)",
+      "accessibility": "Accessibility needs (optional)",
+      "hearAboutUs": "Where did you hear about us?",
+      "consents": "Consents",
+      "consentDataRequired": "I agree to data processing for the purpose of organising this quest (required)",
+      "consentPhotos": "I agree to photo / video documentation of the event",
+      "consentNewsletter": "Keep me posted about upcoming quests",
+      "submit": "Sign up",
+      "submitting": "Signing up…",
+      "fullMessage": "This quest is fully booked, including the waitlist. Check other upcoming quests or suggest a place.",
+      "errors": {
+        "missing": "Missing value",
+        "tooShort": "Too short",
+        "tooLong": "Too long",
+        "invalid": "Invalid value",
+        "required": "This consent is required",
+        "duplicate": "You are already signed up for this quest",
+        "questNotFound": "Quest not found",
+        "full": "This quest is full"
+      }
+    },
+    "confirmation": {
+      "confirmedTitle": "You're in!",
+      "confirmedMessage": "We've saved your registration. We'll be in touch closer to the quest date with meeting details.",
+      "waitlistTitle": "Added to waitlist",
+      "waitlistMessage": "The quest is full, but you're on the waitlist. We'll reach out if a spot opens up.",
+      "backToQuest": "Back to quest",
+      "exploreMore": "Explore more quests"
+    },
+    "suggest": {
+      "title": "Suggest a place",
+      "intro": "Know a great eco-friendly spot in Gliwice or the Silesia region? Add it to our map. We review every submission before it goes live.",
+      "back": "Back to map",
+      "aboutYou": "About you (optional)",
+      "fields": {
+        "name": "Place name",
+        "category": "Category",
+        "address": "Address",
+        "description": "Why is this place special?",
+        "yourName": "Your name",
+        "yourEmail": "Your email"
+      },
+      "submit": "Send suggestion",
+      "submitting": "Sending…",
+      "successTitle": "Thanks for the suggestion!",
+      "successMessage": "We'll review it and add it to the map if it fits the project.",
+      "errors": {
+        "tooShort": "Too short",
+        "tooLong": "Too long",
+        "invalid": "Invalid value"
+      }
+    }
   }
 }

@@ -4,7 +4,8 @@
       "modules": "Moduły",
       "progress": "Postępy",
       "about": "O projekcie",
-      "certificate": "Certyfikat"
+      "certificate": "Certyfikat",
+      "quests": "Questy"
     },
     "buttons": {
       "startLearning": "Rozpocznij naukę",
@@ -1229,5 +1230,110 @@
     "noUsers": "Brak zarejestrowanych użytkowników.",
     "totalUsers": "Łączna liczba użytkowników",
     "withCertificate": "Z certyfikatem"
+  },
+  "quests": {
+    "badge": "City Questy · 2026",
+    "title": "City Questy",
+    "tagline": "Odkrywaj miejsca eco wokół Ciebie. Prawdziwe miejsca. Prawdziwe rozmowy.",
+    "intro": "Jednodniowe questy po miejscach przyjaznych planecie w Gliwicach i na Śląsku. Spotkaj lokalnych twórców, warsztaty naprawcze, sklepy second-hand, wegańskie bistra i miejsca bez opakowań. Część programu G.E.A.R.S. (Erasmus+).",
+    "sections": {
+      "upcoming": "Najbliższe questy",
+      "noUpcoming": "Jeszcze nie zaplanowaliśmy żadnego questu — ale mapa miejsc już rośnie poniżej.",
+      "places": "Miejsca na mapie",
+      "placesIntro": "Filtruj po kategorii, żeby znaleźć to, czego dziś szukasz.",
+      "placesEmpty": "Brak miejsc. Pomóż nam zbudować mapę — zaproponuj pierwsze."
+    },
+    "categories": {
+      "repair": "Naprawa",
+      "secondHand": "Second-hand",
+      "vegan": "Wegańskie",
+      "noPackage": "Bez opakowań",
+      "eco": "Eko / Bio",
+      "recycling": "Recykling",
+      "education": "Edukacja",
+      "mobility": "Mobilność",
+      "tourism": "Turystyka",
+      "gastronomy": "Gastronomia"
+    },
+    "filters": {
+      "title": "Filtruj wg kategorii",
+      "showAll": "Pokaż wszystkie",
+      "empty": "Brak miejsc pasujących do filtrów.",
+      "resultsCount": "{count} miejsc"
+    },
+    "actions": {
+      "viewQuest": "Zobacz quest",
+      "register": "Zapisz się",
+      "suggestPlace": "Zaproponuj miejsce",
+      "visitWebsite": "Strona miejsca",
+      "showMap": "Mapa",
+      "showList": "Lista"
+    },
+    "quest": {
+      "stops": "Przystanki questu",
+      "backToList": "Wróć do listy questów",
+      "waitlistOpen": "(lista rezerwowa)"
+    },
+    "registration": {
+      "heading": "Zapisz się na ten quest",
+      "intro": "Zarezerwuj miejsce. Twoje dane przetwarza Spółdzielnia Socjalna Zielone Śląskie w ramach projektu Erasmus+ G.E.A.R.S.",
+      "firstName": "Imię",
+      "lastName": "Nazwisko",
+      "email": "E-mail",
+      "phone": "Telefon (opcjonalnie)",
+      "ageRange": "Przedział wieku",
+      "city": "Miasto",
+      "dietary": "Specjalne potrzeby żywieniowe (opcjonalnie)",
+      "accessibility": "Potrzeby dostępności (opcjonalnie)",
+      "hearAboutUs": "Skąd o nas wiesz?",
+      "consents": "Zgody",
+      "consentDataRequired": "Wyrażam zgodę na przetwarzanie moich danych osobowych w celu organizacji questu (wymagane)",
+      "consentPhotos": "Zgadzam się na dokumentację foto/wideo z wydarzenia",
+      "consentNewsletter": "Chcę dostawać info o kolejnych questach",
+      "submit": "Zapisz się",
+      "submitting": "Wysyłam…",
+      "fullMessage": "Ten quest jest w pełni obsadzony, łącznie z listą rezerwową. Sprawdź inne najbliższe questy albo zaproponuj nowe miejsce.",
+      "errors": {
+        "missing": "Brak wartości",
+        "tooShort": "Za krótkie",
+        "tooLong": "Za długie",
+        "invalid": "Niepoprawna wartość",
+        "required": "Ta zgoda jest wymagana",
+        "duplicate": "Jesteś już zapisany(a) na ten quest",
+        "questNotFound": "Quest nie znaleziony",
+        "full": "Ten quest jest pełny"
+      }
+    },
+    "confirmation": {
+      "confirmedTitle": "Zapisany(a)!",
+      "confirmedMessage": "Zapamiętaliśmy Twoje zgłoszenie. Odezwiemy się bliżej daty questu z detalami spotkania.",
+      "waitlistTitle": "Lista rezerwowa",
+      "waitlistMessage": "Quest jest pełny, ale jesteś na liście rezerwowej. Damy znać, jeśli zwolni się miejsce.",
+      "backToQuest": "Wróć do questu",
+      "exploreMore": "Zobacz inne questy"
+    },
+    "suggest": {
+      "title": "Zaproponuj miejsce",
+      "intro": "Znasz świetne miejsce eco w Gliwicach albo na Śląsku? Dodaj je do mapy. Każdą propozycję weryfikujemy przed publikacją.",
+      "back": "Wróć do mapy",
+      "aboutYou": "O Tobie (opcjonalnie)",
+      "fields": {
+        "name": "Nazwa miejsca",
+        "category": "Kategoria",
+        "address": "Adres",
+        "description": "Dlaczego to miejsce jest wyjątkowe?",
+        "yourName": "Twoje imię",
+        "yourEmail": "Twój e-mail"
+      },
+      "submit": "Wyślij propozycję",
+      "submitting": "Wysyłam…",
+      "successTitle": "Dzięki za propozycję!",
+      "successMessage": "Sprawdzimy ją i dodamy do mapy, jeśli pasuje do projektu.",
+      "errors": {
+        "tooShort": "Za krótkie",
+        "tooLong": "Za długie",
+        "invalid": "Niepoprawna wartość"
+      }
+    }
   }
 }
