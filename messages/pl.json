@@ -1277,6 +1277,7 @@
     "registration": {
       "heading": "Zapisz się na ten quest",
       "intro": "Zarezerwuj miejsce. Twoje dane przetwarza Spółdzielnia Socjalna Zielone Śląskie w ramach projektu Erasmus+ G.E.A.R.S.",
+      "signedInAs": "Zalogowany(a) jako {email}. Zapis będzie powiązany z Twoim kontem.",
       "firstName": "Imię",
       "lastName": "Nazwisko",
       "email": "E-mail",
@@ -1302,6 +1303,21 @@
         "duplicate": "Jesteś już zapisany(a) na ten quest",
         "questNotFound": "Quest nie znaleziony",
         "full": "Ten quest jest pełny"
+      }
+    },
+    "myQuests": {
+      "title": "Moje questy",
+      "intro": "Questy, na które się zapisałeś(aś).",
+      "empty": "Jeszcze nie zapisałeś(aś) się na żaden quest.",
+      "browse": "Zobacz nadchodzące questy",
+      "registeredOn": "zapis {date}",
+      "status": {
+        "pending": "Oczekuje",
+        "waitlist": "Lista rezerwowa",
+        "confirmed": "Potwierdzony",
+        "attended": "Uczestniczył(a)",
+        "cancelled": "Odwołany",
+        "no_show": "Nie pojawił(a) się"
       }
     },
     "confirmation": {

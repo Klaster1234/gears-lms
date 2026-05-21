@@ -2,6 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { prisma } from '@/lib/prisma';
+import { auth } from '@/lib/auth';
 import {
   validateRegistration,
   validateSuggestion,
@@ -25,6 +26,13 @@ export async function createRegistration(
   }
 
   const input = parsed.data;
+  const session = await auth();
+  const userId = session?.user?.id ?? null;
+
+  // If logged in, force email to match session email (prevent impersonation)
+  if (session?.user?.email && session.user.email.toLowerCase() !== input.email) {
+    return { ok: false, errors: { email: 'invalid' } };
+  }
 
   const quest = await prisma.quest.findUnique({
     where: { id: input.questId },
@@ -60,6 +68,7 @@ export async function createRegistration(
     await prisma.questRegistration.update({
       where: { id: existing.id },
       data: {
+        userId,
         firstName: input.firstName,
         lastName: input.lastName,
         phone: input.phone,
@@ -78,6 +87,7 @@ export async function createRegistration(
     await prisma.questRegistration.create({
       data: {
         questId: input.questId,
+        userId,
         firstName: input.firstName,
         lastName: input.lastName,
         email: input.email,

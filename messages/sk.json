@@ -1277,6 +1277,7 @@
     "registration": {
       "heading": "Prihláste sa na quest",
       "intro": "Rezervujte si miesto. Vaše údaje spracúva Spółdzielnia Socjalna Zielone Śląskie v rámci projektu Erasmus+ G.E.A.R.S.",
+      "signedInAs": "Prihlásený(á) ako {email}. Registráciu prepojíme s vaším kontom.",
       "firstName": "Meno",
       "lastName": "Priezvisko",
       "email": "E-mail",
@@ -1302,6 +1303,21 @@
         "duplicate": "Už ste prihlásený(á) na tento quest",
         "questNotFound": "Quest nenájdený",
         "full": "Tento quest je plný"
+      }
+    },
+    "myQuests": {
+      "title": "Moje questy",
+      "intro": "Questy, na ktoré ste sa prihlásili.",
+      "empty": "Zatiaľ ste sa neprihlásili na žiadny quest.",
+      "browse": "Pozri nadchádzajúce questy",
+      "registeredOn": "prihlásenie {date}",
+      "status": {
+        "pending": "Čaká",
+        "waitlist": "Čakacia listina",
+        "confirmed": "Potvrdený",
+        "attended": "Zúčastnil(a) sa",
+        "cancelled": "Zrušený",
+        "no_show": "Neprišiel(la)"
       }
     },
     "confirmation": {

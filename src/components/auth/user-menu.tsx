@@ -3,7 +3,7 @@
 import { useSession, signOut } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { LogOut, Shield } from 'lucide-react';
+import { LogOut, Shield, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -16,6 +16,7 @@ import {
 export function UserMenu() {
   const { data: session, status } = useSession();
   const t = useTranslations('auth');
+  const tq = useTranslations('quests.myQuests');
 
   if (status === 'loading') {
     return <div className="h-8 w-8 rounded-full bg-[#E5E2DB] animate-pulse" />;
@@ -70,6 +71,12 @@ export function UserMenu() {
           )}
         </div>
         <DropdownMenuSeparator />
+        <DropdownMenuItem asChild className="cursor-pointer">
+          <Link href="/quests/my">
+            <MapPin className="size-4 mr-2" />
+            {tq('title')}
+          </Link>
+        </DropdownMenuItem>
         {isAdmin && (
           <DropdownMenuItem asChild className="cursor-pointer">
             <Link href="/admin">

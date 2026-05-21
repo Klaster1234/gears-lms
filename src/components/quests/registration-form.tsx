@@ -13,13 +13,25 @@ import type { RegistrationFormErrors } from '@/lib/quests/validation';
 type Props = {
   questId: string;
   questSlug: string;
+  sessionUser?: {
+    email?: string;
+    name?: string;
+  };
 };
 
-export function RegistrationForm({ questId, questSlug }: Props) {
+export function RegistrationForm({ questId, questSlug, sessionUser }: Props) {
   const t = useTranslations('quests.registration');
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [errors, setErrors] = useState<RegistrationFormErrors>({});
+
+  // Split full name into first/last if available
+  const [defaultFirstName, defaultLastName] = (() => {
+    if (!sessionUser?.name) return ['', ''];
+    const parts = sessionUser.name.trim().split(/\s+/);
+    if (parts.length === 1) return [parts[0], ''];
+    return [parts[0], parts.slice(1).join(' ')];
+  })();
 
   async function onSubmit(formData: FormData) {
     setErrors({});
@@ -56,17 +68,24 @@ export function RegistrationForm({ questId, questSlug }: Props) {
 
   return (
     <form action={onSubmit} className="space-y-5">
+      {sessionUser?.email && (
+        <p className="rounded-md bg-[#ECFDF5] border border-[#10B981]/30 px-4 py-2.5 text-sm text-[#064E3B]">
+          {t('signedInAs', { email: sessionUser.email })}
+        </p>
+      )}
       <div className="grid gap-4 sm:grid-cols-2">
         <Field
           name="firstName"
           label={t('firstName')}
           required
+          defaultValue={defaultFirstName}
           error={errors.firstName && t(`errors.${errors.firstName}`)}
         />
         <Field
           name="lastName"
           label={t('lastName')}
           required
+          defaultValue={defaultLastName}
           error={errors.lastName && t(`errors.${errors.lastName}`)}
         />
       </div>
@@ -75,6 +94,8 @@ export function RegistrationForm({ questId, questSlug }: Props) {
         type="email"
         label={t('email')}
         required
+        defaultValue={sessionUser?.email}
+        readOnly={!!sessionUser?.email}
         error={errors.email && t(`errors.${errors.email}`)}
       />
       <div className="grid gap-4 sm:grid-cols-2">
@@ -163,12 +184,16 @@ function Field({
   label,
   type = 'text',
   required,
+  defaultValue,
+  readOnly,
   error,
 }: {
   name: string;
   label: string;
   type?: string;
   required?: boolean;
+  defaultValue?: string;
+  readOnly?: boolean;
   error?: string;
 }) {
   return (
@@ -177,7 +202,15 @@ function Field({
         {label}
         {required && <span className="ml-0.5 text-red-600">*</span>}
       </Label>
-      <Input id={name} name={name} type={type} required={required} />
+      <Input
+        id={name}
+        name={name}
+        type={type}
+        required={required}
+        defaultValue={defaultValue}
+        readOnly={readOnly}
+        className={readOnly ? 'bg-[#FAF8F0] cursor-not-allowed' : undefined}
+      />
       {error && <p className="text-xs text-red-600">{error}</p>}
     </div>
   );

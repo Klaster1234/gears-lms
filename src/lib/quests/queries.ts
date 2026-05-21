@@ -103,3 +103,26 @@ export async function countActiveRegistrations(questId: string): Promise<number>
     },
   });
 }
+
+export async function getUserRegistrations(userId: string) {
+  return prisma.questRegistration.findMany({
+    where: { userId, status: { notIn: ['CANCELLED', 'NO_SHOW'] } },
+    orderBy: { createdAt: 'desc' },
+    include: {
+      quest: {
+        select: {
+          id: true,
+          slug: true,
+          titlePl: true,
+          titleEn: true,
+          titleSk: true,
+          scheduledAt: true,
+          durationMinutes: true,
+          meetingPoint: {
+            select: { name: true, city: true },
+          },
+        },
+      },
+    },
+  });
+}

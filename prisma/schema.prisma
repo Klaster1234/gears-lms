@@ -21,9 +21,10 @@ model User {
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 
-  accounts Account[]
-  sessions Session[]
-  progress UserProgress?
+  accounts           Account[]
+  sessions           Session[]
+  progress           UserProgress?
+  questRegistrations QuestRegistration[]
 }
 
 model Account {
@@ -229,6 +230,7 @@ model QuestStop {
 model QuestRegistration {
   id                     String             @id @default(cuid())
   questId                String
+  userId                 String?
   firstName              String
   lastName               String
   email                  String
@@ -246,10 +248,12 @@ model QuestRegistration {
   updatedAt              DateTime           @updatedAt
 
   quest Quest @relation(fields: [questId], references: [id])
+  user  User? @relation(fields: [userId], references: [id], onDelete: SetNull)
 
   @@unique([questId, email])
   @@index([questId])
   @@index([email])
+  @@index([userId])
   @@index([status])
 }
 

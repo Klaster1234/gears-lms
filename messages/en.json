@@ -1277,6 +1277,7 @@
     "registration": {
       "heading": "Sign up for this quest",
       "intro": "Reserve your spot. All data is processed by Spółdzielnia Socjalna Zielone Śląskie under the Erasmus+ G.E.A.R.S. project.",
+      "signedInAs": "Signed in as {email}. We'll link this registration to your account.",
       "firstName": "First name",
       "lastName": "Last name",
       "email": "Email",
@@ -1302,6 +1303,21 @@
         "duplicate": "You are already signed up for this quest",
         "questNotFound": "Quest not found",
         "full": "This quest is full"
+      }
+    },
+    "myQuests": {
+      "title": "My quests",
+      "intro": "Quests you've signed up for.",
+      "empty": "You haven't signed up for any quests yet.",
+      "browse": "Browse upcoming quests",
+      "registeredOn": "signed up {date}",
+      "status": {
+        "pending": "Pending",
+        "waitlist": "Waitlist",
+        "confirmed": "Confirmed",
+        "attended": "Attended",
+        "cancelled": "Cancelled",
+        "no_show": "No-show"
       }
     },
     "confirmation": {

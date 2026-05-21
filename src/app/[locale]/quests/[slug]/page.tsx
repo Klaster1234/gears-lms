@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { getTranslations, getFormatter } from 'next-intl/server';
 import { Calendar, Clock, MapPin, Users, ChevronLeft } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+import { auth } from '@/lib/auth';
 import { getQuestBySlug } from '@/lib/quests/queries';
 import { RegistrationForm } from '@/components/quests/registration-form';
 import { CATEGORY_CONFIG } from '@/lib/quests/categories';
@@ -34,11 +35,21 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function QuestDetailPage({ params }: Props) {
   const { slug, locale } = await params;
-  const quest = await getQuestBySlug(slug);
+  const [quest, session] = await Promise.all([
+    getQuestBySlug(slug),
+    auth(),
+  ]);
   if (!quest || !quest.isPublished) notFound();
 
   const t = await getTranslations('quests');
   const format = await getFormatter();
+
+  const sessionUser = session?.user
+    ? {
+        email: session.user.email ?? undefined,
+        name: session.user.name ?? undefined,
+      }
+    : undefined;
 
   const title =
     locale === 'en' && quest.titleEn
@@ -203,7 +214,11 @@ export default async function QuestDetailPage({ params }: Props) {
               {t('registration.fullMessage')}
             </p>
           ) : (
-            <RegistrationForm questId={quest.id} questSlug={quest.slug} />
+            <RegistrationForm
+              questId={quest.id}
+              questSlug={quest.slug}
+              sessionUser={sessionUser}
+            />
           )}
         </section>
       </div>
