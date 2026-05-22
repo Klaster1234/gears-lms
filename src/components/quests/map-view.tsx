@@ -13,30 +13,23 @@ const GLIWICE_CENTER: [number, number] = [50.2945, 18.6714];
 
 function createCategoryIcon(category: PlaceCategory) {
   const config = CATEGORY_CONFIG[category];
-  const html = `<div style="
-    background: ${config.color};
-    width: 32px;
-    height: 32px;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    border: 2px solid white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  "><div style="
-    transform: rotate(45deg);
-    color: white;
-    font-weight: bold;
-    font-size: 10px;
-  ">●</div></div>`;
+  // Round papercut-style marker: deep earthy fill, cream stroke, small drop
+  // shadow. The glyph rides centered inside; the little stem at the bottom
+  // gives it just enough "pin" so it points at the location without being
+  // a generic Google Maps teardrop.
+  const html = `<div class="qp-marker" style="--qp-fill: ${config.color};">
+    <div class="qp-marker-body">
+      <span class="qp-marker-glyph" role="img" aria-hidden="true">${config.glyph}</span>
+    </div>
+    <div class="qp-marker-stem"></div>
+  </div>`;
 
   return L.divIcon({
     html,
     className: 'quest-place-marker',
-    iconSize: [32, 32],
-    iconAnchor: [16, 32],
-    popupAnchor: [0, -32],
+    iconSize: [36, 44],
+    iconAnchor: [18, 42],
+    popupAnchor: [0, -36],
   });
 }
 
@@ -92,11 +85,16 @@ export function MapView({ places, selectedCategories, height = '600px' }: Props)
       zoom={13}
       scrollWheelZoom={true}
       style={{ height, width: '100%' }}
-      className="rounded-2xl border border-[#E5E2DB] overflow-hidden"
+      className="rounded-2xl border border-[#E5E2DB] overflow-hidden quest-map"
     >
+      {/* CartoDB Positron — light, neutral basemap that lets the deep
+          earthy markers carry the colour without competing. Free, no
+          API key, OSM-attributed. */}
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://carto.com/attributions">CARTO</a> &middot; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+        subdomains="abcd"
+        maxZoom={19}
       />
       <FitBounds places={visible} />
       {visible.map(place => {
