@@ -2,7 +2,15 @@ import type { MetadataRoute } from 'next';
 
 const BASE_URL = 'https://gears.zieloneslaskie.pl';
 const LOCALES = ['pl', 'en', 'sk'] as const;
-const STATIC_PATHS = ['', '/about', '/modules', '/progress', '/certificate'] as const;
+const STATIC_PATHS = [
+  '',
+  '/about',
+  '/modules',
+  '/quests',
+  '/quests/suggest-place',
+  '/progress',
+  '/certificate',
+] as const;
 const MODULE_SLUGS = [
   'intro-5r',
   'waste-zero-waste',

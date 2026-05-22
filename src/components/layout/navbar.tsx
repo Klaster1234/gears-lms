@@ -9,6 +9,7 @@ import { UserMenu } from '@/components/auth/user-menu';
 
 const navItems = [
   { href: '/modules', labelKey: 'modules' },
+  { href: '/quests', labelKey: 'quests' },
   { href: '/progress', labelKey: 'progress' },
   { href: '/about', labelKey: 'about' },
 ] as const;

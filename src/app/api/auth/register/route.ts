@@ -2,13 +2,25 @@ import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import { prisma } from '@/lib/prisma';
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, password } = await request.json();
+    const body = await request.json();
+    const rawEmail = typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
+    const rawName = typeof body.name === 'string' ? body.name.trim() : '';
+    const password = typeof body.password === 'string' ? body.password : '';
 
-    if (!email || !password) {
+    if (!rawEmail || !password) {
       return NextResponse.json(
         { error: 'Email and password are required' },
+        { status: 400 },
+      );
+    }
+
+    if (!EMAIL_RE.test(rawEmail) || rawEmail.length > 254) {
+      return NextResponse.json(
+        { error: 'Invalid email format' },
         { status: 400 },
       );
     }
@@ -20,8 +32,22 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    if (password.length > 200) {
+      return NextResponse.json(
+        { error: 'Password too long' },
+        { status: 400 },
+      );
+    }
+
+    if (rawName.length > 100) {
+      return NextResponse.json(
+        { error: 'Name too long' },
+        { status: 400 },
+      );
+    }
+
     const existingUser = await prisma.user.findUnique({
-      where: { email },
+      where: { email: rawEmail },
     });
 
     if (existingUser) {
@@ -35,8 +61,8 @@ export async function POST(request: NextRequest) {
 
     await prisma.user.create({
       data: {
-        name: name || null,
-        email,
+        name: rawName || null,
+        email: rawEmail,
         password: hashedPassword,
       },
     });

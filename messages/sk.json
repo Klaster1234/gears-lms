@@ -4,7 +4,8 @@
       "modules": "Moduly",
       "progress": "Pokrok",
       "about": "O projekte",
-      "certificate": "Certifikát"
+      "certificate": "Certifikát",
+      "quests": "Questy"
     },
     "buttons": {
       "startLearning": "Začať sa učiť",
@@ -1229,5 +1230,126 @@
     "noUsers": "Zatiaľ žiadni zaregistrovaní používatelia.",
     "totalUsers": "Celkový počet používateľov",
     "withCertificate": "S certifikátom"
+  },
+  "quests": {
+    "badge": "City Questy · 2026",
+    "title": "City Questy",
+    "tagline": "Objavujte udržateľné miesta v okolí. Skutočné miesta. Skutočné rozhovory.",
+    "intro": "Jednodňové questy po eko-priateľských miestach v Gliwiciach a sliezskom regióne. Spoznajte lokálnych remeselníkov, opravárenské dielne, second-handy, vegánske bistrá a obchody bez obalov. Súčasť programu G.E.A.R.S. (Erasmus+).",
+    "sections": {
+      "upcoming": "Nadchádzajúce questy",
+      "noUpcoming": "Žiadne questy zatiaľ nie sú naplánované — mapa miest však už rastie nižšie.",
+      "places": "Miesta na mape",
+      "placesIntro": "Filtrujte podľa kategórie a nájdite, čo dnes hľadáte.",
+      "placesEmpty": "Žiadne miesta. Pomôžte nám vybudovať mapu — navrhnite prvé."
+    },
+    "categories": {
+      "repair": "Oprava",
+      "secondHand": "Second-hand",
+      "vegan": "Vegánske",
+      "noPackage": "Bez obalov",
+      "eco": "Eko / Bio",
+      "recycling": "Recyklácia",
+      "education": "Vzdelávanie",
+      "mobility": "Mobilita",
+      "tourism": "Turistika",
+      "gastronomy": "Gastronómia"
+    },
+    "filters": {
+      "title": "Filtrovať podľa kategórie",
+      "showAll": "Zobraziť všetko",
+      "empty": "Žiadne miesta nezodpovedajú filtrom.",
+      "resultsCount": "{count} miest"
+    },
+    "actions": {
+      "viewQuest": "Zobraziť quest",
+      "register": "Prihlásiť sa",
+      "suggestPlace": "Navrhnúť miesto",
+      "visitWebsite": "Web miesta",
+      "showMap": "Mapa",
+      "showList": "Zoznam"
+    },
+    "quest": {
+      "stops": "Zastávky questu",
+      "backToList": "Späť na zoznam questov",
+      "waitlistOpen": "(čakacia listina)"
+    },
+    "registration": {
+      "heading": "Prihláste sa na quest",
+      "intro": "Rezervujte si miesto. Vaše údaje spracúva Spółdzielnia Socjalna Zielone Śląskie v rámci projektu Erasmus+ G.E.A.R.S.",
+      "signedInAs": "Prihlásený(á) ako {email}. Registráciu prepojíme s vaším kontom.",
+      "firstName": "Meno",
+      "lastName": "Priezvisko",
+      "email": "E-mail",
+      "phone": "Telefón (nepovinné)",
+      "ageRange": "Veková skupina",
+      "city": "Mesto",
+      "dietary": "Stravovacie potreby (nepovinné)",
+      "accessibility": "Potreby dostupnosti (nepovinné)",
+      "hearAboutUs": "Odkiaľ o nás viete?",
+      "consents": "Súhlasy",
+      "consentDataRequired": "Súhlasím so spracovaním osobných údajov pre účely organizácie questu (povinné)",
+      "consentPhotos": "Súhlasím s foto/video dokumentáciou podujatia",
+      "consentNewsletter": "Posielajte mi info o ďalších questoch",
+      "submit": "Prihlásiť sa",
+      "submitting": "Odosielam…",
+      "fullMessage": "Tento quest je plne obsadený vrátane čakacej listiny. Pozrite ďalšie questy alebo navrhnite nové miesto.",
+      "errors": {
+        "missing": "Chýbajúca hodnota",
+        "tooShort": "Príliš krátke",
+        "tooLong": "Príliš dlhé",
+        "invalid": "Neplatná hodnota",
+        "required": "Tento súhlas je povinný",
+        "duplicate": "Už ste prihlásený(á) na tento quest",
+        "questNotFound": "Quest nenájdený",
+        "full": "Tento quest je plný"
+      }
+    },
+    "myQuests": {
+      "title": "Moje questy",
+      "intro": "Questy, na ktoré ste sa prihlásili.",
+      "empty": "Zatiaľ ste sa neprihlásili na žiadny quest.",
+      "browse": "Pozri nadchádzajúce questy",
+      "registeredOn": "prihlásenie {date}",
+      "status": {
+        "pending": "Čaká",
+        "waitlist": "Čakacia listina",
+        "confirmed": "Potvrdený",
+        "attended": "Zúčastnil(a) sa",
+        "cancelled": "Zrušený",
+        "no_show": "Neprišiel(la)"
+      }
+    },
+    "confirmation": {
+      "confirmedTitle": "Prihlásený(á)!",
+      "confirmedMessage": "Vašu registráciu sme uložili. Bližšie k dátumu questu vám pošleme detaily stretnutia.",
+      "waitlistTitle": "Čakacia listina",
+      "waitlistMessage": "Quest je plný, ale ste na čakacej listine. Ozveme sa, ak sa uvoľní miesto.",
+      "backToQuest": "Späť na quest",
+      "exploreMore": "Pozri ďalšie questy"
+    },
+    "suggest": {
+      "title": "Navrhnúť miesto",
+      "intro": "Poznáte výborné eko-priateľské miesto v Gliwiciach alebo Sliezsku? Pridajte ho na mapu. Každý návrh overujeme pred zverejnením.",
+      "back": "Späť na mapu",
+      "aboutYou": "O vás (nepovinné)",
+      "fields": {
+        "name": "Názov miesta",
+        "category": "Kategória",
+        "address": "Adresa",
+        "description": "Prečo je toto miesto výnimočné?",
+        "yourName": "Vaše meno",
+        "yourEmail": "Váš e-mail"
+      },
+      "submit": "Poslať návrh",
+      "submitting": "Odosielam…",
+      "successTitle": "Vďaka za návrh!",
+      "successMessage": "Pozrieme sa naň a pridáme na mapu, ak zapadne do projektu.",
+      "errors": {
+        "tooShort": "Príliš krátke",
+        "tooLong": "Príliš dlhé",
+        "invalid": "Neplatná hodnota"
+      }
+    }
   }
 }
