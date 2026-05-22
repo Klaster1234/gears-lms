@@ -55,7 +55,12 @@ export async function getPlaceBySlug(slug: string) {
 export async function getPublishedQuests(opts?: { upcomingOnly?: boolean }) {
   const where: Prisma.QuestWhereInput = { isPublished: true };
   if (opts?.upcomingOnly) {
-    where.scheduledAt = { gte: new Date() };
+    // Include templates (no scheduledAt yet) AND upcoming scheduled quests.
+    // Past quests (scheduledAt < now) are hidden.
+    where.OR = [
+      { scheduledAt: null },
+      { scheduledAt: { gte: new Date() } },
+    ];
   }
   return prisma.quest.findMany({
     where,
