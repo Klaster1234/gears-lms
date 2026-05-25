@@ -9,7 +9,9 @@ export const PROJECT = {
 export const LOGOS = {
   greenExplorers: '/logos/zielone-slaskie.svg',
   zieloneSlaskie: '/logos/zielone-slaskie.svg',
-  partner: '/logos/youthfully-yours.svg',
+  // White variant of the ZS mark — for dark backgrounds like the footer.
+  zieloneSlaskieWhite: '/logos/zielone-slaskie-white.svg',
+  partner: '/logos/youthfully-yours.png',
   euCoFunded: '/logos/eu-co-funded.jpg',
 };
 

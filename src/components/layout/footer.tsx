@@ -13,14 +13,14 @@ export function Footer() {
         {/* Partner logos */}
         <div className="flex flex-wrap items-center justify-center gap-10">
           <img
-            src={LOGOS.zieloneSlaskie}
-            alt="Zielone Slaskie"
-            className="h-[120px] w-auto object-contain opacity-90"
+            src={LOGOS.zieloneSlaskieWhite}
+            alt="Zielone Śląskie"
+            className="h-[100px] w-auto object-contain opacity-95"
           />
           <img
             src={LOGOS.partner}
             alt="Youthfully Yours SK"
-            className="h-[120px] w-auto object-contain opacity-90"
+            className="h-[120px] w-auto object-contain"
           />
         </div>
 
