@@ -1243,6 +1243,10 @@
       "placesIntro": "Filtruj po kategorii, żeby znaleźć to, czego dziś szukasz.",
       "placesEmpty": "Brak miejsc. Pomóż nam zbudować mapę — zaproponuj pierwsze."
     },
+    "focus": {
+      "gliwice": "Gliwice i okolice",
+      "silesia": "Cały Śląsk"
+    },
     "categories": {
       "repair": "Naprawa",
       "secondHand": "Second-hand",

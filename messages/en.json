@@ -1243,6 +1243,10 @@
       "placesIntro": "Filter by category to find what you need today.",
       "placesEmpty": "No places yet. Help us build the map — suggest the first one."
     },
+    "focus": {
+      "gliwice": "Gliwice & around",
+      "silesia": "All Silesia"
+    },
     "categories": {
       "repair": "Repair",
       "secondHand": "Second-hand",

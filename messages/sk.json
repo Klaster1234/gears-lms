@@ -1243,6 +1243,10 @@
       "placesIntro": "Filtrujte podľa kategórie a nájdite, čo dnes hľadáte.",
       "placesEmpty": "Žiadne miesta. Pomôžte nám vybudovať mapu — navrhnite prvé."
     },
+    "focus": {
+      "gliwice": "Gliwice a okolie",
+      "silesia": "Celé Sliezsko"
+    },
     "categories": {
       "repair": "Oprava",
       "secondHand": "Second-hand",
