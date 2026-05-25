@@ -2,16 +2,17 @@
 
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { MapPin } from 'lucide-react';
 import { Link, usePathname } from '@/i18n/routing';
 import { LanguageSwitcher } from './language-switcher';
 import { MobileMenu } from './mobile-menu';
 import { UserMenu } from '@/components/auth/user-menu';
 
 const navItems = [
-  { href: '/modules', labelKey: 'modules' },
-  { href: '/quests', labelKey: 'quests' },
-  { href: '/progress', labelKey: 'progress' },
-  { href: '/about', labelKey: 'about' },
+  { href: '/modules', labelKey: 'modules', icon: null },
+  { href: '/quests', labelKey: 'quests', icon: MapPin },
+  { href: '/progress', labelKey: 'progress', icon: null },
+  { href: '/about', labelKey: 'about', icon: null },
 ] as const;
 
 export function Navbar() {
@@ -84,11 +85,12 @@ export function Navbar() {
           {navItems.map((item) => {
             const isActive =
               pathname === item.href || pathname.startsWith(item.href + '/');
+            const Icon = item.icon;
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
+                className={`relative inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
                   isTransparent
                     ? isActive
                       ? 'bg-white/10 text-white'
@@ -98,6 +100,7 @@ export function Navbar() {
                       : 'text-[#1A1A2E]/60 hover:text-[#064E3B]'
                 }`}
               >
+                {Icon && <Icon className="h-3.5 w-3.5" aria-hidden="true" />}
                 {t(item.labelKey)}
               </Link>
             );

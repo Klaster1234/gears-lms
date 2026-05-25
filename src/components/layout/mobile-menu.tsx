@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useSession, signOut } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { Menu, LogOut, Shield, LogIn } from 'lucide-react';
+import { Menu, LogOut, Shield, LogIn, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -16,10 +16,10 @@ import {
 import { LanguageSwitcher } from './language-switcher';
 
 const navItems = [
-  { href: '/modules', labelKey: 'modules' },
-  { href: '/quests', labelKey: 'quests' },
-  { href: '/progress', labelKey: 'progress' },
-  { href: '/about', labelKey: 'about' },
+  { href: '/modules', labelKey: 'modules', icon: null },
+  { href: '/quests', labelKey: 'quests', icon: MapPin },
+  { href: '/progress', labelKey: 'progress', icon: null },
+  { href: '/about', labelKey: 'about', icon: null },
 ] as const;
 
 export function MobileMenu() {
@@ -49,16 +49,20 @@ export function MobileMenu() {
           </SheetDescription>
         </SheetHeader>
         <nav className="flex flex-col gap-2 px-4">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className="rounded-md px-3 py-2.5 text-base font-medium text-[#1A1A2E] transition-colors hover:bg-[#ECFDF5] hover:text-[#064E3B]"
-            >
-              {t(item.labelKey)}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="flex items-center gap-2 rounded-md px-3 py-2.5 text-base font-medium text-[#1A1A2E] transition-colors hover:bg-[#ECFDF5] hover:text-[#064E3B]"
+              >
+                {Icon && <Icon className="size-4 text-[#0D9488]" aria-hidden="true" />}
+                {t(item.labelKey)}
+              </Link>
+            );
+          })}
 
           {/* Language switcher */}
           <div className="mt-4 border-t border-[#E5E2DB] pt-4">

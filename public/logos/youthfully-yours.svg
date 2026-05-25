@@ -1,18 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" role="img" aria-label="Youthfully Yours SK">
-  <defs>
-    <linearGradient id="yysCircle" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#D97706"/>
-      <stop offset="100%" stop-color="#92400E"/>
-    </linearGradient>
-  </defs>
-  <g transform="translate(20, 25)">
-    <circle cx="35" cy="35" r="32" fill="url(#yysCircle)"/>
-    <text x="35" y="46" font-family="'Figtree', system-ui, sans-serif" font-size="26" font-weight="800" fill="#FFFBEB" text-anchor="middle">YY</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Youthfully Yours SK">
+  <!-- Three overlapping circles in the brand colours: magenta body, cyan top-right satellite, yellow middle dot -->
+  <circle cx="105" cy="125" r="100" fill="#D63384"/>
+  <circle cx="170" cy="65" r="55" fill="#FFFFFF"/>
+  <circle cx="170" cy="65" r="48" fill="#3FA7DC"/>
+  <circle cx="100" cy="85" r="32" fill="#FFFFFF"/>
+  <circle cx="100" cy="85" r="26" fill="#FFE600"/>
+  <!-- Wordmark: Youthfully Yours stacked, condensed display sans -->
+  <g fill="#FFFFFF" font-family="'Bahnschrift Condensed', 'Oswald', 'Arial Narrow', sans-serif" font-weight="700" text-anchor="middle">
+    <text x="105" y="170" font-size="34" letter-spacing="-1">youthfully</text>
+    <text x="105" y="200" font-size="34" letter-spacing="-1">yours</text>
   </g>
-  <g transform="translate(95, 0)" font-family="'Figtree', system-ui, sans-serif">
-    <text x="0" y="48" font-size="26" font-weight="700" fill="#064E3B">Youthfully Yours</text>
-    <text x="0" y="72" font-size="11" font-weight="500" fill="#D97706" letter-spacing="0.5">SLOVAKIA · NON-PROFIT</text>
-    <line x1="0" y1="82" x2="240" y2="82" stroke="#D97706" stroke-width="1" opacity="0.3"/>
-    <text x="0" y="100" font-size="10" fill="#1A1A2E" opacity="0.6">Nižný Klátov · Slovakia</text>
+  <!-- SK badge bottom-right, white fill with magenta outline -->
+  <g transform="translate(178,200)">
+    <text x="0" y="0" font-family="'Bahnschrift Condensed', 'Oswald', 'Arial Narrow', sans-serif" font-weight="800" font-size="38" letter-spacing="-1" fill="#FFFFFF" stroke="#D63384" stroke-width="2">SK</text>
   </g>
 </svg>
